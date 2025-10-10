@@ -6,7 +6,6 @@ export async function POST(req: NextRequest) {
     // Get client IP address (works on Vercel and locally)
     const ip =
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-      req.ip ||
       "unknown";
 
     // Parse request body
@@ -32,7 +31,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (err) {
+  } 
+  catch (err) {
     console.error("Login log error:", err);
     return NextResponse.json(
       { success: false, message: "Internal server error" },

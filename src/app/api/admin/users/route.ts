@@ -7,7 +7,8 @@ export async function GET() {
     await dbConnect();
     const users = await User.find({}, "email phone name authProvider createdAt").lean();
     return NextResponse.json({ users });
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Error fetching users:", error);
     return NextResponse.json({ error: "Failed to fetch users" }, { status: 500 });
   }

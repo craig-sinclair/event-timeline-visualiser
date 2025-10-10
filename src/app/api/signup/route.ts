@@ -23,7 +23,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ message: "User created", user });
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Signup error:", error);
     return NextResponse.json({ message: "Internal server error" }, { status: 500 });
   }

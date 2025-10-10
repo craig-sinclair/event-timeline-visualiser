@@ -1,12 +1,10 @@
-// src/app/api/profile/route.ts
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/app/lib/mongoose";
-import User from "@/app/models/user";
+import User, { IUser } from "@/app/models/user";
 
 export async function POST(req: Request) {
   try {
     const { id, name, nickname, phone, onboardingStep } = await req.json();
-    console.log("Incoming profile update:", { id, name, nickname, phone });
     if (!id) {
       return NextResponse.json(
         { message: "User ID is required" },
@@ -16,7 +14,7 @@ export async function POST(req: Request) {
 
     await dbConnect();
 
-    const update: any = {};
+    const update: Partial<IUser> = {};
     if (name !== undefined) update.name = name;
     if (nickname !== undefined) update.nickname = nickname;
     if (phone !== undefined) update.phone = phone;
@@ -25,7 +23,6 @@ export async function POST(req: Request) {
 
   
     const user = await User.findByIdAndUpdate(id, update, { new: true });
-    console.log("Updated user:", user);
     if (!user) {
       return NextResponse.json(
         { message: "User not found" },
@@ -37,10 +34,11 @@ export async function POST(req: Request) {
       { message: "Profile updated successfully", user },
       { status: 200 }
     );
-  } catch (err: any) {
-    console.error(err);
+  } 
+  catch (err) {
+    const error = err instanceof Error ? err : new Error("Unknown error");
     return NextResponse.json(
-      { message: err.message || "Internal Server Error" },
+      { message: error.message || "Internal Server Error" },
       { status: 500 }
     );
   }

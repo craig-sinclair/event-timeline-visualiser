@@ -1,19 +1,11 @@
-'use server';
-
 import NextAuth from 'next-auth/next';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import mongoose from 'mongoose';
 import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 
 import clientPromise from '@/app/lib/mongodb';
 import { findUserByEmailOrPhone, createUser } from '@/app/services/authService';
 import { hashPassword, comparePassword } from '@/app/services/passwordService';
-
-async function connectDB() {
-  if (mongoose.connection.readyState === 0) {
-    await mongoose.connect(process.env.MONGODB_URI!);
-  }
-}
+import { dbConnect } from '@/app/lib/mongoose';
 
 const handler = NextAuth({
   adapter: MongoDBAdapter(clientPromise),
@@ -32,7 +24,7 @@ const handler = NextAuth({
       },
       async authorize(credentials) {
         const { email, password, gdprConsent } = credentials!;
-        await connectDB();
+        await dbConnect();
 
         let user = await findUserByEmailOrPhone(email);
 
@@ -42,11 +34,16 @@ const handler = NextAuth({
           user = await createUser({
             email,
             passwordHash: hashed,
-            authProvider: 'password',
-            gdprConsent: true,
+            authProvider: "password",
+            gdprConsent: {
+              accepted: true,
+              acceptedAt: new Date(),
+              version: "1.0",
+            },
             profileCompleted: false,
           });
-        } else {
+        } 
+        else {
           const valid = await comparePassword(password, user.passwordHash!);
           if (!valid) return null;
         }
@@ -57,16 +54,16 @@ const handler = NextAuth({
   ],
   callbacks: {
     async signIn({ user }) {
-      await connectDB();
+      await dbConnect();
 
       if (user.email) {
-        let existing = await findUserByEmailOrPhone(user.email);
+        const existing = await findUserByEmailOrPhone(user.email);
 
         if (!existing) {
           await createUser({
             email: user.email,
-            name: user.name,
-            authProvider: 'password',
+            name: user.name || "",
+            authProvider: "password",
           });
         }
       }
@@ -78,9 +75,10 @@ const handler = NextAuth({
       if (user?.id) token.id = user.id;
       return token;
     },
-
     async session({ session, token }) {
-      if (token?.id) session.user.id = token.id;
+      if(session.user && typeof token?.id === "string"){
+        session.user.id = token.id;
+      }
       return session;
     },
   },

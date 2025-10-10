@@ -1,9 +1,9 @@
-import mongoose from "mongoose";
+import { dbConnect } from "@/app/lib/mongoose";
 import { NextResponse } from "next/server";
 import { findUserByEmailOrPhone, createUser } from "@/app/services/authService";
 
 export async function GET(req: Request) {
-  await mongoose.connect(process.env.MONGODB_URI!);
+  await dbConnect();
 
   const { email, phone } = await req.json();
   let user = await findUserByEmailOrPhone(email, phone);

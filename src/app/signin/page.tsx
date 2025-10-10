@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -14,7 +14,7 @@ const errorMessages: Record<string, string> = {
   Verification: "Email verification failed. Please request a new link.",
 };
 
-export default function SignInPage() {
+function SignInForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -91,8 +91,16 @@ export default function SignInPage() {
           {loading ? "Signing in..." : "Sign In"}
         </button>
 
-        <p className="text-md">Haven't created an account yet? Register <a className="text-blue-500" href="/signup">here</a></p>
+        <p className="text-md">Haven&apos;t created an account yet? Register <a className="text-blue-500" href="/signup">here</a></p>
       </form>
     </div>
+  );
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignInForm />
+    </Suspense>
   );
 }

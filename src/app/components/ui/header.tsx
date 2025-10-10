@@ -1,14 +1,16 @@
 'use client';
 
-import { signOut, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 interface HeaderProps {
   title: string;
+  isSignedIn: boolean;
+  onSignOut: () => void;
 }
 
-export default function Header({ title }: HeaderProps) {
+export default function Header({ title, isSignedIn, onSignOut }: HeaderProps) {
   const { data: session } = useSession();
   const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -27,7 +29,7 @@ export default function Header({ title }: HeaderProps) {
     <header className="flex justify-between items-center p-4 relative">
       <h1 className="text-xl font-bold">{title}</h1>
 
-      {session ? (
+      {isSignedIn ? (
         <div className="relative">
           <button
             onClick={toggleDropdown}
@@ -45,7 +47,7 @@ export default function Header({ title }: HeaderProps) {
                 Profile
               </button>
               <button
-                onClick={() => signOut({ callbackUrl: '/signin' })}
+                onClick={onSignOut}
                 className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-red-600"
               >
                 Sign Out

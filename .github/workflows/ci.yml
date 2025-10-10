@@ -33,16 +33,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # - name: Run ESLint
-      #   run: pnpm run lint
+      - name: Run ESLint
+        run: pnpm run lint
 
       - name: Run tests
         run: pnpm run test
 
-      # - name: Build Next.js app
-      #   run: pnpm run build
-      #   env:
-      #     NEXT_TELEMETRY_DISABLED: 1
-      #     DB_URI: ${{ secrets.DB_URI }}
-      #     MONGO_DB: ${{ secrets.MONGO_DB }}
-      #     NODE_ENV: ${{ secrets.NODE_ENV }}
+      - name: Build Next.js app
+        run: pnpm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NODE_ENV: ${{ secrets.NODE_ENV }}

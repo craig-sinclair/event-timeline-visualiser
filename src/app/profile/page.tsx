@@ -92,9 +92,16 @@ export default function ProfileSetupPage() {
       if (!res.ok) throw new Error("Failed to update profile");
 
       router.push("/profile-setup/step-2");
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
-    } finally {
+    } 
+    catch (err) {
+      if (err instanceof Error){
+        setError(err.message);
+      }
+      else {
+        setError("Something went wrong");
+      }
+    } 
+    finally {
       setLoading(false);
     }
   };
@@ -119,9 +126,16 @@ export default function ProfileSetupPage() {
       if (!res.ok) throw new Error("Failed to skip profile setup");
 
       router.push("/profile-setup/step-2");
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
-    } finally {
+    }
+    catch (err) {
+      if (err instanceof Error){
+        setError(err.message);
+      }
+      else {
+        setError("Something went wrong");
+      }
+    }
+    finally {
       setLoading(false);
     }
   };

@@ -36,6 +36,9 @@ export default function ProfileStep2Page() {
             setError("Unable to fetch user ID");
           }
         } catch (err) {
+          if(err instanceof Error){
+            setError("Error fetching user ID: " + err.message);
+          }
           setError("Error fetching user ID");
         }
       }
@@ -70,9 +73,16 @@ export default function ProfileStep2Page() {
       if (!res.ok) throw new Error("Failed to update profile");
 
       router.push("/profile/complete");
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
-    } finally {
+    } 
+    catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      }
+      else {
+        setError("Something went wrong");
+      }
+    } 
+    finally {
       setLoading(false);
     }
   };
@@ -100,9 +110,16 @@ export default function ProfileStep2Page() {
       if (!res.ok) throw new Error("Failed to skip profile step");
 
       router.push("/profile/complete");
-    } catch (err: any) {
-      setError(err.message || "Something went wrong");
-    } finally {
+    } 
+    catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      }
+      else {
+        setError("Something went wrong");
+      }
+    } 
+    finally {
       setLoading(false);
     }
   };
