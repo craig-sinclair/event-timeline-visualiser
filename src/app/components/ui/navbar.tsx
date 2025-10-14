@@ -10,7 +10,7 @@ interface HeaderProps {
   onSignOut: () => void;
 }
 
-export default function Header({ title, isSignedIn, onSignOut }: HeaderProps) {
+export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
   const { data: session } = useSession();
   const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -56,6 +56,7 @@ export default function Header({ title, isSignedIn, onSignOut }: HeaderProps) {
           )}
         </div>
       ) : (
+        // Not yet signed in; display 'Sign In' button
         <button
           onClick={() => router.push('/signin')}
           className="rounded bg-blue-600 px-3 py-1 text-white hover:bg-blue-700 cursor-pointer"
