@@ -1,14 +1,14 @@
 "use client";
 
 import { useSession, signOut } from "next-auth/react";
-import Header from '@/app/components/ui/header';
+import Navbar from '@/app/components/ui/navbar';
 
-export default function HeaderWrapper() {
+export default function NavbarWrapper() {
   const { data: session } = useSession();
   const isSignedIn = !!session;
 
   return (
-    <Header
+    <Navbar
       title="Interactive Event Timeline Visualiser"
       isSignedIn={isSignedIn}
       onSignOut={() => signOut({ callbackUrl: "/" })}
