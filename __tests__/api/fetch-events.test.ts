@@ -6,11 +6,13 @@ describe("Fetch events test suite", () => {
         const response = await GET();
         const data = await response.json();
 
-        expect(data.message).toEqual("No timeline ID provided.");
+        expect(data.success).toEqual(false);
+        expect(data.error).toEqual("Failed to retrieve events from database");
+        expect(data.details).toEqual("No timeline ID was provided.");
     });
 
     it("Should give hello message with appropriate timeline", async () => {
-        const exampleTimelineID: String = "test-id-123"
+        const exampleTimelineID: string = "test-id-123"
         const response = await GET(exampleTimelineID);
         const data = await response.json();
 
