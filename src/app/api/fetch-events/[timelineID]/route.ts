@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server"
+import { NextResponse, NextRequest } from "next/server"
 import { EventResponse, EventSchema, EventData } from "@/app/models/event";
 import { models, model } from "mongoose"
 import { dbConnect } from "@/app/lib/mongoose";
@@ -6,11 +6,12 @@ import { dbConnect } from "@/app/lib/mongoose";
 const Event = models.Timeline || model<EventData>("Timeline", EventSchema);
 
 export async function GET(
-    request: Request, 
-    context: { params: { timelineID?: string }}
+    request: NextRequest, 
+    { params }: { params: Promise<{ timelineID: string }>}
 ) {
-    const { timelineID } = await context.params;
-    if (!timelineID) {
+    const { timelineID } = await params;
+
+    if (!timelineID || timelineID === "") {
         const response: EventResponse = {
             success: false,
             error: "Failed to retrieve events from database",
