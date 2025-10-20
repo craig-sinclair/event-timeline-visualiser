@@ -1,11 +1,15 @@
 import { NextResponse } from "next/server"
-import { EventResponse } from "@/app/models/event";
+import { EventResponse, EventSchema, EventData } from "@/app/models/event";
+import { models, model } from "mongoose"
+import { dbConnect } from "@/app/lib/mongoose";
+
+const Event = models.Timeline || model<EventData>("Timeline", EventSchema);
 
 export async function GET(
     request: Request, 
     context: { params: { timelineID?: string }}
 ) {
-    const { timelineID } = context.params;
+    const { timelineID } = await context.params;
     if (!timelineID) {
         const response: EventResponse = {
             success: false,
@@ -14,7 +18,20 @@ export async function GET(
             timestamp: new Date().toISOString(),
         };
         return NextResponse.json(response);
-    }
-    const response = {"message": `Given timelineID: ${timelineID}`};
+    };
+
+    await dbConnect();
+    const allEvents = await Event.find().lean<EventData[]>();
+    const validEvents = allEvents.map((t) => ({
+        ...t,
+        _id: t._id.toString(), // converts (Mongo) ObjectId -> string
+    }));
+
+    const response: EventResponse = {
+        success: true,
+        message: `Successfully fetched events for timeline ${timelineID}`,
+        events: validEvents,
+        timestamp: new Date().toISOString(),
+    };
     return NextResponse.json(response);
 }

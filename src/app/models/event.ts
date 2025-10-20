@@ -13,7 +13,7 @@ export type EventResponse =
   | {
       success: true;
       message: string;
-      timelines: EventData[];
+      events: EventData[];
       timestamp: string;
     }
   | {

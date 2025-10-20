@@ -1,4 +1,23 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
+
+vi.mock("@/app/lib/mongoose", () => ({
+    dbConnect: vi.fn(),
+}));
+const mockLean = vi.fn();
+
+vi.mock("mongoose", async () => {
+    const actual = await vi.importActual<typeof import("mongoose")>("mongoose");
+    return {
+        ...actual,
+        models: {},
+        model: vi.fn(() => ({
+            find: () => ({
+                lean: mockLean,
+            }),
+        })),
+    };
+});
+
 import { GET } from "@/app/api/fetch-events/[timelineID]/route"
 
 describe("Fetch events test suite", () => {
@@ -11,13 +30,4 @@ describe("Fetch events test suite", () => {
         expect(data.error).toEqual("Failed to retrieve events from database");
         expect(data.details).toEqual("No timeline ID was provided.");
     });
-
-    it("Should give hello message with appropriate timeline", async () => {
-        const exampleTimelineID: string = "test-id-123"
-        const mockRequest = {} as Request
-        const response = await GET(mockRequest, { params: {timelineID: exampleTimelineID}})
-        const data = await response.json();
-
-        expect(data.message).toEqual(`Given timelineID: ${exampleTimelineID}`);
-    })
 })
