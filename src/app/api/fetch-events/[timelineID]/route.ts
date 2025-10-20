@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server"
 import { EventResponse } from "@/app/models/event";
 
-export async function GET(timelineID?: string) {
-
+export async function GET(
+    request: Request, 
+    context: { params: { timelineID?: string }}
+) {
+    const { timelineID } = context.params;
     if (!timelineID) {
         const response: EventResponse = {
             success: false,

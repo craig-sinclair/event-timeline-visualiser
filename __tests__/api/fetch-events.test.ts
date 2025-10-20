@@ -1,9 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { GET } from "@/app/api/fetch-events/route"
+import { GET } from "@/app/api/fetch-events/[timelineID]/route"
 
 describe("Fetch events test suite", () => {
     it("Should give appropriate error message when no timeline ID give", async () => {
-        const response = await GET();
+        const mockRequest = {} as Request
+        const response = await GET(mockRequest, { params: {}})
         const data = await response.json();
 
         expect(data.success).toEqual(false);
@@ -13,7 +14,8 @@ describe("Fetch events test suite", () => {
 
     it("Should give hello message with appropriate timeline", async () => {
         const exampleTimelineID: string = "test-id-123"
-        const response = await GET(exampleTimelineID);
+        const mockRequest = {} as Request
+        const response = await GET(mockRequest, { params: {timelineID: exampleTimelineID}})
         const data = await response.json();
 
         expect(data.message).toEqual(`Given timelineID: ${exampleTimelineID}`);
