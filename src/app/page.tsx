@@ -12,7 +12,7 @@ export default function Page() {
         </p>
 
         <Link
-          href="/signin"
+          href="/dashboard"
           className="flex items-center justify-center gap-4 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-6 sm:py-3 sm:gap-5 md:text-base"
           aria-label="Log in to the dashboard">
             <span>Get Started</span>
