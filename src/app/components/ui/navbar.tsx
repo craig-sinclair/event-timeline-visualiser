@@ -3,6 +3,7 @@
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Link from "next/link";
 
 interface HeaderProps {
   title: string;
@@ -27,7 +28,9 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
 
   return (
     <header className="flex justify-between items-center p-4 relative border-b border-[var(--borderColour)] dark:border-[var(--darkSecondary)]">
-      <h1 className="text-xl font-bold">{title}</h1>
+      <Link href={"/"}>
+            <h1 className="text-xl font-bold">{title}</h1>
+      </Link>
 
       {isSignedIn ? (
         <div className="relative">
@@ -40,12 +43,14 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
 
           {dropdownOpen && (
             <div className="absolute right-0 mt-2 w-40 border rounded shadow-lg z-10">
-              <button
-                onClick={() => router.push('/profile')}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-              >
-                Profile
-              </button>
+
+              <Link href={"/profile"}>
+                <button
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                >
+                  Profile
+                </button>
+              </Link>
               <button
                 onClick={onSignOut}
                 className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-red-600"
@@ -57,12 +62,13 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
         </div>
       ) : (
         // Not yet signed in; display 'Sign In' button
-        <button
-          onClick={() => router.push('/signin')}
-          className="rounded bg-blue-600 px-3 py-1 text-white hover:bg-blue-700 cursor-pointer"
-        >
-          Sign In
-        </button>
+        <Link href={"/signin"}>
+          <button
+            className="rounded bg-blue-600 px-3 py-1 text-white hover:bg-blue-700 cursor-pointer"
+          >
+            Sign In
+          </button>
+        </Link>
       )}
     </header>
   );
