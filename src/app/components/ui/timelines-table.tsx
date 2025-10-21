@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { TimelineData } from "@/app/models/timeline";
 import { getAllTimelines } from "@/app/lib/api/getAllTimelines";
+import Link from "next/link"
 
 export default function TimelinesTable() {
     const [timelines, setTimelines] = useState<TimelineData[]>([]);
@@ -69,9 +70,12 @@ export default function TimelinesTable() {
                             <td className="px-6 py-4 text-gray-900 dark:text-gray-200">{timeline.title}</td>
                             <td className="px-6 py-4 text-gray-700 dark:text-gray-300 text-center">{timeline.events.length}</td>
                             <td className="px-6 py-4 text-center">
-                                <a className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors cursor-pointer">
+                                <Link 
+                                    className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors cursor-pointer"
+                                    href={`/timeline/${timeline._id}`}
+                                >
                                     View
-                                </a>
+                                </Link>
                             </td>
                         </tr>
                     ))}
