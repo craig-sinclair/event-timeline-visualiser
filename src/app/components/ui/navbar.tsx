@@ -26,7 +26,7 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
     : 'U';
 
   return (
-    <header className="flex justify-between items-center p-4 relative">
+    <header className="flex justify-between items-center p-4 relative border-b border-[var(--borderColour)] dark:border-[var(--darkSecondary)]">
       <h1 className="text-xl font-bold">{title}</h1>
 
       {isSignedIn ? (
