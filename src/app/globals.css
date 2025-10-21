@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --lightGrey: #404040;
+  --darkGrey: #363636;
+  --borderTableGrey: #515151;
 }
 
 @theme inline {
@@ -16,6 +19,9 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --lightSecondary: #404040;
+    --darkSecondary: #363636;
+    --borderColour: #515151;
   }
 }
 

@@ -51,13 +51,13 @@ export default function TimelinesTable() {
     };
 
     return (
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg md:w-1/2 w-3/4 bg-white dark:bg-gray-900">
-            <table className="w-full text-md text-left rtl:text-right text-gray-900 dark:text-gray-300">
-                <thead className="text-md text-gray-700 dark:text-gray-200 bg-gray-200 dark:bg-gray-800/80">
-                    <tr>
-                        <th className="px-6 py-3 w-1/2">Title</th>
-                        <th className="px-6 py-3 w-1/4 text-center">Events</th>
-                        <th className="px-6 py-3 w-1/4 text-center">Action</th>
+        <div className="relative overflow-x-auto shadow-md rounded-sm md:w-3/5 w-full mt-3">
+            <table className="w-full text-md text-center rtl:text-right text-gray-900 dark:text-gray-300">
+                <thead className="text-lg text-gray-700 dark:text-gray-200 bg-[var(--lightSecondary)]">
+                    <tr className="border-b border-[var(--borderColour)]">
+                        <th className="py-6 w-1/2 border-r border-[var(--borderColour)]">Title</th>
+                        <th className="py-6 w-1/4 text-center border-r border-[var(--borderColour)]">Events</th>
+                        <th className="py-6 w-1/4 text-center border-l border-[var(--borderColour)]">Action</th>
                     </tr>
                 </thead>
 
@@ -65,11 +65,11 @@ export default function TimelinesTable() {
                     {timelines.map((timeline) => (
                         <tr
                             key={timeline._id}
-                            className="text-sm odd:bg-gray-100 even:bg-gray-50 dark:odd:bg-gray-900/40 dark:even:bg-gray-800/30 border-b border-gray-300 dark:border-gray-700/60 hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-colors"
+                            className="text-md bg-[var(--darkSecondary)] border-b border-[var(--borderColour)] transition-colors"
                         >
-                            <td className="px-6 py-4 text-gray-900 dark:text-gray-200">{timeline.title}</td>
-                            <td className="px-6 py-4 text-gray-700 dark:text-gray-300 text-center">{timeline.events.length}</td>
-                            <td className="px-6 py-4 text-center">
+                            <td className="py-8 text-gray-900 dark:text-gray-200 border-r border-[var(--borderColour)]">{timeline.title}</td>
+                            <td className="py-8 text-gray-700 dark:text-gray-300 text-center border-r border-[var(--borderColour)]">{timeline.events.length}</td>
+                            <td className="py-8 border-l border-[var(--borderColour)] text-center">
                                 <Link 
                                     className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors cursor-pointer"
                                     href={`/timeline/${timeline._id}`}
