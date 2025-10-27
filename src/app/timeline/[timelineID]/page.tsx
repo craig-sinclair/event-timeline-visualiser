@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { EventData } from "@/app/models/event";
+import HorizontalTimeline from "@/app/components/HorizontalTimeline";
 
 export default function TimelinePage() {
     const { timelineID } = useParams<{ timelineID: string }>();
@@ -76,16 +77,7 @@ export default function TimelinePage() {
             {events.length === 0 ? (
                 <p>No events found for this timeline.</p>
             ) : (
-                <>
-                    <ul className="space-y-2">
-                        {events.map((event) => (
-                            <li key={event._id} className="p-4 rounded-lg shadow bg-gray-50 dark:bg-gray-800">
-                                <h2 className="text-lg font-semibold">{event.overview}</h2>
-                            </li>
-                        ))}
-                    </ul>
-                </>
-
+                <HorizontalTimeline events={events}/>
             )}
         </div>
     );
