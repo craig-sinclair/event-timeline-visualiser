@@ -36,7 +36,7 @@ export default function HorizontalTimeline({ events }: { events: EventData[] }) 
 
               {/* Alternate between events above/below baseline */}
               <div
-                className={`absolute w-28 xs:w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-72 text-left border rounded-md sm:rounded-xs p-2 sm:p-2.5 md:p-3 lg:p-4 hover:opacity-75 transition-all duration-200 cursor-pointer ${
+                className={`absolute w-28 xs:w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-72 text-left border rounded-lg p-2 sm:p-2.5 md:p-3 lg:p-4 hover:opacity-75 transition-all duration-200 cursor-pointer ${
                   i % 2 === 0 
                     ? "bottom-full mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20" 
                     : "top-full mt-6 xs:mt-8 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20"
