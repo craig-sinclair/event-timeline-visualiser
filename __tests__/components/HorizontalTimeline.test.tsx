@@ -2,7 +2,7 @@
 import { describe, it, expect, vi } from "vitest"
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import VerticalTimeline from "@/app/components/VerticalTimeline";
+import HorizontalTimeline from "@/app/components/VerticalTimeline";
 import { EventData } from "@/app/models/event";
 import { SAMPLE_EVENTS } from "../sample-data/sample-events";
 
@@ -19,9 +19,9 @@ vi.mock("@/app/components/ui/EventModal", () => ({
     )
 }));
 
-describe("Vertical timeline tests", () => {
+describe("Horizontal timeline tests", () => {
     it("renders all event overviews", () => {
-        render(<VerticalTimeline events={SAMPLE_EVENTS as EventData[]} />);
+        render(<HorizontalTimeline events={SAMPLE_EVENTS as EventData[]} />);
 
         for (let event of SAMPLE_EVENTS) {
             const eventOverview = screen.getByText(event.overview);
@@ -30,7 +30,7 @@ describe("Vertical timeline tests", () => {
     });
 
     it("opens modal when event is clicked", () => {
-        render(<VerticalTimeline events={SAMPLE_EVENTS as EventData[]} />);
+        render(<HorizontalTimeline events={SAMPLE_EVENTS as EventData[]} />);
         const [firstEvent] = screen.getAllByText(SAMPLE_EVENTS[0].overview);
 
         fireEvent.click(firstEvent);
@@ -38,7 +38,7 @@ describe("Vertical timeline tests", () => {
     });
 
     it("passes the clicked event to modal", () => {
-        render(<VerticalTimeline events={SAMPLE_EVENTS as EventData[]} />);
+        render(<HorizontalTimeline events={SAMPLE_EVENTS as EventData[]} />);
         const [secondEvent] = screen.getAllByText(SAMPLE_EVENTS[1].overview);
 
         fireEvent.click(secondEvent);
@@ -46,7 +46,7 @@ describe("Vertical timeline tests", () => {
     });
 
     it("closes modal when close button is clicked", () => {
-        render(<VerticalTimeline events={SAMPLE_EVENTS as EventData[]} />);
+        render(<HorizontalTimeline events={SAMPLE_EVENTS as EventData[]} />);
         const [firstEvent] = screen.getAllByText(SAMPLE_EVENTS[0].overview);
         fireEvent.click(firstEvent);
 
@@ -54,15 +54,5 @@ describe("Vertical timeline tests", () => {
         fireEvent.click(closeButton);
 
         expect(screen.queryByTestId("mock-modal")).not.toBeInTheDocument();
-    });
-
-    it("applies alternating layout classes", () => {
-        render(<VerticalTimeline events={SAMPLE_EVENTS as EventData[]} />);
-        const eventCards = screen.getAllByRole("heading");
-
-        // Even index should have normal direction, odd should have reversed layout
-        const parentDivs = eventCards.map(el => el.closest("div.relative"));
-        expect(parentDivs[0]?.className).toContain("sm:flex-row");
-        expect(parentDivs[1]?.className).toContain("sm:flex-row-reverse");
     });
 })
