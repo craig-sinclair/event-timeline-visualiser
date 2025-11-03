@@ -21,7 +21,7 @@ export default function EventModal({ visible, event, onClose }: { visible: boole
             <h2 className="text-xl font-semibold pr-8">{event.overview}</h2>
             <button
               onClick={onClose}
-              className="text-2xl leading-none hover:opacity-70 transition-opacity"
+              className="text-2xl leading-none hover:opacity-70 transition-opacity cursor-pointer"
               aria-label="Close modal"
             >
               X
@@ -62,11 +62,11 @@ export default function EventModal({ visible, event, onClose }: { visible: boole
             )}
 
             {/* URLs */}
-            {event.URLS?.length > 0 && (
+            {event.URLs?.length > 0 && (
               <div>
                 <h3 className="text-sm font-semibold mb-2">Related Links</h3>
                 <ul className="space-y-1">
-                  {event.URLS.map((url, index) => (
+                  {event.URLs.map((url, index) => (
                     <li key={index}>
                       <a
                         href={url}

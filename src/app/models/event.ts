@@ -5,8 +5,9 @@ export interface EventData {
     _id: string,
     overview: string,
     dateTime: string,
+    furtherDescription: string,
     relevance: number,
-    URLS: string[]
+    URLs: string[]
     tags: string[]
 };
 
@@ -29,7 +30,8 @@ export const Event =
         overview: { type: String, required: true },
         dateTime: { type: String, required: true },
         relevance: { type: Number, required: true },
-        URLS: [{ type: String }],
+        furtherDescription: { type: String },
+        URLs: [{ type: String }],
         tags: [{ type: String }],
     }, { 
         collection: "events",
