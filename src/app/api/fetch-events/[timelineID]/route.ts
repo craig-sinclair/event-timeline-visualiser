@@ -1,11 +1,7 @@
 import { NextResponse, NextRequest } from "next/server"
-import { EventResponse, EventSchema, EventData } from "@/app/models/event";
-import { TimelineSchema, TimelineData } from "@/app/models/timeline";
-import { models, model } from "mongoose"
+import { EventResponse, Event, EventData } from "@/app/models/event";
+import { Timeline, TimelineData } from "@/app/models/timeline";
 import { dbConnect } from "@/app/lib/mongoose";
-
-const Event = models.Event || model<EventData>("Event", EventSchema);
-const Timeline = models.Timeline || model<TimelineData>("Timeline", TimelineSchema);
 
 export async function GET(
     request: NextRequest, 

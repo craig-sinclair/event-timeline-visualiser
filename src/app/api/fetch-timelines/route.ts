@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/app/lib/mongoose";
-import { models, model } from "mongoose"
-import { TimelineData, TimelineSchema, TimelineResponse } from "@/app/models/timeline";
-
-const Timeline = models.Timeline || model<TimelineData>("Timeline", TimelineSchema);
+import { TimelineData, Timeline, TimelineResponse } from "@/app/models/timeline";
 
 export async function GET() {
     try {
