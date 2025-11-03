@@ -4,7 +4,7 @@ import { Timeline, TimelineData } from "../models/timeline";
 import fs from "fs";
 import path from "path";
 
-async function populateData() {
+export async function populateData() {
     await dbConnect();
 
     try {
@@ -50,4 +50,6 @@ async function populateData() {
     }
 }
 
-populateData();
+if (process.argv[1].endsWith("populateData.ts")) {
+    populateData();
+}
