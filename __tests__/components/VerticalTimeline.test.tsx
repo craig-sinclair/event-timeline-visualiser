@@ -29,6 +29,33 @@ describe("Vertical timeline tests", () => {
         }
     });
 
+    it("opens modal when event is clicked", () => {
+        render(<VerticalTimeline events={SAMPLE_EVENTS as EventData[]} />);
+        const [firstEvent] = screen.getAllByText(SAMPLE_EVENTS[0].overview);
+
+        fireEvent.click(firstEvent);
+        expect(screen.getByTestId("mock-modal")).toBeInTheDocument();
+    });
+
+    it("passes the clicked event to modal", () => {
+        render(<VerticalTimeline events={SAMPLE_EVENTS as EventData[]} />);
+        const [secondEvent] = screen.getAllByText(SAMPLE_EVENTS[1].overview);
+
+        fireEvent.click(secondEvent);
+        expect(screen.getAllByText(SAMPLE_EVENTS[1].overview)[1]).toBeInTheDocument();
+    });
+
+    it("closes modal when close button is clicked", () => {
+        render(<VerticalTimeline events={SAMPLE_EVENTS as EventData[]} />);
+        const [firstEvent] = screen.getAllByText(SAMPLE_EVENTS[0].overview);
+        fireEvent.click(firstEvent);
+
+        const closeButton = screen.getByText("Close");
+        fireEvent.click(closeButton);
+
+        expect(screen.queryByTestId("mock-modal")).not.toBeInTheDocument();
+    });
+
     it("applies alternating layout classes", () => {
         render(<VerticalTimeline events={SAMPLE_EVENTS as EventData[]} />);
         const eventCards = screen.getAllByRole("heading");
