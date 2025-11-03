@@ -87,41 +87,8 @@ export default function ProfileStep2Page() {
     }
   };
 
-  const handleSkip = async () => {
-    setLoading(true);
-    setError("");
-
-    if (!userId) {
-      setError("User details not found");
-      setLoading(false);
-      return;
-    }
-
-    try {
-      const res = await fetch("/api/profile", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id: userId,
-          onboardingStep: 3,
-        }),
-      });
-
-      if (!res.ok) throw new Error("Failed to skip profile step");
-
-      router.push("/profile/complete");
-    } 
-    catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      }
-      else {
-        setError("Something went wrong");
-      }
-    } 
-    finally {
-      setLoading(false);
-    }
+  const handleSkip = () => {
+    router.push("/");
   };
 
   const isDisabled = status !== "authenticated" || loading;
@@ -163,7 +130,7 @@ export default function ProfileStep2Page() {
         <button
           type="submit"
           disabled={isDisabled}
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 cursor-pointer"
         >
           {loading ? "Saving..." : "Continue"}
         </button>
@@ -172,7 +139,7 @@ export default function ProfileStep2Page() {
           type="button"
           onClick={handleSkip}
           disabled={isDisabled}
-          className="w-full bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400"
+          className="w-full bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400 cursor-pointer"
         >
           {loading ? "Skipping..." : "Skip"}
         </button>

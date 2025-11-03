@@ -40,7 +40,7 @@ function SignInForm() {
       email,
       password,
       gdprConsent: true,
-      callbackUrl: "/profile",
+      callbackUrl: "/",
     });
 
     setLoading(false);
@@ -49,7 +49,7 @@ function SignInForm() {
       setError(errorMessages[res.error] || "Invalid email or password");
     } 
     else {
-      router.push("/profile");
+      router.push("/");
     }
   };
 

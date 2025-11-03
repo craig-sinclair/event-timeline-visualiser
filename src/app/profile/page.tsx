@@ -106,38 +106,8 @@ export default function ProfileSetupPage() {
     }
   };
 
-  const handleSkip = async () => {
-    if (!email) {
-      setError("User email not found");
-      return;
-    }
-
-    setLoading(true);
-    try {
-      const res = await fetch("/api/profile", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          onboardingStep: 2,
-        }),
-      });
-
-      if (!res.ok) throw new Error("Failed to skip profile setup");
-
-      router.push("/profile-setup/step-2");
-    }
-    catch (err) {
-      if (err instanceof Error){
-        setError(err.message);
-      }
-      else {
-        setError("Something went wrong");
-      }
-    }
-    finally {
-      setLoading(false);
-    }
+  const handleSkip = () => {
+    router.push("/");
   };
 
   const isDisabled = status !== "authenticated" || loading;
@@ -191,7 +161,7 @@ export default function ProfileSetupPage() {
         <button
           type="submit"
           disabled={isDisabled}
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 cursor-pointer"
         >
           {loading ? "Saving..." : "Continue"}
         </button>
@@ -200,7 +170,7 @@ export default function ProfileSetupPage() {
           type="button"
           onClick={handleSkip}
           disabled={isDisabled}
-          className="w-full bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400"
+          className="w-full bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400 cursor-pointer"
         >
           {loading ? "Skipping..." : "Skip"}
         </button>
