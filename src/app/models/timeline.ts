@@ -1,4 +1,5 @@
-import { Schema, model, models } from "mongoose"
+import mongoose from "mongoose"
+import { Schema, model } from "mongoose"
 
 export interface TimelineData {
     _id: string,
@@ -21,8 +22,11 @@ export type TimelineResponse =
       timestamp: string;
 };
 
-export const Timeline = models.Timeline || model<TimelineData>("Timeline", new Schema<TimelineData>({
+export const Timeline = mongoose.models.Timeline || model<TimelineData>("Timeline", new Schema<TimelineData>({
     title: { type: String, required: true },
     events: [{ type: Schema.Types.ObjectId, ref: "Event" }],
     discussionID: { type: Number },
-}, { collection: "timelines" }));
+}, { 
+  collection: "timelines",
+  versionKey: false,
+}));

@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npx vitest run"
+    "test": "npx vitest run",
+    "populate-data": "tsx --env-file=.env src/app/scripts/populateData.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -50,6 +51,7 @@
     "tailwindcss": "^4",
     "ts-jest": "^29.4.1",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   }
