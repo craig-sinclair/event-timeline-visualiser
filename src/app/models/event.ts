@@ -1,4 +1,4 @@
-import { Schema } from "mongoose"
+import { Schema, models, model } from "mongoose"
 
 export interface EventData {
     _id: string,
@@ -23,13 +23,12 @@ export type EventResponse =
       timestamp: string;
 };
 
-export const EventSchema = new Schema<EventData>(
-    {
-        overview: {type: String, required: true},
-        dateTime: {type: String, required: true},
-        relevance: { type: Number, required: true},
+export const Event =
+    models.Event || model<EventData>("Event", new Schema<EventData>({
+        overview: { type: String, required: true },
+        dateTime: { type: String, required: true },
+        relevance: { type: Number, required: true },
         URLS: [{ type: String }],
-        tags: [{ type: String }]
-    },
-    { collection: "events" }
-)
+        tags: [{ type: String }],
+    }, { collection: "events" })
+);
