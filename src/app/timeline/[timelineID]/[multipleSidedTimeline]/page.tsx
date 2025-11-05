@@ -120,7 +120,11 @@ export default function TimelinePage() {
             {events.length === 0 ? (
                 <p>No events found for this timeline.</p>
             ) : (
-                displayTimeline()
+                <section className="w-full max-w-screen-xl mx-auto">
+                    <div className="overflow-x-auto">
+                        {displayTimeline()}
+                    </div>
+                </section>
             )}
         </div>
     );
