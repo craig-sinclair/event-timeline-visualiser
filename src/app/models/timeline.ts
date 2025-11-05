@@ -6,7 +6,7 @@ export interface TimelineData {
     title: string,
     events: string[],
     discussionID: number,
-    multipleView?: Boolean,
+    multipleView?: boolean,
     sideLabels?: string[]
 };
 

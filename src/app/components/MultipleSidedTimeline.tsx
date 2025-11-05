@@ -9,8 +9,8 @@ export default function MultipleSidedTimeline({ events }: { events: EventData[] 
     const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
 
     // For now hardcode labels (must be passed from timeline)
-    const leftLabel: String = "Leave";
-    const rightLabel: String = "Remain";
+    const leftLabel: string = "Leave";
+    const rightLabel: string = "Remain";
 
     const handleEventClick = (event: EventData) => {
         setSelectedEvent(event);
@@ -43,7 +43,7 @@ export default function MultipleSidedTimeline({ events }: { events: EventData[] 
 
                     {/* Events */}
                     <div className="space-y-8 sm:space-y-12">
-                        {events.map((event, i) => (
+                        {events.map((event) => (
                             <div
                                 key={event._id}
                                 className={`relative flex items-center gap-4 sm:gap-8 ${event.side === 1 ? "sm:flex-row" : "sm:flex-row-reverse"

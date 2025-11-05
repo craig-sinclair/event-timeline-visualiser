@@ -1,0 +1,82 @@
+[
+  {
+    "overview": "First cases of pneumonia of unknown cause reported in Wuhan, China.",
+    "dateTime": "2019-12-31T09:00:00Z",
+    "relevance": 0.95,
+    "furtherDescription": "Chinese authorities notified the World Health Organization (WHO) of several pneumonia cases in Wuhan, Hubei Province. The cause was later identified as a novel coronavirus.",
+    "URLs": ["https://www.who.int/emergencies/disease-outbreak-news/item/2020-DON229"],
+    "tags": ["origin", "china", "health"]
+  },
+  {
+    "overview": "WHO declares a Public Health Emergency of International Concern (PHEIC).",
+    "dateTime": "2020-01-30T12:00:00Z",
+    "relevance": 0.88,
+    "furtherDescription": "The WHO issued its highest alert level, acknowledging the international spread of COVID-19 and urging coordinated global action.",
+    "URLs": ["https://www.who.int/news/item/30-01-2020-statement-on-the-second-meeting-of-the-international-health-regulations"],
+    "tags": ["WHO", "international", "emergency"]
+  },
+  {
+    "overview": "First confirmed COVID-19 death outside China in the Philippines.",
+    "dateTime": "2020-02-02T10:00:00Z",
+    "relevance": 0.65,
+    "furtherDescription": "A 44-year-old man in the Philippines became the first recorded COVID-19 fatality outside China, highlighting global spread concerns.",
+    "URLs": ["https://www.bbc.com/news/world-asia-51345855"],
+    "tags": ["international", "fatality", "spread"]
+  },
+  {
+    "overview": "WHO declares COVID-19 a global pandemic.",
+    "dateTime": "2020-03-11T15:00:00Z",
+    "relevance": 1.0,
+    "furtherDescription": "The WHO officially characterized COVID-19 as a pandemic, acknowledging sustained global transmission and the need for urgent containment measures.",
+    "URLs": ["https://www.who.int/director-general/speeches/detail/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020"],
+    "tags": ["WHO", "pandemic", "health-policy"]
+  },
+  {
+    "overview": "Global lockdowns and travel restrictions implemented.",
+    "dateTime": "2020-03-20T09:00:00Z",
+    "relevance": 0.92,
+    "furtherDescription": "Many countries introduced strict lockdowns and border closures to contain the virus, drastically reducing global mobility and economic activity.",
+    "URLs": ["https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19"],
+    "tags": ["lockdown", "travel", "economy"]
+  },
+  {
+    "overview": "Development and trials of COVID-19 vaccines begin worldwide.",
+    "dateTime": "2020-04-15T09:00:00Z",
+    "relevance": 0.85,
+    "furtherDescription": "Pharmaceutical companies and research institutions launched large-scale vaccine trials, with mRNA technology showing early promise.",
+    "URLs": ["https://www.nature.com/articles/d41586-020-01221-y"],
+    "tags": ["vaccine", "research", "science"]
+  },
+  {
+    "overview": "First COVID-19 vaccine approved for emergency use in the UK (Pfizer-BioNTech).",
+    "dateTime": "2020-12-02T08:00:00Z",
+    "relevance": 0.97,
+    "furtherDescription": "The UK became the first country to approve an mRNA-based COVID-19 vaccine for emergency use, marking a major milestone in the pandemic response.",
+    "URLs": ["https://www.gov.uk/government/news/uk-authorises-pfizer-biontech-covid-19-vaccine"],
+    "tags": ["vaccine", "UK", "healthcare"]
+  },
+  {
+    "overview": "Global vaccination campaigns accelerate through 2021.",
+    "dateTime": "2021-03-01T09:00:00Z",
+    "relevance": 0.9,
+    "furtherDescription": "Countries rolled out mass vaccination programs, though disparities in access between high- and low-income nations became apparent.",
+    "URLs": ["https://www.who.int/news-room/feature-stories/detail/the-covax-facility"],
+    "tags": ["vaccine", "global", "equity"]
+  },
+  {
+    "overview": "Emergence of the Delta and Omicron variants.",
+    "dateTime": "2021-06-15T09:00:00Z",
+    "relevance": 0.93,
+    "furtherDescription": "New, more transmissible variants of SARS-CoV-2 drove fresh waves of infection, challenging global vaccination efforts.",
+    "URLs": ["https://www.cdc.gov/coronavirus/2019-ncov/variants/variant.html"],
+    "tags": ["variant", "mutation", "public-health"]
+  },
+  {
+    "overview": "WHO declares end of COVID-19 as a global public health emergency.",
+    "dateTime": "2023-05-05T12:00:00Z",
+    "relevance": 0.98,
+    "furtherDescription": "After more than three years, the WHO declared the COVID-19 emergency phase over, citing widespread immunity and reduced mortality.",
+    "URLs": ["https://www.who.int/news/item/05-05-2023-who-declares-end-to-covid-19-global-health-emergency"],
+    "tags": ["WHO", "health-policy", "post-pandemic"]
+  }
+]
