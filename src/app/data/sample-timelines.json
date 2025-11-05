@@ -2,7 +2,12 @@
   {
     "title": "Brexit Campaign",
     "events": [],
-    "discussionID": 12345
+    "discussionID": 12345,
+    "multipleView": true,
+    "sideLabels": [
+      "Leave",
+      "Remain"
+    ]
   },
   {
     "title": "COVID-19 Pandemic",

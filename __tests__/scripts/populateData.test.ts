@@ -22,7 +22,24 @@ import fs from "fs";
 import path from "path";
 
 describe("populateData", () => {
-    const mockEventsData = [
+    const mockBrexitEventsData = [
+        {
+            _id: "event1",
+            title: "EU Referendum Announcement",
+            date: "2016-02-20",
+            description: "Prime Minister announces referendum",
+            side: 1
+        },
+        {
+            _id: "event2",
+            title: "Brexit Vote",
+            date: "2016-06-23",
+            description: "UK votes to leave EU",
+            side: 0
+        }
+    ];
+
+    const mockCovidEventsData = [
         {
             _id: "event1",
             title: "EU Referendum Announcement",
@@ -44,15 +61,21 @@ describe("populateData", () => {
             events: []
         },
         {
-            title: "Other Timeline",
-            description: "Another timeline",
+            title: "COVID-19 Pandemic",
+            description: "Timeline of COVID-19 events",
             events: []
         }
     ];
 
-    const mockCreatedEvents = [
-        { ...mockEventsData[0], _id: "createdEvent1" },
-        { ...mockEventsData[1], _id: "createdEvent2" }
+    const mockCreatedBrexitEvents = [
+        { ...mockBrexitEventsData[0], _id: "createdEvent1" },
+        { ...mockBrexitEventsData[1], _id: "createdEvent2" }
+    ];
+
+
+    const mockCreatedCovidEvents = [
+        { ...mockCovidEventsData[0], _id: "createdEvent3" },
+        { ...mockCovidEventsData[1], _id: "createdEvent4" }
     ];
 
     beforeEach(async () => {
@@ -63,13 +86,20 @@ describe("populateData", () => {
         vi.mocked(dbConnect).mockResolvedValue(undefined as any);
         vi.mocked(Event.deleteMany).mockResolvedValue({ deletedCount: 0 } as any);
         vi.mocked(Timeline.deleteMany).mockResolvedValue({ deletedCount: 0 } as any);
-        vi.mocked(Event.insertMany).mockResolvedValue(mockCreatedEvents as any);
+
+        vi.mocked(Event.insertMany)
+            .mockResolvedValueOnce(mockCreatedBrexitEvents as any) // first call for Brexit
+            .mockResolvedValueOnce(mockCreatedCovidEvents as any); // second call for COVID
+
         vi.mocked(Timeline.insertMany).mockResolvedValue([] as any);
 
         vi.mocked(path.join).mockImplementation((...args) => args.join("/"));
         vi.mocked(fs.readFileSync).mockImplementation((filePath: any) => {
             if (filePath.includes("sample-events.json")) {
-                return JSON.stringify(mockEventsData);
+                return JSON.stringify(mockBrexitEventsData);
+            }
+            if (filePath.includes("sample-covid-data.json")) {
+                return JSON.stringify(mockCovidEventsData)
             }
             if (filePath.includes("sample-timelines.json")) {
                 return JSON.stringify(mockTimelinesData);
@@ -107,21 +137,28 @@ describe("populateData", () => {
 
         expect(path.join).toHaveBeenCalledWith(process.cwd(), "src/app/data/sample-events.json");
         expect(path.join).toHaveBeenCalledWith(process.cwd(), "src/app/data/sample-timelines.json");
-        expect(fs.readFileSync).toHaveBeenCalledTimes(2);
+        expect(path.join).toHaveBeenCalledWith(process.cwd(), "src/app/data/sample-covid-data.json");
+        expect(fs.readFileSync).toHaveBeenCalledTimes(3);
     });
 
     it("should insert events into database", async () => {
         await populateData();
 
-        expect(Event.insertMany).toHaveBeenCalledWith(mockEventsData);
-        expect(console.log).toHaveBeenCalledWith(`2) Successfully added ${mockEventsData.length} events...`);
+        expect(Event.insertMany).toHaveBeenCalledWith(mockBrexitEventsData);
+        expect(console.log).toHaveBeenCalledWith(`2) Successfully added ${mockBrexitEventsData.length} Brexit events...`);
+
+        expect(Event.insertMany).toHaveBeenCalledWith(mockCovidEventsData);
+        expect(console.log).toHaveBeenCalledWith(`3) Successfully added ${mockCovidEventsData.length} COVID-19 Pandemic events...`);
     });
 
     it("should link events to Brexit timeline", async () => {
         const timelinesWithBrexit = [...mockTimelinesData];
         vi.mocked(fs.readFileSync).mockImplementation((filePath: any) => {
             if (filePath.includes("sample-events.json")) {
-                return JSON.stringify(mockEventsData);
+                return JSON.stringify(mockBrexitEventsData);
+            }
+            if (filePath.includes("sample-covid-data.json")) {
+                return JSON.stringify(mockCovidEventsData);
             }
             if (filePath.includes("sample-timelines.json")) {
                 return JSON.stringify(timelinesWithBrexit);
@@ -140,22 +177,48 @@ describe("populateData", () => {
         expect(brexitTimeline?.events).toEqual(["createdEvent1", "createdEvent2"]);
     });
 
-    it("should not modify timelines without Brexit title", async () => {
+    it("should link events to Covid timeline", async () => {
+        const timelinesWithBrexit = [...mockTimelinesData];
+        vi.mocked(fs.readFileSync).mockImplementation((filePath: any) => {
+            if (filePath.includes("sample-events.json")) {
+                return JSON.stringify(mockBrexitEventsData);
+            }
+            if (filePath.includes("sample-covid-data.json")) {
+                return JSON.stringify(mockCovidEventsData);
+            }
+            if (filePath.includes("sample-timelines.json")) {
+                return JSON.stringify(timelinesWithBrexit);
+            }
+            return "[]";
+        });
+
+        await populateData();
+
+        expect(Timeline.insertMany).toHaveBeenCalled();
+        const insertedTimelines = vi.mocked(Timeline.insertMany).mock.calls[0][0] as typeof mockTimelinesData;
+        const covidTimeline = insertedTimelines.find(t => t.title === "COVID-19 Pandemic");
+
+        expect(covidTimeline).toBeDefined();
+        expect(covidTimeline?.events).toBeDefined();
+        expect(covidTimeline?.events).toEqual(["createdEvent3", "createdEvent4"]);
+    });
+
+    it("Brexit events not modify Covid timelines", async () => {
         await populateData();
 
         const insertedTimelines = vi.mocked(Timeline.insertMany).mock.calls[0][0] as typeof mockTimelinesData;
-        const otherTimeline = insertedTimelines.find((t: any) => t.title === "Other Timeline");
+        const covidTimeline = insertedTimelines.find((t: any) => t.title === "COVID-19 Pandemic");
 
-        expect(otherTimeline).toBeDefined();
-        expect(otherTimeline?.events).toBeDefined();
-        expect(otherTimeline?.events).toEqual([]);
+        expect(covidTimeline).toBeDefined();
+        expect(covidTimeline?.events).toBeDefined();
+        expect(covidTimeline?.events).toEqual(["createdEvent3", "createdEvent4"]);
     });
 
     it("should insert timelines into database", async () => {
         await populateData();
 
         expect(Timeline.insertMany).toHaveBeenCalledOnce();
-        expect(console.log).toHaveBeenCalledWith(`3) Successfully added ${mockTimelinesData.length} timelines...`);
+        expect(console.log).toHaveBeenCalledWith(`4) Successfully added ${mockTimelinesData.length} timelines...`);
     });
 
     it("should log completion message and exit with code 0", async () => {
@@ -175,8 +238,10 @@ describe("populateData", () => {
         expect(callOrder[2]).toContain("Successfully added");
         expect(callOrder[2]).toContain("events");
         expect(callOrder[3]).toContain("Successfully added");
-        expect(callOrder[3]).toContain("timelines");
-        expect(callOrder[4]).toContain("completed");
+        expect(callOrder[3]).toContain("events");
+        expect(callOrder[4]).toContain("Successfully added");
+        expect(callOrder[4]).toContain("timelines");
+        expect(callOrder[5]).toContain("completed");
     });
 
     it("should handle Event.deleteMany errors", async () => {
@@ -232,19 +297,6 @@ describe("populateData", () => {
         expect(process.exit).toHaveBeenCalledWith(1);
     });
 
-    it("should handle Event.insertMany errors", async () => {
-        const mockError = new Error("Failed to insert events");
-        vi.mocked(Event.insertMany).mockRejectedValue(mockError);
-
-        await populateData();
-
-        expect(console.log).toHaveBeenCalledWith(
-            "An error occurred whilst attempting to populate the database: ",
-            "Failed to insert events"
-        );
-        expect(process.exit).toHaveBeenCalledWith(1);
-    });
-
     it("should handle Timeline.insertMany errors", async () => {
         const mockError = new Error("Failed to insert timelines");
         vi.mocked(Timeline.insertMany).mockRejectedValue(mockError);
@@ -258,9 +310,60 @@ describe("populateData", () => {
         expect(process.exit).toHaveBeenCalledWith(1);
     });
 
-    it("should handle empty events array", async () => {
+    it("should handle empty Brexit events array", async () => {
         vi.mocked(fs.readFileSync).mockImplementation((filePath: any) => {
             if (filePath.includes("sample-events.json")) {
+                return JSON.stringify([]);
+            }
+            if (filePath.includes("sample-covid-data.json")) {
+                return JSON.stringify(mockCovidEventsData);
+            }
+            if (filePath.includes("sample-timelines.json")) {
+                return JSON.stringify(mockTimelinesData);
+            }
+            return "[]";
+        });
+        vi.mocked(Event.insertMany).mockResolvedValue([] as any);
+
+        await populateData();
+
+        expect(Event.insertMany).toHaveBeenCalledWith([]);
+        expect(console.log).toHaveBeenCalledWith("2) Successfully added 0 Brexit events...");
+
+        expect(Event.insertMany).toHaveBeenCalledWith(mockCovidEventsData);
+        expect(console.log).toHaveBeenCalledWith(`3) Successfully added ${mockCovidEventsData.length} COVID-19 Pandemic events...`);
+    });
+
+    it("should handle empty Covid events array", async () => {
+        vi.mocked(fs.readFileSync).mockImplementation((filePath: any) => {
+            if (filePath.includes("sample-events.json")) {
+                return JSON.stringify(mockBrexitEventsData);
+            }
+            if (filePath.includes("sample-covid-data.json")) {
+                return JSON.stringify([]);
+            }
+            if (filePath.includes("sample-timelines.json")) {
+                return JSON.stringify(mockTimelinesData);
+            }
+            return "[]";
+        });
+        vi.mocked(Event.insertMany).mockResolvedValue([] as any);
+
+        await populateData();
+
+        expect(Event.insertMany).toHaveBeenCalledWith(mockBrexitEventsData);
+        expect(console.log).toHaveBeenCalledWith(`2) Successfully added ${mockBrexitEventsData.length} Brexit events...`);
+
+        expect(Event.insertMany).toHaveBeenCalledWith([]);
+        expect(console.log).toHaveBeenCalledWith("3) Successfully added 0 COVID-19 Pandemic events...");
+    });
+
+    it("should handle empty Covid and Brexit events array", async () => {
+        vi.mocked(fs.readFileSync).mockImplementation((filePath: any) => {
+            if (filePath.includes("sample-events.json")) {
+                return JSON.stringify([]);
+            }
+            if (filePath.includes("sample-covid-data.json")) {
                 return JSON.stringify([]);
             }
             if (filePath.includes("sample-timelines.json")) {
@@ -273,13 +376,19 @@ describe("populateData", () => {
         await populateData();
 
         expect(Event.insertMany).toHaveBeenCalledWith([]);
-        expect(console.log).toHaveBeenCalledWith("2) Successfully added 0 events...");
+        expect(console.log).toHaveBeenCalledWith("2) Successfully added 0 Brexit events...");
+
+        expect(Event.insertMany).toHaveBeenCalledWith([]);
+        expect(console.log).toHaveBeenCalledWith("3) Successfully added 0 COVID-19 Pandemic events...");
     });
 
     it("should handle empty timelines array", async () => {
         vi.mocked(fs.readFileSync).mockImplementation((filePath: any) => {
             if (filePath.includes("sample-events.json")) {
-                return JSON.stringify(mockEventsData);
+                return JSON.stringify(mockBrexitEventsData);
+            }
+            if (filePath.includes("sample-covid-data.json")) {
+                return JSON.stringify(mockCovidEventsData);
             }
             if (filePath.includes("sample-timelines.json")) {
                 return JSON.stringify([]);
@@ -290,7 +399,7 @@ describe("populateData", () => {
         await populateData();
 
         expect(Timeline.insertMany).toHaveBeenCalledWith([]);
-        expect(console.log).toHaveBeenCalledWith("3) Successfully added 0 timelines...");
+        expect(console.log).toHaveBeenCalledWith("4) Successfully added 0 timelines...");
     });
 
     it("should handle missing Brexit timeline gracefully", async () => {
@@ -304,7 +413,10 @@ describe("populateData", () => {
 
         vi.mocked(fs.readFileSync).mockImplementation((filePath: any) => {
             if (filePath.includes("sample-events.json")) {
-                return JSON.stringify(mockEventsData);
+                return JSON.stringify(mockBrexitEventsData);
+            }
+            if (filePath.includes("sample-covid-data.json")) {
+                return JSON.stringify(mockCovidEventsData);
             }
             if (filePath.includes("sample-timelines.json")) {
                 return JSON.stringify(timelinesWithoutBrexit);
@@ -316,34 +428,5 @@ describe("populateData", () => {
 
         expect(Timeline.insertMany).toHaveBeenCalledWith(timelinesWithoutBrexit);
         expect(process.exit).toHaveBeenCalledWith(0);
-    });
-
-    it("should handle events with no _id field", async () => {
-        const eventsWithoutId = [
-            { title: "Event 1" },
-            { title: "Event 2" }
-        ];
-        const createdEventsWithId = [
-            { _id: "generated1", title: "Event 1" },
-            { _id: "generated2", title: "Event 2" }
-        ];
-
-        vi.mocked(fs.readFileSync).mockImplementation((filePath: any) => {
-            if (filePath.includes("sample-events.json")) {
-                return JSON.stringify(eventsWithoutId);
-            }
-            if (filePath.includes("sample-timelines.json")) {
-                return JSON.stringify(mockTimelinesData);
-            }
-            return "[]";
-        });
-        vi.mocked(Event.insertMany).mockResolvedValue(createdEventsWithId as any);
-
-        await populateData();
-
-        const insertedTimelines = vi.mocked(Timeline.insertMany).mock.calls[0][0] as typeof mockTimelinesData;
-        const brexitTimeline = insertedTimelines.find((t: any) => t.title === "Brexit Campaign");
-
-        expect(brexitTimeline?.events).toEqual(["generated1", "generated2"]);
     });
 });

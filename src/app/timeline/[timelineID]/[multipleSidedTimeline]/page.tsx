@@ -6,9 +6,12 @@ import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { EventData } from "@/app/models/event";
 import HorizontalTimeline from "@/app/components/HorizontalTimeline";
 import VerticalTimeline from "@/app/components/VerticalTimeline";
+import MultipleSidedTimeline from "@/app/components/MultipleSidedTimeline";
 
 export default function TimelinePage() {
-    const { timelineID } = useParams<{ timelineID: string }>();
+    const { timelineID, multipleSidedTimeline } = useParams<{ timelineID: string, multipleSidedTimeline?: string }>();
+    const isMultipleSidedTimeline = multipleSidedTimeline === "true"
+
     const [events, setEvents] = useState<EventData[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -41,6 +44,19 @@ export default function TimelinePage() {
     };
 
     if (error) return <p>Error fetching events: {error}</p>;
+
+    const displayTimeline = () => {
+        if (isMultipleSidedTimeline) {
+            return <MultipleSidedTimeline events={events} />
+        }
+
+        // If not multiple sided: use toggle between vertical and horizontal
+        return verticalSelected ? (
+            <VerticalTimeline events={events} />
+        ) : (
+            <HorizontalTimeline events={events} />
+        );
+    }
 
     return (
         <div>
@@ -75,37 +91,40 @@ export default function TimelinePage() {
                         placeholder="Chronological" />
                 </div>
 
-                <div className="flex flex-col">
-                    <label className="block mb-2 text-xs md:text-sm">Display Mode:</label>
+                {/* Display toggle (horizontal/ vertical) if not a two-sided timeline */}
+                {!isMultipleSidedTimeline && (
+                    <div className="flex flex-col">
+                        <label className="block mb-2 text-xs md:text-sm">Display Mode:</label>
 
-                    <div>
-                        <div className="inline-flex items-center gap-2">
-                        <label htmlFor="switch-component-on" className="text-sm cursor-pointer">Horizontal</label>
-                        
-                        <div className="relative inline-block w-11 h-5">
-                            <input id="switch-component-on" type="checkbox" className="peer appearance-none w-11 h-5 bg-slate-100 dark:bg-slate-600 rounded-full checked:bg-blue-600 cursor-pointer transition-colors duration-300"
-                                checked={verticalSelected}
-                                onChange={(e) => setVerticalSelected(e.target.checked)}
-                            />
-                            <label htmlFor="switch-component-on" className="absolute top-0 left-0 w-5 h-5 bg-white rounded-full border border-slate-300 dark:border-slate-600 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
-                            </label>
-                        </div>
-                        
-                        <label htmlFor="switch-component-on" className="text-sm cursor-pointer">Vertical</label>
+                        <div>
+                            <div className="inline-flex items-center gap-2">
+                                <label htmlFor="switch-component-on" className="text-sm cursor-pointer">Horizontal</label>
+
+                                <div className="relative inline-block w-11 h-5">
+                                    <input id="switch-component-on" type="checkbox" className="peer appearance-none w-11 h-5 bg-slate-100 dark:bg-slate-600 rounded-full checked:bg-blue-600 cursor-pointer transition-colors duration-300"
+                                        checked={verticalSelected}
+                                        onChange={(e) => setVerticalSelected(e.target.checked)}
+                                    />
+                                    <label htmlFor="switch-component-on" className="absolute top-0 left-0 w-5 h-5 bg-white rounded-full border border-slate-300 dark:border-slate-600 shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer">
+                                    </label>
+                                </div>
+
+                                <label htmlFor="switch-component-on" className="text-sm cursor-pointer">Vertical</label>
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
 
 
             {events.length === 0 ? (
                 <p>No events found for this timeline.</p>
             ) : (
-                verticalSelected ? (
-                    <VerticalTimeline events={events} />
-                ): (
-                    <HorizontalTimeline events={events} />
-                )
+                <section className="w-full max-w-screen-xl mx-auto">
+                    <div className="overflow-x-auto">
+                        {displayTimeline()}
+                    </div>
+                </section>
             )}
         </div>
     );
