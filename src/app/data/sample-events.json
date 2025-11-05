@@ -4,8 +4,13 @@
     "dateTime": "2016-06-01T10:00:00Z",
     "relevance": 0.95,
     "furtherDescription": "This figure was printed on the side of the Vote Leave campaign bus, becoming one of the most controversial claims.",
-    "URLs": ["https://www.bbc.com/news/uk-politics-eu-referendum-36271589"],
-    "tags": ["economic", "political"],
+    "URLs": [
+      "https://www.bbc.com/news/uk-politics-eu-referendum-36271589"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
     "side": 0
   },
   {
@@ -13,8 +18,13 @@
     "dateTime": "2016-05-23T09:30:00Z",
     "relevance": 0.88,
     "furtherDescription": "Chancellor George Osborne warned of a 'DIY recession' if Britain left the EU.",
-    "URLs": ["https://www.theguardian.com/business/2016/may/23/eu-exit-diy-recession-osborne-warns"],
-    "tags": ["economic", "political"],
+    "URLs": [
+      "https://www.theguardian.com/business/2016/may/23/eu-exit-diy-recession-osborne-warns"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
     "side": 1
   },
   {
@@ -22,8 +32,13 @@
     "dateTime": "2016-04-15T12:00:00Z",
     "relevance": 0.9,
     "furtherDescription": "This was a central message of the Leave campaign, focusing heavily on immigration.",
-    "URLs": ["https://www.independent.co.uk/news/uk/politics/eu-referendum-nigel-farage-borders-control-immigration-a6985061.html"],
-    "tags": ["political", "social"],
+    "URLs": [
+      "https://www.independent.co.uk/news/uk/politics/eu-referendum-nigel-farage-borders-control-immigration-a6985061.html"
+    ],
+    "tags": [
+      "political",
+      "social"
+    ],
     "side": 0
   },
   {
@@ -31,8 +46,13 @@
     "dateTime": "2016-05-09T14:00:00Z",
     "relevance": 0.82,
     "furtherDescription": "Cameron suggested that EU membership allowed Britain to work more closely with European allies against terrorism.",
-    "URLs": ["https://www.ft.com/content/5bb7f0ec-14fa-11e6-9d98-00386a18e39d"],
-    "tags": ["political", "security"],
+    "URLs": [
+      "https://www.ft.com/content/5bb7f0ec-14fa-11e6-9d98-00386a18e39d"
+    ],
+    "tags": [
+      "political",
+      "security"
+    ],
     "side": 1
   },
   {
@@ -40,8 +60,13 @@
     "dateTime": "2016-05-15T13:00:00Z",
     "relevance": 0.75,
     "furtherDescription": "Leave campaigners argued that the UK could negotiate better trade deals independently.",
-    "URLs": ["https://www.telegraph.co.uk/news/2016/05/15/brexit-would-allow-uk-to-strike-trade-deals-globally-say-leave-c/"],
-    "tags": ["economic", "political"],
+    "URLs": [
+      "https://www.telegraph.co.uk/news/2016/05/15/brexit-would-allow-uk-to-strike-trade-deals-globally-say-leave-c/"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
     "side": 0
   },
   {
@@ -49,8 +74,13 @@
     "dateTime": "2016-05-20T11:00:00Z",
     "relevance": 0.7,
     "furtherDescription": "They argued that staying in the EU guaranteed British citizens the right to work, study, and travel across Europe.",
-    "URLs": ["https://www.theguardian.com/uk-news/2016/may/20/brexit-freedom-of-movement-uk-youth"],
-    "tags": ["social", "political"],
+    "URLs": [
+      "https://www.theguardian.com/uk-news/2016/may/20/brexit-freedom-of-movement-uk-youth"
+    ],
+    "tags": [
+      "social",
+      "political"
+    ],
     "side": 1
   },
   {
@@ -58,8 +88,12 @@
     "dateTime": "2016-05-17T10:00:00Z",
     "relevance": 0.83,
     "furtherDescription": "He claimed too many decisions were being made in Brussels rather than Westminster.",
-    "URLs": ["https://www.theguardian.com/politics/2016/may/17/michael-gove-brexit-sovereignty-eu"],
-    "tags": ["political"],
+    "URLs": [
+      "https://www.theguardian.com/politics/2016/may/17/michael-gove-brexit-sovereignty-eu"
+    ],
+    "tags": [
+      "political"
+    ],
     "side": 0
   },
   {
@@ -67,8 +101,13 @@
     "dateTime": "2016-04-22T16:00:00Z",
     "relevance": 0.9,
     "furtherDescription": "The US President intervened during his state visit, sparking controversy among Leave supporters.",
-    "URLs": ["https://www.bbc.com/news/uk-politics-eu-referendum-36115138"],
-    "tags": ["economic", "political"],
+    "URLs": [
+      "https://www.bbc.com/news/uk-politics-eu-referendum-36115138"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
     "side": 1
   },
   {
@@ -76,8 +115,12 @@
     "dateTime": "2016-05-16T09:00:00Z",
     "relevance": 0.84,
     "furtherDescription": "Johnson suggested that decisions affecting Britain should not be made by unelected EU bureaucrats.",
-    "URLs": ["https://www.telegraph.co.uk/news/2016/05/16/boris-johnson-eu-undermining-democracy/"],
-    "tags": ["political"],
+    "URLs": [
+      "https://www.telegraph.co.uk/news/2016/05/16/boris-johnson-eu-undermining-democracy/"
+    ],
+    "tags": [
+      "political"
+    ],
     "side": 0
   },
   {
@@ -85,8 +128,13 @@
     "dateTime": "2016-05-21T15:00:00Z",
     "relevance": 0.78,
     "furtherDescription": "Opponents of Brexit argued that leaving would destabilise the housing market and increase unemployment.",
-    "URLs": ["https://www.independent.co.uk/news/uk/politics/eu-referendum-brexit-house-prices-job-losses-remain-campaign-a7042196.html"],
-    "tags": ["economic", "political"],
+    "URLs": [
+      "https://www.independent.co.uk/news/uk/politics/eu-referendum-brexit-house-prices-job-losses-remain-campaign-a7042196.html"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
     "side": 1
   },
   {
@@ -94,8 +142,13 @@
     "dateTime": "2016-03-21T00:00:00Z",
     "relevance": 0.80,
     "furtherDescription": "The CBI commissioned research showing a potential 3-5% hit to GDP and major job losses if the UK left the EU; widely cited by the Remain campaign. :contentReference[oaicite:1]{index=1}",
-    "URLs": ["https://news.sky.com/story/brexit-could-blow-100bn-hole-in-economy-cbi-10213860"],
-    "tags": ["economic","political"],
+    "URLs": [
+      "https://news.sky.com/story/brexit-could-blow-100bn-hole-in-economy-cbi-10213860"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
     "side": 1
   },
   {
@@ -103,8 +156,13 @@
     "dateTime": "2016-05-27T00:00:00Z",
     "relevance": 0.77,
     "furtherDescription": "In a public statement the Authority noted that the gross figure was not the net contribution and warned its misuse undermines trust in official statistics. :contentReference[oaicite:3]{index=3}",
-    "URLs": ["https://uksa.statisticsauthority.gov.uk/news/uk-statistics-authority-statement-on-the-use-of-official-statistics-on-contributions-to-the-european-union/"],
-    "tags": ["economic","political"],
+    "URLs": [
+      "https://uksa.statisticsauthority.gov.uk/news/uk-statistics-authority-statement-on-the-use-of-official-statistics-on-contributions-to-the-european-union/"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
     "side": 1
   },
   {
@@ -112,8 +170,13 @@
     "dateTime": "2016-02-22T00:00:00Z",
     "relevance": 0.74,
     "furtherDescription": "He set out the four reform areas and announced the referendum date for 23 June 2016 as part of the UK’s renegotiated deal. :contentReference[oaicite:5]{index=5}",
-    "URLs": ["https://www.gov.uk/government/speeches/pm-commons-statement-on-eu-reform-and-referendum-22-february-2016"],
-    "tags": ["political","constitutional"],
+    "URLs": [
+      "https://www.gov.uk/government/speeches/pm-commons-statement-on-eu-reform-and-referendum-22-february-2016"
+    ],
+    "tags": [
+      "political",
+      "constitutional"
+    ],
     "side": 1
   },
   {
@@ -121,8 +184,13 @@
     "dateTime": "2016-02-23T00:00:00Z",
     "relevance": 0.70,
     "furtherDescription": "Cameron told business staff that the referendum decision was ‘much bigger’ than ordinary elections because it would shape the country’s future for decades. :contentReference[oaicite:7]{index=7}",
-    "URLs": ["https://www.gov.uk/government/speeches/pm-speech-at-o2-on-the-eu-referendum-23-february-2016"],
-    "tags": ["political","economic"],
+    "URLs": [
+      "https://www.gov.uk/government/speeches/pm-speech-at-o2-on-the-eu-referendum-23-february-2016"
+    ],
+    "tags": [
+      "political",
+      "economic"
+    ],
     "side": 1
   },
   {
@@ -130,8 +198,13 @@
     "dateTime": "2016-02-23T00:00:00Z",
     "relevance": 0.68,
     "furtherDescription": "As Environment Secretary she urged farmers to vote to remain, emphasising UK access to the EU’s 500 million consumers and warning of trade barriers. :contentReference[oaicite:9]{index=9}",
-    "URLs": ["https://www.theguardian.com/environment/2016/feb/23/leaving-eu-would-put-uk-food-and-farming-exports-at-risk-says-liz-truss"],
-    "tags": ["economic","agriculture"],
+    "URLs": [
+      "https://www.theguardian.com/environment/2016/feb/23/leaving-eu-would-put-uk-food-and-farming-exports-at-risk-says-liz-truss"
+    ],
+    "tags": [
+      "economic",
+      "agriculture"
+    ],
     "side": 1
   },
   {
@@ -139,8 +212,13 @@
     "dateTime": "2016-04-07T00:00:00Z",
     "relevance": 0.65,
     "furtherDescription": "The official ‘Stay’ campaign’s leaflet cost £9.3 m and argued Brexit would raise living costs, hit jobs and reduce living standards. :contentReference[oaicite:11]{index=11}",
-    "URLs": ["https://en.wikipedia.org/wiki/Pro-EU_leaflet"],
-    "tags": ["political","economic"],
+    "URLs": [
+      "https://en.wikipedia.org/wiki/Pro-EU_leaflet"
+    ],
+    "tags": [
+      "political",
+      "economic"
+    ],
     "side": 1
   },
   {
@@ -148,8 +226,13 @@
     "dateTime": "2016-04-18T00:00:00Z",
     "relevance": 0.82,
     "furtherDescription": "The analysis estimated a GDP reduction of 6.2% and a tax increase equivalent to 8p in the income tax rate. :contentReference[oaicite:13]{index=13}",
-    "URLs": ["https://www.gov.uk/government/news/hm-treasury-analysis-shows-leaving-eu-would-cost-british-households-4300-per-year"],
-    "tags": ["economic","political"],
+    "URLs": [
+      "https://www.gov.uk/government/news/hm-treasury-analysis-shows-leaving-eu-would-cost-british-households-4300-per-year"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
     "side": 1
   },
   {
@@ -157,8 +240,13 @@
     "dateTime": "2016-05-26T00:00:00Z",
     "relevance": 0.66,
     "furtherDescription": "A briefing by the Commons Library noted that UK farms received substantial payments from the EU and that the UK government had offered no full 'Plan B' for agriculture post-exit. :contentReference[oaicite:15]{index=15}",
-    "URLs": ["https://commonslibrary.parliament.uk/research-briefings/cbp-7602/"],
-    "tags": ["agriculture","economic"],
+    "URLs": [
+      "https://commonslibrary.parliament.uk/research-briefings/cbp-7602/"
+    ],
+    "tags": [
+      "agriculture",
+      "economic"
+    ],
     "side": 1
   },
   {
@@ -166,8 +254,13 @@
     "dateTime": "2016-05-17T10:00:00Z",
     "relevance": 0.79,
     "furtherDescription": "Gove asserted decisions were being made in Brussels and argued a Leave vote would restore sovereignty; this formed a core Leave campaign message. :contentReference[oaicite:17]{index=17}",
-    "URLs": ["https://www.theguardian.com/politics/2016/may/17/michael-gove-brexit-sovereignty-eu"],
-    "tags": ["political","economic"],
+    "URLs": [
+      "https://www.theguardian.com/politics/2016/may/17/michael-gove-brexit-sovereignty-eu"
+    ],
+    "tags": [
+      "political",
+      "economic"
+    ],
     "side": 0
   },
   {
@@ -175,8 +268,13 @@
     "dateTime": "2016-05-15T13:00:00Z",
     "relevance": 0.72,
     "furtherDescription": "The Leave side argued that outside the EU the UK would be free to negotiate its own trade agreements with non-EU countries. (This mirrors the event you already had, but I include a fuller note.)",
-    "URLs": ["https://www.telegraph.co.uk/news/2016/05/15/brexit-would-allow-uk-to-strike-trade-deals-globally-say-leave-c/"],
-    "tags": ["economic","international"],
+    "URLs": [
+      "https://www.telegraph.co.uk/news/2016/05/15/brexit-would-allow-uk-to-strike-trade-deals-globally-say-leave-c/"
+    ],
+    "tags": [
+      "economic",
+      "international"
+    ],
     "side": 0
   },
   {
@@ -184,8 +282,13 @@
     "dateTime": "2016-05-16T09:00:00Z",
     "relevance": 0.73,
     "furtherDescription": "Johnson framed Brexit as reclaiming democracy and saw the EU as a threat to self-government. :contentReference[oaicite:19]{index=19}",
-    "URLs": ["https://www.telegraph.co.uk/news/2016/05/16/boris-johnson-eu-undermining-democracy/"],
-    "tags": ["political","constitutional"],
+    "URLs": [
+      "https://www.telegraph.co.uk/news/2016/05/16/boris-johnson-eu-undermining-democracy/"
+    ],
+    "tags": [
+      "political",
+      "constitutional"
+    ],
     "side": 0
   }
 ]
