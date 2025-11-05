@@ -5,7 +5,9 @@ export interface TimelineData {
     _id: string,
     title: string,
     events: string[],
-    discussionID: number
+    discussionID: number,
+    multipleView?: Boolean,
+    sideLabels?: string[]
 };
 
 export type TimelineResponse =
@@ -26,6 +28,8 @@ export const Timeline = mongoose.models.Timeline || model<TimelineData>("Timelin
     title: { type: String, required: true },
     events: [{ type: Schema.Types.ObjectId, ref: "Event" }],
     discussionID: { type: Number },
+    multipleView: { type: Boolean},
+    sideLabels: [{ type: String }],
 }, { 
   collection: "timelines",
   versionKey: false,

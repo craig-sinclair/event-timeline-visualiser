@@ -7,8 +7,9 @@ export interface EventData {
     dateTime: string,
     furtherDescription: string,
     relevance: number,
-    URLs: string[]
-    tags: string[]
+    URLs: string[],
+    tags: string[],
+    side?: 0 | 1
 };
 
 export type EventResponse =
@@ -33,6 +34,7 @@ export const Event =
         furtherDescription: { type: String },
         URLs: [{ type: String }],
         tags: [{ type: String }],
+        side: { type: Number },
     }, { 
         collection: "events",
         versionKey: false
