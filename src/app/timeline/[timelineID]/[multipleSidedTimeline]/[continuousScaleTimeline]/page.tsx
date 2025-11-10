@@ -7,10 +7,12 @@ import { EventData } from "@/app/models/event";
 import HorizontalTimeline from "@/app/components/HorizontalTimeline";
 import VerticalTimeline from "@/app/components/VerticalTimeline";
 import MultipleSidedTimeline from "@/app/components/MultipleSidedTimeline";
+import ContinuousScaleTimeline from "@/app/components/ContinuousScaleTimeline";
 
 export default function TimelinePage() {
-    const { timelineID, multipleSidedTimeline } = useParams<{ timelineID: string, multipleSidedTimeline?: string }>();
+    const { timelineID, multipleSidedTimeline, continuousScaleTimeline } = useParams<{ timelineID: string, multipleSidedTimeline?: string, continuousScaleTimeline?: string }>();
     const isMultipleSidedTimeline = multipleSidedTimeline === "true"
+    const isContinuousScaleTimeline = continuousScaleTimeline === "true"
 
     const [events, setEvents] = useState<EventData[]>([]);
     const [loading, setLoading] = useState(true);
@@ -48,6 +50,10 @@ export default function TimelinePage() {
     const displayTimeline = () => {
         if (isMultipleSidedTimeline) {
             return <MultipleSidedTimeline events={events} />
+        }
+
+        if (isContinuousScaleTimeline) {
+            return <ContinuousScaleTimeline events={events} />
         }
 
         // If not multiple sided: use toggle between vertical and horizontal
@@ -92,7 +98,7 @@ export default function TimelinePage() {
                 </div>
 
                 {/* Display toggle (horizontal/ vertical) if not a two-sided timeline */}
-                {!isMultipleSidedTimeline && (
+                {(!isMultipleSidedTimeline && !isContinuousScaleTimeline) && (
                     <div className="flex flex-col">
                         <label className="block mb-2 text-xs md:text-sm">Display Mode:</label>
 

@@ -9,7 +9,8 @@ export interface EventData {
     relevance: number,
     URLs: string[],
     tags: string[],
-    side?: 0 | 1
+    side?: 0 | 1, // for binary two-sided timeline events
+    position: number, // for continuous scale timeline events (0.0 -> 1.0 values)
 };
 
 export type EventResponse =
@@ -35,6 +36,7 @@ export const Event =
         URLs: [{ type: String }],
         tags: [{ type: String }],
         side: { type: Number },
+        position: { type: Number },
     }, { 
         collection: "events",
         versionKey: false

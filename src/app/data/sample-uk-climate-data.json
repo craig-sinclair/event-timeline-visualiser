@@ -1,0 +1,106 @@
+[
+  {
+    "overview": "IPCC established",
+    "dateTime": "1988-11-01T00:00:00Z",
+    "position": 0.15,
+    "relevance": 0.85,
+    "furtherDescription": "Intergovernmental Panel on Climate Change formed to assess scientific evidence on climate change",
+    "tags": ["science", "international"]
+  },
+  {
+    "overview": "Rio Earth Summit and UNFCCC signed",
+    "dateTime": "1992-06-13T00:00:00Z",
+    "position": 0.4,
+    "relevance": 0.9,
+    "furtherDescription": "World leaders agree to stabilise greenhouse gas concentrations; foundation for later climate treaties",
+    "tags": ["policy", "international"]
+  },
+  {
+    "overview": "Kyoto Protocol signed by UK",
+    "dateTime": "1998-04-29T00:00:00Z",
+    "position": 0.65,
+    "relevance": 0.9,
+    "furtherDescription": "UK commits to reducing emissions but with moderate targets",
+    "tags": ["policy", "international"]
+  },
+  {
+    "overview": "Stern Review on the Economics of Climate Change",
+    "dateTime": "2006-10-30T00:00:00Z",
+    "position": 0.78,
+    "relevance": 0.93,
+    "furtherDescription": "Landmark UK report concluding that the costs of inaction on climate change far outweigh those of mitigation",
+    "tags": ["economics", "research"]
+  },
+  {
+    "overview": "Climate Change Act passed",
+    "dateTime": "2008-11-26T00:00:00Z",
+    "position": 0.82,
+    "relevance": 0.95,
+    "furtherDescription": "Legally binding commitment to 80% reduction by 2050",
+    "tags": ["legislation", "domestic"]
+  },
+  {
+    "overview": "Paris Agreement signed",
+    "dateTime": "2015-12-12T00:00:00Z",
+    "position": 0.9,
+    "relevance": 0.97,
+    "furtherDescription": "Global accord aiming to limit warming to well below 2°C, with UK reaffirming leadership role",
+    "tags": ["international", "policy"]
+  },
+  {
+    "overview": "UK coal-free electricity for a day",
+    "dateTime": "2017-04-21T00:00:00Z",
+    "position": 0.88,
+    "relevance": 0.9,
+    "furtherDescription": "First 24-hour period since the Industrial Revolution that the UK generated electricity without coal",
+    "tags": ["energy", "domestic"]
+  },
+  {
+    "overview": "Net Zero target adopted",
+    "dateTime": "2019-06-27T00:00:00Z",
+    "position": 0.95,
+    "relevance": 1.0,
+    "furtherDescription": "UK becomes first major economy to legislate for net zero by 2050",
+    "tags": ["legislation", "ambitious"]
+  },
+  {
+    "overview": "Extinction Rebellion protests in London",
+    "dateTime": "2019-04-15T00:00:00Z",
+    "position": 0.93,
+    "relevance": 0.92,
+    "furtherDescription": "Mass climate activism demanding urgent government action on ecological emergency",
+    "tags": ["activism", "domestic"]
+  },
+  {
+    "overview": "COP26 hosted in Glasgow",
+    "dateTime": "2021-11-01T00:00:00Z",
+    "position": 0.96,
+    "relevance": 0.98,
+    "furtherDescription": "World leaders meet to accelerate commitments under Paris Agreement; UK emphasizes global leadership",
+    "tags": ["international", "policy"]
+  },
+  {
+    "overview": "Heatwave emergency declared in UK",
+    "dateTime": "2022-07-19T00:00:00Z",
+    "position": 0.97,
+    "relevance": 0.94,
+    "furtherDescription": "First-ever UK red warning for extreme heat; infrastructure and health impacts highlight climate risks",
+    "tags": ["climate-impact", "domestic"]
+  },
+  {
+    "overview": "UK bans sale of new petrol and diesel cars from 2035",
+    "dateTime": "2023-09-20T00:00:00Z",
+    "position": 0.9,
+    "relevance": 0.88,
+    "furtherDescription": "Government sets transition timeline to accelerate shift to electric vehicles",
+    "tags": ["policy", "transport"]
+  },
+  {
+    "overview": "Launch of UK Green Investment Bank",
+    "dateTime": "2012-11-29T00:00:00Z",
+    "position": 0.84,
+    "relevance": 0.88,
+    "furtherDescription": "Bank established to fund renewable energy and low-carbon infrastructure projects",
+    "tags": ["finance", "domestic"]
+  }
+]
