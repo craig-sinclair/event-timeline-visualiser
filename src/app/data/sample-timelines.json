@@ -15,6 +15,16 @@
     "discussionID": 12346
   },
   {
+    "title": "UK Response to Climate Change",
+    "events": [],
+    "discussionID": 12346,
+    "continuousScale": true,
+    "scaleLabels": {
+      "start": "Climate Skepticism",
+      "end": "Climate Emergency Action"
+    }
+  },
+  {
     "title": "US Presidential Election 2020",
     "events": [],
     "discussionID": 12347
