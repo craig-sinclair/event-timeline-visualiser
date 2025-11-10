@@ -6,8 +6,16 @@ export interface TimelineData {
     title: string,
     events: string[],
     discussionID: number,
+    // for binary 'two-sided' timelines
     multipleView?: boolean,
-    sideLabels?: string[]
+    sideLabels?: string[],
+ 
+    // for multi-view 0.0 -> 1.0 scale position based timelines
+    continuousScale?: boolean,
+    scaleLabels?: {
+      start: string,
+      end: string,
+    }
 };
 
 export type TimelineResponse =
@@ -30,6 +38,11 @@ export const Timeline = mongoose.models.Timeline || model<TimelineData>("Timelin
     discussionID: { type: Number },
     multipleView: { type: Boolean},
     sideLabels: [{ type: String }],
+    continuousScale: { type: Boolean },
+    scaleLabels: {
+      start: { type: String},
+      end: { type: String },
+    }
 }, { 
   collection: "timelines",
   versionKey: false,
