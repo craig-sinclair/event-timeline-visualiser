@@ -98,7 +98,7 @@ export default function TimelinePage() {
                 </div>
 
                 {/* Display toggle (horizontal/ vertical) if not a two-sided timeline */}
-                {!isMultipleSidedTimeline && (
+                {(!isMultipleSidedTimeline && !isContinuousScaleTimeline) && (
                     <div className="flex flex-col">
                         <label className="block mb-2 text-xs md:text-sm">Display Mode:</label>
 
