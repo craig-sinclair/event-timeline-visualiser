@@ -41,7 +41,7 @@ export default function TimelinesTable() {
         );
     };
 
-    if(errorMessage) {
+    if (errorMessage) {
         return (
             <div className="flex justify-center items-center py-4">
                 <h2 className="font-xl">Sorry, an error while fetching timelines from database.</h2>
@@ -70,9 +70,9 @@ export default function TimelinesTable() {
                             <td className="py-8 text-gray-900 dark:text-gray-200 border-r border-[var(--borderColour)]">{timeline.title}</td>
                             <td className="py-8 text-gray-700 dark:text-gray-300 text-center border-r border-[var(--borderColour)]">{timeline.events.length}</td>
                             <td className="py-8 border-l border-[var(--borderColour)] text-center">
-                                <Link 
+                                <Link
                                     className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors cursor-pointer"
-                                    href={`/timeline/${timeline._id}/${timeline.multipleView ? "true" : "false"}`}
+                                    href={`/timeline/${timeline._id}/${timeline.multipleView ? "true" : "false"}/${timeline.continuousScale ? "true" : "false"}`}
                                 >
                                     View
                                 </Link>
