@@ -58,8 +58,8 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 						{events.map((event, _) => {
 							if (event.position == null) {
 								return null;
-							};
-							
+							}
+
 							// Determine placement of events based on event's position value...
 							// Is a value between 0.0 and 1.0 that reflects extend of agreement to side in continuous scale format
 							const horizontalPercent = 10 + event.position * 80;
