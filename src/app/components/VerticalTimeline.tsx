@@ -4,9 +4,13 @@ import { EventData } from "@/app/models/event";
 import { useState } from "react";
 import EventModal from "@/app/components/ui/EventModal";
 
-export default function VerticalTimeline({ events }: { events: EventData[] }) {
+export default function VerticalTimeline({ events, isTwoSided }: { events: EventData[], isTwoSided: boolean }) {
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
+
+  // For now hardcode labels (must be passed from timeline)
+  const leftLabel: string = "Leave";
+  const rightLabel: string = "Remain";
 
   const handleEventClick = (event: EventData) => {
     setSelectedEvent(event);
@@ -22,6 +26,18 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
     <>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="relative">
+
+          {isTwoSided && (
+            <div className="flex justify-between text-sm sm:text-base mb-8">
+                <span className="text-2xl font-semibold px-3 py-1 rounded-full bg-red-900/30 text-red-400 shadow-sm">
+                    {leftLabel}
+                </span>
+                <span className="text-2xl font-semibold px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 shadow-sm">
+                    {rightLabel}
+                </span>
+            </div>
+          )}
+
           {/* Vertical timeline line */}
           <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-[var(--foreground)] opacity-20" />
 
@@ -30,7 +46,14 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
             {events.map((event, i) => (
               <div
                 key={event._id}
-                className={`relative flex items-center gap-4 sm:gap-8 ${i % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
+                className={`relative flex items-center gap-4 sm:gap-8 ${
+                    // If not a two sided timeline, alternate display direction (either side of centre baseline)
+                    !isTwoSided ?
+                      i % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
+
+                    // If is a two-sided timeline, display events (positionally) based on their side
+                    : event.side === 1 ? 
+                      "sm:flex-row" : "sm:flex-row-reverse"
                   }`}
               >
                 {/* Timeline dot */}

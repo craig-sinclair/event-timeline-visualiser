@@ -6,7 +6,6 @@ import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { EventData } from "@/app/models/event";
 import HorizontalTimeline from "@/app/components/HorizontalTimeline";
 import VerticalTimeline from "@/app/components/VerticalTimeline";
-import MultipleSidedTimeline from "@/app/components/MultipleSidedTimeline";
 import ContinuousScaleTimeline from "@/app/components/ContinuousScaleTimeline";
 
 export default function TimelinePage() {
@@ -49,7 +48,7 @@ export default function TimelinePage() {
 
     const displayTimeline = () => {
         if (isMultipleSidedTimeline) {
-            return <MultipleSidedTimeline events={events} />
+            return <VerticalTimeline events={events} isTwoSided={true} />
         }
 
         if (isContinuousScaleTimeline) {
@@ -58,7 +57,7 @@ export default function TimelinePage() {
 
         // If not multiple sided: use toggle between vertical and horizontal
         return verticalSelected ? (
-            <VerticalTimeline events={events} />
+            <VerticalTimeline events={events} isTwoSided={false} />
         ) : (
             <HorizontalTimeline events={events} />
         );
