@@ -1,34 +1,40 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import User from "@/app/models/user";
+
+import { authOptions } from "@/app/lib/auth";
 import { dbConnect } from "@/app/lib/mongoose";
-import { authOptions } from "@/app/lib/auth"; 
+import User from "@/app/models/user";
 
 export async function POST(req: Request) {
-  await dbConnect();
-  const session = await getServerSession(authOptions);
-  if (!session?.user?.email) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+	await dbConnect();
+	const session = await getServerSession(authOptions);
+	if (!session?.user?.email) {
+		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+	}
 
-  const body = await req.json();
+	const body = await req.json();
 
-  // Only allow specific keys to update
-  const allowedUpdates = ["name", "preferences.theme", "preferences.language", "preferences.notifications"];
-  
-  const update: Record<string, unknown> = {};
-  for (const key of allowedUpdates) {
-    const value = key.split('.').reduce((obj, k) => obj?.[k], body);
-    if (value !== undefined) {
-      update[key] = value;
-    }
-  }
+	// Only allow specific keys to update
+	const allowedUpdates = [
+		"name",
+		"preferences.theme",
+		"preferences.language",
+		"preferences.notifications",
+	];
 
-  const user = await User.findOneAndUpdate(
-    { email: session.user.email },
-    { $set: update },
-    { new: true, runValidators: true }
-  );
+	const update: Record<string, unknown> = {};
+	for (const key of allowedUpdates) {
+		const value = key.split(".").reduce((obj, k) => obj?.[k], body);
+		if (value !== undefined) {
+			update[key] = value;
+		}
+	}
 
-  return NextResponse.json(user);
+	const user = await User.findOneAndUpdate(
+		{ email: session.user.email },
+		{ $set: update },
+		{ new: true, runValidators: true }
+	);
+
+	return NextResponse.json(user);
 }
