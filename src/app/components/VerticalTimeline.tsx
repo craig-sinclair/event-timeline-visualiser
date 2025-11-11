@@ -4,7 +4,7 @@ import { EventData } from "@/app/models/event";
 import { useState } from "react";
 import EventModal from "@/app/components/ui/EventModal";
 
-export default function VerticalTimeline({ events, isTwoSided }: { events: EventData[], isTwoSided: boolean }) {
+export default function VerticalTimeline({ events, isTwoSided=false }: { events: EventData[], isTwoSided?: boolean }) {
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
 
