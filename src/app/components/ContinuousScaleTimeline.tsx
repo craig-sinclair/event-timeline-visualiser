@@ -34,14 +34,14 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 
 	return (
 		<>
-			<div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+			<div className="max-w-6xl mx-auto sm:px-6 py-8 sm:py-12 overflow-x-hidden">
 				{/* Header with header labels for opposite sides of scale */}
 				<div className="mb-12">
 					<div className="flex justify-between items-center mb-4">
-						<span className="text-lg sm:text-xl font-semibold px-4 py-2 rounded-full bg-red-900/30 text-red-400">
+						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-red-900/30 text-red-400">
 							{leftLabel}
 						</span>
-						<span className="text-lg sm:text-xl font-semibold px-4 py-2 rounded-full bg-green-900/30 text-green-400">
+						<span className="text-xs sm:text-lg md:text-xl font-semiboldpx-3 sm:px-4 py-1 sm:py-2 rounded-full bg-green-900/30 text-green-400">
 							{rightLabel}
 						</span>
 					</div>
@@ -62,7 +62,7 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 
 							// Determine placement of events based on event's position value...
 							// Is a value between 0.0 and 1.0 that reflects extend of agreement to side in continuous scale format
-							const horizontalPercent = 10 + event.position * 80;
+							const horizontalPercent = 10 + event.position * 70;
 							const isLeft = event.position < 0.5;
 
 							return (
@@ -91,7 +91,7 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 											marginLeft: isLeft ? "0" : "auto",
 											marginRight: isLeft ? "auto" : "0",
 											width: "40%",
-											transform: `translateX(${isLeft ? horizontalPercent - 20 : horizontalPercent - 60}%)`,
+											transform: `translateX(${isLeft ? horizontalPercent - 20 : horizontalPercent - 80}%)`,
 										}}
 									>
 										<div
