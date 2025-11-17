@@ -78,7 +78,7 @@ export default function TimelinesTable() {
 							<td className="py-8 border-l border-[var(--borderColour)] text-center">
 								<Link
 									className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors cursor-pointer"
-									href={`/timeline/${timeline._id}/${timeline.multipleView ? "true" : "false"}/${timeline.continuousScale ? "true" : "false"}`}
+									href={`/timeline/${timeline._id}`}
 								>
 									View
 								</Link>

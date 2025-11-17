@@ -7,35 +7,45 @@ import ContinuousScaleTimeline from "@/app/components/ContinuousScaleTimeline";
 import HorizontalTimeline from "@/app/components/HorizontalTimeline";
 import VerticalTimeline from "@/app/components/VerticalTimeline";
 import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
+import { getTimelineFromId } from "@/app/lib/api/getTimelineFromId";
 import { EventData } from "@/app/models/event";
+import { TimelineData } from "@/app/models/timeline";
 
 export default function TimelinePage() {
-	const { timelineID, multipleSidedTimeline, continuousScaleTimeline } = useParams<{
+	const { timelineID } = useParams<{
 		timelineID: string;
-		multipleSidedTimeline?: string;
-		continuousScaleTimeline?: string;
 	}>();
-	const isMultipleSidedTimeline = multipleSidedTimeline === "true";
-	const isContinuousScaleTimeline = continuousScaleTimeline === "true";
 
 	const [events, setEvents] = useState<EventData[]>([]);
+	const [isMultipleSidedTimeline, setIsMultipleSidedTimeline] = useState(false);
+	const [isContinuousScaleTimeline, setIsContinuousScaleTimeline] = useState(false);
+	const [timelineName, setTimelineName] = useState("");
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 
 	const [verticalSelected, setVerticalSelected] = useState(false);
 
 	useEffect(() => {
-		const fetchEvents = async () => {
+		const fetchEventAndTimelineData = async () => {
 			try {
-				const data = await getEventsInTimeline({ timelineID });
-				setEvents(data);
+				const eventsData = await getEventsInTimeline({ timelineID });
+				setEvents(eventsData);
+
+				const timelineData: TimelineData[] = await getTimelineFromId({ timelineID });
+
+				// Set the useState properties based on timeline data
+				setTimelineName(timelineData[0].title);
+				setIsContinuousScaleTimeline(!!timelineData[0].continuousScale);
+				setIsMultipleSidedTimeline(!!timelineData[0].multipleView);
+
 			} catch (err) {
-				setError(err instanceof Error ? err.message : "Unknown error");
+				setError(err instanceof Error ? err.message : "Unknown error whilst fetching data");
 			} finally {
 				setLoading(false);
 			}
-		};
-		fetchEvents();
+		}
+
+		fetchEventAndTimelineData();
 	}, [timelineID]);
 
 	if (loading) {
@@ -72,7 +82,7 @@ export default function TimelinePage() {
 			<div className="flex justify-center items-center w-full mb-5 md:mb-8">
 				<h1 className="text-3xl">
 					{" "}
-					<span className="font-bold text-blue-500">Brexit Campaign</span> Event Timeline
+					<span className="font-bold text-blue-500">{timelineName}</span> Event Timeline
 				</h1>
 			</div>
 
