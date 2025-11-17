@@ -25,6 +25,16 @@
     }
   },
   {
+    "title": "US Response to Climate Change",
+    "events": [],
+    "discussionID": 999,
+    "continuousScale": true,
+    "scaleLabels": {
+      "start": "Climate Skepticism",
+      "end": "Climate Emergency Action"
+    }
+  },
+  {
     "title": "US Presidential Election 2020",
     "events": [],
     "discussionID": 12347
