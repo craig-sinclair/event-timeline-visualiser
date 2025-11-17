@@ -532,12 +532,12 @@ describe("populateData", () => {
 		// Assert correct update calls made for each timeline for comparableTimelines array
 		expect(Timeline.updateOne).toHaveBeenCalledWith(
 			{ _id: "uk123" },
-			{ $addToSet: { comparableTimelines: "us456" }}
+			{ $addToSet: { comparableTimelines: "us456" } }
 		);
 
 		expect(Timeline.updateOne).toHaveBeenCalledWith(
 			{ _id: "us456" },
-			{ $addToSet: { comparableTimelines: "uk123" }}
+			{ $addToSet: { comparableTimelines: "uk123" } }
 		);
 	});
 });
