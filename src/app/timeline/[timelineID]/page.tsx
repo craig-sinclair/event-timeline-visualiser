@@ -17,9 +17,13 @@ export default function TimelinePage() {
 	}>();
 
 	const [events, setEvents] = useState<EventData[]>([]);
+
+	// Properties of the timeline
 	const [isMultipleSidedTimeline, setIsMultipleSidedTimeline] = useState(false);
 	const [isContinuousScaleTimeline, setIsContinuousScaleTimeline] = useState(false);
+	const [comparableTimelines, setComparableTimelines] = useState<string[]>([]);
 	const [timelineName, setTimelineName] = useState("");
+
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 
@@ -35,15 +39,17 @@ export default function TimelinePage() {
 
 				// Set the useState properties based on timeline data
 				setTimelineName(timelineData[0].title);
+				// Boolean values for multiple view/ continuous scale (true or not present in object)
 				setIsContinuousScaleTimeline(!!timelineData[0].continuousScale);
 				setIsMultipleSidedTimeline(!!timelineData[0].multipleView);
-
+				// Comparable timelines array (default to empty arr if not present in object)
+				setComparableTimelines(timelineData[0].comparableTimelines ?? []);
 			} catch (err) {
 				setError(err instanceof Error ? err.message : "Unknown error whilst fetching data");
 			} finally {
 				setLoading(false);
 			}
-		}
+		};
 
 		fetchEventAndTimelineData();
 	}, [timelineID]);
@@ -87,7 +93,7 @@ export default function TimelinePage() {
 			</div>
 
 			{/* Event filter options */}
-			<div className="flex justify-between items-center mb-5 md:mb-10 max-w-full md:max-w-4/5 lg:max-w-3/4 ml-auto mr-auto">
+			<div className="flex justify-between items-center mb-5 md:mb-10 max-w-full lg:max-w-5/6 ml-auto mr-auto">
 				<div>
 					<label className="block mb-2 text-xs md:text-sm">Date Range</label>
 					<input
@@ -160,6 +166,19 @@ export default function TimelinePage() {
 								</label>
 							</div>
 						</div>
+					</div>
+				)}
+
+				{comparableTimelines.length > 0 && (
+					<div>
+						<label className="block mb-2 text-xs md:text-sm">
+							Compare with other Timeline:
+						</label>
+						<input
+							type="text"
+							className="text-xs md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
+							placeholder="Select Timeline"
+						/>
 					</div>
 				)}
 			</div>
