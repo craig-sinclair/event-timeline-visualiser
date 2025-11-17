@@ -16,6 +16,9 @@ export interface TimelineData {
 		start: string;
 		end: string;
 	};
+
+	// For timelines that can be compared with other timelines (array of timeline IDs)
+	comparableTimelines?: string[];
 }
 
 export type TimelineResponse =
@@ -48,6 +51,7 @@ export const Timeline =
 					start: { type: String },
 					end: { type: String },
 				},
+				comparableTimelines: [{ type: String }],
 			},
 			{
 				collection: "timelines",

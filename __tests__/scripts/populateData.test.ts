@@ -510,4 +510,34 @@ describe("populateData", () => {
 		expect(Timeline.insertMany).toHaveBeenCalledWith(timelinesWithoutBrexit);
 		expect(process.exit).toHaveBeenCalledWith(0);
 	});
+
+	it("Correctly links US and UK Climate Response timelines for comparison", async () => {
+		const mockUkTimeline = { _id: "uk123", title: "UK Response to Climate Change" };
+		const mockUsTimeline = { _id: "us456", title: "US Response to Climate Change" };
+
+		vi.mocked(Timeline.findOne)
+			.mockResolvedValueOnce(mockUkTimeline) // first call for UK
+			.mockResolvedValueOnce(mockUsTimeline); // second call for US
+
+		vi.mocked(Timeline.updateOne).mockResolvedValue({
+			acknowledged: true,
+			matchedCount: 1,
+			modifiedCount: 1,
+			upsertedCount: 0,
+			upsertedId: null,
+		});
+
+		await populateData();
+
+		// Assert correct update calls made for each timeline for comparableTimelines array
+		expect(Timeline.updateOne).toHaveBeenCalledWith(
+			{ _id: "uk123" },
+			{ $addToSet: { comparableTimelines: "us456" }}
+		);
+
+		expect(Timeline.updateOne).toHaveBeenCalledWith(
+			{ _id: "us456" },
+			{ $addToSet: { comparableTimelines: "uk123" }}
+		);
+	});
 });
