@@ -3,12 +3,13 @@
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import CompareTimelines from "@/app/components/CompareTimelines";
 import ContinuousScaleTimeline from "@/app/components/ContinuousScaleTimeline";
 import HorizontalTimeline from "@/app/components/HorizontalTimeline";
 import VerticalTimeline from "@/app/components/VerticalTimeline";
 import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/app/lib/api/getTimelineFromId";
-import { EventData } from "@/app/models/event";
+import { EventData, CompareTimelineEventData } from "@/app/models/event";
 import { TimelineData } from "@/app/models/timeline";
 
 export default function TimelinePage() {
@@ -17,6 +18,9 @@ export default function TimelinePage() {
 	}>();
 
 	const [events, setEvents] = useState<EventData[]>([]);
+	const [compareEventsData, setCompareEventsData] = useState<CompareTimelineEventData[] | null>(
+		null
+	);
 
 	// Properties of the timeline
 	const [isMultipleSidedTimeline, setIsMultipleSidedTimeline] = useState(false);
@@ -28,6 +32,9 @@ export default function TimelinePage() {
 	const [error, setError] = useState<string | null>(null);
 
 	const [verticalSelected, setVerticalSelected] = useState(false);
+	const [selectedComparableTimelineID, setSelectedComparableTimelineID] = useState<string | null>(
+		null
+	);
 
 	useEffect(() => {
 		const fetchEventAndTimelineData = async () => {
@@ -54,6 +61,50 @@ export default function TimelinePage() {
 		fetchEventAndTimelineData();
 	}, [timelineID]);
 
+	useEffect(() => {
+		if (selectedComparableTimelineID) {
+			const fetchComparisonData = async () => {
+				setLoading(true);
+				setCompareEventsData(null);
+				setError(null);
+
+				try {
+					const mainEvents = await getEventsInTimeline({ timelineID });
+					// Fetch events for the comparable timeline (side 2)
+					const comparableEvents: EventData[] = await getEventsInTimeline({
+						timelineID: selectedComparableTimelineID,
+					});
+
+					const markedMainEvents: CompareTimelineEventData[] = mainEvents.map((e) => ({
+						...e,
+						timelineSide: 1,
+					}));
+					const markedComparableEvents: CompareTimelineEventData[] = comparableEvents.map(
+						(e) => ({ ...e, timelineSide: 2 })
+					);
+
+					const allEvents = [...markedMainEvents, ...markedComparableEvents].sort(
+						(a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()
+					);
+
+					setCompareEventsData(allEvents);
+				} catch (err) {
+					setError(
+						err instanceof Error
+							? err.message
+							: "Unknown error whilst fetching comparison data"
+					);
+				} finally {
+					setLoading(false);
+				}
+			};
+
+			fetchComparisonData();
+		} else {
+			setCompareEventsData(null);
+		}
+	}, [timelineID, selectedComparableTimelineID, comparableTimelines]);
+
 	if (loading) {
 		return (
 			// Loading spinner animation
@@ -65,7 +116,16 @@ export default function TimelinePage() {
 
 	if (error) return <p>Error fetching events: {error}</p>;
 
+	const handleCompareTimelineChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		const selectedId = e.target.value;
+		setSelectedComparableTimelineID(selectedId === "" ? null : selectedId);
+	};
+
 	const displayTimeline = () => {
+		if (selectedComparableTimelineID && compareEventsData) {
+			return <CompareTimelines events={compareEventsData} />;
+		}
+
 		if (isMultipleSidedTimeline) {
 			return <VerticalTimeline events={events} isTwoSided={true} />;
 		}
@@ -174,11 +234,20 @@ export default function TimelinePage() {
 						<label className="block mb-2 text-xs md:text-sm">
 							Compare with other Timeline:
 						</label>
-						<input
-							type="text"
-							className="text-xs md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
-							placeholder="Select Timeline"
-						/>
+						<select
+							className="text-xs md:text-sm rounded-lg dark:bg-gray-700 focus:ring-blue-500 dark:hover:bg-gray-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
+							onChange={handleCompareTimelineChange}
+							value={selectedComparableTimelineID || ""}
+						>
+							<option value="" className="dark:bg-gray-700 darK:text-white">
+								Do Not Compare
+							</option>
+							{comparableTimelines.map((timeline, index) => (
+								<option key={index} value={timeline}>
+									{timeline}
+								</option>
+							))}
+						</select>
 					</div>
 				)}
 			</div>

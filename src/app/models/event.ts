@@ -13,6 +13,10 @@ export interface EventData {
 	position?: number; // for continuous scale timeline events (0.0 -> 1.0 values)
 }
 
+export type CompareTimelineEventData = EventData & {
+	timelineSide: 1 | 2;
+};
+
 export type EventResponse =
 	| {
 			success: true;
