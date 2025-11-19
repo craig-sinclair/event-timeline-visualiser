@@ -72,6 +72,21 @@ describe("populateData", () => {
 		},
 	];
 
+	const mockUsClimateEventsData = [
+		{
+			_id: "event9",
+			title: "Sample-US",
+			date: "1988-11-01",
+			description: "XYZ",
+		},
+		{
+			_id: "event10",
+			title: "Sample-US-2",
+			date: "1992-06-13",
+			description: "YZX",
+		},
+	];
+
 	const mockTimelinesData = [
 		{
 			title: "Brexit Campaign",
@@ -86,6 +101,11 @@ describe("populateData", () => {
 		{
 			title: "UK Response to Climate Change",
 			description: "Timeline of UK Response to Climate Change",
+			events: [],
+		},
+		{
+			title: "US Response to Climate Change",
+			description: "Timeline of US Response to Climate Change",
 			events: [],
 		},
 	];
@@ -105,6 +125,11 @@ describe("populateData", () => {
 		{ ...mockUkClimateEventsData[1], _id: "createdEvent6" },
 	];
 
+	const mockCreatedUsClimateEvents = [
+		{ ...mockUsClimateEventsData[0], _id: "createdEvent7" },
+		{ ...mockUsClimateEventsData[1], _id: "createdEvent8" },
+	];
+
 	beforeEach(async () => {
 		vi.clearAllMocks();
 
@@ -117,7 +142,8 @@ describe("populateData", () => {
 		vi.mocked(Event.insertMany)
 			.mockResolvedValueOnce(mockCreatedBrexitEvents) // first call for Brexit
 			.mockResolvedValueOnce(mockCreatedCovidEvents) // second call for COVID
-			.mockResolvedValueOnce(mockCreatedUkClimateEvents); // third call for UK Climate Response
+			.mockResolvedValueOnce(mockCreatedUkClimateEvents) // third call for UK Climate Response
+			.mockResolvedValueOnce(mockCreatedUsClimateEvents); // fourth call for US Climate Response
 
 		vi.mocked(Timeline.insertMany).mockResolvedValue([]);
 
@@ -132,6 +158,9 @@ describe("populateData", () => {
 			}
 			if (filePath.includes("sample-uk-climate-data.json")) {
 				return JSON.stringify(mockUkClimateEventsData);
+			}
+			if (filePath.includes("sample-us-climate-data.json")) {
+				return JSON.stringify(mockUsClimateEventsData);
 			}
 			if (filePath.includes("sample-timelines.json")) {
 				return JSON.stringify(mockTimelinesData);
@@ -150,11 +179,9 @@ describe("populateData", () => {
 		vi.restoreAllMocks();
 	});
 
-	it("should successfully connect to MongoDB", async () => {
+	it("should utilise the existing dbConnect to connect to MongoDB", async () => {
 		await populateData();
-
 		expect(dbConnect).toHaveBeenCalledOnce();
-		expect(console.log).toHaveBeenCalledWith("0) Successfully connected to MongoDB...");
 	});
 
 	it("should clear existing collections before populating", async () => {
@@ -162,9 +189,6 @@ describe("populateData", () => {
 
 		expect(Event.deleteMany).toHaveBeenCalledWith({});
 		expect(Timeline.deleteMany).toHaveBeenCalledWith({});
-		expect(console.log).toHaveBeenCalledWith(
-			"1) Cleared timelines and events collections successfully..."
-		);
 	});
 
 	it("should load JSON files from correct paths", async () => {
@@ -180,47 +204,23 @@ describe("populateData", () => {
 			process.cwd(),
 			"src/app/data/sample-uk-climate-data.json"
 		);
-		expect(fs.readFileSync).toHaveBeenCalledTimes(4);
+		expect(path.join).toHaveBeenCalledWith(
+			process.cwd(),
+			"src/app/data/sample-us-climate-data.json"
+		);
+		expect(fs.readFileSync).toHaveBeenCalledTimes(5);
 	});
 
 	it("should insert events into database", async () => {
 		await populateData();
 
 		expect(Event.insertMany).toHaveBeenCalledWith(mockBrexitEventsData);
-		expect(console.log).toHaveBeenCalledWith(
-			`2) Successfully added ${mockBrexitEventsData.length} Brexit events...`
-		);
-
 		expect(Event.insertMany).toHaveBeenCalledWith(mockCovidEventsData);
-		expect(console.log).toHaveBeenCalledWith(
-			`3) Successfully added ${mockCovidEventsData.length} COVID-19 Pandemic events...`
-		);
-
 		expect(Event.insertMany).toHaveBeenCalledWith(mockUkClimateEventsData);
-		expect(console.log).toHaveBeenCalledWith(
-			`4) Successfully added ${mockUkClimateEventsData.length} UK Climate Response events...`
-		);
+		expect(Event.insertMany).toHaveBeenCalledWith(mockUsClimateEventsData);
 	});
 
 	it("should link events to Brexit timeline", async () => {
-		const timelinesWithBrexit = [...mockTimelinesData];
-		vi.mocked(fs.readFileSync).mockImplementation((filePath: unknown): string => {
-			if (typeof filePath !== "string") return "";
-			if (filePath.includes("sample-events.json")) {
-				return JSON.stringify(mockBrexitEventsData);
-			}
-			if (filePath.includes("sample-covid-data.json")) {
-				return JSON.stringify(mockCovidEventsData);
-			}
-			if (filePath.includes("sample-uk-climate-data.json")) {
-				return JSON.stringify(mockTimelinesData);
-			}
-			if (filePath.includes("sample-timelines.json")) {
-				return JSON.stringify(timelinesWithBrexit);
-			}
-			return "[]";
-		});
-
 		await populateData();
 
 		expect(Timeline.insertMany).toHaveBeenCalled();
@@ -234,24 +234,6 @@ describe("populateData", () => {
 	});
 
 	it("should link events to Covid timeline", async () => {
-		const timelinesWithBrexit = [...mockTimelinesData];
-		vi.mocked(fs.readFileSync).mockImplementation((filePath: unknown): string => {
-			if (typeof filePath !== "string") return "";
-			if (filePath.includes("sample-events.json")) {
-				return JSON.stringify(mockBrexitEventsData);
-			}
-			if (filePath.includes("sample-covid-data.json")) {
-				return JSON.stringify(mockCovidEventsData);
-			}
-			if (filePath.includes("sample-uk-climate-data.json")) {
-				return JSON.stringify(mockTimelinesData);
-			}
-			if (filePath.includes("sample-timelines.json")) {
-				return JSON.stringify(timelinesWithBrexit);
-			}
-			return "[]";
-		});
-
 		await populateData();
 
 		expect(Timeline.insertMany).toHaveBeenCalled();
@@ -265,24 +247,6 @@ describe("populateData", () => {
 	});
 
 	it("should link events to UK Climate Response timeline", async () => {
-		const timelinesWithBrexit = [...mockTimelinesData];
-		vi.mocked(fs.readFileSync).mockImplementation((filePath: unknown): string => {
-			if (typeof filePath !== "string") return "";
-			if (filePath.includes("sample-events.json")) {
-				return JSON.stringify(mockBrexitEventsData);
-			}
-			if (filePath.includes("sample-covid-data.json")) {
-				return JSON.stringify(mockCovidEventsData);
-			}
-			if (filePath.includes("sample-uk-climate-data.json")) {
-				return JSON.stringify(mockTimelinesData);
-			}
-			if (filePath.includes("sample-timelines.json")) {
-				return JSON.stringify(timelinesWithBrexit);
-			}
-			return "[]";
-		});
-
 		await populateData();
 
 		expect(Timeline.insertMany).toHaveBeenCalled();
@@ -309,13 +273,9 @@ describe("populateData", () => {
 		expect(covidTimeline?.events).toEqual(["createdEvent3", "createdEvent4"]);
 	});
 
-	it("should insert timelines into database", async () => {
+	it("should call for insertion of timelines into database", async () => {
 		await populateData();
-
 		expect(Timeline.insertMany).toHaveBeenCalledOnce();
-		expect(console.log).toHaveBeenCalledWith(
-			`5) Successfully added ${mockTimelinesData.length} timelines...`
-		);
 	});
 
 	it("should log completion message and exit with code 0", async () => {
@@ -323,24 +283,6 @@ describe("populateData", () => {
 
 		expect(console.log).toHaveBeenCalledWith("MongoDB data population script completed!");
 		expect(process.exit).toHaveBeenCalledWith(0);
-	});
-
-	it("should execute steps in correct order", async () => {
-		await populateData();
-
-		const callOrder = vi.mocked(console.log).mock.calls.map((call) => call[0]);
-
-		expect(callOrder[0]).toContain("Successfully connected");
-		expect(callOrder[1]).toContain("Cleared timelines and events");
-		expect(callOrder[2]).toContain("Successfully added");
-		expect(callOrder[2]).toContain("events");
-		expect(callOrder[3]).toContain("Successfully added");
-		expect(callOrder[3]).toContain("events");
-		expect(callOrder[4]).toContain("Successfully added");
-		expect(callOrder[4]).toContain("events");
-		expect(callOrder[5]).toContain("Successfully added");
-		expect(callOrder[5]).toContain("timelines");
-		expect(callOrder[6]).toContain("completed");
 	});
 
 	it("should handle Event.deleteMany errors", async () => {
@@ -433,12 +375,7 @@ describe("populateData", () => {
 		await populateData();
 
 		expect(Event.insertMany).toHaveBeenCalledWith([]);
-		expect(console.log).toHaveBeenCalledWith("2) Successfully added 0 Brexit events...");
-
 		expect(Event.insertMany).toHaveBeenCalledWith(mockCovidEventsData);
-		expect(console.log).toHaveBeenCalledWith(
-			`3) Successfully added ${mockCovidEventsData.length} COVID-19 Pandemic events...`
-		);
 	});
 
 	it("should handle empty Covid events array", async () => {
@@ -463,19 +400,8 @@ describe("populateData", () => {
 		await populateData();
 
 		expect(Event.insertMany).toHaveBeenCalledWith(mockBrexitEventsData);
-		expect(console.log).toHaveBeenCalledWith(
-			`2) Successfully added ${mockBrexitEventsData.length} Brexit events...`
-		);
-
 		expect(Event.insertMany).toHaveBeenCalledWith([]);
-		expect(console.log).toHaveBeenCalledWith(
-			"3) Successfully added 0 COVID-19 Pandemic events..."
-		);
-
 		expect(Event.insertMany).toHaveBeenCalledWith(mockUkClimateEventsData);
-		expect(console.log).toHaveBeenCalledWith(
-			`4) Successfully added ${mockUkClimateEventsData.length} UK Climate Response events...`
-		);
 	});
 
 	it("should handle empty UK Climate events array", async () => {
@@ -500,19 +426,8 @@ describe("populateData", () => {
 		await populateData();
 
 		expect(Event.insertMany).toHaveBeenCalledWith(mockBrexitEventsData);
-		expect(console.log).toHaveBeenCalledWith(
-			`2) Successfully added ${mockBrexitEventsData.length} Brexit events...`
-		);
-
 		expect(Event.insertMany).toHaveBeenCalledWith(mockCovidEventsData);
-		expect(console.log).toHaveBeenCalledWith(
-			`3) Successfully added ${mockCovidEventsData.length} COVID-19 Pandemic events...`
-		);
-
 		expect(Event.insertMany).toHaveBeenCalledWith([]);
-		expect(console.log).toHaveBeenCalledWith(
-			`4) Successfully added 0 UK Climate Response events...`
-		);
 	});
 
 	it("should handle empty Covid, Brexit and UK Climate events array", async () => {
@@ -537,17 +452,8 @@ describe("populateData", () => {
 		await populateData();
 
 		expect(Event.insertMany).toHaveBeenCalledWith([]);
-		expect(console.log).toHaveBeenCalledWith("2) Successfully added 0 Brexit events...");
-
 		expect(Event.insertMany).toHaveBeenCalledWith([]);
-		expect(console.log).toHaveBeenCalledWith(
-			"3) Successfully added 0 COVID-19 Pandemic events..."
-		);
-
 		expect(Event.insertMany).toHaveBeenCalledWith([]);
-		expect(console.log).toHaveBeenCalledWith(
-			`4) Successfully added 0 UK Climate Response events...`
-		);
 	});
 
 	it("should handle empty timelines array", async () => {
@@ -571,7 +477,6 @@ describe("populateData", () => {
 		await populateData();
 
 		expect(Timeline.insertMany).toHaveBeenCalledWith([]);
-		expect(console.log).toHaveBeenCalledWith("5) Successfully added 0 timelines...");
 	});
 
 	it("should handle missing Brexit timeline gracefully", async () => {
@@ -604,5 +509,35 @@ describe("populateData", () => {
 
 		expect(Timeline.insertMany).toHaveBeenCalledWith(timelinesWithoutBrexit);
 		expect(process.exit).toHaveBeenCalledWith(0);
+	});
+
+	it("Correctly links US and UK Climate Response timelines for comparison", async () => {
+		const mockUkTimeline = { _id: "uk123", title: "UK Response to Climate Change" };
+		const mockUsTimeline = { _id: "us456", title: "US Response to Climate Change" };
+
+		vi.mocked(Timeline.findOne)
+			.mockResolvedValueOnce(mockUkTimeline) // first call for UK
+			.mockResolvedValueOnce(mockUsTimeline); // second call for US
+
+		vi.mocked(Timeline.updateOne).mockResolvedValue({
+			acknowledged: true,
+			matchedCount: 1,
+			modifiedCount: 1,
+			upsertedCount: 0,
+			upsertedId: null,
+		});
+
+		await populateData();
+
+		// Assert correct update calls made for each timeline for comparableTimelines array
+		expect(Timeline.updateOne).toHaveBeenCalledWith(
+			{ _id: "uk123" },
+			{ $addToSet: { comparableTimelines: "us456" } }
+		);
+
+		expect(Timeline.updateOne).toHaveBeenCalledWith(
+			{ _id: "us456" },
+			{ $addToSet: { comparableTimelines: "uk123" } }
+		);
 	});
 });

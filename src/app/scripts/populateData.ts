@@ -23,11 +23,16 @@ export async function populateData() {
 			process.cwd(),
 			"src/app/data/sample-uk-climate-data.json"
 		);
+		const usClimateEventsDataPath = path.join(
+			process.cwd(),
+			"src/app/data/sample-us-climate-data.json"
+		);
 		const timelinesDataPath = path.join(process.cwd(), "src/app/data/sample-timelines.json");
 
 		const brexitEventsData = JSON.parse(fs.readFileSync(brexitEventsDataPath, "utf-8"));
 		const covidEventsData = JSON.parse(fs.readFileSync(covidEventsDataPath, "utf-8"));
 		const ukClimateData = JSON.parse(fs.readFileSync(ukClimateEventsDataPath, "utf-8"));
+		const usClimateData = JSON.parse(fs.readFileSync(usClimateEventsDataPath, "utf-8"));
 		const timelinesData = JSON.parse(fs.readFileSync(timelinesDataPath, "utf-8"));
 
 		// Add event documents to collection
@@ -39,6 +44,9 @@ export async function populateData() {
 
 		const createdUkClimateEvents = await Event.insertMany(ukClimateData);
 		console.log(`4) Successfully added ${ukClimateData.length} UK Climate Response events...`);
+
+		const createdUsClimateEvents = await Event.insertMany(usClimateData);
+		console.log(`5) Successfully added ${usClimateData.length} US Climate Response events...`);
 
 		// Link event documents for Brexit timeline
 		const brexitTimeline = timelinesData.find(
@@ -64,9 +72,33 @@ export async function populateData() {
 			ukClimateTimeline.events = createdUkClimateEvents.map((e) => e._id);
 		}
 
+		// Link event documents for US Response to Climate Change timeline
+		const usClimateTimeline = timelinesData.find(
+			(t: TimelineData) => t.title === "US Response to Climate Change"
+		);
+		if (usClimateTimeline) {
+			usClimateTimeline.events = createdUsClimateEvents.map((e) => e._id);
+		}
+
 		// Add all timeline documents
 		await Timeline.insertMany(timelinesData);
-		console.log(`5) Successfully added ${timelinesData.length} timelines...`);
+		console.log(`6) Successfully added ${timelinesData.length} timelines...`);
+
+		const ukTimelineDoc = await Timeline.findOne({ title: "UK Response to Climate Change" });
+		const usTimelineDoc = await Timeline.findOne({ title: "US Response to Climate Change" });
+
+		// Link US Climate timeline with UK Climate timeline
+		// Updates both of their comparableTimelines field to add each other's timelineID
+		if (ukTimelineDoc && usTimelineDoc) {
+			const ukId = ukTimelineDoc._id.toString();
+			const usId = usTimelineDoc._id.toString();
+
+			await Timeline.updateOne({ _id: ukId }, { $addToSet: { comparableTimelines: usId } });
+
+			await Timeline.updateOne({ _id: usId }, { $addToSet: { comparableTimelines: ukId } });
+
+			console.log("7) Linked UK and US climate timelines for comparison");
+		}
 
 		console.log("MongoDB data population script completed!");
 		process.exit(0);

@@ -10,17 +10,19 @@ const mockEventData: EventData[] = [
 	{
 		_id: "12345",
 		overview: "example",
+		furtherDescription: "test",
 		dateTime: "2025-01-01 10:00",
 		relevance: 0.5,
-		URLS: [],
+		URLs: [],
 		tags: [],
 	},
 	{
 		_id: "24680",
 		overview: "example-2",
+		furtherDescription: "test 2",
 		dateTime: "2025-01-02 10:01",
 		relevance: 0.9,
-		URLS: ["example-123"],
+		URLs: ["example-123"],
 		tags: ["example-tag"],
 	},
 ];
@@ -74,9 +76,10 @@ describe("Get events in timeline tests", () => {
 			{
 				_id: "4",
 				overview: "Timeline with émojis 🚀 & symbols!@#$%",
+				furtherDescription: "test",
 				dateTime: "2025-01-01 10:00",
 				relevance: 0.2,
-				URLS: [],
+				URLs: [],
 				tags: [],
 			},
 		];
