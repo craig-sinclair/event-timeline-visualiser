@@ -9,9 +9,11 @@ export default function CompareTimelines({ events }: { events: CompareTimelineEv
 	const [isEventModalOpen, setIsEventModalOpen] = useState(false);
 	const [selectedEvent, setSelectedEvent] = useState<CompareTimelineEventData | null>(null);
 
-	// For now hardcode labels (must be passed from timeline)
-	const leftLabel: string = "USA";
-	const rightLabel: string = "UK";
+	const leftLabel = "Climate Skepticism";
+	const rightLabel = "Climate Action";
+
+	const timeline1Label = "USA";
+	const timeline2Label = "UK";
 
 	const handleEventClick = (event: CompareTimelineEventData) => {
 		setSelectedEvent(event);
@@ -23,48 +25,147 @@ export default function CompareTimelines({ events }: { events: CompareTimelineEv
 		setSelectedEvent(null);
 	};
 
+	// Get color based on position (0.0 = red/skepticism, 1.0 = green/action)
+	const getEventColor = (position: number) => {
+		const r = Math.round(220 * (1 - position) + 34 * position);
+		const g = Math.round(38 * (1 - position) + 197 * position);
+		const b = Math.round(38 * (1 - position) + 94 * position);
+		return `rgb(${r}, ${g}, ${b})`;
+	};
+
+	// Get timeline-specific styling
+	const getTimelineStyle = (timelineSide: number) => {
+		if (timelineSide === 1) {
+			return {
+				borderColor: "#3b82f6", // blue
+				icon: "🇺🇸",
+				badgeBg: "bg-blue-100 dark:bg-blue-900/30",
+				badgeText: "text-blue-700 dark:text-blue-400",
+			};
+		} else {
+			return {
+				borderColor: "#ef4444", // red
+				icon: "GB",
+				badgeBg: "bg-red-100 dark:bg-red-900/30",
+				badgeText: "text-red-700 dark:text-red-400",
+			};
+		}
+	};
+
 	return (
 		<>
-			<div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-				<div className="relative">
-					<div className="flex justify-between text-sm sm:text-base mb-8">
-						<span className="text-2xl font-semibold px-3 py-1 rounded-full bg-red-900/30 text-red-400 shadow-sm">
+			<div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 overflow-x-hidden">
+				{/* Header with scale labels */}
+				<div className="mb-12">
+					<div className="flex justify-between items-center mb-4">
+						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-red-900/30 text-red-400">
 							{leftLabel}
 						</span>
-						<span className="text-2xl font-semibold px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 shadow-sm">
+						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-green-900/30 text-green-400">
 							{rightLabel}
 						</span>
 					</div>
 
-					{/* Vertical timeline line */}
-					<div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-[var(--foreground)] opacity-20" />
+					{/* Gradient bar */}
+					<div className="h-2 rounded-full bg-gradient-to-r from-red-600 via-yellow-500 to-green-600 opacity-40" />
 
-					{/* Events */}
-					<div className="space-y-8 sm:space-y-12">
-						{events.map((event) => (
-							<div
-								key={event._id}
-								className={`relative flex items-center gap-4 sm:gap-8 ${
-									event.timelineSide === 1 ? "sm:flex-row" : "sm:flex-row-reverse"
-								}`}
-							>
-								{/* Timeline dot */}
-								<div className="absolute left-4 sm:left-1/2 w-3 h-3 rounded-full bg-blue-500 border-2 border-white dark:border-gray-900 -translate-x-1/2 z-10" />
+					{/* Timeline legend */}
+					<div className="flex justify-center gap-6 mt-6">
+						<div className="flex items-center gap-2">
+							<div className="w-4 h-4 rounded border-2 border-blue-500" />
+							<span className="text-sm font-medium">{timeline2Label}</span>
+						</div>
+						<div className="flex items-center gap-2">
+							<div className="w-4 h-4 rounded border-2 border-red-500" />
+							<span className="text-sm font-medium">{timeline1Label}</span>
+						</div>
+					</div>
+				</div>
 
-								{/* Spacer for alternating layout on larger screens */}
-								<div className="hidden sm:block sm:w-1/2" />
+				<div className="relative">
+					{/* Center vertical line */}
+					<div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-gray-700 -translate-x-1/2" />
 
-								{/* Event card */}
-								<div
-									className="ml-12 sm:ml-0 sm:w-1/2 border rounded-lg p-4 hover:shadow-lg hover:opacity-75 transition-all duration-200 cursor-pointer"
-									onClick={() => handleEventClick(event)}
-								>
-									<h3 className="text-sm sm:text-base md:text-lg font-medium leading-snug">
-										{event.overview}
-									</h3>
+					<div className="space-y-16">
+						{events.map((event) => {
+							if (event.position == null) return null;
+
+							const horizontalPercent = 10 + event.position * 70;
+							const isLeft = event.position < 0.5;
+							const timelineStyle = getTimelineStyle(event.timelineSide);
+
+							return (
+								<div key={event._id} className="relative">
+									{/* Connecting line */}
+									<svg
+										className="absolute top-8 w-full h-12 pointer-events-none"
+										style={{ left: 0 }}
+									>
+										<line
+											x1="50%"
+											y1="0"
+											x2={`${horizontalPercent + 5}%`}
+											y2="100%"
+											stroke={timelineStyle.borderColor}
+											strokeWidth="2"
+											strokeDasharray="4 4"
+											opacity="0.5"
+										/>
+									</svg>
+
+									{/* Event card */}
+									<div
+										className="relative pt-20"
+										style={{
+											marginLeft: isLeft ? "0" : "auto",
+											marginRight: isLeft ? "auto" : "0",
+											width: "40%",
+											transform: `translateX(${isLeft ? horizontalPercent - 20 : horizontalPercent - 75}%)`,
+										}}
+									>
+										<div
+											className="border-2 rounded-lg p-4 cursor-pointer transition-all hover:opacity-75 hover:shadow-lg"
+											style={{
+												borderColor: timelineStyle.borderColor,
+												backgroundColor: `${getEventColor(event.position)}10`,
+											}}
+											onClick={() => handleEventClick(event)}
+										>
+											<div className="flex items-start gap-3">
+												<div className="flex-1">
+													{/* Timeline badge */}
+													<div className="flex items-center mb-2">
+														<span
+															className={`text-xs font-semibold px-2 py-0.5 rounded ${timelineStyle.badgeBg} ${timelineStyle.badgeText}`}
+														>
+															{event.timelineSide === 1
+																? timeline2Label
+																: timeline1Label}
+														</span>
+													</div>
+
+													{/* Event overview */}
+													<h3 className="text-sm sm:text-base font-semibold leading-snug">
+														{event.overview}
+													</h3>
+												</div>
+
+												{/* Position percentage */}
+												<div
+													className="text-xs font-bold px-2 py-1 rounded"
+													style={{
+														backgroundColor: `${getEventColor(event.position)}20`,
+														color: getEventColor(event.position),
+													}}
+												>
+													{(event.position * 100).toFixed(0)}%
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-						))}
+							);
+						})}
 					</div>
 				</div>
 			</div>
