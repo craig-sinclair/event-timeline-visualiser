@@ -1,7 +1,5 @@
 "use client";
-
-import { useState } from "react";
-
+import { useEventModal } from "@/app/hooks/useEventModal";
 import EventModal from "@/app/components/ui/EventModal";
 import { EventData } from "@/app/models/event";
 
@@ -12,22 +10,12 @@ export default function VerticalTimeline({
 	events: EventData[];
 	isTwoSided?: boolean;
 }) {
-	const [isEventModalOpen, setIsEventModalOpen] = useState(false);
-	const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
 
 	// For now hardcode labels (must be passed from timeline)
 	const leftLabel: string = "Leave";
 	const rightLabel: string = "Remain";
 
-	const handleEventClick = (event: EventData) => {
-		setSelectedEvent(event);
-		setIsEventModalOpen(true);
-	};
-
-	const handleCloseModal = () => {
-		setIsEventModalOpen(false);
-		setSelectedEvent(null);
-	};
+	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } = useEventModal<EventData>();
 
 	return (
 		<>
@@ -73,7 +61,7 @@ export default function VerticalTimeline({
 								{/* Event card */}
 								<div
 									className="ml-12 sm:ml-0 sm:w-1/2 border rounded-lg p-4 hover:shadow-lg hover:opacity-75 transition-all duration-200 cursor-pointer"
-									onClick={() => handleEventClick(event)}
+									onClick={() => openEventModal(event)}
 								>
 									<h3 className="text-sm sm:text-base md:text-lg font-medium leading-snug">
 										{event.overview}
@@ -88,7 +76,7 @@ export default function VerticalTimeline({
 			<EventModal
 				visible={isEventModalOpen}
 				event={selectedEvent}
-				onClose={handleCloseModal}
+				onClose={closeEventModal}
 			/>
 		</>
 	);

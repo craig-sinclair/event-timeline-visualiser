@@ -1,23 +1,12 @@
 "use client";
 
-import { useState } from "react";
-
+import { useEventModal } from "@/app//hooks/useEventModal";
 import EventModal from "@/app/components/ui/EventModal";
 import { EventData } from "@/app/models/event";
 
 export default function VerticalTimeline({ events }: { events: EventData[] }) {
-	const [isEventModalOpen, setIsEventModalOpen] = useState(false);
-	const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
-
-	const handleEventClick = (event: EventData) => {
-		setSelectedEvent(event);
-		setIsEventModalOpen(true);
-	};
-
-	const handleCloseModal = () => {
-		setIsEventModalOpen(false);
-		setSelectedEvent(null);
-	};
+	
+	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } = useEventModal<EventData>();
 
 	// Todo: Fixed labels for two sides for UK Climate example for now; update to be dynamic based on input timeline
 	const leftLabel = "Climate Skepticism";
@@ -97,7 +86,7 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 										<div
 											className="border-2 rounded-lg p-4 cursor-pointer transition-all hover:opacity-75"
 											style={{ borderColor: getEventColor(event.position) }}
-											onClick={() => handleEventClick(event)}
+											onClick={() => openEventModal(event)}
 										>
 											<div className="flex items-start gap-3">
 												{/* Event overview text */}
@@ -131,7 +120,7 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 			<EventModal
 				visible={isEventModalOpen}
 				event={selectedEvent}
-				onClose={handleCloseModal}
+				onClose={closeEventModal}
 			/>
 		</>
 	);
