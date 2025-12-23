@@ -5,8 +5,8 @@ import EventModal from "@/app/components/ui/EventModal";
 import { EventData } from "@/app/models/event";
 
 export default function VerticalTimeline({ events }: { events: EventData[] }) {
-	
-	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } = useEventModal<EventData>();
+	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
+		useEventModal<EventData>();
 
 	// Todo: Fixed labels for two sides for UK Climate example for now; update to be dynamic based on input timeline
 	const leftLabel = "Climate Skepticism";

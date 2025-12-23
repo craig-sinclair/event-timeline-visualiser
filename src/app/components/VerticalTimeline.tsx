@@ -1,6 +1,6 @@
 "use client";
-import { useEventModal } from "@/app/hooks/useEventModal";
 import EventModal from "@/app/components/ui/EventModal";
+import { useEventModal } from "@/app/hooks/useEventModal";
 import { EventData } from "@/app/models/event";
 
 export default function VerticalTimeline({
@@ -10,12 +10,12 @@ export default function VerticalTimeline({
 	events: EventData[];
 	isTwoSided?: boolean;
 }) {
-
 	// For now hardcode labels (must be passed from timeline)
 	const leftLabel: string = "Leave";
 	const rightLabel: string = "Remain";
 
-	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } = useEventModal<EventData>();
+	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
+		useEventModal<EventData>();
 
 	return (
 		<>

@@ -1,13 +1,13 @@
 "use client";
 
-import { useEventModal } from "@/app/hooks/useEventModal";
 import EventModal from "@/app/components/ui/EventModal";
+import { useEventModal } from "@/app/hooks/useEventModal";
 import { CompareTimelineEventData } from "@/app/models/event";
 
 export default function CompareTimelines({ events }: { events: CompareTimelineEventData[] }) {
+	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
+		useEventModal<CompareTimelineEventData>();
 
-		const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } = useEventModal<CompareTimelineEventData>();
-	
 	const leftLabel = "Climate Skepticism";
 	const rightLabel = "Climate Action";
 

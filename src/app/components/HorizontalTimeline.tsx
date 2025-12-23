@@ -1,12 +1,12 @@
 "use client";
 
-import { useEventModal } from "@/app/hooks/useEventModal";
 import EventModal from "@/app/components/ui/EventModal";
+import { useEventModal } from "@/app/hooks/useEventModal";
 import { EventData } from "@/app/models/event";
 
 export default function HorizontalTimeline({ events }: { events: EventData[] }) {
-	
-	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } = useEventModal<EventData>();
+	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
+		useEventModal<EventData>();
 
 	return (
 		<>
