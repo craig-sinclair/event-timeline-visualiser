@@ -2,6 +2,7 @@
 
 import EventModal from "@/app/components/ui/EventModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
+import { getEventColor } from "@/app/lib/getEventColour";
 import { CompareTimelineEventData } from "@/app/models/event";
 
 export default function CompareTimelines({ events }: { events: CompareTimelineEventData[] }) {
@@ -13,14 +14,6 @@ export default function CompareTimelines({ events }: { events: CompareTimelineEv
 
 	const timeline1Label = "USA";
 	const timeline2Label = "UK";
-
-	// Get color based on position (0.0 = red/skepticism, 1.0 = green/action)
-	const getEventColor = (position: number) => {
-		const r = Math.round(220 * (1 - position) + 34 * position);
-		const g = Math.round(38 * (1 - position) + 197 * position);
-		const b = Math.round(38 * (1 - position) + 94 * position);
-		return `rgb(${r}, ${g}, ${b})`;
-	};
 
 	// Get timeline-specific styling
 	const getTimelineStyle = (timelineSide: number) => {
