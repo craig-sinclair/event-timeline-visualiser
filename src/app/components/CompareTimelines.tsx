@@ -9,16 +9,17 @@ export default function CompareTimelines({
 	events,
 	leftLabel = "",
 	rightLabel = "",
+	timelineOneLabel = "",
+	timelineTwoLabel = "",
 }: {
 	events: CompareTimelineEventData[];
 	leftLabel: string;
 	rightLabel: string;
+	timelineOneLabel: string;
+	timelineTwoLabel: string;
 }) {
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<CompareTimelineEventData>();
-
-	const timeline1Label = "USA";
-	const timeline2Label = "UK";
 
 	// Get timeline-specific styling
 	const getTimelineStyle = (timelineSide: number) => {
@@ -58,11 +59,11 @@ export default function CompareTimelines({
 					<div className="flex justify-center gap-6 mt-6">
 						<div className="flex items-center gap-2">
 							<div className="w-4 h-4 rounded border-2 border-blue-500" />
-							<span className="text-sm font-medium">{timeline2Label}</span>
+							<span className="text-sm font-medium">{timelineTwoLabel}</span>
 						</div>
 						<div className="flex items-center gap-2">
 							<div className="w-4 h-4 rounded border-2 border-red-500" />
-							<span className="text-sm font-medium">{timeline1Label}</span>
+							<span className="text-sm font-medium">{timelineOneLabel}</span>
 						</div>
 					</div>
 				</div>
@@ -124,8 +125,8 @@ export default function CompareTimelines({
 															className={`text-xs font-semibold px-2 py-0.5 rounded ${timelineStyle.badgeBg} ${timelineStyle.badgeText}`}
 														>
 															{event.timelineSide === 1
-																? timeline2Label
-																: timeline1Label}
+																? timelineTwoLabel
+																: timelineOneLabel}
 														</span>
 													</div>
 

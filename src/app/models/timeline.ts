@@ -4,6 +4,7 @@ import { Schema, model } from "mongoose";
 export interface TimelineData {
 	_id: string;
 	title: string;
+	shortName?: string;
 	events: string[];
 	discussionID: number;
 	// for binary 'two-sided' timelines
@@ -37,6 +38,7 @@ export const Timeline =
 		new Schema<TimelineData>(
 			{
 				title: { type: String, required: true },
+				shortName: { type: String },
 				events: [{ type: Schema.Types.ObjectId, ref: "Event" }],
 				discussionID: { type: Number },
 				multipleView: { type: Boolean },

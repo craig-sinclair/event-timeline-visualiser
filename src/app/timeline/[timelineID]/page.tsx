@@ -23,6 +23,7 @@ export default function TimelinePage() {
 
 	const [timelineConfig, setTimelineConfig] = useState({
 		name: "",
+		shortName: "",
 		isMultipleSided: false,
 		isContinuousScale: false,
 		comparableTimelines: [] as string[],
@@ -54,6 +55,7 @@ export default function TimelinePage() {
 
 				setTimelineConfig({
 					name: timelineData[0].title,
+					shortName: timelineData[0].shortName ?? "",
 					isContinuousScale: !!timelineData[0].continuousScale,
 					isMultipleSided: !!timelineData[0].multipleView,
 					comparableTimelines: timelineData[0].comparableTimelines ?? [],
@@ -94,6 +96,8 @@ export default function TimelinePage() {
 					events={compareEventsData}
 					leftLabel={timelineConfig.leftLabel}
 					rightLabel={timelineConfig.rightLabel}
+					timelineOneLabel="US"
+					timelineTwoLabel={timelineConfig.shortName} // todo: update to OTHER timeline shortname
 				/>
 			);
 		}
