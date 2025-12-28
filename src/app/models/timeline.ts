@@ -8,15 +8,10 @@ export interface TimelineData {
 	discussionID: number;
 	// for binary 'two-sided' timelines
 	multipleView?: boolean;
-	sideLabels?: string[];
-
 	// for multi-view 0.0 -> 1.0 scale position based timelines
 	continuousScale?: boolean;
-	scaleLabels?: {
-		start: string;
-		end: string;
-	};
-
+	leftLabel?: string;
+	rightLabel?: string;
 	// For timelines that can be compared with other timelines (array of timeline IDs)
 	comparableTimelines?: string[];
 }
@@ -45,12 +40,9 @@ export const Timeline =
 				events: [{ type: Schema.Types.ObjectId, ref: "Event" }],
 				discussionID: { type: Number },
 				multipleView: { type: Boolean },
-				sideLabels: [{ type: String }],
+				leftLabel: { type: String },
+				rightLabel: { type: String },
 				continuousScale: { type: Boolean },
-				scaleLabels: {
-					start: { type: String },
-					end: { type: String },
-				},
 				comparableTimelines: [{ type: String }],
 			},
 			{

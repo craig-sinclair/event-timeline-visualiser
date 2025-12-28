@@ -26,7 +26,8 @@ export default function TimelinePage() {
 		isMultipleSided: false,
 		isContinuousScale: false,
 		comparableTimelines: [] as string[],
-		// Todo: include left and right label here
+		leftLabel: "",
+		rightLabel: "",
 	});
 
 	const [loading, setLoading] = useState(true);
@@ -56,7 +57,8 @@ export default function TimelinePage() {
 					isContinuousScale: !!timelineData[0].continuousScale,
 					isMultipleSided: !!timelineData[0].multipleView,
 					comparableTimelines: timelineData[0].comparableTimelines ?? [],
-					// Todo: update left/right label here
+					leftLabel: timelineData[0].leftLabel ?? "",
+					rightLabel: timelineData[0].rightLabel ?? "",
 				});
 			} catch (err) {
 				setError(err instanceof Error ? err.message : "Unknown error whilst fetching data");
