@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import CompareTimelines from "@/app/components/CompareTimelines";
 import ContinuousScaleTimeline from "@/app/components/ContinuousScaleTimeline";
 import HorizontalTimeline from "@/app/components/HorizontalTimeline";
+import TimelineFilters from "@/app/components/ui/TimelineFilters";
 import VerticalTimeline from "@/app/components/VerticalTimeline";
 import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/app/lib/api/getTimelineFromId";
@@ -154,41 +155,7 @@ export default function TimelinePage() {
 
 			{/* Event filter options */}
 			<div className="flex justify-between items-center mb-5 md:mb-10 max-w-full lg:max-w-5/6 ml-auto mr-auto">
-				<div>
-					<label className="block mb-2 text-xs md:text-sm">Date Range</label>
-					<input
-						type="text"
-						className="text-xs md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
-						placeholder="All Time"
-					/>
-				</div>
-
-				<div>
-					<label className="block mb-2 text-xs md:text-sm">Tags</label>
-					<input
-						type="text"
-						className="text-xs md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
-						placeholder="View All"
-					/>
-				</div>
-
-				<div>
-					<label className="block mb-2 text-xs md:text-sm">Min. Relevance</label>
-					<input
-						type="text"
-						className="text-xs md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
-						placeholder="High"
-					/>
-				</div>
-
-				<div>
-					<label className="block mb-2 text-xs md:text-sm">Sort By</label>
-					<input
-						type="text"
-						className="text-xs md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
-						placeholder="Chronological"
-					/>
-				</div>
+				<TimelineFilters />
 
 				{/* Display toggle (horizontal/ vertical) if not a two-sided timeline */}
 				{!isMultipleSidedTimeline && !isContinuousScaleTimeline && (
