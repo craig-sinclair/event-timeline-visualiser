@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
+import { getTimelineFromId } from "@/app/lib/api/getTimelineFromId";
 import { CompareTimelineEventData } from "@/app/models/event";
 
 export function useTimelineComparisonData(
@@ -8,6 +9,7 @@ export function useTimelineComparisonData(
 	selectedComparableTimelineID: string | null
 ) {
 	const [compareData, setCompareData] = useState<CompareTimelineEventData[] | null>(null);
+	const [compareTimelineShortName, setCompareTimelineShortName] = useState("");
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
@@ -25,11 +27,14 @@ export function useTimelineComparisonData(
 			setError(null);
 
 			try {
-				// Fetch events from both timelines
-				const [mainEvents, comparableEvents] = await Promise.all([
+				// Fetch events from both timelines and short name of timeline to compare with
+				const [mainEvents, comparableEvents, comparableTimeline] = await Promise.all([
 					getEventsInTimeline({ timelineID }),
 					getEventsInTimeline({ timelineID: selectedComparableTimelineID }),
+					getTimelineFromId({ timelineID: selectedComparableTimelineID }),
 				]);
+
+				setCompareTimelineShortName(comparableTimeline[0]?.shortName ?? "");
 
 				// Mark each set of events with corresponding timeline side
 				const markedMainEvents: CompareTimelineEventData[] = mainEvents.map((e) => ({
@@ -64,5 +69,5 @@ export function useTimelineComparisonData(
 		fetchComparisonData();
 	}, [timelineID, selectedComparableTimelineID]);
 
-	return { compareData, loading, error };
+	return { compareData, compareTimelineShortName, loading, error };
 }

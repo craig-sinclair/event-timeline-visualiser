@@ -6,14 +6,14 @@ import { EventData } from "@/app/models/event";
 export default function VerticalTimeline({
 	events,
 	isTwoSided = false,
+	leftLabel = "",
+	rightLabel = "",
 }: {
 	events: EventData[];
 	isTwoSided?: boolean;
+	leftLabel: string;
+	rightLabel: string;
 }) {
-	// For now hardcode labels (must be passed from timeline)
-	const leftLabel: string = "Leave";
-	const rightLabel: string = "Remain";
-
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<EventData>();
 
@@ -23,10 +23,10 @@ export default function VerticalTimeline({
 				<div className="relative">
 					{isTwoSided && (
 						<div className="flex justify-between text-sm sm:text-base mb-8">
-							<span className="text-2xl font-semibold px-3 py-1 rounded-full bg-red-900/30 text-red-400 shadow-sm">
+							<span className="text-2xl font-semibold px-3 py-1 rounded-sm bg-red-900/30 text-red-400 shadow-sm">
 								{leftLabel}
 							</span>
-							<span className="text-2xl font-semibold px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 shadow-sm">
+							<span className="text-2xl font-semibold px-3 py-1 rounded-sm bg-blue-900/30 text-blue-400 shadow-sm">
 								{rightLabel}
 							</span>
 						</div>

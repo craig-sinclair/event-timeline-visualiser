@@ -5,29 +5,33 @@ import { useEventModal } from "@/app/hooks/useEventModal";
 import { getEventColor } from "@/app/lib/getEventColour";
 import { CompareTimelineEventData } from "@/app/models/event";
 
-export default function CompareTimelines({ events }: { events: CompareTimelineEventData[] }) {
+export default function CompareTimelines({
+	events,
+	leftLabel = "",
+	rightLabel = "",
+	timelineOneLabel = "",
+	timelineTwoLabel = "",
+}: {
+	events: CompareTimelineEventData[];
+	leftLabel: string;
+	rightLabel: string;
+	timelineOneLabel: string;
+	timelineTwoLabel: string;
+}) {
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<CompareTimelineEventData>();
-
-	const leftLabel = "Climate Skepticism";
-	const rightLabel = "Climate Action";
-
-	const timeline1Label = "USA";
-	const timeline2Label = "UK";
 
 	// Get timeline-specific styling
 	const getTimelineStyle = (timelineSide: number) => {
 		if (timelineSide === 1) {
 			return {
 				borderColor: "#3b82f6", // blue
-				icon: "🇺🇸",
 				badgeBg: "bg-blue-100 dark:bg-blue-900/30",
 				badgeText: "text-blue-700 dark:text-blue-400",
 			};
 		} else {
 			return {
 				borderColor: "#ef4444", // red
-				icon: "GB",
 				badgeBg: "bg-red-100 dark:bg-red-900/30",
 				badgeText: "text-red-700 dark:text-red-400",
 			};
@@ -40,10 +44,10 @@ export default function CompareTimelines({ events }: { events: CompareTimelineEv
 				{/* Header with scale labels */}
 				<div className="mb-12">
 					<div className="flex justify-between items-center mb-4">
-						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-red-900/30 text-red-400">
+						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-sm bg-red-900/30 text-red-400">
 							{leftLabel}
 						</span>
-						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-green-900/30 text-green-400">
+						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-sm bg-green-900/30 text-green-400">
 							{rightLabel}
 						</span>
 					</div>
@@ -55,11 +59,11 @@ export default function CompareTimelines({ events }: { events: CompareTimelineEv
 					<div className="flex justify-center gap-6 mt-6">
 						<div className="flex items-center gap-2">
 							<div className="w-4 h-4 rounded border-2 border-blue-500" />
-							<span className="text-sm font-medium">{timeline2Label}</span>
+							<span className="text-sm font-medium">{timelineTwoLabel}</span>
 						</div>
 						<div className="flex items-center gap-2">
 							<div className="w-4 h-4 rounded border-2 border-red-500" />
-							<span className="text-sm font-medium">{timeline1Label}</span>
+							<span className="text-sm font-medium">{timelineOneLabel}</span>
 						</div>
 					</div>
 				</div>
@@ -121,8 +125,8 @@ export default function CompareTimelines({ events }: { events: CompareTimelineEv
 															className={`text-xs font-semibold px-2 py-0.5 rounded ${timelineStyle.badgeBg} ${timelineStyle.badgeText}`}
 														>
 															{event.timelineSide === 1
-																? timeline2Label
-																: timeline1Label}
+																? timelineTwoLabel
+																: timelineOneLabel}
 														</span>
 													</div>
 
@@ -130,17 +134,6 @@ export default function CompareTimelines({ events }: { events: CompareTimelineEv
 													<h3 className="text-sm sm:text-base font-semibold leading-snug">
 														{event.overview}
 													</h3>
-												</div>
-
-												{/* Position percentage */}
-												<div
-													className="text-xs font-bold px-2 py-1 rounded"
-													style={{
-														backgroundColor: `${getEventColor(event.position)}20`,
-														color: getEventColor(event.position),
-													}}
-												>
-													{(event.position * 100).toFixed(0)}%
 												</div>
 											</div>
 										</div>

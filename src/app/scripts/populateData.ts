@@ -54,6 +54,9 @@ export async function populateData() {
 		);
 		if (brexitTimeline) {
 			brexitTimeline.events = createdBrexitEvents.map((e) => e._id);
+			brexitTimeline.leftLabel = "Leave";
+			brexitTimeline.rightLabel = "Remain";
+			brexitTimeline.shortName = "Brexit";
 		}
 
 		// Link event documents for Covid-19 timeline
@@ -62,6 +65,7 @@ export async function populateData() {
 		);
 		if (covidTimeline) {
 			covidTimeline.events = createdCovidEvents.map((e) => e._id);
+			covidTimeline.shortName = "COVID";
 		}
 
 		// Link event documents for UK Response to Climate Change timeline
@@ -70,6 +74,9 @@ export async function populateData() {
 		);
 		if (ukClimateTimeline) {
 			ukClimateTimeline.events = createdUkClimateEvents.map((e) => e._id);
+			ukClimateTimeline.leftLabel = "Climate Skepticism";
+			ukClimateTimeline.rightLabel = "Climate Emergency Action";
+			ukClimateTimeline.shortName = "UK";
 		}
 
 		// Link event documents for US Response to Climate Change timeline
@@ -78,6 +85,9 @@ export async function populateData() {
 		);
 		if (usClimateTimeline) {
 			usClimateTimeline.events = createdUsClimateEvents.map((e) => e._id);
+			usClimateTimeline.leftLabel = "Climate Skepticism";
+			usClimateTimeline.rightLabel = "Climate Emergency Action";
+			usClimateTimeline.shortName = "US";
 		}
 
 		// Add all timeline documents

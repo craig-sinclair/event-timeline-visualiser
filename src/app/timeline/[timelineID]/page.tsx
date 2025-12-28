@@ -23,10 +23,12 @@ export default function TimelinePage() {
 
 	const [timelineConfig, setTimelineConfig] = useState({
 		name: "",
+		shortName: "",
 		isMultipleSided: false,
 		isContinuousScale: false,
 		comparableTimelines: [] as string[],
-		// Todo: include left and right label here
+		leftLabel: "",
+		rightLabel: "",
 	});
 
 	const [loading, setLoading] = useState(true);
@@ -39,6 +41,7 @@ export default function TimelinePage() {
 
 	const {
 		compareData: compareEventsData,
+		compareTimelineShortName: compareTimelineShortName,
 		loading: compareLoading,
 		error: compareError,
 	} = useTimelineComparisonData(timelineID, selectedComparableTimelineID);
@@ -53,10 +56,12 @@ export default function TimelinePage() {
 
 				setTimelineConfig({
 					name: timelineData[0].title,
+					shortName: timelineData[0].shortName ?? "",
 					isContinuousScale: !!timelineData[0].continuousScale,
 					isMultipleSided: !!timelineData[0].multipleView,
 					comparableTimelines: timelineData[0].comparableTimelines ?? [],
-					// Todo: update left/right label here
+					leftLabel: timelineData[0].leftLabel ?? "",
+					rightLabel: timelineData[0].rightLabel ?? "",
 				});
 			} catch (err) {
 				setError(err instanceof Error ? err.message : "Unknown error whilst fetching data");
@@ -87,20 +92,46 @@ export default function TimelinePage() {
 
 	const displayTimeline = () => {
 		if (selectedComparableTimelineID && compareEventsData) {
-			return <CompareTimelines events={compareEventsData} />;
+			return (
+				<CompareTimelines
+					events={compareEventsData}
+					leftLabel={timelineConfig.leftLabel}
+					rightLabel={timelineConfig.rightLabel}
+					timelineOneLabel={compareTimelineShortName}
+					timelineTwoLabel={timelineConfig.shortName}
+				/>
+			);
 		}
 
 		if (timelineConfig.isMultipleSided) {
-			return <VerticalTimeline events={events} isTwoSided={true} />;
+			return (
+				<VerticalTimeline
+					events={events}
+					isTwoSided={true}
+					leftLabel={timelineConfig.leftLabel}
+					rightLabel={timelineConfig.rightLabel}
+				/>
+			);
 		}
 
 		if (timelineConfig.isContinuousScale) {
-			return <ContinuousScaleTimeline events={events} />;
+			return (
+				<ContinuousScaleTimeline
+					events={events}
+					leftLabel={timelineConfig.leftLabel}
+					rightLabel={timelineConfig.rightLabel}
+				/>
+			);
 		}
 
 		// If not multiple sided: use toggle between vertical and horizontal
 		return verticalSelected ? (
-			<VerticalTimeline events={events} isTwoSided={false} />
+			<VerticalTimeline
+				events={events}
+				isTwoSided={false}
+				leftLabel={timelineConfig.leftLabel}
+				rightLabel={timelineConfig.rightLabel}
+			/>
 		) : (
 			<HorizontalTimeline events={events} />
 		);
