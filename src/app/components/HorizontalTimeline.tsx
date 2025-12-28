@@ -1,23 +1,12 @@
 "use client";
 
-import { useState } from "react";
-
 import EventModal from "@/app/components/ui/EventModal";
+import { useEventModal } from "@/app/hooks/useEventModal";
 import { EventData } from "@/app/models/event";
 
 export default function HorizontalTimeline({ events }: { events: EventData[] }) {
-	const [isEventModalOpen, setIsEventModalOpen] = useState(false);
-	const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
-
-	const handleEventClick = (event: EventData) => {
-		setSelectedEvent(event);
-		setIsEventModalOpen(true);
-	};
-
-	const handleCloseModal = () => {
-		setIsEventModalOpen(false);
-		setSelectedEvent(null);
-	};
+	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
+		useEventModal<EventData>();
 
 	return (
 		<>
@@ -51,7 +40,7 @@ export default function HorizontalTimeline({ events }: { events: EventData[] }) 
 										? "absolute bottom-full mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20"
 										: "absolute top-full mt-6 xs:mt-8 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20"
 								}`}
-								onClick={() => handleEventClick(event)}
+								onClick={() => openEventModal(event)}
 							>
 								<h3 className="xs:text-xs sm:text-sm md:text-base lg:text-md leading-tight xs:leading-snug sm:leading-normal break-words">
 									{event.overview}
@@ -65,7 +54,7 @@ export default function HorizontalTimeline({ events }: { events: EventData[] }) 
 			<EventModal
 				visible={isEventModalOpen}
 				event={selectedEvent}
-				onClose={handleCloseModal}
+				onClose={closeEventModal}
 			/>
 		</>
 	);

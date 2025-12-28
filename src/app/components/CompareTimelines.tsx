@@ -1,37 +1,19 @@
 "use client";
 
-import { useState } from "react";
-
 import EventModal from "@/app/components/ui/EventModal";
+import { useEventModal } from "@/app/hooks/useEventModal";
+import { getEventColor } from "@/app/lib/getEventColour";
 import { CompareTimelineEventData } from "@/app/models/event";
 
 export default function CompareTimelines({ events }: { events: CompareTimelineEventData[] }) {
-	const [isEventModalOpen, setIsEventModalOpen] = useState(false);
-	const [selectedEvent, setSelectedEvent] = useState<CompareTimelineEventData | null>(null);
+	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
+		useEventModal<CompareTimelineEventData>();
 
 	const leftLabel = "Climate Skepticism";
 	const rightLabel = "Climate Action";
 
 	const timeline1Label = "USA";
 	const timeline2Label = "UK";
-
-	const handleEventClick = (event: CompareTimelineEventData) => {
-		setSelectedEvent(event);
-		setIsEventModalOpen(true);
-	};
-
-	const handleCloseModal = () => {
-		setIsEventModalOpen(false);
-		setSelectedEvent(null);
-	};
-
-	// Get color based on position (0.0 = red/skepticism, 1.0 = green/action)
-	const getEventColor = (position: number) => {
-		const r = Math.round(220 * (1 - position) + 34 * position);
-		const g = Math.round(38 * (1 - position) + 197 * position);
-		const b = Math.round(38 * (1 - position) + 94 * position);
-		return `rgb(${r}, ${g}, ${b})`;
-	};
 
 	// Get timeline-specific styling
 	const getTimelineStyle = (timelineSide: number) => {
@@ -129,7 +111,7 @@ export default function CompareTimelines({ events }: { events: CompareTimelineEv
 												borderColor: timelineStyle.borderColor,
 												backgroundColor: `${getEventColor(event.position)}10`,
 											}}
-											onClick={() => handleEventClick(event)}
+											onClick={() => openEventModal(event)}
 										>
 											<div className="flex items-start gap-3">
 												<div className="flex-1">
@@ -173,7 +155,7 @@ export default function CompareTimelines({ events }: { events: CompareTimelineEv
 			<EventModal
 				visible={isEventModalOpen}
 				event={selectedEvent}
-				onClose={handleCloseModal}
+				onClose={closeEventModal}
 			/>
 		</>
 	);

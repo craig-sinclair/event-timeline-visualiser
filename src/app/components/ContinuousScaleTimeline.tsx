@@ -1,36 +1,17 @@
 "use client";
 
-import { useState } from "react";
-
+import { useEventModal } from "@/app//hooks/useEventModal";
 import EventModal from "@/app/components/ui/EventModal";
+import { getEventColor } from "@/app/lib/getEventColour";
 import { EventData } from "@/app/models/event";
 
 export default function VerticalTimeline({ events }: { events: EventData[] }) {
-	const [isEventModalOpen, setIsEventModalOpen] = useState(false);
-	const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
-
-	const handleEventClick = (event: EventData) => {
-		setSelectedEvent(event);
-		setIsEventModalOpen(true);
-	};
-
-	const handleCloseModal = () => {
-		setIsEventModalOpen(false);
-		setSelectedEvent(null);
-	};
+	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
+		useEventModal<EventData>();
 
 	// Todo: Fixed labels for two sides for UK Climate example for now; update to be dynamic based on input timeline
 	const leftLabel = "Climate Skepticism";
 	const rightLabel = "Climate Emergency Action";
-
-	// Helper function to get appropriate colour (on gradient scale) for an event
-	// Based upon the event's position value (agreement on continuous scale to a side) between 0.0 and 1.0
-	const getEventColor = (position: number) => {
-		const r = Math.round(220 * (1 - position) + 34 * position);
-		const g = Math.round(38 * (1 - position) + 197 * position);
-		const b = Math.round(38 * (1 - position) + 94 * position);
-		return `rgb(${r}, ${g}, ${b})`;
-	};
 
 	return (
 		<>
@@ -97,7 +78,7 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 										<div
 											className="border-2 rounded-lg p-4 cursor-pointer transition-all hover:opacity-75"
 											style={{ borderColor: getEventColor(event.position) }}
-											onClick={() => handleEventClick(event)}
+											onClick={() => openEventModal(event)}
 										>
 											<div className="flex items-start gap-3">
 												{/* Event overview text */}
@@ -131,7 +112,7 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 			<EventModal
 				visible={isEventModalOpen}
 				event={selectedEvent}
-				onClose={handleCloseModal}
+				onClose={closeEventModal}
 			/>
 		</>
 	);
