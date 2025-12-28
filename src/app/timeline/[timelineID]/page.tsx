@@ -41,6 +41,7 @@ export default function TimelinePage() {
 
 	const {
 		compareData: compareEventsData,
+		compareTimelineShortName: compareTimelineShortName,
 		loading: compareLoading,
 		error: compareError,
 	} = useTimelineComparisonData(timelineID, selectedComparableTimelineID);
@@ -96,8 +97,8 @@ export default function TimelinePage() {
 					events={compareEventsData}
 					leftLabel={timelineConfig.leftLabel}
 					rightLabel={timelineConfig.rightLabel}
-					timelineOneLabel="US"
-					timelineTwoLabel={timelineConfig.shortName} // todo: update to OTHER timeline shortname
+					timelineOneLabel={compareTimelineShortName}
+					timelineTwoLabel={timelineConfig.shortName}
 				/>
 			);
 		}
