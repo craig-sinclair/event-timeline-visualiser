@@ -89,20 +89,44 @@ export default function TimelinePage() {
 
 	const displayTimeline = () => {
 		if (selectedComparableTimelineID && compareEventsData) {
-			return <CompareTimelines events={compareEventsData} />;
+			return (
+				<CompareTimelines
+					events={compareEventsData}
+					leftLabel={timelineConfig.leftLabel}
+					rightLabel={timelineConfig.rightLabel}
+				/>
+			);
 		}
 
 		if (timelineConfig.isMultipleSided) {
-			return <VerticalTimeline events={events} isTwoSided={true} />;
+			return (
+				<VerticalTimeline
+					events={events}
+					isTwoSided={true}
+					leftLabel={timelineConfig.leftLabel}
+					rightLabel={timelineConfig.rightLabel}
+				/>
+			);
 		}
 
 		if (timelineConfig.isContinuousScale) {
-			return <ContinuousScaleTimeline events={events} />;
+			return (
+				<ContinuousScaleTimeline
+					events={events}
+					leftLabel={timelineConfig.leftLabel}
+					rightLabel={timelineConfig.rightLabel}
+				/>
+			);
 		}
 
 		// If not multiple sided: use toggle between vertical and horizontal
 		return verticalSelected ? (
-			<VerticalTimeline events={events} isTwoSided={false} />
+			<VerticalTimeline
+				events={events}
+				isTwoSided={false}
+				leftLabel={timelineConfig.leftLabel}
+				rightLabel={timelineConfig.rightLabel}
+			/>
 		) : (
 			<HorizontalTimeline events={events} />
 		);

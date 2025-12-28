@@ -5,13 +5,17 @@ import EventModal from "@/app/components/ui/EventModal";
 import { getEventColor } from "@/app/lib/getEventColour";
 import { EventData } from "@/app/models/event";
 
-export default function VerticalTimeline({ events }: { events: EventData[] }) {
+export default function VerticalTimeline({
+	events,
+	leftLabel = "",
+	rightLabel = "",
+}: {
+	events: EventData[];
+	leftLabel: string;
+	rightLabel: string;
+}) {
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<EventData>();
-
-	// Todo: Fixed labels for two sides for UK Climate example for now; update to be dynamic based on input timeline
-	const leftLabel = "Climate Skepticism";
-	const rightLabel = "Climate Emergency Action";
 
 	return (
 		<>
@@ -19,10 +23,10 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 				{/* Header with header labels for opposite sides of scale */}
 				<div className="mb-12">
 					<div className="flex justify-between items-center mb-4">
-						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-red-900/30 text-red-400">
+						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-sm bg-red-900/30 text-red-400">
 							{leftLabel}
 						</span>
-						<span className="text-xs sm:text-lg md:text-xl font-semiboldpx-3 sm:px-4 py-1 sm:py-2 rounded-full bg-green-900/30 text-green-400">
+						<span className="text-xs sm:text-lg md:text-xl font-semiboldpx-3 sm:px-4 py-1 sm:py-2 rounded-sm bg-green-900/30 text-green-400">
 							{rightLabel}
 						</span>
 					</div>
@@ -86,17 +90,6 @@ export default function VerticalTimeline({ events }: { events: EventData[] }) {
 													<h3 className="text-sm sm:text-base font-semibold leading-snug">
 														{event.overview}
 													</h3>
-												</div>
-
-												{/* Event % position on scale (colour appropriate) */}
-												<div
-													className="text-xs font-bold px-2 py-1 rounded"
-													style={{
-														backgroundColor: `${getEventColor(event.position)}20`,
-														color: getEventColor(event.position),
-													}}
-												>
-													{(event.position * 100).toFixed(0)}%
 												</div>
 											</div>
 										</div>
