@@ -8,9 +8,10 @@ import ContinuousScaleTimeline from "@/app/components/ContinuousScaleTimeline";
 import HorizontalTimeline from "@/app/components/HorizontalTimeline";
 import TimelineFilters from "@/app/components/ui/TimelineFilters";
 import VerticalTimeline from "@/app/components/VerticalTimeline";
+import { useTimelineComparisonData } from "@/app/hooks/useTimelineComparisonData";
 import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/app/lib/api/getTimelineFromId";
-import { EventData, CompareTimelineEventData } from "@/app/models/event";
+import { EventData } from "@/app/models/event";
 import { TimelineData } from "@/app/models/timeline";
 
 export default function TimelinePage() {
@@ -19,9 +20,6 @@ export default function TimelinePage() {
 	}>();
 
 	const [events, setEvents] = useState<EventData[]>([]);
-	const [compareEventsData, setCompareEventsData] = useState<CompareTimelineEventData[] | null>(
-		null
-	);
 
 	const [timelineConfig, setTimelineConfig] = useState({
 		name: "",
@@ -38,6 +36,12 @@ export default function TimelinePage() {
 	const [selectedComparableTimelineID, setSelectedComparableTimelineID] = useState<string | null>(
 		null
 	);
+
+	const {
+		compareData: compareEventsData,
+		loading: compareLoading,
+		error: compareError,
+	} = useTimelineComparisonData(timelineID, selectedComparableTimelineID);
 
 	useEffect(() => {
 		const fetchEventAndTimelineData = async () => {
@@ -64,51 +68,7 @@ export default function TimelinePage() {
 		fetchEventAndTimelineData();
 	}, [timelineID]);
 
-	useEffect(() => {
-		if (selectedComparableTimelineID) {
-			const fetchComparisonData = async () => {
-				setLoading(true);
-				setCompareEventsData(null);
-				setError(null);
-
-				try {
-					const mainEvents = await getEventsInTimeline({ timelineID });
-					// Fetch events for the comparable timeline (side 2)
-					const comparableEvents: EventData[] = await getEventsInTimeline({
-						timelineID: selectedComparableTimelineID,
-					});
-
-					const markedMainEvents: CompareTimelineEventData[] = mainEvents.map((e) => ({
-						...e,
-						timelineSide: 1,
-					}));
-					const markedComparableEvents: CompareTimelineEventData[] = comparableEvents.map(
-						(e) => ({ ...e, timelineSide: 2 })
-					);
-
-					const allEvents = [...markedMainEvents, ...markedComparableEvents].sort(
-						(a, b) => new Date(a.dateTime).getTime() - new Date(b.dateTime).getTime()
-					);
-
-					setCompareEventsData(allEvents);
-				} catch (err) {
-					setError(
-						err instanceof Error
-							? err.message
-							: "Unknown error whilst fetching comparison data"
-					);
-				} finally {
-					setLoading(false);
-				}
-			};
-
-			fetchComparisonData();
-		} else {
-			setCompareEventsData(null);
-		}
-	}, [timelineID, selectedComparableTimelineID]);
-
-	if (loading) {
+	if (loading || compareLoading) {
 		return (
 			// Loading spinner animation
 			<div className="flex justify-center items-center py-4">
@@ -118,6 +78,7 @@ export default function TimelinePage() {
 	}
 
 	if (error) return <p>Error fetching events: {error}</p>;
+	if (compareError) return <p>Error whilst fetching comparison events: {compareError}</p>;
 
 	const handleCompareTimelineChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const selectedId = e.target.value;
