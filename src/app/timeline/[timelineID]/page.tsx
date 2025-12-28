@@ -23,11 +23,13 @@ export default function TimelinePage() {
 		null
 	);
 
-	// Properties of the timeline
-	const [isMultipleSidedTimeline, setIsMultipleSidedTimeline] = useState(false);
-	const [isContinuousScaleTimeline, setIsContinuousScaleTimeline] = useState(false);
-	const [comparableTimelines, setComparableTimelines] = useState<string[]>([]);
-	const [timelineName, setTimelineName] = useState("");
+	const [timelineConfig, setTimelineConfig] = useState({
+		name: "",
+		isMultipleSided: false,
+		isContinuousScale: false,
+		comparableTimelines: [] as string[],
+		// Todo: include left and right label here
+	});
 
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
@@ -45,13 +47,13 @@ export default function TimelinePage() {
 
 				const timelineData: TimelineData[] = await getTimelineFromId({ timelineID });
 
-				// Set the useState properties based on timeline data
-				setTimelineName(timelineData[0].title);
-				// Boolean values for multiple view/ continuous scale (true or not present in object)
-				setIsContinuousScaleTimeline(!!timelineData[0].continuousScale);
-				setIsMultipleSidedTimeline(!!timelineData[0].multipleView);
-				// Comparable timelines array (default to empty arr if not present in object)
-				setComparableTimelines(timelineData[0].comparableTimelines ?? []);
+				setTimelineConfig({
+					name: timelineData[0].title,
+					isContinuousScale: !!timelineData[0].continuousScale,
+					isMultipleSided: !!timelineData[0].multipleView,
+					comparableTimelines: timelineData[0].comparableTimelines ?? [],
+					// Todo: update left/right label here
+				});
 			} catch (err) {
 				setError(err instanceof Error ? err.message : "Unknown error whilst fetching data");
 			} finally {
@@ -104,7 +106,7 @@ export default function TimelinePage() {
 		} else {
 			setCompareEventsData(null);
 		}
-	}, [timelineID, selectedComparableTimelineID, comparableTimelines]);
+	}, [timelineID, selectedComparableTimelineID]);
 
 	if (loading) {
 		return (
@@ -127,11 +129,11 @@ export default function TimelinePage() {
 			return <CompareTimelines events={compareEventsData} />;
 		}
 
-		if (isMultipleSidedTimeline) {
+		if (timelineConfig.isMultipleSided) {
 			return <VerticalTimeline events={events} isTwoSided={true} />;
 		}
 
-		if (isContinuousScaleTimeline) {
+		if (timelineConfig.isContinuousScale) {
 			return <ContinuousScaleTimeline events={events} />;
 		}
 
@@ -149,7 +151,8 @@ export default function TimelinePage() {
 			<div className="flex justify-center items-center w-full mb-5 md:mb-8">
 				<h1 className="text-3xl">
 					{" "}
-					<span className="font-bold text-blue-500">{timelineName}</span> Event Timeline
+					<span className="font-bold text-blue-500">{timelineConfig.name}</span> Event
+					Timeline
 				</h1>
 			</div>
 
@@ -158,7 +161,7 @@ export default function TimelinePage() {
 				<TimelineFilters />
 
 				{/* Display toggle (horizontal/ vertical) if not a two-sided timeline */}
-				{!isMultipleSidedTimeline && !isContinuousScaleTimeline && (
+				{!timelineConfig.isMultipleSided && !timelineConfig.isContinuousScale && (
 					<div className="flex flex-col">
 						<label className="block mb-2 text-xs md:text-sm">Display Mode:</label>
 
@@ -196,7 +199,7 @@ export default function TimelinePage() {
 					</div>
 				)}
 
-				{comparableTimelines.length > 0 && (
+				{timelineConfig.comparableTimelines.length > 0 && (
 					<div>
 						<label className="block mb-2 text-xs md:text-sm">
 							Compare with other Timeline:
@@ -209,7 +212,7 @@ export default function TimelinePage() {
 							<option value="" className="dark:bg-gray-700 darK:text-white">
 								Do Not Compare
 							</option>
-							{comparableTimelines.map((timeline, index) => (
+							{timelineConfig.comparableTimelines.map((timeline, index) => (
 								<option key={index} value={timeline}>
 									{timeline}
 								</option>
