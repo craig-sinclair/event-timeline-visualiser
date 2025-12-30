@@ -2,14 +2,14 @@
 import { useState, useEffect } from "react";
 import Select from "react-select";
 
+import { customStyles } from "@/app/components/ui/TimelineFilters.styles";
 import { getAllTagsInTimeline } from "@/app/lib/getAllTagsInTimeline";
 import { EventData, ReactSelectEvent } from "@/app/models/event";
 
 export default function TimelineFilters({ eventsArray }: { eventsArray: EventData[] }) {
-	// const [ selectedTags, setSelectedTags ] = useState<string[]>([]);
+	const [selectedTags, setSelectedTags] = useState<ReactSelectEvent[]>([]);
 	const [allTags, setAllTags] = useState<ReactSelectEvent[]>([]);
 
-	// React select component expects list of dictionary of value/label key/values for options
 	const createReactSelectFormatEvents = (allAvailable: string[]) => {
 		const completeDictionary = [];
 		for (const tag of allAvailable) {
@@ -31,7 +31,7 @@ export default function TimelineFilters({ eventsArray }: { eventsArray: EventDat
 
 	return (
 		<>
-			<div>
+			<div className="w-xs">
 				<label className="block mb-2 text-xs md:text-sm">Date Range</label>
 				<input
 					type="text"
@@ -40,23 +40,24 @@ export default function TimelineFilters({ eventsArray }: { eventsArray: EventDat
 				/>
 			</div>
 
-			<div>
+			<div className="w-xs">
 				<label className="block mb-2 text-xs md:text-sm">Tags</label>
-				{/* <input
-					type="text"
-					className="text-xs md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
-					placeholder="View All"
-				/> */}
 				<Select
 					options={allTags}
+					value={selectedTags}
+					onChange={(selected) => setSelectedTags(selected as ReactSelectEvent[])}
 					isMulti
 					name="tags"
-					className="basic-multi-select"
+					className="text-xs md:text-sm"
 					classNamePrefix="select"
+					styles={customStyles}
+					placeholder="View All"
+					closeMenuOnSelect={false}
+					hideSelectedOptions={false}
 				/>
 			</div>
 
-			<div>
+			<div className="w-xs">
 				<label className="block mb-2 text-xs md:text-sm">Min. Relevance</label>
 				<input
 					type="text"
@@ -65,7 +66,7 @@ export default function TimelineFilters({ eventsArray }: { eventsArray: EventDat
 				/>
 			</div>
 
-			<div>
+			<div className="w-xs">
 				<label className="block mb-2 text-xs md:text-sm">Sort By</label>
 				<input
 					type="text"
