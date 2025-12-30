@@ -5,5 +5,5 @@ export function getAllTagsInTimeline({ eventsArray }: { eventsArray: EventData[]
 	for (const event of eventsArray) {
 		allTags.push(...event.tags);
 	}
-	return allTags;
+	return [...new Set(allTags)];
 }

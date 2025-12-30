@@ -51,4 +51,29 @@ describe("Get all tags in timeline tests", () => {
 		const result = getAllTagsInTimeline({ eventsArray: multipleEventsData });
 		expect(result).toEqual(["tag1", "tag2", "tag3", "tag4", "tag5"]);
 	});
+
+	it("Correctly extracts only unique tags found in events", () => {
+		const multipleEventsData: EventData[] = [
+			{
+				_id: "12345",
+				overview: "test",
+				dateTime: "2025-01-01",
+				furtherDescription: "test",
+				relevance: 0.5,
+				URLs: [],
+				tags: ["tag1", "tag2", "tag2"],
+			},
+			{
+				_id: "123456",
+				overview: "test2",
+				dateTime: "2025-01-01",
+				furtherDescription: "test2",
+				relevance: 0.5,
+				URLs: [],
+				tags: ["tag2", "tag3", "tag1"],
+			},
+		];
+		const result = getAllTagsInTimeline({ eventsArray: multipleEventsData });
+		expect(result).toEqual(["tag1", "tag2", "tag3"]);
+	});
 });
