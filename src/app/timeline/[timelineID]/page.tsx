@@ -150,7 +150,7 @@ export default function TimelinePage() {
 
 			{/* Event filter options */}
 			<div className="flex justify-between items-center mb-5 md:mb-10 max-w-full lg:max-w-5/6 ml-auto mr-auto">
-				<TimelineFilters />
+				<TimelineFilters eventsArray={events} />
 
 				{/* Display toggle (horizontal/ vertical) if not a two-sided timeline */}
 				{!timelineConfig.isMultipleSided && !timelineConfig.isContinuousScale && (
