@@ -1,12 +1,12 @@
-import { EventData, EventFiltersState } from "@/app/models/event";
+import { EventFiltersState } from "@/app/models/event";
 
-export const filterEvents = ({
+export const filterEvents = <T extends { tags?: string[] }>({
 	events,
 	filters,
 }: {
-	events: EventData[];
+	events: T[];
 	filters: EventFiltersState;
-}): EventData[] => {
+}): T[] => {
 	let filteredEvents = [...events];
 
 	if (filters.tags && filters.tags.length > 0) {

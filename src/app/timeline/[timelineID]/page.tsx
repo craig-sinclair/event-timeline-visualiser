@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 
 import CompareTimelines from "@/app/components/CompareTimelines";
 import ContinuousScaleTimeline from "@/app/components/ContinuousScaleTimeline";
@@ -11,7 +11,8 @@ import VerticalTimeline from "@/app/components/VerticalTimeline";
 import { useTimelineComparisonData } from "@/app/hooks/useTimelineComparisonData";
 import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/app/lib/api/getTimelineFromId";
-import { EventData } from "@/app/models/event";
+import { filterEvents } from "@/app/lib/filterEvents";
+import { EventData, EventFiltersState } from "@/app/models/event";
 import { TimelineData } from "@/app/models/timeline";
 
 export default function TimelinePage() {
@@ -20,6 +21,7 @@ export default function TimelinePage() {
 	}>();
 
 	const [events, setEvents] = useState<EventData[]>([]);
+	const [eventFilters, setEventFilters] = useState<EventFiltersState>({ tags: [] });
 
 	const [timelineConfig, setTimelineConfig] = useState({
 		name: "",
@@ -73,6 +75,23 @@ export default function TimelinePage() {
 		fetchEventAndTimelineData();
 	}, [timelineID]);
 
+	const filteredEvents = useMemo(() => {
+		return filterEvents({ events: events, filters: eventFilters });
+	}, [events, eventFilters]);
+
+	const filteredCompareEvents = useMemo(() => {
+		if (!compareEventsData) return null;
+
+		return filterEvents({
+			events: compareEventsData,
+			filters: eventFilters,
+		});
+	}, [compareEventsData, eventFilters]);
+
+	const handleEventFilterChange = useCallback((newEventFilters: EventFiltersState) => {
+		setEventFilters(newEventFilters);
+	}, []);
+
 	if (loading || compareLoading) {
 		return (
 			// Loading spinner animation
@@ -91,10 +110,10 @@ export default function TimelinePage() {
 	};
 
 	const displayTimeline = () => {
-		if (selectedComparableTimelineID && compareEventsData) {
+		if (selectedComparableTimelineID && filteredCompareEvents) {
 			return (
 				<CompareTimelines
-					events={compareEventsData}
+					events={filteredCompareEvents} // Todo: handle filtered events in comparison data
 					leftLabel={timelineConfig.leftLabel}
 					rightLabel={timelineConfig.rightLabel}
 					timelineOneLabel={compareTimelineShortName}
@@ -106,7 +125,7 @@ export default function TimelinePage() {
 		if (timelineConfig.isMultipleSided) {
 			return (
 				<VerticalTimeline
-					events={events}
+					events={filteredEvents}
 					isTwoSided={true}
 					leftLabel={timelineConfig.leftLabel}
 					rightLabel={timelineConfig.rightLabel}
@@ -117,7 +136,7 @@ export default function TimelinePage() {
 		if (timelineConfig.isContinuousScale) {
 			return (
 				<ContinuousScaleTimeline
-					events={events}
+					events={filteredEvents}
 					leftLabel={timelineConfig.leftLabel}
 					rightLabel={timelineConfig.rightLabel}
 				/>
@@ -127,13 +146,13 @@ export default function TimelinePage() {
 		// If not multiple sided: use toggle between vertical and horizontal
 		return verticalSelected ? (
 			<VerticalTimeline
-				events={events}
+				events={filteredEvents}
 				isTwoSided={false}
 				leftLabel={timelineConfig.leftLabel}
 				rightLabel={timelineConfig.rightLabel}
 			/>
 		) : (
-			<HorizontalTimeline events={events} />
+			<HorizontalTimeline events={filteredEvents} />
 		);
 	};
 
@@ -150,7 +169,7 @@ export default function TimelinePage() {
 
 			{/* Event filter options */}
 			<div className="flex justify-between items-center mb-5 md:mb-10 max-w-full lg:max-w-5/6 ml-auto mr-auto">
-				<TimelineFilters eventsArray={events} />
+				<TimelineFilters eventsArray={events} onFiltersChange={handleEventFilterChange} />
 
 				{/* Display toggle (horizontal/ vertical) if not a two-sided timeline */}
 				{!timelineConfig.isMultipleSided && !timelineConfig.isContinuousScale && (

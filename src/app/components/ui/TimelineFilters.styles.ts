@@ -9,6 +9,7 @@ export const customStyles: StylesConfig<ReactSelectEvent> = {
 		borderColor: "var(--borderColour)",
 		borderRadius: "0.5rem",
 		minHeight: "42px",
+		cursor: "pointer",
 		maxHeight: "42px",
 		width: "100%",
 		boxShadow: "none",

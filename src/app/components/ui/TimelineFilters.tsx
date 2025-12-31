@@ -4,9 +4,15 @@ import Select from "react-select";
 
 import { customStyles } from "@/app/components/ui/TimelineFilters.styles";
 import { getAllTagsInTimeline } from "@/app/lib/getAllTagsInTimeline";
-import { EventData, ReactSelectEvent } from "@/app/models/event";
+import { EventData, EventFiltersState, ReactSelectEvent } from "@/app/models/event";
 
-export default function TimelineFilters({ eventsArray }: { eventsArray: EventData[] }) {
+export default function TimelineFilters({
+	eventsArray,
+	onFiltersChange,
+}: {
+	eventsArray: EventData[];
+	onFiltersChange: (filters: EventFiltersState) => void;
+}) {
 	const [selectedTags, setSelectedTags] = useState<ReactSelectEvent[]>([]);
 	const [allTags, setAllTags] = useState<ReactSelectEvent[]>([]);
 
@@ -28,6 +34,13 @@ export default function TimelineFilters({ eventsArray }: { eventsArray: EventDat
 		};
 		fetchAllTags();
 	}, [eventsArray]);
+
+	// When tags change, notify parent timeline component
+	useEffect(() => {
+		onFiltersChange({
+			tags: selectedTags.map((tag) => tag.value),
+		});
+	}, [selectedTags, onFiltersChange]);
 
 	return (
 		<>
