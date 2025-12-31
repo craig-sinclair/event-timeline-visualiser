@@ -18,6 +18,13 @@ export interface ReactSelectEvent {
 	label: string;
 }
 
+export interface EventFiltersState {
+	tags: string[];
+	dateRange?: string;
+	minRelevance?: number;
+	sortBy?: string;
+}
+
 export type CompareTimelineEventData = EventData & {
 	timelineSide: 1 | 2;
 };
