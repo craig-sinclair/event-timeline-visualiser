@@ -1,12 +1,6 @@
-import { EventSortByOptions } from "@/app/models/event";
+import { EventSortByOptions, SortableEventFields } from "@/app/models/event";
 
-export const sortEvents = <
-	T extends {
-		overview: string;
-		dateTime: string;
-		relevance?: number;
-	},
->({
+export const sortEvents = <T extends SortableEventFields>({
 	events,
 	sortBy,
 }: {

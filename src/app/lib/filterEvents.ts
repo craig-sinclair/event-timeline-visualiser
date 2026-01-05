@@ -1,6 +1,6 @@
-import { EventFiltersState, EventFilterPredicate } from "@/app/models/event";
+import { EventFiltersState, EventFilterPredicate, SortableEventFields } from "@/app/models/event";
 
-export const filterEvents = <T extends { tags?: string[]; relevance?: number }>({
+export const filterEvents = <T extends SortableEventFields>({
 	events,
 	filters,
 }: {

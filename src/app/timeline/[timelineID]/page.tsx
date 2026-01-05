@@ -12,6 +12,7 @@ import { useTimelineComparisonData } from "@/app/hooks/useTimelineComparisonData
 import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/app/lib/api/getTimelineFromId";
 import { filterEvents } from "@/app/lib/filterEvents";
+import { sortEvents } from "@/app/lib/sortEvents";
 import { EventData, EventFiltersState, EventSortByOptions } from "@/app/models/event";
 import { TimelineData } from "@/app/models/timeline";
 
@@ -76,26 +77,27 @@ export default function TimelinePage() {
 		fetchEventAndTimelineData();
 	}, [timelineID]);
 
-	const filteredEvents = useMemo(() => {
-		return filterEvents({ events: events, filters: eventFilters });
-	}, [events, eventFilters]);
+	const filteredAndSortedEvents = useMemo(() => {
+		const filteredEvents = filterEvents({ events: events, filters: eventFilters });
+		return sortEvents({ events: filteredEvents, sortBy: eventSortBy });
+	}, [events, eventFilters, eventSortBy]);
 
-	const filteredCompareEvents = useMemo(() => {
+	const filteredAndSortedCompareEvents = useMemo(() => {
 		if (!compareEventsData) return null;
 
-		return filterEvents({
+		const filteredCompareEvents = filterEvents({
 			events: compareEventsData,
 			filters: eventFilters,
 		});
-	}, [compareEventsData, eventFilters]);
+		return sortEvents({
+			events: filteredCompareEvents,
+			sortBy: eventSortBy,
+		});
+	}, [compareEventsData, eventFilters, eventSortBy]);
 
-	const handleEventFilterChange = useCallback(
-		(newEventFilters: EventFiltersState) => {
-			setEventFilters(newEventFilters);
-			console.log(eventSortBy);
-		},
-		[eventSortBy]
-	);
+	const handleEventFilterChange = useCallback((newEventFilters: EventFiltersState) => {
+		setEventFilters(newEventFilters);
+	}, []);
 
 	const handleEventSortByChange = useCallback((newEventSortBy: EventSortByOptions) => {
 		setEventSortBy(newEventSortBy);
@@ -119,10 +121,10 @@ export default function TimelinePage() {
 	};
 
 	const displayTimeline = () => {
-		if (selectedComparableTimelineID && filteredCompareEvents) {
+		if (selectedComparableTimelineID && filteredAndSortedCompareEvents) {
 			return (
 				<CompareTimelines
-					events={filteredCompareEvents} // Todo: handle filtered events in comparison data
+					events={filteredAndSortedCompareEvents}
 					leftLabel={timelineConfig.leftLabel}
 					rightLabel={timelineConfig.rightLabel}
 					timelineOneLabel={compareTimelineShortName}
@@ -134,7 +136,7 @@ export default function TimelinePage() {
 		if (timelineConfig.isMultipleSided) {
 			return (
 				<VerticalTimeline
-					events={filteredEvents}
+					events={filteredAndSortedEvents}
 					isTwoSided={true}
 					leftLabel={timelineConfig.leftLabel}
 					rightLabel={timelineConfig.rightLabel}
@@ -145,7 +147,7 @@ export default function TimelinePage() {
 		if (timelineConfig.isContinuousScale) {
 			return (
 				<ContinuousScaleTimeline
-					events={filteredEvents}
+					events={filteredAndSortedEvents}
 					leftLabel={timelineConfig.leftLabel}
 					rightLabel={timelineConfig.rightLabel}
 				/>
@@ -155,13 +157,13 @@ export default function TimelinePage() {
 		// If not multiple sided: use toggle between vertical and horizontal
 		return verticalSelected ? (
 			<VerticalTimeline
-				events={filteredEvents}
+				events={filteredAndSortedEvents}
 				isTwoSided={false}
 				leftLabel={timelineConfig.leftLabel}
 				rightLabel={timelineConfig.rightLabel}
 			/>
 		) : (
-			<HorizontalTimeline events={filteredEvents} />
+			<HorizontalTimeline events={filteredAndSortedEvents} />
 		);
 	};
 
