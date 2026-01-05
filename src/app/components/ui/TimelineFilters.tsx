@@ -74,7 +74,7 @@ export default function TimelineFilters({
 			</div>
 
 			<div className="w-xs">
-				<label className="block mb-2 text-xs md:text-sm">Min. Relevance:</label>
+				<label className="block mb-2 text-xs md:text-sm">Min. Relevance</label>
 				<input
 					type="range"
 					min={0}
