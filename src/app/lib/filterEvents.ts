@@ -1,21 +1,31 @@
-import { EventFiltersState } from "@/app/models/event";
+import { EventFiltersState, EventFilterPredicate } from "@/app/models/event";
 
-export const filterEvents = <T extends { tags?: string[] }>({
+export const filterEvents = <T extends { tags?: string[]; relevance?: number }>({
 	events,
 	filters,
 }: {
 	events: T[];
 	filters: EventFiltersState;
 }): T[] => {
-	let filteredEvents = [...events];
+	const predicates: EventFilterPredicate<T>[] = [];
 
 	if (filters.tags && filters.tags.length > 0) {
-		filteredEvents = filteredEvents.filter((event) => {
-			return filters.tags.some((tag) => event.tags?.includes(tag));
-		});
+		predicates.push(
+			(event) => !!event.tags && filters.tags.some((tag) => event.tags!.includes(tag))
+		);
 	}
 
-	// Remaining filters for date range/ relevance/ sortby etc
+	if (
+		filters.minRelevance !== undefined &&
+		filters.minRelevance >= 0.0 &&
+		filters.minRelevance <= 1.0
+	) {
+		const minRelevance = filters.minRelevance;
+		predicates.push(
+			(event) => typeof event.relevance === "number" && event.relevance >= minRelevance
+		);
+	}
 
-	return filteredEvents;
+	// Apply all filters on events array, built up from predicates array
+	return events.filter((event) => predicates.every((p) => p(event)));
 };

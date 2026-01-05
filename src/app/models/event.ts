@@ -25,6 +25,8 @@ export interface EventFiltersState {
 	sortBy?: string;
 }
 
+export type EventFilterPredicate<T> = (event: T) => boolean;
+
 export type CompareTimelineEventData = EventData & {
 	timelineSide: 1 | 2;
 };
