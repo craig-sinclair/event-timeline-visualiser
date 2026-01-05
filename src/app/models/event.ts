@@ -27,6 +27,8 @@ export interface EventFiltersState {
 
 export type EventFilterPredicate<T> = (event: T) => boolean;
 
+export type EventSortByOptions = "relevance-asc" | "relevance-desc" | "date-asc" | "date-desc";
+
 export type CompareTimelineEventData = EventData & {
 	timelineSide: 1 | 2;
 };
