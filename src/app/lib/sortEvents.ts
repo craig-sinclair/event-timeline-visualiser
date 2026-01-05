@@ -6,10 +6,13 @@ export const sortEvents = <
 		dateTime: string;
 		relevance?: number;
 	},
->(
-	events: T[],
-	sortBy?: EventSortByOptions
-): T[] => {
+>({
+	events,
+	sortBy,
+}: {
+	events: T[];
+	sortBy?: EventSortByOptions;
+}): T[] => {
 	const sortedEvents = [...events];
 
 	switch (sortBy) {

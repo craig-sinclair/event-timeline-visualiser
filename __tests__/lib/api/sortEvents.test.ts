@@ -26,22 +26,22 @@ const mockEventData: EventData[] = [
 
 describe("Sort events function tests", () => {
 	it("correctly sorts events based on minimum relevance (ascending)", () => {
-		const result = sortEvents(mockEventData, "relevance-asc");
+		const result = sortEvents({ events: mockEventData, sortBy: "relevance-asc" });
 		expect(result).toEqual(mockEventData);
 	});
 
 	it("correctly sorts events based on minimum relevance (descending)", () => {
-		const result = sortEvents(mockEventData, "relevance-desc");
+		const result = sortEvents({ events: mockEventData, sortBy: "relevance-desc" });
 		expect(result).toEqual([...mockEventData].reverse());
 	});
 
 	it("correctly sorts events based on datetime (ascending)", () => {
-		const result = sortEvents(mockEventData, "date-asc");
+		const result = sortEvents({ events: mockEventData, sortBy: "date-asc" });
 		expect(result).toEqual(mockEventData);
 	});
 
 	it("correctly sorts events based on datetime (descending)", () => {
-		const result = sortEvents(mockEventData, "date-desc");
+		const result = sortEvents({ events: mockEventData, sortBy: "date-desc" });
 		expect(result).toEqual([...mockEventData].reverse());
 	});
 });
