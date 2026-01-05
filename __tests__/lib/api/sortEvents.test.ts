@@ -3,7 +3,7 @@ import { describe, it, expect } from "vitest";
 import { sortEvents } from "@/app/lib/sortEvents";
 import { EventData } from "@/app/models/event";
 
-const mockCompareTimelinesData: EventData[] = [
+const mockEventData: EventData[] = [
 	{
 		_id: "12345",
 		overview: "example",
@@ -26,12 +26,22 @@ const mockCompareTimelinesData: EventData[] = [
 
 describe("Sort events function tests", () => {
 	it("correctly sorts events based on minimum relevance (ascending)", () => {
-		const result = sortEvents(mockCompareTimelinesData, "relevance-asc");
-		expect(result).toEqual(mockCompareTimelinesData);
+		const result = sortEvents(mockEventData, "relevance-asc");
+		expect(result).toEqual(mockEventData);
 	});
 
 	it("correctly sorts events based on minimum relevance (descending)", () => {
-		const result = sortEvents(mockCompareTimelinesData, "relevance-desc");
-		expect(result).toEqual([...mockCompareTimelinesData].reverse());
+		const result = sortEvents(mockEventData, "relevance-desc");
+		expect(result).toEqual([...mockEventData].reverse());
+	});
+
+	it("correctly sorts events based on datetime (ascending)", () => {
+		const result = sortEvents(mockEventData, "date-asc");
+		expect(result).toEqual(mockEventData);
+	});
+
+	it("correctly sorts events based on datetime (descending)", () => {
+		const result = sortEvents(mockEventData, "date-desc");
+		expect(result).toEqual([...mockEventData].reverse());
 	});
 });
