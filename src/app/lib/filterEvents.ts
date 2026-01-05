@@ -27,7 +27,7 @@ export const filterEvents = <T extends SortableEventFields>({
 	}
 
 	// Ensure substring (year) at start of date matches the filter year
-	if (filters.dateRange !== undefined) {
+	if (filters.dateRange !== undefined && filters.dateRange !== "") {
 		predicates.push(
 			(event) =>
 				event.dateTime.length >= 4 && event.dateTime.substring(0, 4) === filters.dateRange

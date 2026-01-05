@@ -22,8 +22,10 @@ export default function TimelineFilters({
 }) {
 	const [selectedTags, setSelectedTags] = useState<ReactSelectEvent[]>([]);
 	const [allTags, setAllTags] = useState<ReactSelectEvent[]>([]);
+
 	const [minimumRelevance, setMinimumRelevance] = useState<number>(0.0);
 	const [selectedSortBy, setSelectedSortBy] = useState<EventSortByOptions>("date-asc");
+	const [selectedDateFilter, setSelectedDateFilter] = useState<string>("");
 
 	const createReactSelectFormatEvents = (allAvailable: string[]) => {
 		const completeDictionary = [];
@@ -50,8 +52,9 @@ export default function TimelineFilters({
 		onFiltersChange({
 			tags: selectedTags.map((tag) => tag.value),
 			minRelevance: minimumRelevance,
+			dateRange: selectedDateFilter,
 		});
-	}, [selectedTags, minimumRelevance, onFiltersChange]);
+	}, [selectedTags, minimumRelevance, selectedDateFilter, onFiltersChange]);
 
 	// When sort by option changes, notify the parent timeline component
 	useEffect(() => {
@@ -60,13 +63,27 @@ export default function TimelineFilters({
 
 	return (
 		<>
-			<div className="w-xs">
-				<label className="block mb-2 text-xs md:text-sm">Date Range</label>
-				<input
-					type="text"
-					className="text-xs md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
-					placeholder="All Time"
-				/>
+			<div className="flex flex-col gap-2">
+				<label className="text-xs md:text-sm font-medium text-[var(--foreground)]">
+					Date Range
+				</label>
+				<select
+					value={selectedDateFilter}
+					onChange={(e) => setSelectedDateFilter(e.target.value as string)}
+					className="w-full px-3 py-2.5 text-xs md:text-sm rounded-lg cursor-pointer appearance-none bg-[var(--background)] border border-[var(--borderColour)] hover:border-[var(--borderColour)] focus:outline-none focus:ring-0 focus:border-[var(--borderColour)] transition-colors"
+					style={{
+						backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+						backgroundRepeat: "no-repeat",
+						backgroundPosition: "right 0.75rem center",
+						backgroundSize: "12px",
+						paddingRight: "2.5rem",
+					}}
+				>
+					<option value="">All Time</option>
+					<option value="1980">1980</option>
+					<option value="2016">2016</option>
+					<option value="2025">2025</option>
+				</select>
 			</div>
 
 			<div className="w-xs">
