@@ -15,6 +15,7 @@ export default function TimelineFilters({
 }) {
 	const [selectedTags, setSelectedTags] = useState<ReactSelectEvent[]>([]);
 	const [allTags, setAllTags] = useState<ReactSelectEvent[]>([]);
+	const [minimumRelevance, setMinimumRelevance] = useState<number>(0.0);
 
 	const createReactSelectFormatEvents = (allAvailable: string[]) => {
 		const completeDictionary = [];
@@ -27,6 +28,7 @@ export default function TimelineFilters({
 		return completeDictionary;
 	};
 
+	// Fetch all the tags in the given timeline
 	useEffect(() => {
 		const fetchAllTags = () => {
 			const allTags = getAllTagsInTimeline({ eventsArray: eventsArray });
@@ -35,12 +37,13 @@ export default function TimelineFilters({
 		fetchAllTags();
 	}, [eventsArray]);
 
-	// When tags change, notify parent timeline component
+	// When filter useState variables change, notify parent timeline component
 	useEffect(() => {
 		onFiltersChange({
 			tags: selectedTags.map((tag) => tag.value),
+			minRelevance: minimumRelevance,
 		});
-	}, [selectedTags, onFiltersChange]);
+	}, [selectedTags, minimumRelevance, onFiltersChange]);
 
 	return (
 		<>
@@ -71,11 +74,15 @@ export default function TimelineFilters({
 			</div>
 
 			<div className="w-xs">
-				<label className="block mb-2 text-xs md:text-sm">Min. Relevance</label>
+				<label className="block mb-2 text-xs md:text-sm">Min. Relevance:</label>
 				<input
-					type="text"
-					className="text-xs md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
-					placeholder="High"
+					type="range"
+					min={0}
+					max={1}
+					value={minimumRelevance}
+					step={0.1}
+					onChange={(e) => setMinimumRelevance(Number(e.target.value))}
+					className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-[var(--lightSecondary)] dark:bg-[var(--darkSecondary)] accent-blue-500 border border-[var(--borderColour)]"
 				/>
 			</div>
 
