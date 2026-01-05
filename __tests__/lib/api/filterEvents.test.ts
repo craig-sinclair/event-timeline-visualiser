@@ -88,4 +88,21 @@ describe("Filter events function tests", () => {
 		expect(result).not.toEqual(mockCompareTimelinesData);
 		expect(result).toEqual([mockCompareTimelinesData[1]]);
 	});
+
+	it("correctly applies filters for minimum relevance in event data", () => {
+		const result = filterEvents({
+			events: mockCompareTimelinesData,
+			filters: { tags: [], minRelevance: 0.6 },
+		});
+		expect(result).not.toEqual(mockCompareTimelinesData);
+		expect(result).toEqual([mockCompareTimelinesData[1]]);
+	});
+
+	it("correctly handles redundant filters for minimum relevance in event data", () => {
+		const result = filterEvents({
+			events: mockCompareTimelinesData,
+			filters: { tags: [], minRelevance: 0.1 },
+		});
+		expect(result).toEqual(mockCompareTimelinesData);
+	});
 });
