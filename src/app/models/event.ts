@@ -25,7 +25,16 @@ export interface EventFiltersState {
 	sortBy?: string;
 }
 
+export type SortableEventFields = {
+	overview: string;
+	dateTime: string;
+	relevance?: number;
+	tags?: string[];
+};
+
 export type EventFilterPredicate<T> = (event: T) => boolean;
+
+export type EventSortByOptions = "relevance-asc" | "relevance-desc" | "date-asc" | "date-desc";
 
 export type CompareTimelineEventData = EventData & {
 	timelineSide: 1 | 2;
