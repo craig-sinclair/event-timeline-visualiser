@@ -12,7 +12,7 @@ import { useTimelineComparisonData } from "@/app/hooks/useTimelineComparisonData
 import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/app/lib/api/getTimelineFromId";
 import { filterEvents } from "@/app/lib/filterEvents";
-import { EventData, EventFiltersState } from "@/app/models/event";
+import { EventData, EventFiltersState, EventSortByOptions } from "@/app/models/event";
 import { TimelineData } from "@/app/models/timeline";
 
 export default function TimelinePage() {
@@ -22,6 +22,7 @@ export default function TimelinePage() {
 
 	const [events, setEvents] = useState<EventData[]>([]);
 	const [eventFilters, setEventFilters] = useState<EventFiltersState>({ tags: [] });
+	const [eventSortBy, setEventSortBy] = useState<EventSortByOptions>("date-asc");
 
 	const [timelineConfig, setTimelineConfig] = useState({
 		name: "",
@@ -88,8 +89,16 @@ export default function TimelinePage() {
 		});
 	}, [compareEventsData, eventFilters]);
 
-	const handleEventFilterChange = useCallback((newEventFilters: EventFiltersState) => {
-		setEventFilters(newEventFilters);
+	const handleEventFilterChange = useCallback(
+		(newEventFilters: EventFiltersState) => {
+			setEventFilters(newEventFilters);
+			console.log(eventSortBy);
+		},
+		[eventSortBy]
+	);
+
+	const handleEventSortByChange = useCallback((newEventSortBy: EventSortByOptions) => {
+		setEventSortBy(newEventSortBy);
 	}, []);
 
 	if (loading || compareLoading) {
@@ -169,7 +178,11 @@ export default function TimelinePage() {
 
 			{/* Event filter options */}
 			<div className="flex justify-between items-center mb-5 md:mb-10 max-w-full lg:max-w-5/6 ml-auto mr-auto">
-				<TimelineFilters eventsArray={events} onFiltersChange={handleEventFilterChange} />
+				<TimelineFilters
+					eventsArray={events}
+					onFiltersChange={handleEventFilterChange}
+					onSortByChange={handleEventSortByChange}
+				/>
 
 				{/* Display toggle (horizontal/ vertical) if not a two-sided timeline */}
 				{!timelineConfig.isMultipleSided && !timelineConfig.isContinuousScale && (
