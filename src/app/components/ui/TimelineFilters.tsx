@@ -4,6 +4,7 @@ import Select from "react-select";
 
 import { customStyles } from "@/app/components/ui/TimelineFilters.styles";
 import { getAllTagsInTimeline } from "@/app/lib/getAllTagsInTimeline";
+import { getAllYearsInTimeline } from "@/app/lib/getAllYearsInTimeline";
 import {
 	EventData,
 	EventFiltersState,
@@ -25,7 +26,9 @@ export default function TimelineFilters({
 
 	const [minimumRelevance, setMinimumRelevance] = useState<number>(0.0);
 	const [selectedSortBy, setSelectedSortBy] = useState<EventSortByOptions>("date-asc");
+
 	const [selectedDateFilter, setSelectedDateFilter] = useState<string>("");
+	const [allPossibleEventYears, setAllPossibleEventYears] = useState<string[]>([]);
 
 	const createReactSelectFormatEvents = (allAvailable: string[]) => {
 		const completeDictionary = [];
@@ -45,6 +48,15 @@ export default function TimelineFilters({
 			setAllTags(createReactSelectFormatEvents(allTags));
 		};
 		fetchAllTags();
+	}, [eventsArray]);
+
+	// Fetch all the years in the given timeline for date filter
+	useEffect(() => {
+		const fetchAllYears = () => {
+			const allYears = getAllYearsInTimeline({ eventsArray: eventsArray });
+			setAllPossibleEventYears(allYears);
+		};
+		fetchAllYears();
 	}, [eventsArray]);
 
 	// When filter useState variables change, notify parent timeline component
@@ -80,9 +92,11 @@ export default function TimelineFilters({
 					}}
 				>
 					<option value="">All Time</option>
-					<option value="1980">1980</option>
-					<option value="2016">2016</option>
-					<option value="2025">2025</option>
+					{allPossibleEventYears.map((year) => (
+						<option key={year} value={year}>
+							{year}
+						</option>
+					))}
 				</select>
 			</div>
 
