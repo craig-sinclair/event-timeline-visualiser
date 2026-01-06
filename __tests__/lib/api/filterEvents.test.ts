@@ -91,18 +91,34 @@ describe("Filter events function tests", () => {
 
 	it("correctly applies filters for minimum relevance in event data", () => {
 		const result = filterEvents({
-			events: mockCompareTimelinesData,
+			events: mockEventData,
 			filters: { tags: [], minRelevance: 0.6 },
 		});
-		expect(result).not.toEqual(mockCompareTimelinesData);
-		expect(result).toEqual([mockCompareTimelinesData[1]]);
+		expect(result).not.toEqual(mockEventData);
+		expect(result).toEqual([mockEventData[1]]);
 	});
 
 	it("correctly handles redundant filters for minimum relevance in event data", () => {
 		const result = filterEvents({
-			events: mockCompareTimelinesData,
+			events: mockEventData,
 			filters: { tags: [], minRelevance: 0.1 },
 		});
-		expect(result).toEqual(mockCompareTimelinesData);
+		expect(result).toEqual(mockEventData);
+	});
+
+	it("correctly handles filtering with year for event data that excludes all data", () => {
+		const result = filterEvents({
+			events: mockEventData,
+			filters: { tags: [], dateRange: "1999" },
+		});
+		expect(result).toEqual([]);
+	});
+
+	it("correctly handles filtering with year for event data that includes all data", () => {
+		const result = filterEvents({
+			events: mockEventData,
+			filters: { tags: [], dateRange: "2025" },
+		});
+		expect(result).toEqual(mockEventData);
 	});
 });
