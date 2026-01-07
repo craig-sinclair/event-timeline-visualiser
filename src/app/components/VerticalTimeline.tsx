@@ -1,6 +1,9 @@
 "use client";
+import { useState, useRef } from "react";
+
 import EventModal from "@/app/components/ui/EventModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
+import { exportTimelineAsImage } from "@/app/lib/exportTimelineImage";
 import { EventData } from "@/app/models/event";
 
 export default function VerticalTimeline({
@@ -17,10 +20,29 @@ export default function VerticalTimeline({
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<EventData>();
 
+	const [isGeneratingImage, setIsGeneratingImage] = useState(false);
+	const timelineRef = useRef<HTMLDivElement>(null);
+
+	const handleImageExport = async () => {
+		setIsGeneratingImage(true);
+		await exportTimelineAsImage(timelineRef.current);
+		setIsGeneratingImage(false);
+	};
+
+	// ADD BIG OVERLAY IF GENERATING IMAGE
 	return (
 		<>
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-				<div className="relative">
+				{/* Export image button */}
+				<button
+					onClick={handleImageExport}
+					disabled={isGeneratingImage}
+					className="border-white border p-2 text-md cursor-pointer mb-10"
+				>
+					{isGeneratingImage ? "Generating..." : "Export as Image"}
+				</button>
+
+				<div className="relative" ref={timelineRef} data-export-root>
 					{isTwoSided && (
 						<div className="flex justify-between text-sm sm:text-base mb-8">
 							<span className="text-2xl font-semibold px-3 py-1 rounded-sm bg-red-900/30 text-red-400 shadow-sm">
@@ -33,7 +55,8 @@ export default function VerticalTimeline({
 					)}
 
 					{/* Vertical timeline line */}
-					<div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-[var(--foreground)] opacity-20" />
+					{/* Fix COLOUR OF BG HERE */}
+					<div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-[#171717] dark:bg-[#ededed] opacity-20" />
 
 					{/* Events */}
 					<div className="space-y-8 sm:space-y-12">
