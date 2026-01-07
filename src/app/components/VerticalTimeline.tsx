@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 
 import EventModal from "@/app/components/ui/EventModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
+import { exportTimelineAsHtml } from "@/app/lib/exportTimelineHTML";
 import { exportTimelineAsImage } from "@/app/lib/exportTimelineImage";
 import { EventData } from "@/app/models/event";
 
@@ -20,27 +21,48 @@ export default function VerticalTimeline({
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<EventData>();
 
-	const [isGeneratingImage, setIsGeneratingImage] = useState(false);
+	const [isExportingTimeline, setIsExportingTimeine] = useState(false);
 	const timelineRef = useRef<HTMLDivElement>(null);
 
 	const handleImageExport = async () => {
-		setIsGeneratingImage(true);
+		setIsExportingTimeine(true);
 		await exportTimelineAsImage(timelineRef.current);
-		setIsGeneratingImage(false);
+		setIsExportingTimeine(false);
 	};
 
-	// ADD BIG OVERLAY IF GENERATING IMAGE
+	const handleHtmlExport = async () => {
+		setIsExportingTimeine(true);
+		await exportTimelineAsHtml(timelineRef.current);
+		setIsExportingTimeine(false);
+	};
+
 	return (
 		<>
+			{isExportingTimeline && (
+				<div className="fixed inset-0 z-[9999] dark:bg-black bg-white flex items-center justify-center">
+					<div className="text-lg font-medium">Generating...</div>
+				</div>
+			)}
+
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-				{/* Export image button */}
-				<button
-					onClick={handleImageExport}
-					disabled={isGeneratingImage}
-					className="border-white border p-2 text-md cursor-pointer mb-10"
-				>
-					{isGeneratingImage ? "Generating..." : "Export as Image"}
-				</button>
+				<div className="flex gap-5">
+					{/* Export image button */}
+					<button
+						onClick={handleImageExport}
+						disabled={isExportingTimeline}
+						className="border-white border p-2 text-md cursor-pointer mb-10"
+					>
+						Export as Image
+					</button>
+
+					<button
+						onClick={handleHtmlExport}
+						disabled={isExportingTimeline}
+						className="border-white border p-2 text-md cursor-pointer mb-10"
+					>
+						Export as HTML
+					</button>
+				</div>
 
 				<div className="relative" ref={timelineRef} data-export-root>
 					{isTwoSided && (
@@ -55,7 +77,6 @@ export default function VerticalTimeline({
 					)}
 
 					{/* Vertical timeline line */}
-					{/* Fix COLOUR OF BG HERE */}
 					<div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-[#171717] dark:bg-[#ededed] opacity-20" />
 
 					{/* Events */}
