@@ -1,6 +1,6 @@
 import { toPng } from "html-to-image";
 
-export const exportTimelineAsImage = async (timelineRef: HTMLDivElement | null): Promise<void> => {
+export const exportTimelineImage = async (timelineRef: HTMLDivElement | null): Promise<void> => {
 	if (!timelineRef) return;
 
 	const element = timelineRef;

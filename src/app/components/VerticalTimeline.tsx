@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import EventModal from "@/app/components/ui/EventModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
 import { exportTimelineHtml } from "@/app/lib/exportTimelineHTML";
-import { exportTimelineAsImage } from "@/app/lib/exportTimelineImage";
+import { exportTimelineImage } from "@/app/lib/exportTimelineImage";
 import { EventData } from "@/app/models/event";
 
 export default function VerticalTimeline({
@@ -26,7 +26,7 @@ export default function VerticalTimeline({
 
 	const handleImageExport = async () => {
 		setIsExportingTimeine(true);
-		await exportTimelineAsImage(timelineRef.current);
+		await exportTimelineImage(timelineRef.current);
 		setIsExportingTimeine(false);
 	};
 
