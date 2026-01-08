@@ -27,6 +27,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-unused-imports": "^4.3.0",
     "fix-react2shell-next": "^1.1.4",
+    "html-to-image": "^1.11.13",
     "i": "^0.3.7",
     "mongodb": "^5.9.2",
     "mongoose": "^8.17.1",
