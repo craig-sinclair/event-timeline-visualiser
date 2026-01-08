@@ -27,6 +27,9 @@ export const exportTimelineAsImage = async (timelineRef: HTMLDivElement | null):
 		link.download = `timeline-${new Date().toISOString().slice(0, 10)}.png`;
 		link.href = dataUrl;
 		link.click();
+	} catch (error) {
+		console.error("Error during exporting timeline image", error);
+		throw error;
 	} finally {
 		element.classList.remove("export-mode");
 		element.style.overflow = originalOverflow;
