@@ -5,15 +5,15 @@ import { useState, RefObject } from "react";
 import { exportTimelineHtml } from "@/app/lib/exportTimelineHTML";
 import { exportTimelineImage } from "@/app/lib/exportTimelineImage";
 
-export const ExportTimelineModal = ({
+export default function ExportTimelineModal({
 	isVisible,
 	timelineRef,
 	onClose,
 }: {
 	isVisible: boolean;
-	timelineRef: RefObject<HTMLDivElement>;
+	timelineRef: RefObject<HTMLDivElement | null>;
 	onClose: () => void;
-}) => {
+}) {
 	const [isExportingTimeline, setIsExportingTimeline] = useState<boolean>(false);
 	const [errorMessage, setErrorMessage] = useState<string>("");
 
@@ -44,11 +44,11 @@ export const ExportTimelineModal = ({
 	return (
 		<>
 			{/* Backdrop */}
-			<div className="fixed inset-0 bg-black/50 z-40" onClick={onClose} />
+			<div className="fixed inset-0 bg-black/99 z-40" onClick={onClose} />
 
 			{/* Modal */}
 			<div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-				<div className="bg-[var(--background)] border rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+				<div className="bg-[var(--background)] border rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto p-5">
 					{/* Header */}
 					<div className="flex justify-between items-start p-6 border-b">
 						<h2 className="text-xl font-semibold pr-8">Export Timeline</h2>
@@ -61,7 +61,7 @@ export const ExportTimelineModal = ({
 						</button>
 					</div>
 
-					<div className="flex gap-5">
+					<div className="flex gap-5 mt-10">
 						{/* Export image button */}
 						<button
 							onClick={() => handleTimelineExport(exportTimelineImage)}
@@ -87,4 +87,4 @@ export const ExportTimelineModal = ({
 			</div>
 		</>
 	);
-};
+}
