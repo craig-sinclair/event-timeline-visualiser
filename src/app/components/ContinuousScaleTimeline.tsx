@@ -1,7 +1,9 @@
 "use client";
+import { useState, useRef } from "react";
 
 import { useEventModal } from "@/app//hooks/useEventModal";
 import EventModal from "@/app/components/ui/EventModal";
+import ExportTimelineModal from "@/app/components/ui/ExportTimelineModal";
 import { getEventColor } from "@/app/lib/getEventColour";
 import { EventData } from "@/app/models/event";
 
@@ -17,9 +19,25 @@ export default function VerticalTimeline({
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<EventData>();
 
+	const [isExportTimelineModalOpen, setIsExportTimelineModalOpen] = useState<boolean>(false);
+
+	const timelineRef = useRef<HTMLDivElement>(null);
+
 	return (
 		<>
-			<div className="max-w-6xl mx-auto sm:px-6 py-8 sm:py-12 overflow-x-hidden">
+			<button
+				onClick={() => setIsExportTimelineModalOpen(true)}
+				disabled={isExportTimelineModalOpen}
+				className="border-white border p-2 text-md cursor-pointer mb-10"
+			>
+				Export Timeline
+			</button>
+
+			<div
+				className="max-w-6xl mx-auto sm:px-6 py-8 sm:py-12 overflow-x-hidden"
+				ref={timelineRef}
+				data-export-root
+			>
 				{/* Header with header labels for opposite sides of scale */}
 				<div className="mb-12">
 					<div className="flex justify-between items-center mb-4">
@@ -106,6 +124,12 @@ export default function VerticalTimeline({
 				visible={isEventModalOpen}
 				event={selectedEvent}
 				onClose={closeEventModal}
+			/>
+
+			<ExportTimelineModal
+				isVisible={isExportTimelineModalOpen}
+				timelineRef={timelineRef}
+				onClose={() => setIsExportTimelineModalOpen(false)}
 			/>
 		</>
 	);

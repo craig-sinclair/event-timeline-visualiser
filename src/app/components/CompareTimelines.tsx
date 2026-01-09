@@ -1,6 +1,9 @@
 "use client";
 
+import { useState, useRef } from "react";
+
 import EventModal from "@/app/components/ui/EventModal";
+import ExportTimelineModal from "@/app/components/ui/ExportTimelineModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
 import { getEventColor } from "@/app/lib/getEventColour";
 import { CompareTimelineEventData } from "@/app/models/event";
@@ -21,6 +24,10 @@ export default function CompareTimelines({
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<CompareTimelineEventData>();
 
+	const [isExportTimelineModalOpen, setIsExportTimelineModalOpen] = useState<boolean>(false);
+
+	const timelineRef = useRef<HTMLDivElement>(null);
+
 	// Get timeline-specific styling
 	const getTimelineStyle = (timelineSide: number) => {
 		if (timelineSide === 1) {
@@ -40,7 +47,18 @@ export default function CompareTimelines({
 
 	return (
 		<>
-			<div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 overflow-x-hidden">
+			<button
+				onClick={() => setIsExportTimelineModalOpen(true)}
+				disabled={isExportTimelineModalOpen}
+				className="border-white border p-2 text-md cursor-pointer mb-10"
+			>
+				Export Timeline
+			</button>
+			<div
+				className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 overflow-x-hidden"
+				ref={timelineRef}
+				data-export-root
+			>
 				{/* Header with scale labels */}
 				<div className="mb-12">
 					<div className="flex justify-between items-center mb-4">
@@ -149,6 +167,12 @@ export default function CompareTimelines({
 				visible={isEventModalOpen}
 				event={selectedEvent}
 				onClose={closeEventModal}
+			/>
+
+			<ExportTimelineModal
+				isVisible={isExportTimelineModalOpen}
+				timelineRef={timelineRef}
+				onClose={() => setIsExportTimelineModalOpen(false)}
 			/>
 		</>
 	);

@@ -1,4 +1,4 @@
-export const exportTimelineHtml = (timelineRef: HTMLDivElement | null): void => {
+export const exportTimelineHtml = async (timelineRef: HTMLDivElement | null): Promise<void> => {
 	if (!timelineRef) return;
 
 	try {
@@ -18,15 +18,26 @@ export const exportTimelineHtml = (timelineRef: HTMLDivElement | null): void => 
                 </script>
 
                 <style>
-                    body {
-                        margin: 0;
-                        padding: 32px;
-                        background: #ffffff;
+                    .export-mode,
+                    .export-mode * {
+                        color: #000000 !important;
+                        background-color: #ffffff !important;
+                        border-color: #000000 !important;
+                        opacity: 1 !important;
                         font-family: Arial, Helvetica, sans-serif;
+                    }
+
+                    @media (prefers-color-scheme: dark) {
+                        .export-mode,
+                        .export-mode * {
+                            color: #ffffff !important;
+                            background-color: #0a0a0a !important;
+                            border-color: #ffffff !important;
+                        }
                     }
                 </style>
             </head>
-            <body class="light">
+            <body class="export-mode">
                 ${clone.outerHTML}
             </body>
         </html>

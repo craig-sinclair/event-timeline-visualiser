@@ -66,12 +66,12 @@ describe("exportTimelineAsHtml", () => {
 		expect(mockElement.innerHTML).toContain("Test Content");
 	});
 
-	it("should handle errors gracefully", () => {
+	it("should handle errors gracefully", async () => {
 		// Force an error by making cloneNode throw
 		vi.spyOn(mockElement, "cloneNode").mockImplementation(() => {
 			throw new Error("Clone failed");
 		});
 
-		expect(() => exportTimelineHtml(mockElement)).toThrow("Clone failed");
+		await expect(exportTimelineHtml(mockElement)).rejects.toThrow("Clone failed");
 	});
 });

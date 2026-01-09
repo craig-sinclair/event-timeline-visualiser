@@ -1,6 +1,9 @@
 "use client";
 
+import { useState, useRef } from "react";
+
 import EventModal from "@/app/components/ui/EventModal";
+import ExportTimelineModal from "@/app/components/ui/ExportTimelineModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
 import { EventData } from "@/app/models/event";
 
@@ -8,9 +11,24 @@ export default function HorizontalTimeline({ events }: { events: EventData[] }) 
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<EventData>();
 
+	const [isExportTimelineModalOpen, setIsExportTimelineModalOpen] = useState<boolean>(false);
+
+	const timelineRef = useRef<HTMLDivElement>(null);
+
 	return (
 		<>
-			<div className="w-full overflow-x-auto pt-12 xs:pt-16 sm:pt-24 md:pt-32 lg:pt-50 pb-32 xs:pb-36 sm:pb-44 md:pb-52 lg:pb-60 overflow-y-hidden">
+			<button
+				onClick={() => setIsExportTimelineModalOpen(true)}
+				disabled={isExportTimelineModalOpen}
+				className="border-white border p-2 text-md cursor-pointer mb-10"
+			>
+				Export Timeline
+			</button>
+			<div
+				className="w-full overflow-x-auto pt-12 xs:pt-16 sm:pt-24 md:pt-32 lg:pt-50 pb-32 xs:pb-36 sm:pb-44 md:pb-52 lg:pb-60 overflow-y-hidden"
+				ref={timelineRef}
+				data-export-root
+			>
 				<div className="relative inline-flex items-center min-w-full px-2 xs:px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-30">
 					{/* Horizontal Base Line */}
 					<div
@@ -55,6 +73,12 @@ export default function HorizontalTimeline({ events }: { events: EventData[] }) 
 				visible={isEventModalOpen}
 				event={selectedEvent}
 				onClose={closeEventModal}
+			/>
+
+			<ExportTimelineModal
+				isVisible={isExportTimelineModalOpen}
+				timelineRef={timelineRef}
+				onClose={() => setIsExportTimelineModalOpen(false)}
 			/>
 		</>
 	);

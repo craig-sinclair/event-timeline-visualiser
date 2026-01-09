@@ -40,3 +40,12 @@ body {
     background: #ffffff !important;
     font-family: Arial, Arial, Helvetica, sans-serif;
 }
+
+@media (prefers-color-scheme: dark) {
+  .export-mode,
+  .export-mode * {
+    color: #ffffff !important;
+    background-color: #0a0a0a !important;
+    border-color: #ffffff !important; 
+  }
+}
