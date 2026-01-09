@@ -1,4 +1,4 @@
-export const exportTimelineHtml = (timelineRef: HTMLDivElement | null): void => {
+export const exportTimelineHtml = async (timelineRef: HTMLDivElement | null): Promise<void> => {
 	if (!timelineRef) return;
 
 	try {
