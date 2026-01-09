@@ -40,6 +40,12 @@ export type CompareTimelineEventData = EventData & {
 	timelineSide: 1 | 2;
 };
 
+export type EventRelevanceStyling = {
+	// Values stored in the rem unit
+	padding: number;
+	fontSize: number;
+};
+
 export type EventResponse =
 	| {
 			success: true;
