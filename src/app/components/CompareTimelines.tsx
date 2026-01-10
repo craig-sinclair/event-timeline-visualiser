@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 
 import EventModal from "@/app/components/ui/EventModal";
 import ExportTimelineModal from "@/app/components/ui/ExportTimelineModal";
+import GradientScaleHeader from "@/app/components/ui/GradientScaleHeader";
 import { useEventModal } from "@/app/hooks/useEventModal";
 import { createEventCardStyle } from "@/app/lib/createEventCardStyle";
 import { getEventColor } from "@/app/lib/getEventColour";
@@ -62,17 +63,7 @@ export default function CompareTimelines({
 			>
 				{/* Header with scale labels */}
 				<div className="mb-12">
-					<div className="flex justify-between items-center mb-4">
-						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-sm bg-red-900/30 text-red-400">
-							{leftLabel}
-						</span>
-						<span className="text-xs sm:text-lg md:text-xl font-semibold px-3 sm:px-4 py-1 sm:py-2 rounded-sm bg-green-900/30 text-green-400">
-							{rightLabel}
-						</span>
-					</div>
-
-					{/* Gradient bar */}
-					<div className="h-2 rounded-full bg-gradient-to-r from-red-600 via-yellow-500 to-green-600 opacity-40" />
+					<GradientScaleHeader leftLabel={leftLabel} rightLabel={rightLabel} />
 
 					{/* Timeline legend */}
 					<div className="flex justify-center gap-6 mt-6">
