@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import EventModal from "@/app/components/ui/EventModal";
 import ExportTimelineModal from "@/app/components/ui/ExportTimelineModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
+import { createEventCardStyle } from "@/app/lib/createEventCardStyle";
 import { getEventColor } from "@/app/lib/getEventColour";
 import { CompareTimelineEventData } from "@/app/models/event";
 
@@ -135,7 +136,12 @@ export default function CompareTimelines({
 											}}
 											onClick={() => openEventModal(event)}
 										>
-											<div className="flex items-start gap-3">
+											<div
+												className="flex items-start gap-3"
+												style={createEventCardStyle({
+													relevance: event.relevance,
+												})}
+											>
 												<div className="flex-1">
 													{/* Timeline badge */}
 													<div className="flex items-center mb-2">
@@ -149,7 +155,7 @@ export default function CompareTimelines({
 													</div>
 
 													{/* Event overview */}
-													<h3 className="text-sm sm:text-base font-semibold leading-snug">
+													<h3 className="font-semibold leading-snug">
 														{event.overview}
 													</h3>
 												</div>

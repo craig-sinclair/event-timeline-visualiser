@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { useEventModal } from "@/app//hooks/useEventModal";
 import EventModal from "@/app/components/ui/EventModal";
 import ExportTimelineModal from "@/app/components/ui/ExportTimelineModal";
+import { createEventCardStyle } from "@/app/lib/createEventCardStyle";
 import { getEventColor } from "@/app/lib/getEventColour";
 import { EventData } from "@/app/models/event";
 
@@ -99,13 +100,18 @@ export default function VerticalTimeline({
 									>
 										<div
 											className="border-2 rounded-lg p-4 cursor-pointer transition-all hover:opacity-75"
-											style={{ borderColor: getEventColor(event.position) }}
+											style={{
+												borderColor: getEventColor(event.position),
+												...createEventCardStyle({
+													relevance: event.relevance,
+												}),
+											}}
 											onClick={() => openEventModal(event)}
 										>
 											<div className="flex items-start gap-3">
 												{/* Event overview text */}
 												<div className="flex-1">
-													<h3 className="text-sm sm:text-base font-semibold leading-snug">
+													<h3 className="font-semibold leading-snug">
 														{event.overview}
 													</h3>
 												</div>

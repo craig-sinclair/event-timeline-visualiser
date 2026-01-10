@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import EventModal from "@/app/components/ui/EventModal";
 import ExportTimelineModal from "@/app/components/ui/ExportTimelineModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
+import { createEventCardStyle } from "@/app/lib/createEventCardStyle";
 import { EventData } from "@/app/models/event";
 
 export default function HorizontalTimeline({ events }: { events: EventData[] }) {
@@ -53,14 +54,15 @@ export default function HorizontalTimeline({ events }: { events: EventData[] }) 
 
 							{/* Alternate between events above/below baseline */}
 							<div
-								className={`w-full text-left border rounded-lg p-2 sm:p-2.5 md:p-3 lg:p-4 hover:opacity-75 transition-all duration-200 cursor-pointer ${
+								className={`w-full text-left border rounded-lg hover:opacity-75 transition-all duration-200 cursor-pointer ${
 									i % 2 === 0
 										? "absolute bottom-full mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20"
 										: "absolute top-full mt-6 xs:mt-8 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20"
 								}`}
 								onClick={() => openEventModal(event)}
+								style={createEventCardStyle({ relevance: event.relevance })}
 							>
-								<h3 className="xs:text-xs sm:text-sm md:text-base lg:text-md leading-tight xs:leading-snug sm:leading-normal break-words">
+								<h3 className="leading-tight xs:leading-snug sm:leading-normal break-words">
 									{event.overview}
 								</h3>
 							</div>
