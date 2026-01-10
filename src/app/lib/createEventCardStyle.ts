@@ -9,8 +9,8 @@ export function createEventCardStyle({ relevance }: { relevance: number }): Even
 	relevance = Math.min(Math.max(relevance, minRelevance), maxRelevance);
 
 	const relevanceWeightedStyles: EventRelevanceStyling = {
-		fontSize: baseEventRelevanceStyling.fontSize * relevance,
-		padding: baseEventRelevanceStyling.padding * relevance,
+		fontSize: `${baseEventRelevanceStyling.fontSize * relevance}rem`,
+		padding: `${baseEventRelevanceStyling.padding * relevance}rem`,
 	};
 	return relevanceWeightedStyles;
 }

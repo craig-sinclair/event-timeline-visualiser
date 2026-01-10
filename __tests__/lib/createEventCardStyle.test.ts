@@ -2,13 +2,19 @@ import { describe, it, expect } from "vitest";
 
 import { createEventCardStyle } from "@/app/lib/createEventCardStyle";
 
-describe("Create event card style tests", () => {
-	it("correctly returns higher styling values for higher relevance", () => {
-		const lowerRelevanceStyling = createEventCardStyle({ relevance: 0.1 });
-		const higherRelevanceStyling = createEventCardStyle({ relevance: 0.2 });
+const getRemNumericalValue = (value: string) => parseFloat(value);
 
-		expect(higherRelevanceStyling.fontSize).toBeGreaterThan(lowerRelevanceStyling.fontSize);
-		expect(higherRelevanceStyling.padding).toBeGreaterThan(lowerRelevanceStyling.padding);
+describe("Create event card style tests", () => {
+	it("correctly returns greater size styling values for higher relevance", () => {
+		const lowerRelevanceStyling = createEventCardStyle({ relevance: 0.1 });
+		const higherRelevanceStyling = createEventCardStyle({ relevance: 0.9 });
+
+		expect(getRemNumericalValue(lowerRelevanceStyling.fontSize)).toBeLessThan(
+			getRemNumericalValue(higherRelevanceStyling.fontSize)
+		);
+		expect(getRemNumericalValue(lowerRelevanceStyling.padding)).toBeLessThan(
+			getRemNumericalValue(higherRelevanceStyling.padding)
+		);
 	});
 
 	it("correctly handles relevance input beyond limit by clamping to 1.0", () => {

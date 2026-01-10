@@ -42,8 +42,8 @@ export type CompareTimelineEventData = EventData & {
 
 export type EventRelevanceStyling = {
 	// Values stored in the rem unit
-	padding: number;
-	fontSize: number;
+	padding: string;
+	fontSize: string;
 };
 
 export type EventResponse =
