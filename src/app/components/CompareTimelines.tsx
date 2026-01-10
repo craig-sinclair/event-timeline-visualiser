@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import EventModal from "@/app/components/ui/EventModal";
 import ExportTimelineModal from "@/app/components/ui/ExportTimelineModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
+import { createEventCardStyle } from "@/app/lib/createEventCardStyle";
 import { getEventColor } from "@/app/lib/getEventColour";
 import { CompareTimelineEventData } from "@/app/models/event";
 
@@ -128,10 +129,14 @@ export default function CompareTimelines({
 										}}
 									>
 										<div
-											className="border-2 rounded-lg p-4 cursor-pointer transition-all hover:opacity-75 hover:shadow-lg"
+											className="border-2 rounded-lg cursor-pointer transition-all hover:opacity-75 hover:shadow-lg"
 											style={{
 												borderColor: timelineStyle.borderColor,
 												backgroundColor: `${getEventColor(event.position)}10`,
+												...createEventCardStyle({
+													relevance: event.relevance,
+													paddingMultiplier: 0.75,
+												}),
 											}}
 											onClick={() => openEventModal(event)}
 										>
@@ -149,7 +154,7 @@ export default function CompareTimelines({
 													</div>
 
 													{/* Event overview */}
-													<h3 className="text-sm sm:text-base font-semibold leading-snug">
+													<h3 className="font-semibold leading-snug">
 														{event.overview}
 													</h3>
 												</div>

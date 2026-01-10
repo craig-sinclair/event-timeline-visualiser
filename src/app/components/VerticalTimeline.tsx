@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import EventModal from "@/app/components/ui/EventModal";
 import ExportTimelineModal from "@/app/components/ui/ExportTimelineModal";
 import { useEventModal } from "@/app/hooks/useEventModal";
+import { createEventCardStyle } from "@/app/lib/createEventCardStyle";
 import { EventData } from "@/app/models/event";
 
 export default function VerticalTimeline({
@@ -21,7 +22,6 @@ export default function VerticalTimeline({
 		useEventModal<EventData>();
 
 	const [isExportTimelineModalOpen, setIsExportTimelineModalOpen] = useState<boolean>(false);
-
 	const timelineRef = useRef<HTMLDivElement>(null);
 
 	return (
@@ -75,12 +75,11 @@ export default function VerticalTimeline({
 
 								{/* Event card */}
 								<div
-									className="ml-12 sm:ml-0 sm:w-1/2 border rounded-lg p-4 hover:shadow-lg hover:opacity-75 transition-all duration-200 cursor-pointer"
+									style={createEventCardStyle({ relevance: event.relevance })}
+									className="ml-12 sm:ml-0 sm:w-1/2 border rounded-lg hover:shadow-lg hover:opacity-75 transition-all duration-200 cursor-pointer"
 									onClick={() => openEventModal(event)}
 								>
-									<h3 className="text-sm sm:text-base md:text-lg font-medium leading-snug">
-										{event.overview}
-									</h3>
+									<h3 className="font-medium leading-snug">{event.overview}</h3>
 								</div>
 							</div>
 						))}
