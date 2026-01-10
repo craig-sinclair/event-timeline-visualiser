@@ -30,4 +30,32 @@ describe("Create event card style tests", () => {
 
 		expect(stylingAtInvalidRelevance).toEqual(stylingAtMinimumRelevance);
 	});
+
+	it("correctly applies multiplier for padding", () => {
+		const paddingMultiplier = 0.5;
+
+		const noPaddingMultiplierGiven = createEventCardStyle({ relevance: 0.5 });
+		const paddingMultiplierGiven = createEventCardStyle({
+			relevance: 0.5,
+			paddingMultiplier: paddingMultiplier,
+		});
+
+		expect(getRemNumericalValue(noPaddingMultiplierGiven.padding)).toBeGreaterThan(
+			getRemNumericalValue(paddingMultiplierGiven.padding) * paddingMultiplier
+		);
+	});
+
+	it("correctly applies multiplier for font size", () => {
+		const fontSizeMultiplier = 0.5;
+
+		const noFontSizeMultiplierGiven = createEventCardStyle({ relevance: 0.5 });
+		const fontSizeMultiplierGiven = createEventCardStyle({
+			relevance: 0.5,
+			fontSizeMultiplier: fontSizeMultiplier,
+		});
+
+		expect(getRemNumericalValue(noFontSizeMultiplierGiven.fontSize)).toBeGreaterThan(
+			getRemNumericalValue(fontSizeMultiplierGiven.fontSize) * fontSizeMultiplier
+		);
+	});
 });
