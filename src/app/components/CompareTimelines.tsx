@@ -129,19 +129,18 @@ export default function CompareTimelines({
 										}}
 									>
 										<div
-											className="border-2 rounded-lg p-4 cursor-pointer transition-all hover:opacity-75 hover:shadow-lg"
+											className="border-2 rounded-lg cursor-pointer transition-all hover:opacity-75 hover:shadow-lg"
 											style={{
 												borderColor: timelineStyle.borderColor,
 												backgroundColor: `${getEventColor(event.position)}10`,
+												...createEventCardStyle({
+													relevance: event.relevance,
+													paddingMultiplier: 0.75,
+												}),
 											}}
 											onClick={() => openEventModal(event)}
 										>
-											<div
-												className="flex items-start gap-3"
-												style={createEventCardStyle({
-													relevance: event.relevance,
-												})}
-											>
+											<div className="flex items-start gap-3">
 												<div className="flex-1">
 													{/* Timeline badge */}
 													<div className="flex items-center mb-2">

@@ -60,7 +60,11 @@ export default function HorizontalTimeline({ events }: { events: EventData[] }) 
 										: "absolute top-full mt-6 xs:mt-8 sm:mt-10 md:mt-12 lg:mt-16 xl:mt-20"
 								}`}
 								onClick={() => openEventModal(event)}
-								style={createEventCardStyle({ relevance: event.relevance })}
+								style={createEventCardStyle({
+									relevance: event.relevance,
+									paddingMultiplier: 0.6,
+									fontSizeMultiplier: 0.85,
+								})}
 							>
 								<h3 className="leading-tight xs:leading-snug sm:leading-normal break-words">
 									{event.overview}
