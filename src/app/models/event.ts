@@ -11,6 +11,7 @@ export interface EventData {
 	tags: string[];
 	side?: 0 | 1; // for binary two-sided timeline events
 	position?: number; // for continuous scale timeline events (0.0 -> 1.0 values)
+	qcode?: string[]; // link to ontology topic(s)
 }
 
 export interface ReactSelectEvent {
@@ -74,6 +75,7 @@ export const Event =
 				tags: [{ type: String }],
 				side: { type: Number },
 				position: { type: Number },
+				qcode: [{ type: String }],
 			},
 			{
 				collection: "events",
