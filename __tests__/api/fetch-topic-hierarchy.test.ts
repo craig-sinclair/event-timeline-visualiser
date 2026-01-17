@@ -17,15 +17,35 @@ import { OntologyTopic, TopicData, TopicHierarchyData } from "@/app/models/ontol
 const mockData = vi.hoisted(() => {
 	const mockBaseTopicResponse: TopicData = {
 		_id: "1",
-		qcode: "qcode-test",
+		qcode: "medtop:qcode-test",
 		uri: "123",
 		definition: "123",
 		prefLabel: "prefLabel-test",
-		broader: [],
+		broader: ["qcode-test-2"],
 		narrower: [],
 	};
 
-	return { mockBaseTopicResponse };
+	const mockFirstBroaderTopic: TopicData = {
+		_id: "2",
+		qcode: "medtop:qcode-test-2",
+		uri: "123",
+		definition: "123",
+		prefLabel: "prefLabel-test-2",
+		broader: ["qcode-test-3"],
+		narrower: ["qcode-test"],
+	};
+
+	const mockSecondBroaderTopic: TopicData = {
+		_id: "3",
+		qcode: "medtop:qcode-test-3",
+		uri: "123",
+		definition: "123",
+		prefLabel: "prefLabel-test-3",
+		broader: [],
+		narrower: ["qcode-test-2"],
+	};
+
+	return { mockBaseTopicResponse, mockFirstBroaderTopic, mockSecondBroaderTopic };
 });
 
 // Create object with lean method defined and return mock data
@@ -49,9 +69,10 @@ describe("Fetch (ontology) topic hiearchy data API tests", () => {
 	});
 
 	it("Correctly returns topic qcode and prefLabel when given topic with no hierarchy (parent topics)", async () => {
-		(OntologyTopic.findOne as Mock).mockReturnValue(
-			createMockChain(mockData.mockBaseTopicResponse)
-		);
+		const mockTopicNoParentTopics = { ...mockData.mockBaseTopicResponse };
+		mockTopicNoParentTopics.broader = [];
+
+		(OntologyTopic.findOne as Mock).mockReturnValue(createMockChain(mockTopicNoParentTopics));
 
 		const mockRequest = {} as NextRequest;
 		const response = await GET(mockRequest, {
@@ -65,6 +86,52 @@ describe("Fetch (ontology) topic hiearchy data API tests", () => {
 		const expectedResponse: TopicHierarchyData = {
 			qcode: mockData.mockBaseTopicResponse.qcode,
 			prefLabel: mockData.mockBaseTopicResponse.prefLabel,
+			hierarchy: [],
+		};
+		expect(data.topic).toEqual(expectedResponse);
+	});
+
+	it("Correctly throws error where topic ID did not match any topics in query", async () => {
+		(OntologyTopic.findOne as Mock).mockReturnValue(createMockChain(null));
+		const mockRequest = {} as NextRequest;
+		const response = await GET(mockRequest, {
+			params: Promise.resolve({ topicID: "qcode-test" }),
+		});
+		const data = await response.json();
+
+		expect(data.success).toEqual(false);
+		expect(data.error).toEqual("Failed to retrieve topic hierarchy data from database");
+		expect(data.details).toEqual(`Could not find topic with ID: qcode-test.`);
+	});
+
+	it("Correctly returns hierarchy for multiple parent topics", async () => {
+		(OntologyTopic.findOne as Mock)
+			.mockReturnValueOnce(createMockChain(mockData.mockBaseTopicResponse))
+			.mockReturnValueOnce(createMockChain(mockData.mockFirstBroaderTopic))
+			.mockReturnValueOnce(createMockChain(mockData.mockSecondBroaderTopic));
+
+		const mockRequest = {} as NextRequest;
+		const response = await GET(mockRequest, {
+			params: Promise.resolve({ topicID: "qcode-test" }),
+		});
+		const data = await response.json();
+
+		expect(data.success).toEqual(true);
+		expect(data.message).toEqual("Successfully fetched topic hierarchy data from database");
+
+		const expectedResponse: TopicHierarchyData = {
+			qcode: mockData.mockBaseTopicResponse.qcode,
+			prefLabel: mockData.mockBaseTopicResponse.prefLabel,
+			hierarchy: [
+				{
+					qcode: mockData.mockFirstBroaderTopic.qcode,
+					prefLabel: mockData.mockFirstBroaderTopic.prefLabel,
+				},
+				{
+					qcode: mockData.mockSecondBroaderTopic.qcode,
+					prefLabel: mockData.mockSecondBroaderTopic.prefLabel,
+				},
+			],
 		};
 		expect(data.topic).toEqual(expectedResponse);
 	});

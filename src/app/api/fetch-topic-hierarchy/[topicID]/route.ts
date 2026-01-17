@@ -6,6 +6,7 @@ import {
 	TopicHierarchyResponse,
 	OntologyTopic,
 	TopicData,
+	ParentHierarchyData,
 } from "@/app/models/ontology";
 
 export async function GET(
@@ -21,17 +22,38 @@ export async function GET(
 
 		await dbConnect();
 
-		const baseTopic = await OntologyTopic.findOne({
-			qcode: topicID,
+		const TOPIC_QCODE_PREFIX = "medtop:";
+		const baseTopic: TopicData | null = await OntologyTopic.findOne({
+			qcode: `${TOPIC_QCODE_PREFIX}${topicID}`,
 		}).lean<TopicData>();
 
 		if (!baseTopic) {
 			throw new Error(`Could not find topic with ID: ${topicID}.`);
 		}
 
+		const hierarchy: ParentHierarchyData[] = [];
+		let currentTopic: TopicData | null = baseTopic;
+
+		// Fetch all parent topics (until reaching topic with no broader topic field)
+		// Known that there is at most one parent topic (array length 1)
+		while (currentTopic?.broader?.[0]) {
+			const parentTopic: TopicData | null = await OntologyTopic.findOne({
+				qcode: `${TOPIC_QCODE_PREFIX}${currentTopic.broader[0]}`,
+			}).lean<TopicData>();
+
+			if (!parentTopic) break;
+
+			hierarchy.push({
+				qcode: parentTopic.qcode,
+				prefLabel: parentTopic.prefLabel,
+			});
+			currentTopic = parentTopic;
+		}
+
 		const topicHierarchy: TopicHierarchyData = {
 			qcode: baseTopic.qcode,
 			prefLabel: baseTopic.prefLabel,
+			hierarchy: hierarchy,
 		};
 
 		const response: TopicHierarchyResponse = {
