@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 
+import TopicHierarchyText from "@/app/components/ui/TopicHierarchyText";
 import VerticalTimeline from "@/app/components/VerticalTimeline";
 import { getEventsInTopic } from "@/app/lib/api/getEventsInTopic";
 import { EventsInTopic } from "@/app/models/ontology";
@@ -21,7 +22,9 @@ export default function EventsInTopicPage() {
 			setLoading(true);
 			try {
 				const response = await getEventsInTopic({ topicID: topicID });
-				console.log(response);
+				if (!response || response.length == 0) {
+					throw new Error("No events found with this media topic");
+				}
 				setAllEventsInTopic(response);
 			} catch (err) {
 				setErrorMessage(
@@ -43,18 +46,17 @@ export default function EventsInTopicPage() {
 		);
 	}
 
-	if (errorMessage)
+	if (errorMessage) {
 		return (
 			<div className="flex min-h-[80vh] min-w-full justify-center items-center">
 				<h1 className="text-3xl font-bold">{errorMessage}...</h1>
 			</div>
 		);
+	}
 
 	return (
 		<>
-			<h1 className="text-3xl font-medium max-w-4xl mx-auto px-4 sm:px-6 underline">
-				{topicID}
-			</h1>
+			<TopicHierarchyText topicID={topicID} />
 			{allEventsInTopic.map((timeline, i) => {
 				return (
 					<div key={i}>
