@@ -1,7 +1,12 @@
 import { NextResponse, NextRequest } from "next/server";
 
 import { dbConnect } from "@/app/lib/mongoose";
-import { TopicHierarchyData, TopicHierarchyResponse } from "@/app/models/ontology";
+import {
+	TopicHierarchyData,
+	TopicHierarchyResponse,
+	OntologyTopic,
+	TopicData,
+} from "@/app/models/ontology";
 
 export async function GET(
 	request: NextRequest,
@@ -16,10 +21,23 @@ export async function GET(
 
 		await dbConnect();
 
+		const baseTopic = await OntologyTopic.findOne({
+			qcode: topicID,
+		}).lean<TopicData>();
+
+		if (!baseTopic) {
+			throw new Error(`Could not find topic with ID: ${topicID}.`);
+		}
+
+		const topicHierarchy: TopicHierarchyData = {
+			qcode: baseTopic.qcode,
+			prefLabel: baseTopic.prefLabel,
+		};
+
 		const response: TopicHierarchyResponse = {
 			success: true,
 			message: "Successfully fetched topic hierarchy data from database",
-			topic: {} as TopicHierarchyData,
+			topic: topicHierarchy,
 			timestamp: new Date().toISOString(),
 		};
 
