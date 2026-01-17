@@ -220,7 +220,7 @@
       "economic"
     ],
     "side": 1,
-    "qcode": ["medtop:11000000", "medtop:20000580"]
+    "qcode": ["11000000", "20000580"]
   },
   {
     "overview": "In April 2016 the HM Treasury published analysis that voting to leave would make each UK household on average £4,300 worse off per year after 15 years.",
@@ -291,6 +291,6 @@
       "constitutional"
     ],
     "side": 0,
-    "qcode": ["medtop:20000580"]
+    "qcode": ["20000580"]
   }
 ]
