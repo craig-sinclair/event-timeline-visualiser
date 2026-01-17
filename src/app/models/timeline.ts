@@ -18,7 +18,7 @@ export interface TimelineData {
 	comparableTimelines?: string[];
 }
 
-export type TimelinesResponse = ApiResponseBase<{ timelines: TimelineData[] }>;
+export type TimelineResponse = ApiResponseBase<{ timelines: TimelineData[] }>;
 
 export const Timeline =
 	mongoose.models.Timeline ||
