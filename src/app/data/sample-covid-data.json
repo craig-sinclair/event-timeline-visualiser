@@ -11,7 +11,8 @@
             "origin",
             "china",
             "health"
-        ]
+        ],
+        "qcode": ["medtop:03000000"]
     },
     {
         "overview": "WHO declares a Public Health Emergency of International Concern (PHEIC).",
@@ -25,7 +26,8 @@
             "WHO",
             "international",
             "emergency"
-        ]
+        ],
+        "qcode": ["medtop:03000000", "medtop:11000000"]
     },
     {
         "overview": "First confirmed COVID-19 death outside China in the Philippines.",
