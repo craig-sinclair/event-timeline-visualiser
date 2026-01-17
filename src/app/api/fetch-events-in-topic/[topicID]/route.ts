@@ -1,7 +1,12 @@
 import { NextResponse, NextRequest } from "next/server";
 
+import { getAllTimelines } from "@/app/lib/api/getAllTimelines";
+import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
 import { dbConnect } from "@/app/lib/mongoose";
+import { EventData } from "@/app/models/event";
 import { TopicEventsResponse } from "@/app/models/ontology";
+import { EventsInTopic } from "@/app/models/ontology";
+import { TimelineData } from "@/app/models/timeline";
 
 export async function GET(
 	request: NextRequest,
@@ -16,10 +21,38 @@ export async function GET(
 
 		await dbConnect();
 
+		const allTimelines: TimelineData[] = await getAllTimelines();
+		if (!Array.isArray(allTimelines) || allTimelines.length === 0) {
+			throw new Error("No timelines were found.");
+		}
+
+		const allMatchingEventTimelines: EventsInTopic = [];
+
+		for (const timeline of allTimelines) {
+			const allTimelineEvents: EventData[] = await getEventsInTimeline({
+				timelineID: timeline._id,
+			});
+
+			const currentTimelineMatchingEvents = [];
+			for (const event of allTimelineEvents) {
+				if (event.qcode?.includes(topicID)) {
+					currentTimelineMatchingEvents.push(event);
+				}
+			}
+
+			if (currentTimelineMatchingEvents.length > 0) {
+				allMatchingEventTimelines.push({
+					timelineId: timeline._id,
+					timelineName: timeline.title,
+					events: currentTimelineMatchingEvents,
+				});
+			}
+		}
+
 		const mockResponse: TopicEventsResponse = {
 			success: true,
 			message: "Successfully fetched event data from topic ID",
-			events: [],
+			events: allMatchingEventTimelines,
 			timestamp: new Date().toISOString(),
 		};
 

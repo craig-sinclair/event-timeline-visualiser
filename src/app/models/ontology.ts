@@ -11,7 +11,9 @@ export type TopicData = {
 };
 
 export type EventsInTopic = {
-	timeline: EventData[];
+	timelineId: string;
+	timelineName: string;
+	events: EventData[];
 }[];
 
 export type TopicEventsResponse =
