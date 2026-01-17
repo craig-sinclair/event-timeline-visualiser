@@ -58,7 +58,7 @@ describe("Fetch (ontology) topic hiearchy data API tests", () => {
 		vi.resetAllMocks();
 	});
 
-	it("Throws error when no topic given", async () => {
+	it("Throws error when empty topic ID string given", async () => {
 		const mockRequest = {} as NextRequest;
 		const response = await GET(mockRequest, { params: Promise.resolve({ topicID: "" }) });
 		const data = await response.json();
@@ -68,7 +68,7 @@ describe("Fetch (ontology) topic hiearchy data API tests", () => {
 		expect(data.details).toEqual("No topic ID was provided.");
 	});
 
-	it("Correctly returns topic qcode and prefLabel when given topic with no hierarchy (parent topics)", async () => {
+	it("Correctly returns topic qcode and prefLabel when given topic with no parent", async () => {
 		const mockTopicNoParentTopics = { ...mockData.mockBaseTopicResponse };
 		mockTopicNoParentTopics.broader = [];
 
@@ -91,7 +91,7 @@ describe("Fetch (ontology) topic hiearchy data API tests", () => {
 		expect(data.topic).toEqual(expectedResponse);
 	});
 
-	it("Correctly throws error where topic ID did not match any topics in query", async () => {
+	it("Correctly throws error where (base) topic ID/qcode did not match any topics in query", async () => {
 		(OntologyTopic.findOne as Mock).mockReturnValue(createMockChain(null));
 		const mockRequest = {} as NextRequest;
 		const response = await GET(mockRequest, {
@@ -132,6 +132,28 @@ describe("Fetch (ontology) topic hiearchy data API tests", () => {
 					prefLabel: mockData.mockSecondBroaderTopic.prefLabel,
 				},
 			],
+		};
+		expect(data.topic).toEqual(expectedResponse);
+	});
+
+	it("Correctly handles parent topic which cannot be found", async () => {
+		(OntologyTopic.findOne as Mock)
+			.mockReturnValueOnce(createMockChain(mockData.mockBaseTopicResponse))
+			.mockReturnValueOnce(createMockChain(null));
+
+		const mockRequest = {} as NextRequest;
+		const response = await GET(mockRequest, {
+			params: Promise.resolve({ topicID: "qcode-test" }),
+		});
+		const data = await response.json();
+
+		expect(data.success).toEqual(true);
+		expect(data.message).toEqual("Successfully fetched topic hierarchy data from database");
+
+		const expectedResponse: TopicHierarchyData = {
+			qcode: mockData.mockBaseTopicResponse.qcode,
+			prefLabel: mockData.mockBaseTopicResponse.prefLabel,
+			hierarchy: [],
 		};
 		expect(data.topic).toEqual(expectedResponse);
 	});
