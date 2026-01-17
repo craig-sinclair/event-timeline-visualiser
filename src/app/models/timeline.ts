@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { Schema, model } from "mongoose";
 
+import { ApiResponseBase } from "@/app/models/api";
 export interface TimelineData {
 	_id: string;
 	title: string;
@@ -17,19 +18,7 @@ export interface TimelineData {
 	comparableTimelines?: string[];
 }
 
-export type TimelineResponse =
-	| {
-			success: true;
-			message: string;
-			timelines: TimelineData[];
-			timestamp: string;
-	  }
-	| {
-			success: false;
-			error: string;
-			details?: string;
-			timestamp: string;
-	  };
+export type TimelinesResponse = ApiResponseBase<{ timelines: TimelineData[] }>;
 
 export const Timeline =
 	mongoose.models.Timeline ||

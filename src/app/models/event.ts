@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import { Schema, model } from "mongoose";
 
+import { ApiResponseBase } from "@/app/models/api";
+
 export interface EventData {
 	_id: string;
 	overview: string;
@@ -47,19 +49,7 @@ export type EventRelevanceStyling = {
 	fontSize: string;
 };
 
-export type EventResponse =
-	| {
-			success: true;
-			message: string;
-			events: EventData[];
-			timestamp: string;
-	  }
-	| {
-			success: false;
-			error: string;
-			details?: string;
-			timestamp: string;
-	  };
+export type EventResponse = ApiResponseBase<{ events: EventData[] }>;
 
 export const Event =
 	mongoose.models.Event ||
