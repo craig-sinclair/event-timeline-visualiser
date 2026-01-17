@@ -15,7 +15,8 @@
       "targets",
       "historic"
     ],
-    "position": 0.85
+    "position": 0.85,
+    "qcode": ["11000000"]
   },
   {
     "overview": "Nigel Lawson Forms Global Warming Policy Foundation",
@@ -33,7 +34,8 @@
       "opposition",
       "policy"
     ],
-    "position": 0.15
+    "position": 0.15,
+    "qcode": ["11000000"]
   },
   {
     "overview": "Net Zero Target Legislated",
@@ -51,7 +53,8 @@
       "targets",
       "ambitious"
     ],
-    "position": 0.95
+    "position": 0.95,
+    "qcode": ["11000000"]
   },
   {
     "overview": "Cancellation of Carbon Capture Competition",

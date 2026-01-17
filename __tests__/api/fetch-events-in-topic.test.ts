@@ -2,22 +2,26 @@ vi.mock("@/app/lib/mongoose", () => ({
 	dbConnect: vi.fn(),
 }));
 
-vi.mock("@/app/lib/api/getAllTimelines", () => ({
-	getAllTimelines: vi.fn(),
+vi.mock("@/app/models/timeline", () => ({
+	Timeline: {
+		find: vi.fn(),
+	},
 }));
 
-vi.mock("@/app/lib/api/getEventsInTimeline", () => ({
-	getEventsInTimeline: vi.fn(),
+vi.mock("@/app/models/event", () => ({
+	Event: {
+		find: vi.fn(),
+	},
 }));
 
 import { NextRequest } from "next/server";
 import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 
 import { GET } from "@/app/api/fetch-events-in-topic/[topicID]/route";
-import { getAllTimelines } from "@/app/lib/api/getAllTimelines";
-import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
+import { Event } from "@/app/models/event";
 import { EventData } from "@/app/models/event";
 import { EventsInTopic } from "@/app/models/ontology";
+import { Timeline } from "@/app/models/timeline";
 import { TimelineData } from "@/app/models/timeline";
 
 const mockData = vi.hoisted(() => {
@@ -69,6 +73,11 @@ const mockData = vi.hoisted(() => {
 	return { mockSingleTimelineData, mockEventData, mockMultipleTimelineData };
 });
 
+// Create object with lean method defined and return mock data
+const createMockChain = <T>(returnValue: T) => ({
+	lean: vi.fn().mockResolvedValue(returnValue),
+});
+
 describe("Fetch events in topic API route tests", () => {
 	beforeEach(() => {
 		vi.resetAllMocks();
@@ -85,8 +94,8 @@ describe("Fetch events in topic API route tests", () => {
 	});
 
 	it("Correctly returns matching events for a given qcode in a single timeline", async () => {
-		(getAllTimelines as Mock).mockResolvedValue([mockData.mockSingleTimelineData]);
-		(getEventsInTimeline as Mock).mockResolvedValue(mockData.mockEventData);
+		(Timeline.find as Mock).mockReturnValue(createMockChain([mockData.mockSingleTimelineData]));
+		(Event.find as Mock).mockReturnValue(createMockChain(mockData.mockEventData));
 
 		const mockRequest = {} as NextRequest;
 		const response = await GET(mockRequest, { params: Promise.resolve({ topicID: "qcode1" }) });
@@ -106,7 +115,7 @@ describe("Fetch events in topic API route tests", () => {
 	});
 
 	it("Correctly throws an error when no timelines are found", async () => {
-		(getAllTimelines as Mock).mockResolvedValue([]);
+		(Timeline.find as Mock).mockReturnValue(createMockChain([]));
 
 		const mockRequest = {} as NextRequest;
 		const response = await GET(mockRequest, { params: Promise.resolve({ topicID: "qcode1" }) });
@@ -118,10 +127,10 @@ describe("Fetch events in topic API route tests", () => {
 	});
 
 	it("Correctly finds matching events across multiple timelines", async () => {
-		(getAllTimelines as Mock).mockResolvedValue(mockData.mockMultipleTimelineData);
-		(getEventsInTimeline as Mock)
-			.mockResolvedValueOnce([mockData.mockEventData[0]])
-			.mockResolvedValueOnce([mockData.mockEventData[1]]);
+		(Timeline.find as Mock).mockReturnValue(createMockChain(mockData.mockMultipleTimelineData));
+		(Event.find as Mock)
+			.mockReturnValueOnce(createMockChain([mockData.mockEventData[0]]))
+			.mockReturnValueOnce(createMockChain([mockData.mockEventData[1]]));
 
 		const mockRequest = {} as NextRequest;
 		const response = await GET(mockRequest, { params: Promise.resolve({ topicID: "qcode3" }) });
@@ -146,8 +155,8 @@ describe("Fetch events in topic API route tests", () => {
 	});
 
 	it("Correctly handles case where no events match search qcode", async () => {
-		(getAllTimelines as Mock).mockResolvedValue([mockData.mockSingleTimelineData]);
-		(getEventsInTimeline as Mock).mockResolvedValue(mockData.mockEventData);
+		(Timeline.find as Mock).mockReturnValue(createMockChain([mockData.mockSingleTimelineData]));
+		(Event.find as Mock).mockReturnValue(createMockChain(mockData.mockEventData));
 
 		const mockRequest = {} as NextRequest;
 		const response = await GET(mockRequest, { params: Promise.resolve({ topicID: "qcode9" }) });
@@ -159,8 +168,8 @@ describe("Fetch events in topic API route tests", () => {
 	});
 
 	it("Correctly handles missing event data", async () => {
-		(getAllTimelines as Mock).mockResolvedValue([mockData.mockSingleTimelineData]);
-		(getEventsInTimeline as Mock).mockResolvedValue([]);
+		(Timeline.find as Mock).mockReturnValue(createMockChain([mockData.mockSingleTimelineData]));
+		(Event.find as Mock).mockReturnValue(createMockChain([]));
 
 		const mockRequest = {} as NextRequest;
 		const response = await GET(mockRequest, { params: Promise.resolve({ topicID: "qcode1" }) });
