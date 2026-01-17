@@ -38,7 +38,7 @@ export async function GET(
 		// Known that there is at most one parent topic (array length 1)
 		while (currentTopic?.broader?.[0]) {
 			const parentTopic: TopicData | null = await OntologyTopic.findOne({
-				qcode: `${TOPIC_QCODE_PREFIX}${currentTopic.broader[0]}`,
+				qcode: currentTopic.broader[0],
 			}).lean<TopicData>();
 
 			if (!parentTopic) break;

@@ -36,9 +36,9 @@ export type TopicHierarchyData = {
 export type TopicHierarchyResponse = ApiResponseBase<{ topic: TopicHierarchyData }>;
 
 export const OntologyTopic =
-	mongoose.models.Event ||
+	mongoose.models.OntologyTopic ||
 	model<TopicData>(
-		"Event",
+		"OntologyTopic",
 		new Schema<TopicData>(
 			{
 				qcode: { type: String, required: true },
