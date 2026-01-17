@@ -12,11 +12,13 @@ export default function VerticalTimeline({
 	isTwoSided = false,
 	leftLabel = "",
 	rightLabel = "",
+	exportVisible = true,
 }: {
 	events: EventData[];
 	isTwoSided?: boolean;
 	leftLabel: string;
 	rightLabel: string;
+	exportVisible?: boolean;
 }) {
 	const { isEventModalOpen, selectedEvent, openEventModal, closeEventModal } =
 		useEventModal<EventData>();
@@ -27,13 +29,15 @@ export default function VerticalTimeline({
 	return (
 		<>
 			<div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-				<button
-					onClick={() => setIsExportTimelineModalOpen(true)}
-					disabled={isExportTimelineModalOpen}
-					className="border-white border p-2 text-md cursor-pointer mb-10"
-				>
-					Export Timeline
-				</button>
+				{exportVisible && (
+					<button
+						onClick={() => setIsExportTimelineModalOpen(true)}
+						disabled={isExportTimelineModalOpen}
+						className="border-white border p-2 text-md cursor-pointer mb-10"
+					>
+						Export Timeline
+					</button>
+				)}
 
 				<div className="relative" ref={timelineRef} data-export-root>
 					{isTwoSided && (

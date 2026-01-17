@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+
 import { EventData } from "@/app/models/event";
 
 export default function EventModal({
@@ -61,6 +65,26 @@ export default function EventModal({
 										>
 											{tag}
 										</span>
+									))}
+								</div>
+							</div>
+						)}
+
+						{/* Ontology Topics */}
+						{event?.qcode && event.qcode.length > 0 && (
+							<div>
+								<h3 className="text-sm font-semibold mb-2">Media Topics:</h3>
+								<div className="flex flex-wrap gap-2">
+									{event.qcode.map((topicID, index) => (
+										<Link
+											className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors cursor-pointer"
+											href={`/events-in-topic/${topicID}`}
+											key={index}
+										>
+											<span className="px-3 py-1 text-xs border rounded-full">
+												{topicID}
+											</span>
+										</Link>
 									))}
 								</div>
 							</div>
