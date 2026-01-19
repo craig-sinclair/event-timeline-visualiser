@@ -1,27 +1,37 @@
 # Event Timeline Visualiser
 
-## Getting Started
+## Technology Stack
+- **MongoDB** serves as the application's database, with backend interaction utilising the [Mongoose]("https://mongoosejs.com/") object modelling tool.
+- **NextJS** utilised as a full-stack framework, with [React]("https://react.dev/") as the web-library.
+- **TypeScript** programming language used throughout the application.
 
-First, run the development server:
+## Running the Project Locally
 
+#### Environmetal Variables
+Environmetal variables are required for setup to allow for MongoDB interaction. For reference, a `.env.example` file has been created at the project root.
+Developers should create a `.env` file following this example, and update the `MONGODB_URI` to their own connection string.
+
+#### Dependencies Installation
+`npm` was utilised as a package manager tool in this project. To install dependencies, from the project root folder `event-timeline-visualiser`:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Database Population
+A database population script has been provided in this project. From the project root folder `event-timeline-visualiser` (after installing dependencies):
+```bash
+npm run populate-data
+```
+
+#### Running the Site
+From the project root folder `event-timeline-visualiser`:
+```bash
+npm run dev
+```
+The site shall then be accessible at [http://localhost:3000](http://localhost:3000).
 
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment on Vercel
 
 
 ## Directory structure
