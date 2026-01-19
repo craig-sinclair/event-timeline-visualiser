@@ -4,11 +4,11 @@ import { describe, it, expect, vi } from "vitest";
 
 import { SAMPLE_EVENTS } from "../sample-data/sample-events";
 
-import HorizontalTimeline from "@/app/components/VerticalTimeline";
-import { EventData } from "@/app/models/event";
+import HorizontalTimeline from "@/components/VerticalTimeline";
+import { EventData } from "@/models/event";
 
 // Mock EventModal component for quick tests on its interaction here
-vi.mock("@/app/components/ui/EventModal", () => ({
+vi.mock("@/components/ui/EventModal", () => ({
 	__esModule: true,
 	default: ({
 		visible,

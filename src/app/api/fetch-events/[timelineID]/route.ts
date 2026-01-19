@@ -1,8 +1,8 @@
 import { NextResponse, NextRequest } from "next/server";
 
-import { dbConnect } from "@/app/lib/mongoose";
-import { EventResponse, Event, EventData } from "@/app/models/event";
-import { Timeline, TimelineData } from "@/app/models/timeline";
+import { dbConnect } from "@/lib/mongoose";
+import { EventResponse, Event, EventData } from "@/models/event";
+import { Timeline, TimelineData } from "@/models/timeline";
 
 export async function GET(
 	request: NextRequest,

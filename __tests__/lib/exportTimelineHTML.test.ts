@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach, type MockInstance } from "vitest";
 
-import { exportTimelineHtml } from "@/app/lib/exportTimelineHTML";
+import { exportTimelineHtml } from "@/lib/exportTimelineHTML";
 
 describe("exportTimelineAsHtml", () => {
 	let mockElement: HTMLDivElement;

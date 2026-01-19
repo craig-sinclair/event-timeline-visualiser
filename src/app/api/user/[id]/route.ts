@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 
-import { authOptions } from "@/app/lib/auth";
-import { dbConnect } from "@/app/lib/mongoose";
-import User from "@/app/models/user";
+import { authOptions } from "@/lib/auth";
+import { dbConnect } from "@/lib/mongoose";
+import User from "@/models/user";
 
 export async function POST(req: Request) {
 	await dbConnect();

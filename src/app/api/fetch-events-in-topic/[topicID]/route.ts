@@ -1,12 +1,12 @@
 import { NextResponse, NextRequest } from "next/server";
 
-import { dbConnect } from "@/app/lib/mongoose";
-import { EventData } from "@/app/models/event";
-import { Event } from "@/app/models/event";
-import { TopicEventsResponse } from "@/app/models/ontology";
-import { EventsInTopic } from "@/app/models/ontology";
-import { TimelineData } from "@/app/models/timeline";
-import { Timeline } from "@/app/models/timeline";
+import { dbConnect } from "@/lib/mongoose";
+import { EventData } from "@/models/event";
+import { Event } from "@/models/event";
+import { TopicEventsResponse } from "@/models/ontology";
+import { EventsInTopic } from "@/models/ontology";
+import { TimelineData } from "@/models/timeline";
+import { Timeline } from "@/models/timeline";
 
 export async function GET(
 	request: NextRequest,

@@ -3,18 +3,18 @@
 import { useParams } from "next/navigation";
 import { useEffect, useState, useCallback, useMemo } from "react";
 
-import CompareTimelines from "@/app/components/CompareTimelines";
-import ContinuousScaleTimeline from "@/app/components/ContinuousScaleTimeline";
-import HorizontalTimeline from "@/app/components/HorizontalTimeline";
-import TimelineFilters from "@/app/components/ui/TimelineFilters";
-import VerticalTimeline from "@/app/components/VerticalTimeline";
-import { useTimelineComparisonData } from "@/app/hooks/useTimelineComparisonData";
-import { getEventsInTimeline } from "@/app/lib/api/getEventsInTimeline";
-import { getTimelineFromId } from "@/app/lib/api/getTimelineFromId";
-import { filterEvents } from "@/app/lib/filterEvents";
-import { sortEvents } from "@/app/lib/sortEvents";
-import { EventData, EventFiltersState, EventSortByOptions } from "@/app/models/event";
-import { TimelineData } from "@/app/models/timeline";
+import CompareTimelines from "@/components/CompareTimelines";
+import ContinuousScaleTimeline from "@/components/ContinuousScaleTimeline";
+import HorizontalTimeline from "@/components/HorizontalTimeline";
+import TimelineFilters from "@/components/ui/TimelineFilters";
+import VerticalTimeline from "@/components/VerticalTimeline";
+import { useTimelineComparisonData } from "@/hooks/useTimelineComparisonData";
+import { getEventsInTimeline } from "@/lib/api/getEventsInTimeline";
+import { getTimelineFromId } from "@/lib/api/getTimelineFromId";
+import { filterEvents } from "@/lib/filterEvents";
+import { sortEvents } from "@/lib/sortEvents";
+import { EventData, EventFiltersState, EventSortByOptions } from "@/models/event";
+import { TimelineData } from "@/models/timeline";
 
 export default function TimelinePage() {
 	const { timelineID } = useParams<{

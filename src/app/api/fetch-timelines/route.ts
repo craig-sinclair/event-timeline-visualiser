@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { dbConnect } from "@/app/lib/mongoose";
-import { TimelineData, Timeline, TimelineResponse } from "@/app/models/timeline";
+import { dbConnect } from "@/lib/mongoose";
+import { TimelineData, Timeline, TimelineResponse } from "@/models/timeline";
 
 export async function GET() {
 	try {

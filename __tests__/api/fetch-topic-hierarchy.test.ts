@@ -1,8 +1,8 @@
-vi.mock("@/app/lib/mongoose", () => ({
+vi.mock("@/lib/mongoose", () => ({
 	dbConnect: vi.fn(),
 }));
 
-vi.mock("@/app/models/ontology", () => ({
+vi.mock("@/models/ontology", () => ({
 	OntologyTopic: {
 		findOne: vi.fn(),
 	},
@@ -12,7 +12,7 @@ import { NextRequest } from "next/server";
 import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 
 import { GET } from "@/app/api/fetch-topic-hierarchy/[topicID]/route";
-import { OntologyTopic, TopicData, TopicHierarchyData } from "@/app/models/ontology";
+import { OntologyTopic, TopicData, TopicHierarchyData } from "@/models/ontology";
 
 const mockData = vi.hoisted(() => {
 	const mockBaseTopicResponse: TopicData = {

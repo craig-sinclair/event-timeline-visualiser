@@ -1,13 +1,13 @@
 import { NextResponse, NextRequest } from "next/server";
 
-import { dbConnect } from "@/app/lib/mongoose";
+import { dbConnect } from "@/lib/mongoose";
 import {
 	TopicHierarchyData,
 	TopicHierarchyResponse,
 	OntologyTopic,
 	TopicData,
 	ParentHierarchyData,
-} from "@/app/models/ontology";
+} from "@/models/ontology";
 
 export async function GET(
 	request: NextRequest,

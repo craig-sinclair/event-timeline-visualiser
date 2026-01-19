@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 
-import { sortEvents } from "@/app/lib/sortEvents";
-import { EventData } from "@/app/models/event";
+import { sortEvents } from "@/lib/sortEvents";
+import { EventData } from "@/models/event";
 
 const mockEventData: EventData[] = [
 	{

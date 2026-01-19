@@ -1,4 +1,4 @@
-import TimelinesTable from "@/app/components/TimelinesTable";
+import TimelinesTable from "@/components/TimelinesTable";
 
 export default function ProfileSetupPage() {
 	return (

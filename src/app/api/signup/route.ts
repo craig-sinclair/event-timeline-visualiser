@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
-import { dbConnect } from "@/app/lib/mongoose";
-import User from "@/app/models/user";
-import { hashPassword } from "@/app/services/passwordService";
+import { dbConnect } from "@/lib/mongoose";
+import User from "@/models/user";
+import { hashPassword } from "@/services/passwordService";
 
 export async function POST(req: Request) {
 	try {

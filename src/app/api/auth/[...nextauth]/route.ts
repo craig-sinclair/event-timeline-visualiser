@@ -2,10 +2,10 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-import clientPromise from "@/app/lib/mongodb";
-import { dbConnect } from "@/app/lib/mongoose";
-import { findUserByEmailOrPhone, createUser } from "@/app/services/authService";
-import { hashPassword, comparePassword } from "@/app/services/passwordService";
+import clientPromise from "@/lib/mongodb";
+import { dbConnect } from "@/lib/mongoose";
+import { findUserByEmailOrPhone, createUser } from "@/services/authService";
+import { hashPassword, comparePassword } from "@/services/passwordService";
 
 const handler = NextAuth({
 	adapter: MongoDBAdapter(clientPromise),

@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 
-import { filterEvents } from "@/app/lib/filterEvents";
-import { EventData, CompareTimelineEventData } from "@/app/models/event";
+import { filterEvents } from "@/lib/filterEvents";
+import { EventData, CompareTimelineEventData } from "@/models/event";
 
 const mockEventData: EventData[] = [
 	{

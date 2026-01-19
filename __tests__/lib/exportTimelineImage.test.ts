@@ -1,7 +1,7 @@
 import * as htmlToImage from "html-to-image";
 import { describe, it, expect, vi, beforeEach, afterEach, type MockInstance } from "vitest";
 
-import { exportTimelineImage } from "@/app/lib/exportTimelineImage";
+import { exportTimelineImage } from "@/lib/exportTimelineImage";
 
 vi.mock("html-to-image");
 

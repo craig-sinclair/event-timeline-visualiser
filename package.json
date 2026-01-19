@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .ts,.tsx --max-warnings=0",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "test": "npx vitest run",
-    "populate-data": "tsx --env-file=.env src/app/scripts/populateData.ts",
+    "populate-data": "tsx --env-file=.env src/scripts/populateData.ts",
     "prepare": "husky"
   },
   "dependencies": {

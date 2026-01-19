@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-vi.mock("@/app/lib/mongoose", () => ({
+vi.mock("@/lib/mongoose", () => ({
 	dbConnect: vi.fn(),
 }));
 const mockLean = vi.fn();

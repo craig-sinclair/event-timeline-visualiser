@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { dbConnect } from "@/app/lib/mongoose";
-import { findUserByEmailOrPhone, createUser } from "@/app/services/authService";
+import { dbConnect } from "@/lib/mongoose";
+import { findUserByEmailOrPhone, createUser } from "@/services/authService";
 
 export async function GET(req: Request) {
 	await dbConnect();

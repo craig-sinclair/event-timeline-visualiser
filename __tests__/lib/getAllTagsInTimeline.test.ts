@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 
-import { getAllTagsInTimeline } from "@/app/lib/getAllTagsInTimeline";
-import { EventData } from "@/app/models/event";
+import { getAllTagsInTimeline } from "@/lib/getAllTagsInTimeline";
+import { EventData } from "@/models/event";
 
 describe("Get all tags in timeline tests", () => {
 	it("Returns an empty array for empty events data", () => {

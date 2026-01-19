@@ -9,18 +9,18 @@ vi.spyOn(process, "exit").mockImplementation(((code?: number) => {
 }) as unknown as typeof process.exit);
 
 // Mock all external dependencies
-vi.mock("@/app/models/event");
-vi.mock("@/app/lib/mongoose", () => ({
+vi.mock("@/models/event");
+vi.mock("@/lib/mongoose", () => ({
 	dbConnect: vi.fn(),
 }));
-vi.mock("@/app/models/timeline");
+vi.mock("@/models/timeline");
 vi.mock("fs");
 vi.mock("path");
 
-import { dbConnect } from "@/app/lib/mongoose";
-import { Event } from "@/app/models/event";
-import { Timeline } from "@/app/models/timeline";
-import { populateData } from "@/app/scripts/populateData";
+import { dbConnect } from "@/lib/mongoose";
+import { Event } from "@/models/event";
+import { Timeline } from "@/models/timeline";
+import { populateData } from "@/scripts/populateData";
 
 describe("populateData", () => {
 	const mockBrexitEventsData = [
@@ -194,19 +194,16 @@ describe("populateData", () => {
 	it("should load JSON files from correct paths", async () => {
 		await populateData();
 
-		expect(path.join).toHaveBeenCalledWith(process.cwd(), "src/app/data/sample-events.json");
-		expect(path.join).toHaveBeenCalledWith(process.cwd(), "src/app/data/sample-timelines.json");
+		expect(path.join).toHaveBeenCalledWith(process.cwd(), "src/data/sample-events.json");
+		expect(path.join).toHaveBeenCalledWith(process.cwd(), "src/data/sample-timelines.json");
+		expect(path.join).toHaveBeenCalledWith(process.cwd(), "src/data/sample-covid-data.json");
 		expect(path.join).toHaveBeenCalledWith(
 			process.cwd(),
-			"src/app/data/sample-covid-data.json"
+			"src/data/sample-uk-climate-data.json"
 		);
 		expect(path.join).toHaveBeenCalledWith(
 			process.cwd(),
-			"src/app/data/sample-uk-climate-data.json"
-		);
-		expect(path.join).toHaveBeenCalledWith(
-			process.cwd(),
-			"src/app/data/sample-us-climate-data.json"
+			"src/data/sample-us-climate-data.json"
 		);
 		expect(fs.readFileSync).toHaveBeenCalledTimes(5);
 	});
