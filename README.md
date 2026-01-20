@@ -6,8 +6,7 @@
 - [Technology Stack](#technology-stack)
 - [Local Installation Guide](#local-installation-guide)
 - [Directory Structure](#directory-structure)
-- [API Endpoints](#api-endpoints)
-- [Continuous Integration](#continuous-integration)
+- [CI/CD](#cicd)
 
 ## About
 ![Site Banner Image](src/data/screenshots/header.png)
@@ -108,57 +107,83 @@ src/
     VerticalTimeline.tsx          # Standard vertical format timeline of events
     TimelinesTable.tsx            # Table to list all events
 
-  lib/                        # Framework-agnostic helpers (formatters, API clients)
-                              # general-purpose utilities (date formatting, helper functions, API client setup).
+  lib/                        # Framework-agnostic helpers (formatters, API clients) and general-purpose utilities
+    createEventCardStyle.ts       # Determine event card styling based on its relevance
+    exportTimelineHTML.ts         # Exporting of timeline as HTML file
+    exportTimelineImage.ts        # Exporting of timeline as PNG file
+    filterEvents.ts               # Filter event array by tags, date range and relevance
+    getAllTagsInTimeline.ts       # Returns all tags that exist in events in a timeline
+    getAllYearsInTimeline.ts      # Gets all years (dates) in events in a timeline
+    getEventColour.ts             # Determine event card colour corresponding to gradient scale for position
+    mongoose.ts                   # Allow global connection to MongoDB through mongoose package
+    sortEvents.ts                 # Re-arrange array of event by input sorting field
+    api/                      # Helper functions to communicate with API endpoints via frontend
+      getAllTimelines.ts
+      getEventsInTimeline.ts
+      getEventsInTopic.ts
+      getTimelineFromId.ts
+      getTopicHierarchy.ts
 
-  models/                     # TypeScript types, interfaces, schemas
-                              # clear place for TypeScript interfaces, Zod schemas, or Prisma models.
+  models/                     # TypeScript types/interfaces and schemas/models for MongoDB
+    api.ts                      # Contains base types for API responses/failures
+    event.ts
+    ontology.ts
+    timeline.ts
+    user.ts
 
-  services/                   # Business logic (API calls, auth logic, etc.)
-                              # domain-specific logic (auth service, database queries, feature APIs).
+
+  services/                   # Business logic for auth login
+    authService.ts
+    passwordService.ts
 
   hooks/                      # Custom React hooks
-
-
-  config/                     # App-wide constants, env configs
-                              # avoids sprinkling env vars everywhere.
+    useEventModal.ts            # Contains shared general logic for opening/closing event card and viewing its contents
+    useTimelineComparisonData.ts
 
   utils/                      # Miscellaneous utilities
     event-styles.const.ts       # Stores base styling logic for event cards
 
   public/                     # Static assets
 
+  data/                       # JSON format data for population script and screenshots
+    /screenshots
+    sample-timelines.json     # JSON document for timelines collection
+    sample-covid-data.json    # Example of JSON document for events in a timeline
+
   __tests__/                  # Unit tests folder
 ```
 
-## API Endpoints
-Detail all available API endpoints, inputs expected, and what they return
+## CI/CD
 
-## Overview of Files
-Detail quick overview for important files; can be done in directory overview?
-
-## Continuous Integration
+### Continuous Integration
 The `.github/workflows/ci.yml` file specifies a CI pipeline to execute on each commit to the repository. This consists of a single job with four key phases:
 1) Installation of project dependencies.
 2) **Linting**: see more information on project styles and conventions this phase enforces [here](#code-styling-and-conventions).
 3) **Unit test**: see more information on project unit testing [here](#unit-testing)
 4) **Build**: which converts the project code into a production-ready build of the application.
 
-#### Deployment on Vercel
+### Continuous Deployment
 The `main` branch on this repository automatically deploys to Vercel with new commits. Due to this, future contributions should ensure robust evaluation of code additions prior to committing changes to the main branch to avoid disruptions to the deployed environment. See more information on project conventions for branching and merge requests [here](#branching-strategy).
 Production credentials are stored on GitHub under the repository secrets. Importantly, this includes the `MONGODB_URI` which links to the hosted MongoDB databse, via [Atlas Database](https://www.mongodb.com/products/platform/atlas-database).
 
 
-#### Branching Strategy
+### Branching Strategy
 This application makes use of the [feature branching](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) strategy. All new code contributions (bug fixes, new features, refactoring, etc) should be committed to a branch created from an issue on the GitHub repository. When changes are ready to enter the production environment, a merge request should be raised from the feature branch (branch created from an issue) into the `main` branch.
 Before merging, the pipeline must have completed a successful run on the merge request before being changes are allowed to be merged onto the `main` branch. This serves as a protection method for the deployed environment 
 
-#### Code Styling and Conventions
-Add: information on code styling (what the lint stage enforces for code files).
+### Code Styling and Conventions
+- Code styles and conventions are enforced throughout the project, and are specified in `eslint.config.mjs`.
+- This enforces: double quotes for strings, trailing commas in objects, four tab style indentation/spacing, wrapping lines over one hundred characters, ... etc.
+- Running `npm run lint` locally in a terminal shall execute the linter tool. Enable automating fixing of lint issues (where possible), with `npm run lint:fix`.
 
-#### Unit Testing
+### Unit Testing
+- The [Vitest](https://vitest.dev/) testing framework was used for all unit tests.
+- The `__tests__/` directory aims to mirror the `src/` directory, with an emphasis on testing for API routes and `lib/` functions.
+- Running `npm run test` locally in a terminal shall execute all unit tests in the `__test__/` directory.
+- Frequently, interactions with the database are mocked. This is to ensure an isolated testing environment and to avoid unwanted changes to records.
+
 Add: package used for unit testing, patterns of unit testing, automated runs, local triggering of unit testing, importance of testing (particular lib functions + api routes).
 
-#### Pre-Commit Hooks
+### Pre-Commit Hooks
 After cloning the repository, and running `npm install`, this shall enable pre-commit hooks via the Husky package.
 Currently, this executes the lint stage prior to all Git commits made, blocking if there are any lint errors.
