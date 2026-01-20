@@ -1,4 +1,4 @@
-import { EventData } from "@/app/models/event";
+import { EventData } from "@/models/event";
 
 export const SAMPLE_EVENTS: EventData[] = [
 	{

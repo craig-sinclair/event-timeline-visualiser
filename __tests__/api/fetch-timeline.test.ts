@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 
 import { GET } from "@/app/api/fetch-timeline/[timelineID]/route";
 
-vi.mock("@/app/lib/mongoose", () => ({
+vi.mock("@/lib/mongoose", () => ({
 	dbConnect: vi.fn(),
 }));
 const mockLean = vi.fn();

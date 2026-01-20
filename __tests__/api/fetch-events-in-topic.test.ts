@@ -1,14 +1,14 @@
-vi.mock("@/app/lib/mongoose", () => ({
+vi.mock("@/lib/mongoose", () => ({
 	dbConnect: vi.fn(),
 }));
 
-vi.mock("@/app/models/timeline", () => ({
+vi.mock("@/models/timeline", () => ({
 	Timeline: {
 		find: vi.fn(),
 	},
 }));
 
-vi.mock("@/app/models/event", () => ({
+vi.mock("@/models/event", () => ({
 	Event: {
 		find: vi.fn(),
 	},
@@ -18,11 +18,11 @@ import { NextRequest } from "next/server";
 import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 
 import { GET } from "@/app/api/fetch-events-in-topic/[topicID]/route";
-import { Event } from "@/app/models/event";
-import { EventData } from "@/app/models/event";
-import { EventsInTopic } from "@/app/models/ontology";
-import { Timeline } from "@/app/models/timeline";
-import { TimelineData } from "@/app/models/timeline";
+import { Event } from "@/models/event";
+import { EventData } from "@/models/event";
+import { EventsInTopic } from "@/models/ontology";
+import { Timeline } from "@/models/timeline";
+import { TimelineData } from "@/models/timeline";
 
 const mockData = vi.hoisted(() => {
 	const mockSingleTimelineData: TimelineData = {

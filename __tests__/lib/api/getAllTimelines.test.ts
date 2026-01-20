@@ -1,7 +1,7 @@
 import { describe, it, vi, expect, beforeEach, afterEach } from "vitest";
 
-import { getAllTimelines } from "@/app/lib/api/getAllTimelines";
-import { TimelineData, TimelineResponse } from "@/app/models/timeline";
+import { getAllTimelines } from "@/lib/api/getAllTimelines";
+import { TimelineData, TimelineResponse } from "@/models/timeline";
 
 const mockFetch = vi.fn();
 global.fetch = mockFetch;

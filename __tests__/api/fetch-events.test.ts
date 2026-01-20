@@ -2,10 +2,10 @@ import { NextRequest } from "next/server";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
 import { GET } from "@/app/api/fetch-events/[timelineID]/route";
-import { EventData } from "@/app/models/event";
-import { TimelineData } from "@/app/models/timeline";
+import { EventData } from "@/models/event";
+import { TimelineData } from "@/models/timeline";
 
-vi.mock("@/app/lib/mongoose", () => ({
+vi.mock("@/lib/mongoose", () => ({
 	dbConnect: vi.fn(),
 }));
 const mockLean = vi.fn();

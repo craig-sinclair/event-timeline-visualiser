@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { dbConnect } from "@/app/lib/mongoose";
-import User, { IUser } from "@/app/models/user";
+import { dbConnect } from "@/lib/mongoose";
+import User, { IUser } from "@/models/user";
 
 export async function POST(req: Request) {
 	try {

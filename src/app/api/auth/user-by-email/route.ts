@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-import { dbConnect } from "@/app/lib/mongoose";
-import User from "@/app/models/user";
+import { dbConnect } from "@/lib/mongoose";
+import User from "@/models/user";
 
 export async function GET(req: Request) {
 	const { searchParams } = new URL(req.url);

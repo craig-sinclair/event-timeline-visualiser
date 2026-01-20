@@ -1,7 +1,7 @@
 import { describe, it, vi, expect, beforeEach, afterEach } from "vitest";
 
-import { getTopicHierarchy } from "@/app/lib/api/getTopicHierarchy";
-import { TopicHierarchyResponse, TopicHierarchyData } from "@/app/models/ontology";
+import { getTopicHierarchy } from "@/lib/api/getTopicHierarchy";
+import { TopicHierarchyResponse, TopicHierarchyData } from "@/models/ontology";
 
 const mockFetch = vi.fn();
 global.fetch = mockFetch;

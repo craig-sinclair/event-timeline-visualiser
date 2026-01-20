@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-import { createEventCardStyle } from "@/app/lib/createEventCardStyle";
+import { createEventCardStyle } from "@/lib/createEventCardStyle";
 
 const getRemNumericalValue = (value: string) => parseFloat(value);
 
