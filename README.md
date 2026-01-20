@@ -17,7 +17,28 @@ Timelines consists of a variety of events, which include: political statements, 
 The Event Timeline Visualiser application publicly accessible at [event-timeline-visualiser.vercel.app/](https://event-timeline-visualiser.vercel.app/). If you wish to run a local version of the application, please see the dedicated [guide](#local-installation-guide).
 
 ## Features
-Features + screenshots. Important to explain all different forms of timelines.
+Beyond the landing page, users are redirected to the home dashboard, which contains a table of all explorable timelines in the application:
+![Dashbord of Available Timelines](src/data/screenshots/table-dashboard.png)
+
+There are a variety of available formats for viewing timelines, and the application aims to automatically determine the most appropriate view depending on the context of a particular timeline. These include:
+1) Standard horizontal format timelines:
+![Horizontal Timeline View](src/data/screenshots/horizontal.png)
+
+2) Standard vertical format timelines:
+![Vertical Timeline View](src/data/screenshots/vertical.png)
+
+3) Two-sided timeline:
+![Two-Sided Timeline View](src/data/screenshots/two-sided.png)
+
+3) Continuous/gradient scale timelines (communicating each event's position within the timeline):
+![Continuous/Gradient Scale Timeline View](src/data/screenshots/continuous.png)
+
+4) Comparison view, allowing the grouping of multiple timelines for similar issues:
+![Comparison Timeline View](src/data/screenshots/comparison.png)
+
+Note that in all cases, the timeline pages are equipped with a suite of helpful **filters** based on the content of events. This allows users to customise their view and explore topics most interesting to them.
+Users may click on individual events, which displays a helpful pop-up with more information, sources, and topics related to that particular event.
+
 
 ## Technology Stack
 - **MongoDB** serves as the application's database, with backend interaction utilising the [Mongoose]("https://mongoosejs.com/") object modelling tool.
