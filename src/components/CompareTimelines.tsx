@@ -2,8 +2,8 @@
 
 import { useState, useRef } from "react";
 
-import EventModal from "@/components/ui/EventModal";
-import ExportTimelineModal from "@/components/ui/ExportTimelineModal";
+import EventModal from "@/components/modals/EventModal";
+import ExportTimelineModal from "@/components/modals/ExportTimelineModal";
 import GradientScaleHeader from "@/components/ui/GradientScaleHeader";
 import { useEventModal } from "@/hooks/useEventModal";
 import { createEventCardStyle } from "@/lib/createEventCardStyle";

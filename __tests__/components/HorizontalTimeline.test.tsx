@@ -8,7 +8,7 @@ import HorizontalTimeline from "@/components/VerticalTimeline";
 import { EventData } from "@/models/event";
 
 // Mock EventModal component for quick tests on its interaction here
-vi.mock("@/components/ui/EventModal", () => ({
+vi.mock("@/components/modals/EventModal", () => ({
 	__esModule: true,
 	default: ({
 		visible,

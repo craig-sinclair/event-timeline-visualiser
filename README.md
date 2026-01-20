@@ -51,39 +51,84 @@ npm run dev
 The site shall then be accessible at [http://localhost:3000](http://localhost:3000).
 
 ## Directory structure
-(Update with current structure)
+Following NextJS convention, routing to frontend pages and API endpoints is based upon the folder structure in the `src/app/` directory.
 
 ```
 src/
-  app/                      # Next.js routes (App Router)
+  app/                        # Next.js routes (App Router)
     layout.tsx
     page.tsx
-    (feature)/              # Optional: co-locate feature-specific routes
-    api/                    # ONLY route handlers here (Next.js conventions)
+    dashboard/                # Displays all available timelines in a table format
+      page.tsx
+    events-in-topic/          # View all events with a particular ontology topic (across all timelines)
+      [topicID]/
+        page.tsx
+    signin/                   # Sign-in form page
+      page.tsx
+    signup/                   # Profile registration page
+      page.tsx
+    profile/                  # View profile (signed in users only)
+      page.tsx
+    timeline/                 # View a specific timeline, defaulting to an appropriate view/style for event display
+      [timelineID]/
+        page.tsx
+
+    api/                      # ONLY route handlers here (Next.js conventions)
+      /admin              
+        / users               # Fetch all users from database
+          / route.ts
+      /auth                   # Various routes for login, registration, fetching auth session
+        ...
+      /fetch-events           # Fetch all events in a given timeline
+        /[timelineID]
+          /route.ts
+      /fetch-tmieline         # Fetch a timeline object by its ID
+        /[timelineID]
+          /route.ts
+      /fetch-timelines        # Fetch all timelines in the DB
+        /route.ts
+      
+      /fetch-topic-hierarchy  # Builds array of parent/grandparent/... topics from a given media (ontology) topic
+        /[topicID]
+          / route.ts
 
   components/
-    ui/                     # Reusable UI primitives (buttons, cards, modals)
-                            # only reusable building blocks.
-    layout/                 # Page or app-level layout components
-    features/               # Feature-specific components (optional grouping)
-                            # optional: if you have big features, keep their components together.
+    ui/                       # Reusable UI primitives
 
-  lib/                      # Framework-agnostic helpers (formatters, API clients)
-                            # general-purpose utilities (date formatting, helper functions, API client setup).
-  models/                   # TypeScript types, interfaces, schemas
-                            # clear place for TypeScript interfaces, Zod schemas, or Prisma models.
-  services/                 # Business logic (API calls, auth logic, etc.)
-                            # domain-specific logic (auth service, database queries, feature APIs).
-  hooks/                    # Custom React hooks
-  store/                    # State management (Zustand, Redux, etc.)
-                            # centralizes state if you use Zustand/Redux.
-  config/                   # App-wide constants, env configs
-                            # avoids sprinkling env vars everywhere.
-  utils/                    # Miscellaneous utilities (non-business logic)
-  styles/                   # Global CSS, Tailwind configs
-  public/                   # Static assets
+    layout/                     # Page or app-level layout components
+      ErrorBoundary.tsx
 
-  tests/                    # Unit/integration tests (if not colocated)
+    modals/                     # modals/ pop-ups
+      EventModal.tsx            # Event card with further information on specific event
+      ExportTimelineModal.tsx   # Modal to handle exporting of timeline in HTML or image format
+
+    CompareTimelines.tsx          # Allow grouped display of all events in multiple timelines
+    ContinuousScaleTimeline.tsx   # Gradient format scale encoding position in timeline display
+    HorizontalTimeline.tsx        # Standard horizontal format timeline of events
+    VerticalTimeline.tsx          # Standard vertical format timeline of events
+    TimelinesTable.tsx            # Table to list all events
+
+  lib/                        # Framework-agnostic helpers (formatters, API clients)
+                              # general-purpose utilities (date formatting, helper functions, API client setup).
+
+  models/                     # TypeScript types, interfaces, schemas
+                              # clear place for TypeScript interfaces, Zod schemas, or Prisma models.
+
+  services/                   # Business logic (API calls, auth logic, etc.)
+                              # domain-specific logic (auth service, database queries, feature APIs).
+
+  hooks/                      # Custom React hooks
+
+
+  config/                     # App-wide constants, env configs
+                              # avoids sprinkling env vars everywhere.
+
+  utils/                      # Miscellaneous utilities
+    event-styles.const.ts       # Stores base styling logic for event cards
+
+  public/                     # Static assets
+
+  __tests__/                  # Unit tests folder
 ```
 
 ## API Endpoints
