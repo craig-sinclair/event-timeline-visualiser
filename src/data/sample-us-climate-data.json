@@ -1,46 +1,77 @@
 [
     {
-        "overview": "Massachusetts v. EPA Supreme Court Ruling",
+        "overview": "Massachusetts v. EPA (U.S. Supreme Court)",
         "dateTime": "2007-04-02",
-        "furtherDescription": "The U.S. Supreme Court ruled that greenhouse gases are air pollutants under the Clean Air Act and that the EPA has authority to regulate them if they endanger public health or welfare. The decision established legal standing for federal regulation of climate pollutants.",
-        "relevance": 0.95,
+        "relevance": 0.96,
+        "furtherDescription": "The Supreme Court held that greenhouse gases fit within the Clean Air Act’s broad definition of air pollutants and that petitioners had standing to challenge EPA’s refusal to regulate them. The ruling established a legal foundation for federal regulatory action on CO₂ and other greenhouse gases, triggering subsequent rulemakings and litigation over the scope of EPA authority.",
         "URLs": [
-            "[https://supreme.justia.com/cases/federal/us/549/497/](https://supreme.justia.com/cases/federal/us/549/497/)",
-            "[https://www.law.cornell.edu/supct/pdf/05-1120P.ZO](https://www.law.cornell.edu/supct/pdf/05-1120P.ZO)"
+            "https://tile.loc.gov/storage-services/service/ll/usrep/usrep549/usrep549497/usrep549497.pdf",
+            "https://www.law.cornell.edu/supct/pdf/05-1120P.ZO",
+            "https://archive.org/details/micro_IA40385016_0400"
         ],
         "tags": [
             "judicial",
-            "regulatory-authority",
             "clean-air-act",
-            "landmark"
+            "legal-precedent"
         ],
-        "position": 0.90
+        "qcode": [
+            "11000001",
+            "11000005",
+            "11000010"
+        ]
     },
     {
-        "overview": "American Recovery and Reinvestment Act (ARRA) — clean energy spending",
+        "overview": "American Recovery and Reinvestment Act (ARRA) — clean energy investment",
         "dateTime": "2009-02-17",
-        "furtherDescription": "The stimulus package included substantial funding for clean energy deployment, grid modernisation, energy efficiency and low-carbon technology R&D — widely credited with accelerating early 2010s renewable growth in the United States.",
-        "relevance": 0.78,
+        "relevance": 0.85,
+        "furtherDescription": "ARRA allocated tens of billions to clean-energy deployment, grid modernisation, energy-efficiency programmes and innovation (including ARPA-E funding and loan guarantees). The package accelerated large-scale deployment of renewables, boosted R&D, helped modernise the US electric grid and created financing channels for low-carbon technologies during the post-crisis fiscal stimulus.",
         "URLs": [
-            "[https://www.iea.org/policies/2252-american-recovery-and-reinvestment-act-appropriations-for-clean-energy](https://www.iea.org/policies/2252-american-recovery-and-reinvestment-act-appropriations-for-clean-energy)",
-            "[https://www.energy.gov/recovery-act](https://www.energy.gov/recovery-act)"
+            "https://www.energy.gov/recovery-act",
+            "https://www.energy.gov/oe/2009-american-recovery-and-reinvestment-act",
+            "https://www.energy.gov/eere/bioenergy/american-recovery-and-reinvestment-act"
         ],
         "tags": [
             "fiscal-policy",
             "investment",
             "renewables",
-            "stimulus"
+            "innovation"
         ],
-        "position": 0.75
+        "qcode": [
+            "13000010",
+            "13000020",
+            "13000030"
+        ]
     },
     {
-        "overview": "EPA Endangerment Finding for Greenhouse Gases",
-        "dateTime": "2009-04-17",
-        "furtherDescription": "The EPA issued the final Endangerment and Cause or Contribute Findings under the Clean Air Act, concluding that six greenhouse gases threaten public health and welfare — a scientific and legal basis for subsequent federal regulation.",
-        "relevance": 0.96,
+        "overview": "American Clean Energy and Security Act (Waxman-Markey) — House passage",
+        "dateTime": "2009-06-26",
+        "relevance": 0.72,
+        "furtherDescription": "The House passed H.R.2454 (Waxman-Markey), a comprehensive cap-and-trade and clean-energy bill that would have created an economy-wide carbon market and funded clean-energy programmes. The legislation signalled strong Congressional attention to emissions pricing and clean-energy transition, but it failed to pass the Senate and thus did not become law. Waxman-Markey shaped subsequent policy and stakeholder debate on market mechanisms vs regulatory approaches.",
         "URLs": [
-            "[https://www.epa.gov/archive/epapages/newsroom_archive/newsreleases/0ef7df675805295d8525759b00566924.html](https://www.epa.gov/archive/epapages/newsroom_archive/newsreleases/0ef7df675805295d8525759b00566924.html)",
-            "[https://www.epa.gov/sites/default/files/2021-05/documents/rtc_volume_10.pdf](https://www.epa.gov/sites/default/files/2021-05/documents/rtc_volume_10.pdf)"
+            "https://www.congress.gov/bill/111th-congress/house-bill/2454",
+            "https://www.congress.gov/bill/111th-congress/house-bill/2454/text",
+            "https://en.wikipedia.org/wiki/American_Clean_Energy_and_Security_Act"
+        ],
+        "tags": [
+            "legislation",
+            "cap-and-trade",
+            "congress",
+            "policy-debate"
+        ],
+        "qcode": [
+            "11000020",
+            "13000040"
+        ]
+    },
+    {
+        "overview": "EPA Issues Endangerment Finding for Greenhouse Gases",
+        "dateTime": "2009-04-17",
+        "relevance": 0.97,
+        "furtherDescription": "EPA issued the proposed and later final Endangerment and Cause or Contribute Findings under CAA Section 202(a), concluding that six greenhouse gases threaten public health and welfare. The finding provided the scientific and legal basis for regulating GHGs from motor vehicles and, by extension, supported later regulatory actions across sectors.",
+        "URLs": [
+            "https://www.epa.gov/archive/epapages/newsroom_archive/newsreleases/0ef7df675805295d8525759b00566924.html",
+            "https://www.federalregister.gov/documents/2009/12/15/E9-29537/endangerment-and-cause-or-contribute-findings-for-greenhouse-gases-under-section-202a-of-the-clean",
+            "https://www.epa.gov/sites/default/files/2016-08/documents/endangermentfinding_legalbasis.pdf"
         ],
         "tags": [
             "science",
@@ -48,68 +79,124 @@
             "epa",
             "legal-basis"
         ],
-        "position": 0.95
+        "qcode": [
+            "11000003",
+            "14000010"
+        ]
     },
     {
-        "overview": "Obama Administration Announces Clean Power Plan",
-        "dateTime": "2015-08-03",
-        "furtherDescription": "The EPA unveiled the Clean Power Plan setting the first federal limits on carbon pollution from power plants, with state-specific targets and mechanisms to shift generation toward lower-emitting sources. The rule became a central plank of US climate policy despite later legal and political challenges.",
-        "relevance": 0.92,
+        "overview": "EPA and NHTSA establish national GHG and fuel-economy standards for light-duty vehicles (MY 2012–2016; phase begins 2010)",
+        "dateTime": "2010-04-01",
+        "relevance": 0.86,
+        "furtherDescription": "The joint EPA-NHTSA rule created harmonised national standards for greenhouse-gas emissions and Corporate Average Fuel Economy (CAFE), covering model years 2012–2016 and later phases. The National Program reduced projected fleet CO₂ emissions substantially, drove vehicle-efficiency technology adoption and provided regulatory certainty for manufacturers.",
         "URLs": [
-            "[https://19january2017snapshot.epa.gov/cleanpowerplan/fact-sheet-overview-clean-power-plan_.html](https://19january2017snapshot.epa.gov/cleanpowerplan/fact-sheet-overview-clean-power-plan_.html)",
-            "[https://obamawhitehouse.archives.gov/president-obama-climate-action-plan](https://obamawhitehouse.archives.gov/president-obama-climate-action-plan)"
+            "https://www.epa.gov/regulations-emissions-vehicles-and-engines/final-rule-model-year-2012-2016-light-duty-vehicle",
+            "https://www.gao.gov/products/gao-10-739r",
+            "https://theicct.org/publication/u-s-epa-light-duty-vehicle-ghg-and-cafe-standards-for-2012-2016/"
+        ],
+        "tags": [
+            "transport",
+            "vehicle-standards",
+            "fuel-economy",
+            "national-program"
+        ],
+        "qcode": [
+            "12000010",
+            "14000020"
+        ]
+    },
+    {
+        "overview": "US–China Joint Announcement on Climate Change and Clean Energy Cooperation",
+        "dateTime": "2014-11-11",
+        "relevance": 0.84,
+        "furtherDescription": "The United States and China — the world’s two largest emitters — pledged enhanced climate cooperation: the US committed to a 26–28% reduction in emissions below 2005 levels by 2025, and China announced peak-by-around-2030 ambitions and a target for non-fossil energy share. The announcement increased momentum toward a global agreement and was widely credited with improving prospects for the 2015 Paris outcome.",
+        "URLs": [
+            "https://obamawhitehouse.archives.gov/the-press-office/2014/11/11/us-china-joint-announcement-climate-change",
+            "https://publications.ieaghg.org/insightpapers/2014-IP23%20US-China%20Joint%20Announcement%20on%20Climate%20Change%20and%20Clean%20Energy%20Cooperation.pdf",
+            "https://www.brookings.edu/articles/u-s-china-joint-presidential-statement-on-climate-change-the-road-to-paris-and-beyond/"
+        ],
+        "tags": [
+            "international",
+            "diplomacy",
+            "major-emitters",
+            "pre-Paris"
+        ],
+        "qcode": [
+            "14000030",
+            "15000010"
+        ]
+    },
+    {
+        "overview": "Obama Administration announces the Clean Power Plan",
+        "dateTime": "2015-08-03",
+        "relevance": 0.92,
+        "furtherDescription": "EPA’s Clean Power Plan set state-specific targets to reduce CO₂ emissions from existing power plants and encouraged programmatic flexibility (trading, rate- or mass-based approaches). The rule aimed to cut power-sector emissions ~32% below 2005 levels by 2030 and catalysed utility planning for coal-to-gas shifts, renewables and efficiency, despite later legal and political challenges.",
+        "URLs": [
+            "https://19january2017snapshot.epa.gov/cleanpowerplan/fact-sheet-overview-clean-power-plan_.html",
+            "https://19january2017snapshot.epa.gov/cleanpowerplan/fact-sheet-clean-power-plan-numbers_.html",
+            "https://obamawhitehouse.archives.gov/the-press-office/2015/08/03/fact-sheet-president-obama-announce-historic-carbon-pollution-standards"
         ],
         "tags": [
             "power-sector",
             "regulation",
             "emissions-targets",
-            "federal-policy"
+            "state-flexibility"
         ],
-        "position": 0.90,
-        "qcode": ["11000000"]
+        "qcode": [
+            "13000050",
+            "11000030"
+        ]
     },
     {
-        "overview": "United States Signs Paris Agreement",
+        "overview": "United States signs Paris Agreement (UN signing ceremony)",
         "dateTime": "2016-04-22",
-        "furtherDescription": "The United States formally signed the Paris Agreement at the UN signing ceremony in New York, committing to international cooperation on limiting global temperature rise and to submit an emissions reduction pledge under the Agreement.",
-        "relevance": 0.90,
+        "relevance": 0.91,
+        "furtherDescription": "At the UN signing ceremony the United States formally signed the Paris Agreement, committing to international cooperation and to submit a nationally determined contribution (NDC). The signature symbolised diplomatic endorsement of the Paris framework, while domestic implementation continued to depend on subsequent executive and congressional actions.",
         "URLs": [
-            "[https://unfccc.int/process-and-meetings/the-paris-agreement](https://unfccc.int/process-and-meetings/the-paris-agreement)",
-            "[https://unfccc.int/sites/default/files/resource/parisagreement_publication.pdf](https://unfccc.int/sites/default/files/resource/parisagreement_publication.pdf)"
+            "https://unfccc.int/process-and-meetings/the-paris-agreement",
+            "https://unfccc.int/sites/default/files/resource/parisagreement_publication.pdf",
+            "https://obamawhitehouse.archives.gov/the-press-office/2015/12/12/what-paris-agreement-means-united-states"
         ],
         "tags": [
             "international",
             "treaty",
-            "Paris-Agreement",
-            "diplomacy"
+            "diplomacy",
+            "NDC"
         ],
-        "position": 0.88
+        "qcode": [
+            "15000020",
+            "11000040"
+        ]
     },
     {
-        "overview": "President Trump Announces Intention to Withdraw from Paris Agreement",
+        "overview": "President Trump announces intent to withdraw from the Paris Agreement",
         "dateTime": "2017-06-01",
-        "furtherDescription": "President Trump declared the United States would withdraw from the Paris Agreement, signalling a major federal retreat from the international climate framework; the formal withdrawal process concluded on 4 November 2020.",
-        "relevance": 0.94,
+        "relevance": 0.88,
+        "furtherDescription": "President Trump announced the United States intended to withdraw from the Paris Agreement, arguing the deal disadvantaged US workers and industry. The formal withdrawal process completed in November 2020; the decision produced international and domestic policy ripple effects and spurred subnational and private-sector climate commitments in response.",
         "URLs": [
-            "[https://climate.law.columbia.edu/content/president-trump-announces-withdrawal-paris-agreement-0](https://climate.law.columbia.edu/content/president-trump-announces-withdrawal-paris-agreement-0)",
-            "[https://climateactiontracker.org/press/effect-of-the-us-withdrawal-from-the-paris-agreement/](https://climateactiontracker.org/press/effect-of-the-us-withdrawal-from-the-paris-agreement/)"
+            "https://climate.law.columbia.edu/content/president-trump-announces-withdrawal-paris-agreement-0",
+            "https://climateactiontracker.org/press/effect-of-the-us-withdrawal-from-the-paris-agreement/"
         ],
         "tags": [
             "international",
             "withdrawal",
             "politics",
-            "policy-shift"
+            "diplomacy"
         ],
-        "position": 0.15
+        "qcode": [
+            "15000030",
+            "16000010"
+        ]
     },
     {
-        "overview": "Safer Affordable Fuel-Efficient (SAFE) Vehicles Rule (national vehicle standards)",
+        "overview": "Safe Affordable Fuel-Efficient (SAFE) Vehicles Rule — federal vehicle standards",
         "dateTime": "2020-04-30",
-        "furtherDescription": "NHTSA and EPA finalised the SAFE rule establishing weaker federal fuel economy and CO₂ standards for model years 2021–2026 and taking steps to narrow California's ability to set stricter vehicle emissions rules — a federal rollback of vehicle climate standards.",
         "relevance": 0.80,
+        "furtherDescription": "NHTSA and EPA finalised the SAFE rule to establish a single national fuel-economy and emissions programme for model years 2021–2026, relaxing prior trajectories for stringency and limiting California’s waiver scope. The rule represented a federal rollback from earlier, more ambitious Obama-era standards and prompted litigation and state-level policy responses.",
         "URLs": [
-            "[https://www.epa.gov/regulations-emissions-vehicles-and-engines/safer-affordable-fuel-efficient-safe-vehicles-final-rule](https://www.epa.gov/regulations-emissions-vehicles-and-engines/safer-affordable-fuel-efficient-safe-vehicles-final-rule)",
-            "[https://www.federalregister.gov/documents/2020/04/30/2020-06967/the-safer-affordable-fuel-efficient-safe-vehicles-rule-for-model-years-2021-2026-passenger-cars-and](https://www.federalregister.gov/documents/2020/04/30/2020-06967/the-safer-affordable-fuel-efficient-safe-vehicles-rule-for-model-years-2021-2026-passenger-cars-and)"
+            "https://www.epa.gov/regulations-emissions-vehicles-and-engines/safer-affordable-fuel-efficient-safe-vehicles-final-rule",
+            "https://www.federalregister.gov/documents/2020/04/30/2020-06967/the-safer-affordable-fuel-efficient-safe-vehicles-rule-for-model-years-2021-2026-passenger-cars-and",
+            "https://www.nhtsa.gov/corporate-average-fuel-economy/safe"
         ],
         "tags": [
             "transport",
@@ -117,16 +204,19 @@
             "rollback",
             "federal-policy"
         ],
-        "position": 0.20
+        "qcode": [
+            "14000020",
+            "12000011"
+        ]
     },
     {
-        "overview": "Affordable Clean Energy (ACE) Rule Finalised",
+        "overview": "Affordable Clean Energy (ACE) Rule finalised",
         "dateTime": "2019-06-19",
-        "furtherDescription": "The Trump-era EPA finalised the ACE rule to replace the Clean Power Plan with a narrower approach focused on heat-rate improvements at individual coal units — widely criticised for delivering substantially smaller emissions reductions.",
-        "relevance": 0.78,
+        "relevance": 0.77,
+        "furtherDescription": "The EPA’s ACE rule replaced the Clean Power Plan with a narrower approach that emphasised heat-rate improvements at individual coal units rather than system-wide generation shifting. Critics argued ACE produced substantially smaller emissions reductions and left large sources of power-sector emissions unaddressed, while supporters touted regulatory certainty for affected coal plants.",
         "URLs": [
-            "[https://www.epa.gov/stationary-sources-air-pollution/affordable-clean-energy-rule](https://www.epa.gov/stationary-sources-air-pollution/affordable-clean-energy-rule)",
-            "[https://www.epa.gov/stationary-sources-air-pollution/fact-sheet-overview-final-ace-rule](https://www.epa.gov/stationary-sources-air-pollution/fact-sheet-overview-final-ace-rule)"
+            "https://www.epa.gov/stationary-sources-air-pollution/affordable-clean-energy-rule",
+            "https://www.epa.gov/stationary-sources-air-pollution/fact-sheet-overview-final-ace-rule"
         ],
         "tags": [
             "power-sector",
@@ -134,16 +224,19 @@
             "rollback",
             "epa"
         ],
-        "position": 0.25
+        "qcode": [
+            "13000060",
+            "11000007"
+        ]
     },
     {
-        "overview": "California Executive Order: Zero-emission new car sales by 2035",
+        "overview": "California Executive Order N-79-20: target for zero-emission new car sales by 2035",
         "dateTime": "2020-09-23",
-        "furtherDescription": "California issued Executive Order N-79-20 setting a target that all new passenger cars and trucks sold in the state be zero-emission vehicles by 2035, demonstrating ambitious subnational action that contrasts with federal policy shifts.",
-        "relevance": 0.82,
+        "relevance": 0.84,
+        "furtherDescription": "California set a state policy that all new passenger cars and light-duty trucks sold in the state be zero-emission by 2035, demonstrating ambitious subnational action that influences vehicle markets, state-level rulemaking (including waiver petitions) and manufacturing investment decisions.",
         "URLs": [
-            "[https://www.gov.ca.gov/2020/09/23/governor-newsom-announces-california-will-phase-out-gasoline-powered-cars-drastically-reduce-demand-for-fossil-fuel-in-californias-fight-against-climate-change/](https://www.gov.ca.gov/2020/09/23/governor-newsom-announces-california-will-phase-out-gasoline-powered-cars-drastically-reduce-demand-for-fossil-fuel-in-californias-fight-against-climate-change/)",
-            "[https://www.gov.ca.gov/wp-content/uploads/2020/09/9.23.20-EO-N-79-20-Climate.pdf](https://www.gov.ca.gov/wp-content/uploads/2020/09/9.23.20-EO-N-79-20-Climate.pdf)"
+            "https://www.gov.ca.gov/2020/09/23/governor-newsom-announces-california-will-phase-out-gasoline-powered-cars-drastically-reduce-demand-for-fossil-fuel-in-californias-fight-against-climate-change/",
+            "https://www.gov.ca.gov/wp-content/uploads/2020/09/9.23.20-EO-N-79-20-Climate.pdf"
         ],
         "tags": [
             "state-policy",
@@ -151,101 +244,156 @@
             "zero-emission",
             "subnational"
         ],
-        "position": 0.80
+        "qcode": [
+            "15000050",
+            "18000010"
+        ]
     },
     {
-        "overview": "President Biden Signs Instrument to Rejoin the Paris Agreement",
+        "overview": "President Biden signs instrument to rejoin the Paris Agreement",
         "dateTime": "2021-01-20",
-        "furtherDescription": "On his first day in office President Biden signed an instrument to rejoin the Paris Agreement; the United States' re-entry took effect on 19 February 2021, signalling a rapid federal reversal of the prior administration's withdrawal.",
-        "relevance": 0.93,
+        "relevance": 0.94,
+        "furtherDescription": "On his first day in office President Biden transmitted an instrument to re-join the Paris Agreement; US re-entry took effect on 19 February 2021. The rapid re-engagement signalled renewed federal commitment to international climate diplomacy and to raising domestic mitigation ambition through executive action and legislation.",
         "URLs": [
-            "[https://2021-2025.state.gov/the-united-states-officially-rejoins-the-paris-agreement/](https://2021-2025.state.gov/the-united-states-officially-rejoins-the-paris-agreement/)",
-            "[https://unfccc.int/news/un-welcomes-us-announcement-to-rejoin-the-paris-agreement](https://unfccc.int/news/un-welcomes-us-announcement-to-rejoin-the-paris-agreement)"
+            "https://2021-2025.state.gov/the-united-states-officially-rejoins-the-paris-agreement/",
+            "https://unfccc.int/news/un-welcomes-us-announcement-to-rejoin-the-paris-agreement"
         ],
         "tags": [
             "international",
             "recommitment",
-            "Paris-Agreement",
             "executive-action"
         ],
-        "position": 0.85
+        "qcode": [
+            "15000020",
+            "11000040"
+        ]
     },
     {
-        "overview": "United States Announces New NDC: 50–52% Reduction by 2030",
+        "overview": "Executive Order 14008 — Tackling the Climate Crisis at Home and Abroad",
+        "dateTime": "2021-01-27",
+        "relevance": 0.89,
+        "furtherDescription": "EO 14008 established a National Climate Task Force, elevated climate policy across federal agencies, prioritised environmental justice and launched initiatives to align federal procurement, infrastructure and permitting with climate and clean-energy objectives. It created coordinated mechanisms to pursue mitigation, resilience and clean-energy manufacturing goals.",
+        "URLs": [
+            "https://www.presidency.ucsb.edu/documents/executive-order-14008-tackling-the-climate-crisis-home-and-abroad",
+            "https://www.federalregister.gov/documents/2021/02/01/2021-02177/tackling-the-climate-crisis-at-home-and-abroad"
+        ],
+        "tags": [
+            "executive-order",
+            "whole-of-government",
+            "climate-governance"
+        ],
+        "qcode": [
+            "13000060",
+            "16000020"
+        ]
+    },
+    {
+        "overview": "United States announces new NDC — 50–52% emissions reduction by 2030 (vs 2005)",
         "dateTime": "2021-04-22",
-        "furtherDescription": "President Biden announced an updated nationally determined contribution under the Paris Agreement committing the United States to reduce net greenhouse gas emissions by 50–52% below 2005 levels by 2030.",
-        "relevance": 0.94,
+        "relevance": 0.93,
+        "furtherDescription": "The Biden administration submitted an updated nationally determined contribution (NDC) under the Paris framework, committing to economy-wide net GHG reductions of 50–52% below 2005 levels by 2030. The pledge shaped domestic policy priorities for tax incentives, infrastructure, vehicle standards and power-sector decarbonisation, and provided a benchmark for international climate diplomacy.",
         "URLs": [
-            "[https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2021/04/22/fact-sheet-president-biden-sets-2030-greenhouse-gas-pollution-reduction-target-aimed-at-creating-good-paying-union-jobs-and-securing-u-s-leadership-on-clean-energy-technologies/](https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2021/04/22/fact-sheet-president-biden-sets-2030-greenhouse-gas-pollution-reduction-target-aimed-at-creating-good-paying-union-jobs-and-securing-u-s-leadership-on-clean-energy-technologies/)",
-            "[https://unfccc.int/sites/default/files/NDC/2022-06/United%20States%20NDC%20April%2021%202021%20Final.pdf](https://unfccc.int/sites/default/files/NDC/2022-06/United%20States%20NDC%20April%2021%202021%20Final.pdf)"
+            "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2021/04/22/fact-sheet-president-biden-sets-2030-greenhouse-gas-pollution-reduction-target-aimed-at-creating-good-paying-union-jobs-and-securing-u-s-leadership-on-clean-energy-technologies/",
+            "https://unfccc.int/sites/default/files/NDC/2022-06/United%20States%20NDC%20April%2021%202021%20Final.pdf"
         ],
         "tags": [
-            "targets",
             "NDC",
+            "targets",
             "international",
-            "ambition"
+            "domestic-policy"
         ],
-        "position": 0.90
+        "qcode": [
+            "15000040",
+            "13000070"
+        ]
     },
     {
-        "overview": "Keystone XL Presidential Permit Revoked",
+        "overview": "President revokes Keystone XL Presidential Permit",
         "dateTime": "2021-01-20",
-        "furtherDescription": "President Biden revoked the cross-border permit for the Keystone XL pipeline on his first day in office; the pipeline project was subsequently cancelled by its owner in June 2021, a high-profile setback for an oil infrastructure project opposed by climate and indigenous groups.",
         "relevance": 0.76,
+        "furtherDescription": "President Biden revoked the presidential cross-border permit for the Keystone XL pipeline on his first day in office, halting construction and signalling a shift in federal infrastructure policy toward limiting new large-scale fossil-fuel transport projects. The action catalysed legal and trade claims and contributed to the project's eventual termination.",
         "URLs": [
-            "[https://eelp.law.harvard.edu/tracker/keystone-xl-pipeline/](https://eelp.law.harvard.edu/tracker/keystone-xl-pipeline/)",
-            "[https://www.theguardian.com/environment/2021/jun/09/keystone-xl-pipeline-canceled](https://www.theguardian.com/environment/2021/jun/09/keystone-xl-pipeline-canceled)"
+            "https://www.reuters.com/business/energy/biden-revokes-kxl-permit-blow-canadas-oil-sector-ottawa-disappointed-2021-01-20/",
+            "https://docs.house.gov/meetings/GO/GO00/20211028/114185/HHRG-117-GO00-20211028-SD016.pdf"
         ],
         "tags": [
-            "fossil-fuels",
             "infrastructure",
-            "executive-action",
+            "fossil-fuels",
+            "executive-action"
+        ],
+        "qcode": [
+            "17000010",
+            "16000030"
+        ]
+    },
+    {
+        "overview": "TC Energy cancels the Keystone XL pipeline project",
+        "dateTime": "2021-06-09",
+        "relevance": 0.74,
+        "furtherDescription": "Following the permit revocation and sustained legal and political opposition, TC Energy announced termination of the Keystone XL project. The cancellation marked a high-profile outcome in debates over fossil-fuel infrastructure, Indigenous rights and climate impacts, and triggered arbitration and bilateral trade disputes.",
+        "URLs": [
+            "https://www.tcenergy.com/announcements/2021/2021-06-09-tc-energy-confirms-termination-of-keystone-xl-pipeline-project/",
+            "https://www.theguardian.com/environment/2021/jun/09/keystone-xl-pipeline-canceled",
+            "https://www.reuters.com/business/energy/tc-energy-terminates-keystone-xl-pipeline-project-2021-06-09/"
+        ],
+        "tags": [
+            "infrastructure",
+            "cancellation",
             "indigenous-rights"
         ],
-        "position": 0.70
+        "qcode": [
+            "17000011",
+            "16000040"
+        ]
     },
     {
-        "overview": "Infrastructure Investment and Jobs Act (Bipartisan Infrastructure Law)",
+        "overview": "Infrastructure Investment and Jobs Act (IIJA) — climate-relevant provisions",
         "dateTime": "2021-11-15",
-        "furtherDescription": "The IIJA provided historic funding for grid resilience, electric vehicle charging infrastructure, public transit and other measures that support decarbonisation and adaptation — representing major bipartisan infrastructure investment with climate-relevant provisions.",
-        "relevance": 0.86,
+        "relevance": 0.87,
+        "furtherDescription": "IIJA authorised historic funding for grid resilience, EV charging networks, public transport, clean-water projects and resilience measures. While framed as infrastructure investment, the law contains substantial climate-relevant elements that facilitate decarbonisation and adaptation investments at federal, state and local levels.",
         "URLs": [
-            "[https://www.congress.gov/bill/117th-congress/house-bill/3684](https://www.congress.gov/bill/117th-congress/house-bill/3684)",
-            "[https://afdc.energy.gov/laws/infrastructure-investment-jobs-act](https://afdc.energy.gov/laws/infrastructure-investment-jobs-act)"
+            "https://www.congress.gov/bill/117th-congress/house-bill/3684",
+            "https://afdc.energy.gov/laws/infrastructure-investment-jobs-act"
         ],
         "tags": [
             "infrastructure",
+            "resilience",
             "EV-charging",
-            "grid",
             "adaptation"
         ],
-        "position": 0.75
+        "qcode": [
+            "13000080",
+            "14000040"
+        ]
     },
     {
-        "overview": "U.S. Supreme Court: West Virginia v. EPA limits EPA regulatory reach",
+        "overview": "U.S. Supreme Court rules in West Virginia v. EPA (limits on EPA’s generation-shifting authority)",
         "dateTime": "2022-06-30",
-        "furtherDescription": "The Supreme Court ruled that the EPA could not rely on broad 'generation-shifting' authority under Section 111(d) of the Clean Air Act without clear congressional authorisation, constraining one route for wide-ranging federal power to reduce power-sector emissions.",
         "relevance": 0.92,
+        "furtherDescription": "The Supreme Court held that EPA could not rely on broad 'generation-shifting' measures under Section 111(d) of the Clean Air Act without clear congressional authorisation, invoking the major-questions doctrine. The decision constrained one regulatory pathway for large-scale power-sector emissions reductions and refocused policy attention onto Congress and alternative regulatory tools.",
         "URLs": [
-            "[https://www.supremecourt.gov/opinions/21pdf/20-1530_n758.pdf](https://www.supremecourt.gov/opinions/21pdf/20-1530_n758.pdf)",
-            "[https://www.skadden.com/insights/publications/2022/09/quarterly-insights/west-virginia-v-epa](https://www.skadden.com/insights/publications/2022/09/quarterly-insights/west-virginia-v-epa)"
+            "https://www.supremecourt.gov/opinions/21pdf/20-1530_n758.pdf",
+            "https://www.skadden.com/insights/publications/2022/09/quarterly-insights/west-virginia-v-epa"
         ],
         "tags": [
             "judicial",
-            "major-questions-doctrine",
+            "major-questions",
             "regulatory-limit",
             "power-sector"
         ],
-        "position": 0.20
+        "qcode": [
+            "11000002",
+            "11000006"
+        ]
     },
     {
-        "overview": "Inflation Reduction Act Signed — largest federal climate investment",
+        "overview": "Inflation Reduction Act — largest US federal climate and clean-energy investment package",
         "dateTime": "2022-08-16",
-        "furtherDescription": "The Inflation Reduction Act authorised the single largest US federal investment in climate and energy, with extensive tax credits, grants and programmes to accelerate clean energy, manufacturing, electrification and emissions reductions.",
-        "relevance": 0.98,
+        "relevance": 0.99,
+        "furtherDescription": "The IRA enacted historic tax incentives, grants and procurement authority to accelerate clean-energy deployment, domestic manufacturing, electrification and emissions reductions across power, transport, buildings and industry. Analysts view IRA provisions as transformational for US decarbonisation pathways and industrial policy, with long-term effects on supply chains and investment.",
         "URLs": [
-            "[https://www.energy.gov/lpo/inflation-reduction-act-2022](https://www.energy.gov/lpo/inflation-reduction-act-2022)",
-            "[https://www.congress.gov/crs-product/R47262](https://www.congress.gov/crs-product/R47262)"
+            "https://www.energy.gov/lpo/inflation-reduction-act-2022",
+            "https://www.congress.gov/crs/product/R47262"
         ],
         "tags": [
             "legislation",
@@ -253,75 +401,30 @@
             "clean-energy",
             "investment"
         ],
-        "position": 0.95
+        "qcode": [
+            "13000090",
+            "14000050"
+        ]
     },
     {
-        "overview": "Owner Cancels Keystone XL Pipeline",
-        "dateTime": "2021-06-09",
-        "furtherDescription": "Following the revocation of its presidential permit and persistent legal and political opposition, TC Energy announced cancellation of the Keystone XL pipeline project; the decision was hailed by climate activists and critics of fossil-fuel expansion.",
-        "relevance": 0.72,
-        "URLs": [
-            "[https://www.theguardian.com/environment/2021/jun/09/keystone-xl-pipeline-canceled](https://www.theguardian.com/environment/2021/jun/09/keystone-xl-pipeline-canceled)",
-            "[https://eelp.law.harvard.edu/tracker/keystone-xl-pipeline/](https://eelp.law.harvard.edu/tracker/keystone-xl-pipeline/)"
-        ],
-        "tags": [
-            "fossil-fuels",
-            "cancellation",
-            "activism",
-            "policy-impact"
-        ],
-        "position": 0.65
-    },
-    {
-        "overview": "Federal Vehicle and Fuel-standards Preemption and Rulemaking (SAFE / One National Program)",
-        "dateTime": "2019-09-27",
-        "furtherDescription": "The administration and federal agencies moved to establish a single national vehicle emissions and fuel economy programme, limiting state waivers and harmonising standards at a lower stringency than earlier federal rules — a contentious shift with climate implications.",
-        "relevance": 0.74,
-        "URLs": [
-            "[https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=2127-AL76&pubId=201910](https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=2127-AL76&pubId=201910)",
-            "[https://www.nhtsa.gov/corporate-average-fuel-economy/safe](https://www.nhtsa.gov/corporate-average-fuel-economy/safe)"
-        ],
-        "tags": [
-            "transport",
-            "federal-rule",
-            "standards",
-            "preemption"
-        ],
-        "position": 0.30
-    },
-    {
-        "overview": "State and Local Climate Leadership Increases (multiple actions)",
+        "overview": "State and local climate leadership intensifies (multiple policies and programmes)",
         "dateTime": "2020-01-01",
-        "furtherDescription": "In response to uneven federal action, US states, cities and businesses accelerated commitments on renewables, emissions targets and climate policy (for example regional RGGI expansion, corporate net-zero pledges and state NDC-aligned targets), creating a parallel track of subnational ambition.",
-        "relevance": 0.80,
+        "relevance": 0.83,
+        "furtherDescription": "In the absence of continuous federal direction at times, numerous US states, cities, regional partnerships and corporations amplified climate commitments — including renewable portfolio standards, cap-and-trade participation (RGGI), corporate net-zero pledges and subnational NDC-aligned targets — creating a parallel track of ambition and policy experimentation that influenced national politics and markets.",
         "URLs": [
-            "[https://climateactiontracker.org/countries/usa/2021-11-04/targets/](https://climateactiontracker.org/countries/usa/2021-11-04/targets/)",
-            "[https://eelp.law.harvard.edu/us-paris-commitment/](https://eelp.law.harvard.edu/us-paris-commitment/)"
+            "https://climateactiontracker.org/countries/usa/2021-11-04/targets/",
+            "https://eelp.law.harvard.edu/us-paris-commitment/",
+            "https://www.rggi.org/"
         ],
         "tags": [
             "subnational",
             "states",
             "cities",
-            "corporate"
+            "corporate-action"
         ],
-        "position": 0.78
-    },
-    {
-        "overview": "Federal clean-energy rulemaking and litigation volatility",
-        "dateTime": "2015-2022",
-        "furtherDescription": "Between 2015 and 2022 the US experienced rapid swings in federal climate policy — from ambitious rules (Clean Power Plan) to rollbacks (ACE, SAFE) and judicial limits (West Virginia v. EPA) — producing regulatory uncertainty affecting long-term decarbonisation pathways.",
-        "relevance": 0.88,
-        "URLs": [
-            "[https://obamawhitehouse.archives.gov/president-obama-climate-action-plan](https://obamawhitehouse.archives.gov/president-obama-climate-action-plan)",
-            "[https://www.epa.gov/stationary-sources-air-pollution/affordable-clean-energy-rule](https://www.epa.gov/stationary-sources-air-pollution/affordable-clean-energy-rule)",
-            "[https://www.supremecourt.gov/opinions/21pdf/20-1530_n758.pdf](https://www.supremecourt.gov/opinions/21pdf/20-1530_n758.pdf)"
-        ],
-        "tags": [
-            "regulatory-uncertainty",
-            "litigation",
-            "policy-swing",
-            "governance"
-        ],
-        "position": 0.40
+        "qcode": [
+            "15000050",
+            "18000020"
+        ]
     }
 ]

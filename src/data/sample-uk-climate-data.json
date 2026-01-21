@@ -2,12 +2,13 @@
   {
     "overview": "Climate Change Act 2008 Passed",
     "dateTime": "2008-11-26",
-    "furtherDescription": "The UK became the first country in the world to set legally binding long-term emissions reduction targets. The Act committed the UK to reducing greenhouse gas emissions by at least 80% by 2050, relative to 1990 levels, and established a framework of carbon budgets.",
+    "furtherDescription": "The UK became the first country in the world to set legally binding long-term emissions reduction targets. The Climate Change Act committed the UK to reducing greenhouse gas emissions by at least 80% by 2050 relative to 1990 levels, and established a framework of five-year carbon budgets. The Act also created the independent Climate Change Committee to advise the government and monitor progress. This groundbreaking legislation set a template for climate action globally and established the UK as an international leader on climate policy.",
     "relevance": 0.95,
     "URLs": [
       "https://www.legislation.gov.uk/ukpga/2008/27/contents",
       "https://www.bbc.co.uk/news/science-environment-46459714",
-      "https://commonslibrary.parliament.uk/research-briefings/sn05533/"
+      "https://commonslibrary.parliament.uk/research-briefings/sn05533/",
+      "https://en.wikipedia.org/wiki/Climate_Change_Act_2008"
     ],
     "tags": [
       "legislation",
@@ -16,17 +17,37 @@
       "historic"
     ],
     "position": 0.85,
-    "qcode": ["11000000"]
+    "qcode": ["11000000", "20000543", "20000570", "06000000", "20000632", "20000633"]
+  },
+  {
+    "overview": "Government Advertising Encouraged Less Flying and Lower-Carbon Behaviors",
+    "dateTime": "2009-03-15",
+    "furtherDescription": "The government ran campaigns under the 'Act on CO2' initiative encouraging people to reduce flying and adopt lower-carbon behaviors such as switching off lights and reducing home heating. The campaign included TV advertisements and a website with carbon calculators. However, these campaigns were quietly dropped amid political concerns about appearing anti-growth and pressure from the aviation and business industries, who argued the messaging was damaging to the economy. This marked an early example of the tension between climate action and economic growth concerns.",
+    "relevance": 0.64,
+    "URLs": [
+      "https://www.theguardian.com/environment/2009/feb/03/act-on-co2-carbon-emissions",
+      "https://www.bbc.co.uk/news/science-environment-10206286",
+      "https://webarchive.nationalarchives.gov.uk/ukgwa/20100509140257/http://actonco2.direct.gov.uk/"
+    ],
+    "tags": [
+      "aviation",
+      "behavior-change",
+      "public-awareness",
+      "policy-retreat"
+    ],
+    "position": 0.58,
+    "qcode": ["11000000", "06000000", "20000632", "20000337", "20000338", "14000000"]
   },
   {
     "overview": "Nigel Lawson Forms Global Warming Policy Foundation",
     "dateTime": "2009-11-23",
-    "furtherDescription": "Former Chancellor Nigel Lawson established the Global Warming Policy Foundation, a think tank skeptical of climate change policies. The organization has been influential in questioning the costs and necessity of aggressive climate action, representing a significant counter-movement to mainstream climate policy.",
+    "furtherDescription": "Former Conservative Chancellor Nigel Lawson established the Global Warming Policy Foundation (GWPF), a think tank skeptical of climate change policies and the costs of climate action. The organization has been influential in questioning the necessity of aggressive climate measures and providing a platform for climate skepticism in UK policy debates. The GWPF has been criticized for lacking transparency about its funding sources and for promoting views that contradict mainstream climate science. It represents a significant counter-movement to climate policy and has influenced Conservative Party thinking on net zero costs.",
     "relevance": 0.75,
     "URLs": [
       "https://www.thegwpf.org/",
       "https://www.theguardian.com/environment/2009/nov/23/lord-lawson-climate-change-think-tank",
-      "https://www.bbc.co.uk/news/uk-politics-48868561"
+      "https://www.bbc.co.uk/news/uk-politics-48868561",
+      "https://en.wikipedia.org/wiki/Global_Warming_Policy_Foundation"
     ],
     "tags": [
       "skepticism",
@@ -35,49 +56,70 @@
       "policy"
     ],
     "position": 0.15,
-    "qcode": ["11000000"]
+    "qcode": ["11000000", "06000000", "20000632", "20000560", "20000363"]
   },
   {
-    "overview": "Net Zero Target Legislated",
-    "dateTime": "2019-06-27",
-    "furtherDescription": "The UK amended the Climate Change Act to target net zero emissions by 2050, making it the first major economy to legislate for net zero. This represented a significant strengthening of climate ambitions, moving beyond the previous 80% reduction target.",
-    "relevance": 0.98,
+    "overview": "Woodland Carbon Code Established",
+    "dateTime": "2011-08-01",
+    "furtherDescription": "The UK government launched the Woodland Carbon Code, the world's first voluntary standard for woodland creation projects that allows carbon sequestration to be quantified and verified. This created a robust framework for carbon offsetting through forestry and helped develop a market for woodland carbon credits. The Code provides assurance that the climate benefits claimed by tree planting projects are real, measurable, and additional. It has since been adopted as a model by other countries and has enabled over 100 projects covering thousands of hectares of new woodland.",
+    "relevance": 0.71,
     "URLs": [
-      "https://www.gov.uk/government/news/uk-becomes-first-major-economy-to-pass-net-zero-emissions-law",
-      "https://www.bbc.co.uk/news/science-environment-48596775",
-      "https://commonslibrary.parliament.uk/research-briefings/cbp-8590/"
+      "https://woodlandcarboncode.org.uk/",
+      "https://www.bbc.co.uk/news/science-environment-14368790",
+      "https://www.gov.uk/guidance/the-woodland-carbon-code-scheme"
     ],
     "tags": [
-      "legislation",
-      "net-zero",
-      "targets",
-      "ambitious"
+      "forestry",
+      "carbon-offsetting",
+      "nature",
+      "standards"
     ],
-    "position": 0.95,
-    "qcode": ["11000000"]
+    "position": 0.65,
+    "qcode": ["06000000", "20000632", "20000635", "20000649", "20000214"]
   },
   {
-    "overview": "Cancellation of Carbon Capture Competition",
-    "dateTime": "2015-11-25",
-    "furtherDescription": "The government unexpectedly cancelled a £1 billion carbon capture and storage competition, disappointing industry and environmental groups. This decision was seen as undermining the UK's green technology leadership and commitment to emissions reduction.",
-    "relevance": 0.70,
+    "overview": "Carbon Price Floor Introduced",
+    "dateTime": "2013-04-01",
+    "furtherDescription": "The UK introduced a carbon price floor, setting a minimum price on carbon emissions from electricity generation to provide certainty for low-carbon investment. Starting at £16 per tonne of CO2, this policy made coal power significantly more expensive and accelerated the decline of coal generation while making renewables and nuclear more competitive. The carbon price floor is credited as one of the most effective policies in driving the UK's dramatic reduction in coal use. However, it was later frozen in 2016 to avoid penalizing energy-intensive industries and affecting competitiveness. Despite this freeze, it remains a key policy tool in the UK's decarbonization strategy.",
+    "relevance": 0.83,
     "URLs": [
-      "https://www.bbc.co.uk/news/business-34912948",
-      "https://www.theguardian.com/environment/2015/nov/25/uk-cancels-pioneering-1bn-carbon-capture-and-storage-competition",
-      "https://www.carbonbrief.org/timeline-how-uk-carbon-capture-storage-competitions-have-unfolded/"
+      "https://www.gov.uk/government/publications/excise-notice-ccl1-climate-change-levy/excise-notice-ccl1-climate-change-levy",
+      "https://www.carbonbrief.org/analysis-uks-co2-emissions-have-fallen-29-per-cent-over-the-past-decade",
+      "https://commonslibrary.parliament.uk/research-briefings/sn05927/",
+      "https://en.wikipedia.org/wiki/Carbon_price_floor"
     ],
     "tags": [
-      "carbon-capture",
-      "funding",
+      "carbon-pricing",
+      "taxation",
+      "coal",
+      "policy-instrument"
+    ],
+    "position": 0.77,
+    "qcode": ["11000000", "04000000", "20000379", "06000000", "20000632", "20000256", "20000258"]
+  },
+  {
+    "overview": "Zero Carbon Homes Policy Scrapped",
+    "dateTime": "2015-07-10",
+    "furtherDescription": "The Conservative government scrapped the Zero Carbon Homes standard, which would have required all new homes built from 2016 onwards to be zero carbon through a combination of energy efficiency measures and renewable energy. The policy, first announced in 2006, had been due to take effect within months. Environmental groups condemned this as a major setback for reducing emissions from the housing sector, which accounts for around 20% of UK emissions. The housing industry had largely welcomed the decision, claiming the standards would add excessive costs to new builds. This reversal highlighted tensions between climate ambitions and concerns about housing affordability and construction industry competitiveness.",
+    "relevance": 0.68,
+    "URLs": [
+      "https://www.theguardian.com/environment/2015/jul/10/government-cuts-green-policy-to-boost-homebuilding-industry",
+      "https://www.bbc.co.uk/news/business-33482425",
+      "https://www.carbonbrief.org/why-did-uk-government-scrap-zero-carbon-homes-policy/"
+    ],
+    "tags": [
+      "housing",
       "policy-reversal",
-      "technology"
+      "emissions",
+      "construction"
     ],
-    "position": 0.35
+    "position": 0.28,
+    "qcode": ["11000000", "04000000", "20000235", "20001368", "06000000", "20000632"]
   },
   {
     "overview": "Coal Phase-Out Announcement",
     "dateTime": "2015-11-18",
-    "furtherDescription": "Energy Secretary Amber Rudd announced plans to phase out all coal-fired power stations by 2025. This marked a decisive shift away from coal, though critics noted it was partly offset by continued support for gas infrastructure.",
+    "furtherDescription": "Energy Secretary Amber Rudd announced plans to phase out all unabated coal-fired power stations in Great Britain by 2025, marking a decisive shift away from coal. In her landmark speech, Rudd stated that coal power was incompatible with climate targets and that the UK would lead the world in clean energy transition. The announcement set in motion the closure of remaining coal plants and positioned the UK to become the first major economy to eliminate coal power. However, critics noted that support for gas infrastructure continued, and environmental groups argued the government was not doing enough to replace coal with renewables rather than gas.",
     "relevance": 0.85,
     "URLs": [
       "https://www.gov.uk/government/speeches/amber-rudds-speech-on-a-new-direction-for-uk-energy-policy",
@@ -90,12 +132,207 @@
       "phase-out",
       "fossil-fuels"
     ],
-    "position": 0.75
+    "position": 0.75,
+    "qcode": ["11000000", "04000000", "20000256", "20000258", "06000000", "20000632", "20000260"]
+  },
+  {
+    "overview": "Cancellation of Carbon Capture Competition",
+    "dateTime": "2015-11-25",
+    "furtherDescription": "The government unexpectedly cancelled a £1 billion carbon capture and storage (CCS) competition that had been running since 2012, just weeks before winners were to be announced. Two major projects at Peterhead in Scotland and the White Rose project in Yorkshire had been competing for the funding. The decision disappointed industry leaders and environmental groups, who viewed CCS as essential for decarbonizing heavy industry and potentially continuing to use gas power stations. The cancellation was seen as undermining the UK's position as a leader in green technology development and jeopardizing future investment in CCS. It marked a significant policy reversal that set back UK CCS development by years.",
+    "relevance": 0.70,
+    "URLs": [
+      "https://www.bbc.co.uk/news/business-34912948",
+      "https://www.theguardian.com/environment/2015/nov/25/uk-cancels-pioneering-1bn-carbon-capture-and-storage-competition",
+      "https://www.carbonbrief.org/timeline-how-uk-carbon-capture-storage-competitions-have-unfolded/"
+    ],
+    "tags": [
+      "carbon-capture",
+      "funding",
+      "policy-reversal",
+      "technology"
+    ],
+    "position": 0.35,
+    "qcode": ["11000000", "04000000", "20000256", "06000000", "20000632", "20000208"]
+  },
+  {
+    "overview": "Solar Subsidy Cuts Devastate Industry",
+    "dateTime": "2015-12-17",
+    "furtherDescription": "The government announced it would slash subsidies for solar power by 65%, effective from January 2016, reducing the Feed-in Tariff from 12.9p per kWh to 4.4p per kWh. The solar industry warned this would destroy jobs and halt the UK's solar energy growth, with some companies describing it as an 'existential threat'. Solar installations fell by over 90% in subsequent years, dropping from around 4GW of new capacity in 2015 to just 0.4GW in 2019. The policy was criticized as short-sighted, particularly given falling costs of solar panels and the technology's potential for distributed generation. It represented a significant setback for the UK's renewable energy transition and contrasted sharply with growing solar deployment in other countries.",
+    "relevance": 0.79,
+    "URLs": [
+      "https://www.bbc.co.uk/news/business-35126353",
+      "https://www.theguardian.com/environment/2015/dec/17/solar-panel-subsidies-slashed-government-climate-change",
+      "https://www.carbonbrief.org/guest-post-why-have-uk-solar-panel-installations-fallen-so-dramatically"
+    ],
+    "tags": [
+      "solar",
+      "subsidies",
+      "renewable-energy",
+      "policy-cut"
+    ],
+    "position": 0.30,
+    "qcode": ["11000000", "04000000", "20000256", "20000257", "20001209", "06000000", "20000632"]
+  },
+  {
+    "overview": "Green Investment Bank Privatized",
+    "dateTime": "2017-03-23",
+    "furtherDescription": "The government sold the Green Investment Bank (GIB) to Australian infrastructure group Macquarie for £2.3 billion, despite warnings from environmental groups that privatization would weaken its green mandate. Originally established in 2012 with £3.8 billion of public money to catalyze private investment in low-carbon projects, the GIB had invested in offshore wind, waste-to-energy, and energy efficiency projects. Environmental campaigners argued the bank was finally gaining momentum and that selling it represented a false economy. The sale included some environmental protections, but critics questioned whether Macquarie would maintain the same commitment to green investments. The privatization raised fundamental questions about the government's commitment to green finance and infrastructure.",
+    "relevance": 0.73,
+    "URLs": [
+      "https://www.bbc.co.uk/news/business-39370529",
+      "https://www.theguardian.com/environment/2017/mar/23/green-investment-bank-sold-macquarie-climate-concerns",
+      "https://commonslibrary.parliament.uk/research-briefings/sn05960/"
+    ],
+    "tags": [
+      "finance",
+      "privatization",
+      "green-investment",
+      "policy-change"
+    ],
+    "position": 0.40,
+    "qcode": ["11000000", "04000000", "20001370", "20000287", "06000000", "20000632"]
+  },
+  {
+    "overview": "Heathrow Third Runway Approval and Legal Challenge",
+    "dateTime": "2018-06-25",
+    "furtherDescription": "Parliament voted 415 to 119 to approve expansion of Heathrow Airport with a third runway, despite concerns about aviation emissions and the project's compatibility with climate commitments. The £14 billion project was projected to increase the airport's capacity from 480,000 flights to 740,000 per year. Environmental groups, local councils, and London Mayor Sadiq Khan challenged the decision in court. In February 2020, the Court of Appeal ruled the expansion illegal because ministers had failed to consider the Paris Agreement and the government's own climate commitments. This landmark ruling was the first in the world to be based on the Paris Agreement, though it was later overturned by the Supreme Court, which found the government had adequately considered climate policy.",
+    "relevance": 0.76,
+    "URLs": [
+      "https://www.bbc.co.uk/news/uk-44596308",
+      "https://www.theguardian.com/environment/2020/feb/27/heathrow-third-runway-ruled-illegal-over-climate-change",
+      "https://commonslibrary.parliament.uk/research-briefings/cbp-8706/"
+    ],
+    "tags": [
+      "aviation",
+      "infrastructure",
+      "legal",
+      "emissions"
+    ],
+    "position": 0.32,
+    "qcode": ["11000000", "04000000", "20000337", "20000338", "02000000", "20000106", "06000000", "20000632"]
+  },
+  {
+    "overview": "Extinction Rebellion Protests Disrupt London",
+    "dateTime": "2019-04-15",
+    "furtherDescription": "Environmental activist group Extinction Rebellion launched major non-violent protests across London, blocking Oxford Circus, Waterloo Bridge, and other major roads and bridges for 11 days to demand urgent climate action. The protests involved thousands of people and resulted in over 1,000 arrests. Extinction Rebellion's three demands were: tell the truth about the climate emergency, act now to halt biodiversity loss and reach net zero by 2025, and create a Citizens' Assembly on climate. The movement used civil disobedience tactics including sit-ins, roadblocks, and disruption of public transport. While controversial, the protests succeeded in putting climate change at the center of public discourse and influenced Parliament's subsequent climate emergency declaration. Swedish activist Greta Thunberg addressed protesters and met with MPs during the demonstrations.",
+    "relevance": 0.87,
+    "URLs": [
+      "https://www.bbc.co.uk/news/uk-48013125",
+      "https://www.theguardian.com/environment/2019/apr/15/extinction-rebellion-activists-block-london-bridges",
+      "https://extinctionrebellion.uk/",
+      "https://en.wikipedia.org/wiki/Extinction_Rebellion"
+    ],
+    "tags": [
+      "activism",
+      "protests",
+      "public-pressure",
+      "social-movement"
+    ],
+    "position": 0.92,
+    "qcode": ["16000000", "20000065", "20000066", "06000000", "20000632", "14000000"]
+  },
+  {
+    "overview": "UK Parliament Declares Climate Emergency",
+    "dateTime": "2019-05-01",
+    "furtherDescription": "The UK Parliament became the first national legislature in the world to declare a climate and environment emergency, following a motion tabled by Labour leader Jeremy Corbyn. The symbolic motion passed without a vote after cross-party support, though it did not legally compel the government to specific actions. Environment Secretary Michael Gove acknowledged the situation was 'grave' but stopped short of using the word 'emergency'. The declaration was one of the key demands from Extinction Rebellion protests that had paralyzed parts of London in April. The motion called for net-zero emissions before 2050 and urged the government to outline proposals to restore the UK's natural environment within six months. The declaration inspired similar emergency declarations by local councils, regional governments, and eventually other national parliaments around the world.",
+    "relevance": 0.91,
+    "URLs": [
+      "https://www.parliament.uk/business/news/2019/may/mps-debate-the-environment-and-climate-change/",
+      "https://hansard.parliament.uk/commons/2019-05-01/debates/3C133E25-D670-4F2B-B245-33968D0228D2/EnvironmentAndClimateChange",
+      "https://www.bbc.com/news/uk-politics-48126677",
+      "https://climateemergencydeclaration.org/united-kingdom-bipartisan-uk-parliament-declares-a-climate-emergency/",
+      "https://en.wikipedia.org/wiki/Climate_emergency_declarations_in_the_United_Kingdom"
+    ],
+    "tags": [
+      "political",
+      "historic",
+      "declaration",
+      "parliamentary"
+    ],
+    "position": 0.88,
+    "qcode": ["11000000", "20000543", "20000537", "06000000", "20000632", "20000540"]
+  },
+  {
+    "overview": "Feed-in Tariff Scheme Closed",
+    "dateTime": "2019-03-31",
+    "furtherDescription": "The Feed-in Tariff (FIT) scheme, which paid households and businesses for generating renewable electricity through solar panels, wind turbines, or other technologies, was closed to new applicants. Launched in 2010, the scheme had been highly successful in boosting small-scale renewable energy deployment, particularly rooftop solar. Over 800,000 installations were made under the scheme. However, its closure without an adequate replacement disappointed renewable energy advocates, who argued it left a policy gap for community and household-scale renewables. The government argued the scheme had achieved its purpose of establishing renewables and that costs had fallen sufficiently. Critics contended this left individuals with limited options to participate in the energy transition.",
+    "relevance": 0.70,
+    "URLs": [
+      "https://www.ofgem.gov.uk/environmental-and-social-schemes/feed-tariffs-fit",
+      "https://www.bbc.co.uk/news/business-47686377",
+      "https://www.theguardian.com/environment/2019/mar/29/uk-solar-panel-installations-fall-by-94-as-subsidies-cut"
+    ],
+    "tags": [
+      "renewable-energy",
+      "solar",
+      "subsidies",
+      "policy-change"
+    ],
+    "position": 0.48,
+    "qcode": ["11000000", "04000000", "20000256", "20000257", "20001209", "06000000"]
+  },
+  {
+    "overview": "Net Zero Target Legislated",
+    "dateTime": "2019-06-27",
+    "furtherDescription": "The UK amended the Climate Change Act to target net zero greenhouse gas emissions by 2050, making it the first major economy to legislate for net zero. This represented a significant strengthening of climate ambitions from the previous 80% reduction target set in 2008. Prime Minister Theresa May announced the commitment just before leaving office, establishing it as her environmental legacy. The decision followed recommendations from the Climate Change Committee and was backed by cross-party support. The legislation requires the UK to bring all greenhouse gas emissions to net zero by 2050, compared to 1990 levels, through a combination of emissions reductions and offsetting remaining emissions through methods like tree planting or carbon capture technology. This legally binding commitment set the framework for all subsequent UK climate policy.",
+    "relevance": 0.98,
+    "URLs": [
+      "https://www.gov.uk/government/news/uk-becomes-first-major-economy-to-pass-net-zero-emissions-law",
+      "https://www.bbc.co.uk/news/science-environment-48596775",
+      "https://commonslibrary.parliament.uk/research-briefings/cbp-8590/",
+      "https://www.legislation.gov.uk/uksi/2019/1056/made"
+    ],
+    "tags": [
+      "legislation",
+      "net-zero",
+      "targets",
+      "ambitious"
+    ],
+    "position": 0.95,
+    "qcode": ["11000000", "20000543", "20000570", "06000000", "20000632", "20000633"]
+  },
+  {
+    "overview": "Climate Assembly UK Convened",
+    "dateTime": "2020-01-25",
+    "furtherDescription": "Parliament established Climate Assembly UK, a citizens' assembly bringing together 108 randomly selected members of the public to deliberate on how the UK should meet its net zero target. Meeting over six weekends, the assembly heard from experts and discussed options across transport, home heating, diet, and other areas. The assembly's September 2020 report emphasized the importance of clear leadership, fair burden-sharing, public engagement, and co-benefits in climate action. Key recommendations included phasing out petrol and diesel vehicles, improving public transport, insulating homes, reducing meat consumption, and protecting nature. The process demonstrated strong public support for climate action when people are properly informed, though implementation of recommendations has been partial.",
+    "relevance": 0.78,
+    "URLs": [
+      "https://www.climateassembly.uk/",
+      "https://www.bbc.co.uk/news/science-environment-54014081",
+      "https://www.theguardian.com/environment/2020/sep/10/climate-assembly-uk-publishes-its-report"
+    ],
+    "tags": [
+      "public-engagement",
+      "democracy",
+      "policy-development",
+      "consultation"
+    ],
+    "position": 0.72,
+    "qcode": ["11000000", "20000540", "06000000", "20000632", "14000000"]
+  },
+  {
+    "overview": "Nature Recovery Network Proposed",
+    "dateTime": "2020-02-12",
+    "furtherDescription": "The government's 25 Year Environment Plan proposed creating a Nature Recovery Network across England to connect and expand habitats, support biodiversity, and enhance carbon sequestration. The network would link existing protected areas with restored habitats, creating corridors for wildlife and resilient ecosystems. The plan recognized that nature-based solutions are essential for both climate mitigation (through carbon storage) and adaptation (through flood management and cooling). However, implementation has been slower than hoped, hampered by funding constraints, planning system barriers, and lack of coordination between different government departments and agencies. Environmental groups have called for stronger legal backing and dedicated funding to realize the network's potential.",
+    "relevance": 0.72,
+    "URLs": [
+      "https://www.gov.uk/government/publications/25-year-environment-plan",
+      "https://www.bbc.co.uk/news/science-environment-51476012",
+      "https://www.theguardian.com/environment/2020/feb/12/nature-recovery-network-england-habitats-wildlife"
+    ],
+    "tags": [
+      "nature",
+      "biodiversity",
+      "habitat",
+      "planning"
+    ],
+    "position": 0.70,
+    "qcode": ["06000000", "20000632", "20000635", "20000649", "20000650", "11000000"]
   },
   {
     "overview": "Green Homes Grant Scheme Launched and Scrapped",
     "dateTime": "2020-09-01",
-    "furtherDescription": "The £2 billion Green Homes Grant scheme was launched to help homeowners improve energy efficiency, but was abruptly scrapped after just six months due to poor implementation, bureaucracy, and low uptake. Only 5% of the funding was distributed.",
+    "furtherDescription": "The government launched the £2 billion Green Homes Grant scheme to help homeowners and landlords improve energy efficiency through insulation, double glazing, and low-carbon heating. Homeowners could claim vouchers covering up to two-thirds of costs (up to £5,000), with low-income households eligible for 100% funding (up to £10,000). However, the scheme was plagued by bureaucratic delays, difficulties finding approved installers, and low awareness. It was abruptly scrapped in March 2021 after just six months, with only £314 million of the £2 billion allocated actually spent—just 5% of the budget reaching households. The failure was widely criticized as emblematic of stop-start climate policies that undermine industry confidence and waste public money. It highlighted the challenge of retrofitting the UK's poorly insulated housing stock.",
     "relevance": 0.65,
     "URLs": [
       "https://www.bbc.co.uk/news/business-56523614",
@@ -108,48 +345,13 @@
       "policy-failure",
       "funding"
     ],
-    "position": 0.45
-  },
-  {
-    "overview": "COP26 Summit Hosted in Glasgow",
-    "dateTime": "2021-11-01",
-    "furtherDescription": "The UK hosted the 26th UN Climate Change Conference in Glasgow, positioning itself as a global climate leader. The summit produced the Glasgow Climate Pact, though critics argued the UK's domestic actions didn't match its rhetoric on the international stage.",
-    "relevance": 0.90,
-    "URLs": [
-      "https://ukcop26.org/",
-      "https://www.bbc.co.uk/news/science-environment-59210120",
-      "https://www.gov.uk/government/topical-events/cop26"
-    ],
-    "tags": [
-      "international",
-      "diplomacy",
-      "COP26",
-      "leadership"
-    ],
-    "position": 0.82
-  },
-  {
-    "overview": "Rishi Sunak Dilutes Net Zero Policies",
-    "dateTime": "2023-09-20",
-    "furtherDescription": "Prime Minister Rishi Sunak announced a watering down of key climate commitments, including delaying the ban on new petrol and diesel cars from 2030 to 2035 and weakening plans to phase out gas boilers. He framed this as protecting households from excessive costs.",
-    "relevance": 0.88,
-    "URLs": [
-      "https://www.bbc.co.uk/news/science-environment-66858806",
-      "https://www.theguardian.com/environment/2023/sep/20/rishi-sunak-confirms-rollback-of-key-green-policies",
-      "https://www.gov.uk/government/speeches/pm-speech-on-net-zero-20-september-2023"
-    ],
-    "tags": [
-      "policy-reversal",
-      "net-zero",
-      "political",
-      "controversy"
-    ],
-    "position": 0.38
+    "position": 0.45,
+    "qcode": ["11000000", "04000000", "20000235", "20001368", "06000000", "20000632"]
   },
   {
     "overview": "Offshore Wind Expansion Commitment",
     "dateTime": "2020-10-06",
-    "furtherDescription": "Boris Johnson announced plans to make the UK the 'Saudi Arabia of wind', committing to quadruple offshore wind capacity to 40GW by 2030, enough to power every home. This represented significant ambition in renewable energy deployment.",
+    "furtherDescription": "Prime Minister Boris Johnson announced his 'Ten Point Plan for a Green Industrial Revolution', committing to quadruple offshore wind capacity from 10GW to 40GW by 2030—enough to power every home in the UK. Johnson declared the UK would become the 'Saudi Arabia of wind', positioning offshore wind as central to both decarbonization and economic recovery from COVID-19. The plan included £160 million to upgrade ports and infrastructure for offshore wind manufacturing. The UK's shallow seas, particularly in the North Sea, provide ideal conditions for offshore wind, and the country has become a global leader in the technology. The commitment represented significant ambition, though some questioned whether grid infrastructure, planning systems, and supply chains could scale at the required pace.",
     "relevance": 0.92,
     "URLs": [
       "https://www.gov.uk/government/news/pm-outlines-his-ten-point-plan-for-a-green-industrial-revolution-for-250000-jobs",
@@ -162,7 +364,27 @@
       "investment",
       "ambitious"
     ],
-    "position": 0.88
+    "position": 0.88,
+    "qcode": ["11000000", "04000000", "20000256", "20000257", "20001211", "06000000", "20000632"]
+  },
+  {
+    "overview": "Electric Vehicle Charging Infrastructure Investment",
+    "dateTime": "2020-11-18",
+    "furtherDescription": "As part of the Ten Point Plan, the government committed £1.3 billion to accelerate the rollout of charging infrastructure for electric vehicles (EVs), including rapid chargers on motorways and on-street charging in residential areas. The funding recognized that charging infrastructure is critical to supporting the planned ban on new petrol and diesel car sales from 2030 (later delayed to 2035). The UK has led Europe in EV adoption, with over 1 million EVs on the road by 2022, but 'charging anxiety' remains a barrier. The investment aimed to create a comprehensive network of 300,000 charge points by 2030, though concerns persist about regional inequalities, with rural and less affluent areas having fewer chargers.",
+    "relevance": 0.84,
+    "URLs": [
+      "https://www.gov.uk/government/news/pm-outlines-his-ten-point-plan-for-a-green-industrial-revolution-for-250000-jobs",
+      "https://www.bbc.co.uk/news/business-55005408",
+      "https://www.theguardian.com/environment/2020/nov/18/boris-johnsons-10-point-green-plan-what-does-it-include"
+    ],
+    "tags": [
+      "electric-vehicles",
+      "transport",
+      "infrastructure",
+      "investment"
+    ],
+    "position": 0.78,
+    "qcode": ["11000000", "04000000", "20000337", "20000341", "20001258", "06000000", "20000632"]
   },
   {
     "overview": "Fracking Ban Lifted Then Reinstated",

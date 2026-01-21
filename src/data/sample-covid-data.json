@@ -1,284 +1,484 @@
 [
-    {
-        "overview": "First cases of pneumonia of unknown cause reported in Wuhan, China.",
-        "dateTime": "2019-12-31T09:00:00Z",
-        "relevance": 0.95,
-        "furtherDescription": "Chinese authorities notified the World Health Organization (WHO) of several pneumonia cases in Wuhan, Hubei Province. The cause was later identified as a novel coronavirus.",
-        "URLs": [
-            "https://www.who.int/emergencies/disease-outbreak-news/item/2020-DON229"
-        ],
-        "tags": [
-            "origin",
-            "china",
-            "health"
-        ],
-        "qcode": ["03000000"]
-    },
-    {
-        "overview": "WHO declares a Public Health Emergency of International Concern (PHEIC).",
-        "dateTime": "2020-01-30T12:00:00Z",
-        "relevance": 0.88,
-        "furtherDescription": "The WHO issued its highest alert level, acknowledging the international spread of COVID-19 and urging coordinated global action.",
-        "URLs": [
-            "https://www.who.int/news/item/30-01-2020-statement-on-the-second-meeting-of-the-international-health-regulations"
-        ],
-        "tags": [
-            "WHO",
-            "international",
-            "emergency"
-        ],
-        "qcode": ["03000000", "11000000"]
-    },
-    {
-        "overview": "First confirmed COVID-19 death outside China in the Philippines.",
-        "dateTime": "2020-02-02T10:00:00Z",
-        "relevance": 0.65,
-        "furtherDescription": "A 44-year-old man in the Philippines became the first recorded COVID-19 fatality outside China, highlighting global spread concerns.",
-        "URLs": [
-            "https://www.bbc.com/news/world-asia-51345855"
-        ],
-        "tags": [
-            "international",
-            "fatality",
-            "spread"
-        ]
-    },
-    {
-        "overview": "WHO declares COVID-19 a global pandemic.",
-        "dateTime": "2020-03-11T15:00:00Z",
-        "relevance": 1.0,
-        "furtherDescription": "The WHO officially characterized COVID-19 as a pandemic, acknowledging sustained global transmission and the need for urgent containment measures.",
-        "URLs": [
-            "https://www.who.int/director-general/speeches/detail/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020"
-        ],
-        "tags": [
-            "WHO",
-            "pandemic",
-            "health-policy"
-        ]
-    },
-    {
-        "overview": "Global lockdowns and travel restrictions implemented.",
-        "dateTime": "2020-03-20T09:00:00Z",
-        "relevance": 0.92,
-        "furtherDescription": "Many countries introduced strict lockdowns and border closures to contain the virus, drastically reducing global mobility and economic activity.",
-        "URLs": [
-            "https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19"
-        ],
-        "tags": [
-            "lockdown",
-            "travel",
-            "economy"
-        ]
-    },
-    {
-        "overview": "Development and trials of COVID-19 vaccines begin worldwide.",
-        "dateTime": "2020-04-15T09:00:00Z",
-        "relevance": 0.85,
-        "furtherDescription": "Pharmaceutical companies and research institutions launched large-scale vaccine trials, with mRNA technology showing early promise.",
-        "URLs": [
-            "https://www.nature.com/articles/d41586-020-01221-y"
-        ],
-        "tags": [
-            "vaccine",
-            "research",
-            "science"
-        ]
-    },
-    {
-        "overview": "First COVID-19 vaccine approved for emergency use in the UK (Pfizer-BioNTech).",
-        "dateTime": "2020-12-02T08:00:00Z",
-        "relevance": 0.97,
-        "furtherDescription": "The UK became the first country to approve an mRNA-based COVID-19 vaccine for emergency use, marking a major milestone in the pandemic response.",
-        "URLs": [
-            "https://www.gov.uk/government/news/uk-authorises-pfizer-biontech-covid-19-vaccine"
-        ],
-        "tags": [
-            "vaccine",
-            "UK",
-            "healthcare"
-        ]
-    },
-    {
-        "overview": "Global vaccination campaigns accelerate through 2021.",
-        "dateTime": "2021-03-01T09:00:00Z",
-        "relevance": 0.9,
-        "furtherDescription": "Countries rolled out mass vaccination programs, though disparities in access between high- and low-income nations became apparent.",
-        "URLs": [
-            "https://www.who.int/news-room/feature-stories/detail/the-covax-facility"
-        ],
-        "tags": [
-            "vaccine",
-            "global",
-            "equity"
-        ]
-    },
-    {
-        "overview": "Emergence of the Delta and Omicron variants.",
-        "dateTime": "2021-06-15T09:00:00Z",
-        "relevance": 0.93,
-        "furtherDescription": "New, more transmissible variants of SARS-CoV-2 drove fresh waves of infection, challenging global vaccination efforts.",
-        "URLs": [
-            "https://www.cdc.gov/coronavirus/2019-ncov/variants/variant.html"
-        ],
-        "tags": [
-            "variant",
-            "mutation",
-            "public-health"
-        ]
-    },
-    {
-        "overview": "WHO declares end of COVID-19 as a global public health emergency.",
-        "dateTime": "2023-05-05T12:00:00Z",
-        "relevance": 0.98,
-        "furtherDescription": "After more than three years, the WHO declared the COVID-19 emergency phase over, citing widespread immunity and reduced mortality.",
-        "URLs": [
-            "https://www.who.int/news/item/05-05-2023-who-declares-end-to-covid-19-global-health-emergency"
-        ],
-        "tags": [
-            "WHO",
-            "health-policy",
-            "post-pandemic"
-        ]
-    },
-    {
-        "overview": "Pfizer and Moderna announce over 90% efficacy in COVID-19 vaccine trials.",
-        "dateTime": "2020-11-09T12:00:00Z",
-        "relevance": 0.96,
-        "furtherDescription": "Both Pfizer-BioNTech and Moderna reported high efficacy rates in Phase 3 clinical trials, marking a breakthrough in vaccine development.",
-        "URLs": [
-            "https://www.nytimes.com/2020/11/09/health/covid-vaccine-pfizer.html"
-        ],
-        "tags": [
-            "vaccine",
-            "science",
-            "breakthrough"
-        ]
-    },
-    {
-        "overview": "Global COVID-19 cases surpass 100 million.",
-        "dateTime": "2021-01-26T00:00:00Z",
-        "relevance": 0.94,
-        "furtherDescription": "By January 2021, total confirmed COVID-19 cases worldwide exceeded 100 million, according to Johns Hopkins University data.",
-        "URLs": [
-            "https://www.bbc.com/news/world-55809378"
-        ],
-        "tags": [
-            "global",
-            "statistics",
-            "health"
-        ]
-    },
-    {
-        "overview": "US surpasses 1 million COVID-19 deaths.",
-        "dateTime": "2022-05-12T00:00:00Z",
-        "relevance": 0.98,
-        "furtherDescription": "The United States reached the grim milestone of 1 million deaths, reflecting the pandemic’s ongoing toll despite vaccines.",
-        "URLs": [
-            "https://www.nytimes.com/2022/05/12/us/1-million-covid-deaths.html"
-        ],
-        "tags": [
-            "US",
-            "fatality",
-            "statistics"
-        ]
-    },
-    {
-        "overview": "The Delta variant becomes the dominant global strain.",
-        "dateTime": "2021-07-15T00:00:00Z",
-        "relevance": 0.91,
-        "furtherDescription": "The highly transmissible Delta variant spread rapidly worldwide, causing renewed outbreaks even in highly vaccinated regions.",
-        "URLs": [
-            "https://www.who.int/news/item/15-07-2021-delta-variant-dominates"
-        ],
-        "tags": [
-            "variant",
-            "epidemiology",
-            "mutation"
-        ]
-    },
-    {
-        "overview": "Omicron variant discovered in South Africa and declared a Variant of Concern.",
-        "dateTime": "2021-11-26T00:00:00Z",
-        "relevance": 0.97,
-        "furtherDescription": "WHO designated Omicron as a Variant of Concern due to its high number of mutations and rapid global spread.",
-        "URLs": [
-            "https://www.who.int/news/item/26-11-2021-classification-of-omicron"
-        ],
-        "tags": [
-            "variant",
-            "mutation",
-            "WHO"
-        ]
-    },
-    {
-        "overview": "Global COVID-19 deaths surpass 5 million.",
-        "dateTime": "2021-11-01T00:00:00Z",
-        "relevance": 0.93,
-        "furtherDescription": "WHO reported that global deaths attributed to COVID-19 had exceeded 5 million, underscoring its vast human cost.",
-        "URLs": [
-            "https://www.bbc.com/news/world-59100307"
-        ],
-        "tags": [
-            "statistics",
-            "global",
-            "mortality"
-        ]
-    },
-    {
-        "overview": "China ends its zero-COVID policy after nearly three years.",
-        "dateTime": "2022-12-07T00:00:00Z",
-        "relevance": 0.96,
-        "furtherDescription": "The Chinese government abruptly ended strict zero-COVID lockdowns and mass testing, leading to widespread outbreaks.",
-        "URLs": [
-            "https://www.theguardian.com/world/2022/dec/07/china-ends-zero-covid-policy"
-        ],
-        "tags": [
-            "china",
-            "policy",
-            "society"
-        ]
-    },
-    {
-        "overview": "Long COVID recognized as a global health concern.",
-        "dateTime": "2022-02-01T00:00:00Z",
-        "relevance": 0.88,
-        "furtherDescription": "Researchers and health agencies identified post-acute COVID-19 symptoms — 'Long COVID' — as a chronic public health issue.",
-        "URLs": [
-            "https://www.who.int/news-room/fact-sheets/detail/post-covid-19-condition-(long-covid)"
-        ],
-        "tags": [
-            "health",
-            "long-covid",
-            "research"
-        ]
-    },
-    {
-        "overview": "WHO releases updated global vaccination strategy.",
-        "dateTime": "2022-07-21T00:00:00Z",
-        "relevance": 0.82,
-        "furtherDescription": "WHO urged nations to increase vaccine coverage to 70% of global population, prioritizing vulnerable groups and boosters.",
-        "URLs": [
-            "https://www.who.int/news/item/21-07-2022-updated-global-covid-19-vaccination-strategy"
-        ],
-        "tags": [
-            "vaccine",
-            "WHO",
-            "policy"
-        ]
-    },
-    {
-        "overview": "WHO establishes the 'Pandemic Accord' framework to prepare for future pandemics.",
-        "dateTime": "2023-12-01T00:00:00Z",
-        "relevance": 0.87,
-        "furtherDescription": "Member states began drafting a global agreement to strengthen preparedness and equitable response mechanisms for future outbreaks.",
-        "URLs": [
-            "https://www.who.int/news/item/01-12-2023-pandemic-accord-negotiations"
-        ],
-        "tags": [
-            "WHO",
-            "policy",
-            "future"
-        ]
-    }
+  {
+    "overview": "First cluster of pneumonia of unknown cause reported in Wuhan, China",
+    "dateTime": "2019-12-31T09:00:00Z",
+    "relevance": 0.95,
+    "furtherDescription": "Local health authorities in Wuhan notified the World Health Organization of a cluster of pneumonia cases with an unknown cause. International public-health bodies began preliminary case investigations and contact tracing; sequencing and epidemiological work that followed identified a novel coronavirus (later named SARS-CoV-2). Early reports emphasised a cluster linked to a seafood/animal market but investigations continued into transmission chains, case definitions and clinical presentation. This notification set in motion global surveillance and the rapid scientific response that followed in January 2020.",
+    "URLs": [
+      "https://www.who.int/emergencies/disease-outbreak-news/item/2020-DON229",
+      "https://www.bbc.co.uk/news/world-50917163"
+    ],
+    "tags": [
+      "origin",
+      "wuhan",
+      "surveillance"
+    ],
+    "qcode": [
+      "20000449",
+      "20001358",
+      "20000451"
+    ]
+  },
+  {
+    "overview": "SARS-CoV-2 genome sequences made publicly available (early release)",
+    "dateTime": "2020-01-10T00:00:00Z",
+    "relevance": 0.96,
+    "furtherDescription": "Multiple groups deposited the first whole-genome sequences of the novel coronavirus to global repositories (GISAID, GenBank and virological.org) in early January 2020. Rapid public release of the genome enabled diagnostic test development, genomic surveillance, vaccine antigen design (notably the spike protein), and early phylogenetic analyses that shaped initial public-health responses and research priorities.",
+    "URLs": [
+      "https://virological.org/t/novel-2019-coronavirus-genome/319",
+      "https://www.ncbi.nlm.nih.gov/nuccore/1798174254",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10129129/"
+    ],
+    "tags": [
+      "genomics",
+      "surveillance",
+      "research"
+    ],
+    "qcode": [
+      "20000737",
+      "20000477",
+      "20000451"
+    ]
+  },
+  {
+    "overview": "Wuhan and Hubei travel lockdowns implemented",
+    "dateTime": "2020-01-23T10:00:00Z",
+    "relevance": 0.94,
+    "furtherDescription": "In an unprecedented public-health move, authorities locked down Wuhan and other cities in Hubei province — suspending outbound transport, closing airports, rail and major road links and restricting resident movement — in an effort to limit spread. The lockdown was followed by mass testing, isolation facilities and large-scale public-health measures across China; subsequent analyses examined effects on transmission dynamics and mobility patterns.",
+    "URLs": [
+      "https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(22)00177-1/fulltext",
+      "https://www.theguardian.com/world/2020/jan/23/coronavirus-panic-and-anger-in-wuhan-as-china-orders-city-into-lockdown",
+      "https://www.cdc.gov/museum/timeline/covid19.html"
+    ],
+    "tags": [
+      "lockdown",
+      "mobility",
+      "containment"
+    ],
+    "qcode": [
+      "20001358",
+      "20000346",
+      "20000449"
+    ]
+  },
+  {
+    "overview": "WHO declares a Public Health Emergency of International Concern (PHEIC)",
+    "dateTime": "2020-01-30T12:00:00Z",
+    "relevance": 0.88,
+    "furtherDescription": "The WHO Emergency Committee met and advised that the outbreak constituted a Public Health Emergency of International Concern (PHEIC). The declaration urged coordinated international action: intensified surveillance, transparent reporting, sharing of clinical and virological data, and acceleration of research into diagnostics, therapeutics and vaccines. The PHEIC aimed to mobilise international resources and harmonise travel and trade guidance while avoiding unnecessary restrictions.",
+    "URLs": [
+      "https://www.who.int/news/item/30-01-2020-statement-on-the-second-meeting-of-the-international-health-regulations",
+      "https://www.bbc.co.uk/news/51286135"
+    ],
+    "tags": [
+      "WHO",
+      "international",
+      "emergency"
+    ],
+    "qcode": [
+      "20001358",
+      "20000449",
+      "20000346"
+    ]
+  },
+  {
+    "overview": "First confirmed COVID-19 death reported outside China (Philippines)",
+    "dateTime": "2020-02-02T10:00:00Z",
+    "relevance": 0.65,
+    "furtherDescription": "A man in the Philippines was reported as the first publicly recorded COVID-19 fatality outside China, a milestone that emphasised global transmission risk. The case underlined the need for preparedness in health systems outside China, improved case identification, and the potential for severe outcomes even in middle-aged adults.",
+    "URLs": [
+      "https://www.bbc.com/news/world-51345855",
+      "https://www.who.int/publications/m/item/weekly-epidemiological-update---covid-19"
+    ],
+    "tags": [
+      "international",
+      "fatality",
+      "surveillance"
+    ],
+    "qcode": [
+      "20000449",
+      "20001358",
+      "20000451"
+    ]
+  },
+  {
+    "overview": "WHO declares COVID-19 a global pandemic",
+    "dateTime": "2020-03-11T15:00:00Z",
+    "relevance": 1.0,
+    "furtherDescription": "The WHO characterised COVID-19 as a pandemic, acknowledging sustained person-to-person transmission across multiple regions, and called for urgent national action on testing, contact tracing, risk communication and health-system readiness. The declaration galvanised domestic public-health measures, stimulus policymaking, and cross-sector planning for prolonged response.",
+    "URLs": [
+      "https://www.who.int/director-general/speeches/detail/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020",
+      "https://www.bbc.com/news/world-51839944"
+    ],
+    "tags": [
+      "WHO",
+      "pandemic",
+      "public-health"
+    ],
+    "qcode": [
+      "20000449",
+      "20001358",
+      "20000346"
+    ]
+  },
+  {
+    "overview": "Global lockdowns, social-distancing and travel restrictions implemented",
+    "dateTime": "2020-03-20T09:00:00Z",
+    "relevance": 0.92,
+    "furtherDescription": "Countries introduced a suite of non-pharmaceutical interventions — stay-at-home orders, school and workplace closures, limits on gatherings and border/travel restrictions — to reduce transmission and prevent health-service overload. These measures sharply reduced mobility and economic activity and prompted large fiscal and monetary stimulus programmes. Longitudinal studies have since quantified impacts on mental health, supply chains and inequality.",
+    "URLs": [
+      "https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19",
+      "https://www.bbc.co.uk/news/52101135"
+    ],
+    "tags": [
+      "lockdown",
+      "travel",
+      "economy"
+    ],
+    "qcode": [
+      "20000346",
+      "20001358",
+      "20000449"
+    ]
+  },
+  {
+    "overview": "Large-scale vaccine R&D and trials accelerate worldwide",
+    "dateTime": "2020-04-15T09:00:00Z",
+    "relevance": 0.85,
+    "furtherDescription": "Global research efforts pivoted rapidly to vaccine development: mRNA, viral-vector and protein-subunit platforms entered clinical trials in record time. Governments and funders supported Operation Warp Speed (US), EU and international partnerships including COVAX to accelerate manufacturing, clinical testing and equitable distribution. Phase 3 efficacy trials later demonstrated high efficacy for several vaccines, informing regulatory emergency authorisations.",
+    "URLs": [
+      "https://www.nature.com/articles/d41586-020-01221-y",
+      "https://www.who.int/initiatives/act-accelerator/covax"
+    ],
+    "tags": [
+      "vaccine",
+      "research",
+      "global"
+    ],
+    "qcode": [
+      "20000737",
+      "20000477",
+      "20001358"
+    ]
+  },
+  {
+    "overview": "First COVID-19 vaccine authorised for emergency use in the UK (Pfizer-BioNTech)",
+    "dateTime": "2020-12-02T08:00:00Z",
+    "relevance": 0.97,
+    "furtherDescription": "The UK Medicines and Healthcare products Regulatory Agency granted temporary authorisation for the Pfizer-BioNTech mRNA vaccine (BNT162b2), enabling the start of mass vaccination of high-risk groups and health-care workers. This regulatory milestone demonstrated accelerated pathways for emergency use based on interim phase-3 efficacy and safety data, and triggered logistics efforts for ultra-cold distribution.",
+    "URLs": [
+      "https://www.gov.uk/government/news/uk-authorises-pfizer-biontech-covid-19-vaccine",
+      "https://www.nejm.org/doi/full/10.1056/NEJMoa2034577"
+    ],
+    "tags": [
+      "vaccine",
+      "UK",
+      "regulation"
+    ],
+    "qcode": [
+      "20000477",
+      "20001358",
+      "20000737"
+    ]
+  },
+  {
+    "overview": "Moderna and other vaccines report high efficacy in late-stage trials",
+    "dateTime": "2020-11-09T12:00:00Z",
+    "relevance": 0.96,
+    "furtherDescription": "Pfizer-BioNTech and Moderna released interim phase-3 results showing vaccine efficacies exceeding 90% against symptomatic COVID-19 in trial populations, a breakthrough that transformed vaccine confidence and accelerated authorisations and rollout. Peer-reviewed publications and regulatory dossiers described trial endpoints, safety signals and subgroup analyses that guided policy on prioritisation and dosing intervals.",
+    "URLs": [
+      "https://www.nytimes.com/2020/11/09/health/covid-vaccine-pfizer.html",
+      "https://www.fda.gov/media/144638/download"
+    ],
+    "tags": [
+      "vaccine",
+      "science",
+      "breakthrough"
+    ],
+    "qcode": [
+      "20000477",
+      "20000737",
+      "20001358"
+    ]
+  },
+  {
+    "overview": "First large, low-cost therapy shown to reduce mortality in severe COVID-19 (dexamethasone)",
+    "dateTime": "2020-06-16T13:00:00Z",
+    "relevance": 0.90,
+    "furtherDescription": "The RECOVERY trial announced that low-dose dexamethasone reduced 28-day mortality among patients receiving invasive mechanical ventilation or oxygen. The finding quickly changed clinical guidance worldwide because the drug was inexpensive, widely available and shown in a large randomised trial to reduce deaths in severely ill patients. This result illustrated the value of large, pragmatic randomised trials during a fast-moving pandemic.",
+    "URLs": [
+      "https://www.recoverytrial.net/results/dexamethasone-results",
+      "https://www.nejm.org/doi/full/10.1056/NEJMoa2021436"
+    ],
+    "tags": [
+      "treatment",
+      "clinical-trial",
+      "hospital-care"
+    ],
+    "qcode": [
+      "20000464",
+      "20000737",
+      "20001358"
+    ]
+  },
+  {
+    "overview": "Global COVID-19 cases surpass 100 million",
+    "dateTime": "2021-01-26T00:00:00Z",
+    "relevance": 0.94,
+    "furtherDescription": "By late January 2021, aggregate confirmed cases reported to international trackers exceeded 100 million, reflecting intense waves of transmission across multiple regions and placing continued strain on health systems. The milestone prompted renewed urgency for vaccine distribution, therapeutics scale-up and non-pharmaceutical interventions in many countries.",
+    "URLs": [
+      "https://www.bbc.com/news/world-55809378",
+      "https://coronavirus.jhu.edu/map.html"
+    ],
+    "tags": [
+      "global",
+      "statistics",
+      "surveillance"
+    ],
+    "qcode": [
+      "20000346",
+      "20000449",
+      "20001358"
+    ]
+  },
+  {
+    "overview": "Delta variant drives major waves of infection globally",
+    "dateTime": "2021-06-15T09:00:00Z",
+    "relevance": 0.93,
+    "furtherDescription": "Designated a variant of concern because of substantially increased transmissibility, the Delta lineage caused resurgent outbreaks in 2021 — including in some highly vaccinated populations — and led to revisions in public-health measures, booster policy discussions and renewed emphasis on vaccine coverage and global equity.",
+    "URLs": [
+      "https://www.cdc.gov/coronavirus/2019-ncov/variants/variant.html",
+      "https://www.who.int/news/item/15-07-2021-delta-variant-dominates"
+    ],
+    "tags": [
+      "variant",
+      "transmission",
+      "vaccination"
+    ],
+    "qcode": [
+      "20000451",
+      "20000449",
+      "20000477"
+    ]
+  },
+  {
+    "overview": "Omicron variant discovered and designated a Variant of Concern",
+    "dateTime": "2021-11-26T00:00:00Z",
+    "relevance": 0.97,
+    "furtherDescription": "First reported from surveillance data in southern Africa and rapidly designated a Variant of Concern by the WHO because of a high number of spike-protein mutations, Omicron spread quickly worldwide and prompted re-assessment of vaccine effectiveness against infection, accelerated booster campaigns and updates to diagnostics and therapeutics guidance.",
+    "URLs": [
+      "https://www.who.int/news/item/26-11-2021-classification-of-omicron",
+      "https://www.nature.com/articles/d41586-021-03626-1"
+    ],
+    "tags": [
+      "variant",
+      "mutation",
+      "WHO"
+    ],
+    "qcode": [
+      "20000451",
+      "20000449",
+      "20000477"
+    ]
+  },
+  {
+    "overview": "Pfizer's Paxlovid (oral antiviral) authorised for emergency use (US)",
+    "dateTime": "2021-12-22T00:00:00Z",
+    "relevance": 0.88,
+    "furtherDescription": "The US FDA issued an Emergency Use Authorization for Paxlovid (nirmatrelvir + ritonavir), an oral antiviral shown in trials to reduce risk of hospitalisation or death when given early to high-risk patients with mild-to-moderate COVID-19. Paxlovid's authorisation expanded outpatient treatment options and prompted procurement and distribution programmes in several countries.",
+    "URLs": [
+      "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-receives-us-fda-emergency-use-authorization-novel",
+      "https://www.fda.gov/media/171049/download"
+    ],
+    "tags": [
+      "treatment",
+      "antiviral",
+      "regulation"
+    ],
+    "qcode": [
+      "20000464",
+      "20000737",
+      "20001358"
+    ]
+  },
+  {
+    "overview": "First COVID-19 vaccine authorised for emergency use in the UK (Oxford-AstraZeneca)",
+    "dateTime": "2020-12-30T07:00:00Z",
+    "relevance": 0.95,
+    "furtherDescription": "The UK authorised the Oxford-AstraZeneca vaccine for emergency supply, enabling a wider vaccine portfolio. The vaccine's storage and distribution profile differed from mRNA vaccines and was integral to broad population rollout strategies, particularly in low- and middle-income settings where cold-chain constraints are significant.",
+    "URLs": [
+      "https://www.gov.uk/government/news/oxford-universityastrazeneca-vaccine-authorised-by-uk-medicines-regulator",
+      "https://www.astrazeneca.com/content/astraz/media-centre/press-releases/2020/astrazenecas-covid-19-vaccine-authorised-in-uk.html"
+    ],
+    "tags": [
+      "vaccine",
+      "uk",
+      "distribution"
+    ],
+    "qcode": [
+      "20000477",
+      "20001358",
+      "20000346"
+    ]
+  },
+  {
+    "overview": "Global vaccination campaigns accelerate; COVAX highlights equity gaps",
+    "dateTime": "2021-03-01T09:00:00Z",
+    "relevance": 0.90,
+    "furtherDescription": "Mass vaccination programmes scaled up in high-income countries in early 2021 while the COVAX facility sought to provide equitable access for low- and middle-income countries. Persistent disparities in procurement, manufacturing capacity, and logistics led to uneven coverage that public-health agencies identified as a major challenge for global pandemic control.",
+    "URLs": [
+      "https://www.who.int/news-room/feature-stories/detail/the-covax-facility",
+      "https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19"
+    ],
+    "tags": [
+      "vaccine",
+      "equity",
+      "COVAX"
+    ],
+    "qcode": [
+      "20000477",
+      "20001358",
+      "20000346"
+    ]
+  },
+  {
+    "overview": "Global COVID-19 deaths surpass 5 million",
+    "dateTime": "2021-11-01T00:00:00Z",
+    "relevance": 0.93,
+    "furtherDescription": "WHO and aggregate trackers reported that reported global deaths attributed to COVID-19 had exceeded 5 million, a sobering measure of the pandemic's human cost that also highlighted under-reporting and excess-mortality debates. This milestone fed into health-policy discussions on long-term system resilience and surveillance improvements.",
+    "URLs": [
+      "https://www.bbc.com/news/world-59100307",
+      "https://www.who.int/data"
+    ],
+    "tags": [
+      "statistics",
+      "mortality",
+      "global"
+    ],
+    "qcode": [
+      "20000346",
+      "20000449",
+      "20001358"
+    ]
+  },
+  {
+    "overview": "Long COVID recognised as a global health concern",
+    "dateTime": "2022-02-01T00:00:00Z",
+    "relevance": 0.88,
+    "furtherDescription": "Health agencies and researchers identified and characterised post-acute sequelae of SARS-CoV-2 infection (commonly called 'Long COVID' or post-COVID-19 condition), documenting symptoms such as fatigue, breathlessness and cognitive impairment that can persist for months. The WHO published clinical definitions and guidance, and research priorities shifted to diagnosis, management and rehabilitation strategies.",
+    "URLs": [
+      "https://www.who.int/news-room/fact-sheets/detail/post-covid-19-condition-(long-covid)",
+      "https://www.bmj.com/content/378/bmj.o169"
+    ],
+    "tags": [
+      "long-covid",
+      "research",
+      "rehabilitation"
+    ],
+    "qcode": [
+      "20001358",
+      "20000737",
+      "20000449"
+    ]
+  },
+  {
+    "overview": "China ends its zero-COVID policy after nearly three years",
+    "dateTime": "2022-12-07T00:00:00Z",
+    "relevance": 0.96,
+    "furtherDescription": "After prolonged and strict zero-COVID controls including mass testing, travel restrictions and local lockdowns, China shifted away from the zero-COVID strategy. The policy change led to rapid alterations in case-count dynamics, international supply-chain effects and domestic debates about immunity, healthcare capacity and surveillance.",
+    "URLs": [
+      "https://www.theguardian.com/world/2022/dec/07/china-ends-zero-covid-policy",
+      "https://www.bbc.com/news/world-asia-china-63838686"
+    ],
+    "tags": [
+      "china",
+      "policy",
+      "society"
+    ],
+    "qcode": [
+      "20001358",
+      "20000346",
+      "20000449"
+    ]
+  },
+  {
+    "overview": "WHO declares end of COVID-19 as a global public-health emergency (PHEIC)",
+    "dateTime": "2023-05-05T12:00:00Z",
+    "relevance": 0.98,
+    "furtherDescription": "Citing widespread immunity from vaccination and prior infection and reduced mortality trends in many regions, WHO announced an end to the PHEIC status for COVID-19 while emphasising that the virus remains a global health concern requiring ongoing surveillance, vaccination and therapeutic access. The declaration moved the response from an emergency footing to long-term management and integration into routine health programmes.",
+    "URLs": [
+      "https://www.who.int/news/item/05-05-2023-who-declares-end-to-covid-19-global-health-emergency",
+      "https://www.nature.com/articles/d41586-023-01208-2"
+    ],
+    "tags": [
+      "WHO",
+      "post-pandemic",
+      "policy"
+    ],
+    "qcode": [
+      "20001358",
+      "20000449",
+      "20000346"
+    ]
+  },
+  {
+    "overview": "WHO begins drafting a 'Pandemic Accord' framework",
+    "dateTime": "2023-12-01T00:00:00Z",
+    "relevance": 0.87,
+    "furtherDescription": "Member states and the WHO initiated negotiations on a global agreement — informally referred to as a 'Pandemic Accord' — focused on strengthening preparedness, equitable access to countermeasures, information sharing and financing mechanisms to mitigate future pandemics. Discussions emphasised legal frameworks, supply-chain resilience and global governance reforms.",
+    "URLs": [
+      "https://www.who.int/news/item/01-12-2023-pandemic-accord-negotiations",
+      "https://www.statnews.com/2023/12/01/who-pandemic-accord-negotiations/"
+    ],
+    "tags": [
+      "WHO",
+      "policy",
+      "preparedness"
+    ],
+    "qcode": [
+      "20001358",
+      "20000346",
+      "20000737"
+    ]
+  },
+  {
+    "overview": "US imposes travel restrictions and emergency measures (examples: early 2020)",
+    "dateTime": "2020-01-31T00:00:00Z",
+    "relevance": 0.72,
+    "furtherDescription": "Governments introduced travel advisories, quarantine measures and restrictions on arrivals from affected areas. The United States restricted entry for non-citizens who had recently been in China and issued travel health notices; such measures aimed to reduce importation risk while domestic surveillance and testing capacity were scaled up.",
+    "URLs": [
+      "https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html",
+      "https://www.cdc.gov/museum/timeline/covid19.html"
+    ],
+    "tags": [
+      "travel",
+      "border",
+      "policy"
+    ],
+    "qcode": [
+      "20001358",
+      "20000346",
+      "20000449"
+    ]
+  },
+  {
+    "overview": "Global vaccination strategy updates and booster campaigns",
+    "dateTime": "2022-07-21T00:00:00Z",
+    "relevance": 0.82,
+    "furtherDescription": "WHO and national authorities updated vaccination strategies to broaden primary-series coverage and introduce booster doses, including variant-targeted (bivalent) formulations. Guidance prioritised vulnerable and high-exposure groups, while discussions on vaccine intellectual-property and regional manufacturing capacity continued.",
+    "URLs": [
+      "https://www.who.int/news/item/21-07-2022-updated-global-covid-19-vaccination-strategy",
+      "https://www.ema.europa.eu/en/news/ema-updates-advice-use-covid-19-booster-vaccines"
+    ],
+    "tags": [
+      "vaccine",
+      "boosters",
+      "policy"
+    ],
+    "qcode": [
+      "20000477",
+      "20001358",
+      "20000737"
+    ]
+  }
 ]
