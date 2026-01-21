@@ -18,6 +18,26 @@
             "11000001",
             "11000005",
             "11000010"
+        ],
+        "position": 0.7
+    },
+    {
+        "overview": "Clinton Administration delays on SUV fuel efficiency standards",
+        "dateTime": "1999-07-01",
+        "relevance": 0.70,
+        "furtherDescription": "Despite growing concern over fuel economy, the Clinton administration allowed CAFE standards to remain flat for light trucks and SUVs, reducing pressure for efficiency improvements in a rapidly growing segment.",
+        "URLs": [
+            "https://www.nhtsa.gov/corporate-average-fuel-economy"
+        ],
+        "tags": [
+            "transport",
+            "standards",
+            "inaction"
+        ],
+        "position": 0.35,
+        "qcode": [
+            "12000000",
+            "14000000"
         ]
     },
     {
@@ -40,6 +60,26 @@
             "13000010",
             "13000020",
             "13000030"
+        ],
+        "position": 0.9
+    },
+    {
+        "overview": "George W. Bush administration rejects mandatory caps on CO₂",
+        "dateTime": "2001-2005",
+        "relevance": 0.85,
+        "furtherDescription": "The administration repeatedly opposed congressional proposals for mandatory carbon caps or economy-wide emissions limits, favouring voluntary programmes that had minimal impact on actual emissions.",
+        "URLs": [
+            "https://www.epa.gov/climatechange/epa-climate-change-policy-history"
+        ],
+        "tags": [
+            "federal-policy",
+            "inaction",
+            "emissions"
+        ],
+        "position": 0.2,
+        "qcode": [
+            "13000000",
+            "11000000"
         ]
     },
     {
@@ -61,7 +101,8 @@
         "qcode": [
             "11000020",
             "13000040"
-        ]
+        ],
+        "position": 0.8
     },
     {
         "overview": "EPA Issues Endangerment Finding for Greenhouse Gases",
@@ -82,6 +123,26 @@
         "qcode": [
             "11000003",
             "14000010"
+        ],
+        "position": 0.75
+    },
+    {
+        "overview": "EPA revokes New Source Review enforcement (Bush era)",
+        "dateTime": "2003-12-31",
+        "relevance": 0.75,
+        "furtherDescription": "EPA rolled back strict enforcement of New Source Review rules, allowing some older coal-fired power plants to avoid upgrading emissions controls, slowing progress on reducing air pollutants and CO₂ co-benefits.",
+        "URLs": [
+            "https://www.nytimes.com/2003/12/31/us/bush-plan-eases-rules-for-pollution-control.html"
+        ],
+        "tags": [
+            "epa",
+            "power-sector",
+            "rollback"
+        ],
+        "position": 0.3,
+        "qcode": [
+            "11000005",
+            "13000000"
         ]
     },
     {
@@ -103,7 +164,8 @@
         "qcode": [
             "12000010",
             "14000020"
-        ]
+        ],
+        "position": 0.6
     },
     {
         "overview": "US–China Joint Announcement on Climate Change and Clean Energy Cooperation",
@@ -124,6 +186,45 @@
         "qcode": [
             "14000030",
             "15000010"
+        ],
+        "position": 0.7
+    },
+    {
+        "overview": "US fails to act on Arctic sea ice loss warnings",
+        "dateTime": "2000-2010",
+        "relevance": 0.65,
+        "furtherDescription": "Despite scientific warnings from NASA and NOAA about accelerating Arctic ice loss, federal policy was slow to fund mitigation or adaptation, relying on voluntary programmes rather than binding targets.",
+        "URLs": [
+            "https://climate.nasa.gov/news/"
+        ],
+        "tags": [
+            "science",
+            "inaction",
+            "arctic"
+        ],
+        "position": 0.25,
+        "qcode": [
+            "14000000",
+            "11000000"
+        ]
+    },
+    {
+        "overview": "Trump Administration rolls back Clean Power Plan",
+        "dateTime": "2019-06-19",
+        "relevance": 0.77,
+        "furtherDescription": "The EPA’s Affordable Clean Energy (ACE) rule replaced the Clean Power Plan with a narrower approach focusing on individual coal units rather than system-wide emissions reductions, substantially weakening national CO₂ reduction pathways.",
+        "URLs": [
+            "https://www.epa.gov/stationary-sources-air-pollution/affordable-clean-energy-rule"
+        ],
+        "tags": [
+            "power-sector",
+            "rollback",
+            "epa"
+        ],
+        "position": 0.3,
+        "qcode": [
+            "13000060",
+            "11000007"
         ]
     },
     {
@@ -145,6 +246,45 @@
         "qcode": [
             "13000050",
             "11000030"
+        ],
+        "position": 0.9
+    },
+    {
+        "overview": "Trump Administration SAFE Vehicles Rule",
+        "dateTime": "2020-04-30",
+        "relevance": 0.80,
+        "furtherDescription": "The SAFE rule rolled back federal vehicle fuel-economy and emissions standards for 2021–2026 model years, relaxing trajectory and limiting California’s waiver, reducing progress on transport decarbonisation.",
+        "URLs": [
+            "https://www.epa.gov/regulations-emissions-vehicles-and-engines/safer-affordable-fuel-efficient-safe-vehicles-final-rule"
+        ],
+        "tags": [
+            "transport",
+            "standards",
+            "rollback"
+        ],
+        "position": 0.35,
+        "qcode": [
+            "14000020",
+            "12000011"
+        ]
+    },
+    {
+        "overview": "Biden delays methane regulations for oil and gas (initial period)",
+        "dateTime": "2021-03-01",
+        "relevance": 0.65,
+        "furtherDescription": "Early in the administration, enforcement of stricter methane rules from the oil and gas sector was slowed pending review, temporarily reducing regulatory pressure on one of the fastest-growing sources of US greenhouse gases.",
+        "URLs": [
+            "https://www.epa.gov/ghgemissions"
+        ],
+        "tags": [
+            "methane",
+            "regulation",
+            "delay"
+        ],
+        "position": 0.45,
+        "qcode": [
+            "13000060",
+            "14000000"
         ]
     },
     {
@@ -166,6 +306,83 @@
         "qcode": [
             "15000020",
             "11000040"
+        ],
+        "position": 0.6
+    },
+    {
+        "overview": "Coal subsidies continue in US federal budget",
+        "dateTime": "2000-2020",
+        "relevance": 0.70,
+        "furtherDescription": "Despite growing recognition of climate risks, federal budgets maintained subsidies and tax advantages for coal production, indirectly slowing transition to low-carbon electricity.",
+        "URLs": [
+            "https://www.eia.gov/todayinenergy/detail.php?id=38032"
+        ],
+        "tags": [
+            "fossil-fuels",
+            "subsidy",
+            "policy-inaction"
+        ],
+        "position": 0.25,
+        "qcode": [
+            "13000000",
+            "17000000"
+        ]
+    },
+    {
+        "overview": "Minimal federal support for renewable energy pre-2009",
+        "dateTime": "2000-2008",
+        "relevance": 0.75,
+        "furtherDescription": "Before ARRA, renewable deployment was limited by low federal incentives, minimal R&D funding, and fragmented policy, slowing adoption of wind, solar, and other low-carbon technologies.",
+        "URLs": [
+            "https://www.energy.gov/eere/office-energy-efficiency-renewable-energy"
+        ],
+        "tags": [
+            "renewables",
+            "federal-policy",
+            "inaction"
+        ],
+        "position": 0.4,
+        "qcode": [
+            "13000010",
+            "13000000"
+        ]
+    },
+    {
+        "overview": "Weak response to 2005 hurricane season and climate link",
+        "dateTime": "2005-12-01",
+        "relevance": 0.65,
+        "furtherDescription": "Following Hurricane Katrina and other storms, federal policy largely focused on disaster response rather than linking increased hurricane severity to climate change, missing opportunities for mitigation planning.",
+        "URLs": [
+            "https://www.nhc.noaa.gov/education/history/"
+        ],
+        "tags": [
+            "disaster",
+            "inaction",
+            "climate-connection"
+        ],
+        "position": 0.3,
+        "qcode": [
+            "14000000",
+            "16000000"
+        ]
+    },
+    {
+        "overview": "US delays on CAFE standards for 2008–2010 vehicles",
+        "dateTime": "2007-12-01",
+        "relevance": 0.70,
+        "furtherDescription": "Despite growing fuel prices and emissions concerns, light-duty vehicle efficiency standards remained modest, and regulatory updates were slow, delaying fleet-wide efficiency gains.",
+        "URLs": [
+            "https://www.nhtsa.gov/laws-regulations/corporate-average-fuel-economy"
+        ],
+        "tags": [
+            "transport",
+            "standards",
+            "inaction"
+        ],
+        "position": 0.4,
+        "qcode": [
+            "12000010",
+            "14000000"
         ]
     },
     {
@@ -186,7 +403,8 @@
         "qcode": [
             "15000030",
             "16000010"
-        ]
+        ],
+        "position": 0.3
     },
     {
         "overview": "Safe Affordable Fuel-Efficient (SAFE) Vehicles Rule — federal vehicle standards",
@@ -207,7 +425,8 @@
         "qcode": [
             "14000020",
             "12000011"
-        ]
+        ],
+        "position": 0.65
     },
     {
         "overview": "Affordable Clean Energy (ACE) Rule finalised",
@@ -227,6 +446,27 @@
         "qcode": [
             "13000060",
             "11000007"
+        ],
+        "position": 0.74
+    },
+    {
+        "overview": "US Withdrawal from Kyoto Protocol (Bush Administration)",
+        "dateTime": "2001-03-28",
+        "relevance": 0.90,
+        "furtherDescription": "President George W. Bush announced that the US would not ratify the Kyoto Protocol, citing potential economic harm and unfair obligations on developing countries. This decision delayed US engagement in binding international emissions reductions.",
+        "URLs": [
+            "https://www.state.gov/u-s-withdrawal-from-the-kyoto-protocol/",
+            "https://www.nytimes.com/2001/03/29/world/bush-wont-join-kyoto-climate-treaty-us-says.html"
+        ],
+        "tags": [
+            "international",
+            "withdrawal",
+            "policy-delay"
+        ],
+        "position": 0.2,
+        "qcode": [
+            "15000000",
+            "16000000"
         ]
     },
     {
@@ -247,7 +487,8 @@
         "qcode": [
             "15000050",
             "18000010"
-        ]
+        ],
+        "position": 0.68
     },
     {
         "overview": "President Biden signs instrument to rejoin the Paris Agreement",
@@ -266,7 +507,8 @@
         "qcode": [
             "15000020",
             "11000040"
-        ]
+        ],
+        "position": 0.76
     },
     {
         "overview": "Executive Order 14008 — Tackling the Climate Crisis at Home and Abroad",
@@ -285,7 +527,8 @@
         "qcode": [
             "13000060",
             "16000020"
-        ]
+        ],
+        "position": 0.8
     },
     {
         "overview": "United States announces new NDC — 50–52% emissions reduction by 2030 (vs 2005)",
@@ -305,7 +548,8 @@
         "qcode": [
             "15000040",
             "13000070"
-        ]
+        ],
+        "position": 0.67
     },
     {
         "overview": "President revokes Keystone XL Presidential Permit",
@@ -324,7 +568,8 @@
         "qcode": [
             "17000010",
             "16000030"
-        ]
+        ],
+        "position": 0.57
     },
     {
         "overview": "TC Energy cancels the Keystone XL pipeline project",
@@ -344,7 +589,8 @@
         "qcode": [
             "17000011",
             "16000040"
-        ]
+        ],
+        "position": 0.7
     },
     {
         "overview": "Infrastructure Investment and Jobs Act (IIJA) — climate-relevant provisions",
@@ -364,7 +610,8 @@
         "qcode": [
             "13000080",
             "14000040"
-        ]
+        ],
+        "position": 0.9
     },
     {
         "overview": "U.S. Supreme Court rules in West Virginia v. EPA (limits on EPA’s generation-shifting authority)",
@@ -384,7 +631,8 @@
         "qcode": [
             "11000002",
             "11000006"
-        ]
+        ],
+        "position": 0.4
     },
     {
         "overview": "Inflation Reduction Act — largest US federal climate and clean-energy investment package",
@@ -404,7 +652,8 @@
         "qcode": [
             "13000090",
             "14000050"
-        ]
+        ],
+        "position": 0.9
     },
     {
         "overview": "State and local climate leadership intensifies (multiple policies and programmes)",
@@ -425,6 +674,7 @@
         "qcode": [
             "15000050",
             "18000020"
-        ]
+        ],
+        "position": 0.58
     }
 ]
