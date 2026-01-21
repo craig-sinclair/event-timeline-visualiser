@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import TopicHierarchyText from "@/components/ui/TopicHierarchyText";
 import VerticalTimeline from "@/components/VerticalTimeline";
 import { getEventsInTopic } from "@/lib/api/getEventsInTopic";
-import { EventsInTopic } from "@/models/ontology";
+import { EventsInTopic } from "@/models/ontology.types";
 
 export default function EventsInTopicPage() {
 	const { topicID } = useParams<{
@@ -56,7 +56,9 @@ export default function EventsInTopicPage() {
 
 	return (
 		<>
-			<TopicHierarchyText topicID={topicID} />
+			<div className="max-w-4xl mx-auto px-4 sm:px-6 mt-5 sm:mt-10">
+				<TopicHierarchyText topicID={topicID} />
+			</div>
 			{allEventsInTopic.map((timeline, i) => {
 				return (
 					<div key={i}>

@@ -1,175 +1,9 @@
 [
   {
-    "overview": "Vote Leave campaign claimed leaving the EU would save £350 million per week for the NHS.",
-    "dateTime": "2016-06-01T10:00:00Z",
-    "relevance": 0.95,
-    "furtherDescription": "This figure was printed on the side of the Vote Leave campaign bus, becoming one of the most controversial claims.",
-    "URLs": [
-      "https://www.bbc.com/news/uk-politics-eu-referendum-36271589"
-    ],
-    "tags": [
-      "economic",
-      "political"
-    ],
-    "side": 0
-  },
-  {
-    "overview": "Remain campaign argued Brexit would cause an immediate economic shock.",
-    "dateTime": "2016-05-23T09:30:00Z",
-    "relevance": 0.88,
-    "furtherDescription": "Chancellor George Osborne warned of a 'DIY recession' if Britain left the EU.",
-    "URLs": [
-      "https://www.theguardian.com/business/2016/may/23/eu-exit-diy-recession-osborne-warns"
-    ],
-    "tags": [
-      "economic",
-      "political"
-    ],
-    "side": 1
-  },
-  {
-    "overview": "Nigel Farage claimed Brexit would allow the UK to take back control of its borders.",
-    "dateTime": "2016-04-15T12:00:00Z",
-    "relevance": 0.9,
-    "furtherDescription": "This was a central message of the Leave campaign, focusing heavily on immigration.",
-    "URLs": [
-      "https://www.independent.co.uk/news/uk/politics/eu-referendum-nigel-farage-borders-control-immigration-a6985061.html"
-    ],
-    "tags": [
-      "political",
-      "social"
-    ],
-    "side": 0
-  },
-  {
-    "overview": "David Cameron argued leaving the EU would threaten national security.",
-    "dateTime": "2016-05-09T14:00:00Z",
-    "relevance": 0.82,
-    "furtherDescription": "Cameron suggested that EU membership allowed Britain to work more closely with European allies against terrorism.",
-    "URLs": [
-      "https://www.ft.com/content/5bb7f0ec-14fa-11e6-9d98-00386a18e39d"
-    ],
-    "tags": [
-      "political",
-      "security"
-    ],
-    "side": 1
-  },
-  {
-    "overview": "Vote Leave highlighted potential trade deals with non-EU countries.",
-    "dateTime": "2016-05-15T13:00:00Z",
-    "relevance": 0.75,
-    "furtherDescription": "Leave campaigners argued that the UK could negotiate better trade deals independently.",
-    "URLs": [
-      "https://www.telegraph.co.uk/news/2016/05/15/brexit-would-allow-uk-to-strike-trade-deals-globally-say-leave-c/"
-    ],
-    "tags": [
-      "economic",
-      "political"
-    ],
-    "side": 0
-  },
-  {
-    "overview": "Remain campaign emphasised freedom of movement benefits for young people.",
-    "dateTime": "2016-05-20T11:00:00Z",
-    "relevance": 0.7,
-    "furtherDescription": "They argued that staying in the EU guaranteed British citizens the right to work, study, and travel across Europe.",
-    "URLs": [
-      "https://www.theguardian.com/uk-news/2016/may/20/brexit-freedom-of-movement-uk-youth"
-    ],
-    "tags": [
-      "social",
-      "political"
-    ],
-    "side": 1
-  },
-  {
-    "overview": "Michael Gove said Brexit would restore sovereignty to the UK Parliament.",
-    "dateTime": "2016-05-17T10:00:00Z",
-    "relevance": 0.83,
-    "furtherDescription": "He claimed too many decisions were being made in Brussels rather than Westminster.",
-    "URLs": [
-      "https://www.theguardian.com/politics/2016/may/17/michael-gove-brexit-sovereignty-eu"
-    ],
-    "tags": [
-      "political"
-    ],
-    "side": 0
-  },
-  {
-    "overview": "Barack Obama warned the UK would be 'at the back of the queue' for trade deals if it left the EU.",
-    "dateTime": "2016-04-22T16:00:00Z",
-    "relevance": 0.9,
-    "furtherDescription": "The US President intervened during his state visit, sparking controversy among Leave supporters.",
-    "URLs": [
-      "https://www.bbc.com/news/uk-politics-eu-referendum-36115138"
-    ],
-    "tags": [
-      "economic",
-      "political"
-    ],
-    "side": 1
-  },
-  {
-    "overview": "Boris Johnson argued that the EU was undermining democracy.",
-    "dateTime": "2016-05-16T09:00:00Z",
-    "relevance": 0.84,
-    "furtherDescription": "Johnson suggested that decisions affecting Britain should not be made by unelected EU bureaucrats.",
-    "URLs": [
-      "https://www.telegraph.co.uk/news/2016/05/16/boris-johnson-eu-undermining-democracy/"
-    ],
-    "tags": [
-      "political"
-    ],
-    "side": 0
-  },
-  {
-    "overview": "Remain campaign launched warnings of house price falls and job losses if Brexit happened.",
-    "dateTime": "2016-05-21T15:00:00Z",
-    "relevance": 0.78,
-    "furtherDescription": "Opponents of Brexit argued that leaving would destabilise the housing market and increase unemployment.",
-    "URLs": [
-      "https://www.independent.co.uk/news/uk/politics/eu-referendum-brexit-house-prices-job-losses-remain-campaign-a7042196.html"
-    ],
-    "tags": [
-      "economic",
-      "political"
-    ],
-    "side": 1
-  },
-  {
-    "overview": "Confederation of British Industry (CBI) warned that leaving the EU could cost the UK economy around £100 billion and 950,000 jobs by 2020.",
-    "dateTime": "2016-03-21T00:00:00Z",
-    "relevance": 0.80,
-    "furtherDescription": "The CBI commissioned research showing a potential 3-5% hit to GDP and major job losses if the UK left the EU; widely cited by the Remain campaign. :contentReference[oaicite:1]{index=1}",
-    "URLs": [
-      "https://news.sky.com/story/brexit-could-blow-100bn-hole-in-economy-cbi-10213860"
-    ],
-    "tags": [
-      "economic",
-      "political"
-    ],
-    "side": 1
-  },
-  {
-    "overview": "UK Statistics Authority officially criticised the claim that the UK sends £350 million per week to the EU, calling it misleading.",
-    "dateTime": "2016-05-27T00:00:00Z",
-    "relevance": 0.77,
-    "furtherDescription": "In a public statement the Authority noted that the gross figure was not the net contribution and warned its misuse undermines trust in official statistics. :contentReference[oaicite:3]{index=3}",
-    "URLs": [
-      "https://uksa.statisticsauthority.gov.uk/news/uk-statistics-authority-statement-on-the-use-of-official-statistics-on-contributions-to-the-european-union/"
-    ],
-    "tags": [
-      "economic",
-      "political"
-    ],
-    "side": 1
-  },
-  {
-    "overview": "David Cameron delivered a statement in the House of Commons on 22 February 2016 about his EU reform package and the coming referendum.",
+    "overview": "David Cameron announced EU reform deal and set referendum date for 23 June 2016",
     "dateTime": "2016-02-22T00:00:00Z",
-    "relevance": 0.74,
-    "furtherDescription": "He set out the four reform areas and announced the referendum date for 23 June 2016 as part of the UK’s renegotiated deal. :contentReference[oaicite:5]{index=5}",
+    "relevance": 0.92,
+    "furtherDescription": "Prime Minister David Cameron delivered a statement in the House of Commons outlining the four areas of EU reform he had negotiated (economic governance, competitiveness, sovereignty, and immigration) and formally announced that the referendum on UK's EU membership would be held on 23 June 2016. This marked the official beginning of the referendum campaign period.",
     "URLs": [
       "https://www.gov.uk/government/speeches/pm-commons-statement-on-eu-reform-and-referendum-22-february-2016"
     ],
@@ -177,13 +11,19 @@
       "political",
       "constitutional"
     ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000543",
+      "20000570"
+    ],
     "side": 1
   },
   {
-    "overview": "In an April 2016 speech at O2 plc in Slough, Cameron argued that deciding to stay or leave the EU was a bigger decision than a general election.",
+    "overview": "Cameron argued that the referendum decision was bigger than a general election",
     "dateTime": "2016-02-23T00:00:00Z",
     "relevance": 0.70,
-    "furtherDescription": "Cameron told business staff that the referendum decision was ‘much bigger’ than ordinary elections because it would shape the country’s future for decades. :contentReference[oaicite:7]{index=7}",
+    "furtherDescription": "In a speech at O2 plc in Slough, Prime Minister Cameron told business employees that the referendum decision was 'much bigger' than ordinary elections because it would shape the country's future for decades. He emphasized the economic benefits of EU membership and warned against the uncertainties of leaving.",
     "URLs": [
       "https://www.gov.uk/government/speeches/pm-speech-at-o2-on-the-eu-referendum-23-february-2016"
     ],
@@ -191,27 +31,63 @@
       "political",
       "economic"
     ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000344"
+    ],
     "side": 1
   },
   {
-    "overview": "Liz Truss told farmers on 23 February 2016 that leaving the EU would be a ‘leap into the dark’ and warned of risks to UK food & farming exports.",
+    "overview": "Liz Truss warned farmers that leaving EU would be a 'leap into the dark'",
     "dateTime": "2016-02-23T00:00:00Z",
     "relevance": 0.68,
-    "furtherDescription": "As Environment Secretary she urged farmers to vote to remain, emphasising UK access to the EU’s 500 million consumers and warning of trade barriers. :contentReference[oaicite:9]{index=9}",
+    "furtherDescription": "As Environment Secretary, Liz Truss (who later became Prime Minister) told farmers to vote Remain, emphasizing UK access to the EU's 500 million consumers and warning of potential trade barriers. She highlighted that agricultural subsidies under the Common Agricultural Policy made up roughly 50-60% of UK farm income and that Brexit would bring huge uncertainty to farming policy.",
     "URLs": [
-      "https://www.theguardian.com/environment/2016/feb/23/leaving-eu-would-put-uk-food-and-farming-exports-at-risk-says-liz-truss"
+      "https://www.theguardian.com/environment/2016/feb/23/leaving-eu-would-put-uk-food-and-farming-exports-at-risk-says-liz-truss",
+      "https://commonslibrary.parliament.uk/research-briefings/cbp-7602/"
     ],
     "tags": [
       "economic",
-      "agriculture"
+      "agriculture",
+      "political"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000210",
+      "20000344"
     ],
     "side": 1
   },
   {
-    "overview": "Britain Stronger in Europe (Remain campaign) published a government leaflet in April 2016 warning that a vote to leave the EU could lead to 'a decade or more of uncertainty'.",
+    "overview": "CBI warned Brexit could cost UK economy £100bn and 950,000 jobs by 2020",
+    "dateTime": "2016-03-21T00:00:00Z",
+    "relevance": 0.80,
+    "furtherDescription": "The Confederation of British Industry commissioned research showing a potential 3-5% hit to GDP and major job losses if the UK left the EU. The CBI's analysis projected that leaving would blow a £100 billion hole in the economy and result in nearly a million job losses. This became widely cited evidence by the Remain campaign.",
+    "URLs": [
+      "https://news.sky.com/story/brexit-could-blow-100bn-hole-in-economy-cbi-10213860"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000344",
+      "20000365"
+    ],
+    "side": 1
+  },
+  {
+    "overview": "Remain campaign published £9.3m government leaflet warning of 'decade of uncertainty'",
     "dateTime": "2016-04-07T00:00:00Z",
     "relevance": 0.65,
-    "furtherDescription": "The official ‘Stay’ campaign’s leaflet cost £9.3 m and argued Brexit would raise living costs, hit jobs and reduce living standards. :contentReference[oaicite:11]{index=11}",
+    "furtherDescription": "Britain Stronger in Europe (the official Remain campaign) published a government-funded leaflet costing £9.3 million that was delivered to households across the UK. The leaflet argued that Brexit would raise living costs, hit jobs, reduce living standards, and lead to 'a decade or more of uncertainty'. The use of public funds for this campaign material was controversial.",
     "URLs": [
       "https://en.wikipedia.org/wiki/Pro-EU_leaflet"
     ],
@@ -219,14 +95,57 @@
       "political",
       "economic"
     ],
-    "side": 1,
-    "qcode": ["11000000", "20000580"]
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000"
+    ],
+    "side": 1
   },
   {
-    "overview": "In April 2016 the HM Treasury published analysis that voting to leave would make each UK household on average £4,300 worse off per year after 15 years.",
+    "overview": "Vote Leave officially designated as lead Leave campaign",
+    "dateTime": "2016-04-13T00:00:00Z",
+    "relevance": 0.87,
+    "furtherDescription": "The Electoral Commission designated Vote Leave as the official campaign for leaving the European Union, led by Conservative politicians including Boris Johnson and Michael Gove. This gave Vote Leave access to higher spending limits, broadcast time, and official campaign materials. The rival Leave.EU campaign, associated with Nigel Farage and UKIP, failed to secure the designation.",
+    "URLs": [
+      "https://en.wikipedia.org/wiki/Campaigning_in_the_2016_United_Kingdom_European_Union_membership_referendum"
+    ],
+    "tags": [
+      "political"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000543"
+    ],
+    "side": 0
+  },
+  {
+    "overview": "Nigel Farage claimed Brexit would allow UK to take back control of its borders",
+    "dateTime": "2016-04-15T12:00:00Z",
+    "relevance": 0.9,
+    "furtherDescription": "UKIP leader Nigel Farage made border control and immigration a central message of the Leave campaign, arguing that EU membership prevented the UK from controlling who entered the country. This 'take back control' message became one of the most resonant themes of the Brexit campaign, focusing heavily on concerns about immigration levels.",
+    "URLs": [
+      "https://www.independent.co.uk/news/uk/politics/eu-referendum-nigel-farage-borders-control-immigration-a6985061.html"
+    ],
+    "tags": [
+      "political",
+      "social",
+      "immigration"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000616",
+      "20000621"
+    ],
+    "side": 0
+  },
+  {
+    "overview": "HM Treasury published analysis claiming Brexit would cost households £4,300 per year",
     "dateTime": "2016-04-18T00:00:00Z",
     "relevance": 0.82,
-    "furtherDescription": "The analysis estimated a GDP reduction of 6.2% and a tax increase equivalent to 8p in the income tax rate. :contentReference[oaicite:13]{index=13}",
+    "furtherDescription": "The Treasury analysis estimated that voting to leave would make each UK household on average £4,300 worse off per year after 15 years, based on a projected GDP reduction of 6.2% and a tax increase equivalent to 8p on the basic rate of income tax. This analysis was heavily criticized by Leave campaigners as 'Project Fear'.",
     "URLs": [
       "https://www.gov.uk/government/news/hm-treasury-analysis-shows-leaving-eu-would-cost-british-households-4300-per-year"
     ],
@@ -234,55 +153,83 @@
       "economic",
       "political"
     ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000344",
+      "20000359"
+    ],
     "side": 1
   },
   {
-    "overview": "In April 2016 the Remain side highlighted that agricultural subsidies under the Common Agricultural Policy (CAP) made up roughly 50-60% of UK farm income and that exit would bring huge uncertainty to farming policy.",
-    "dateTime": "2016-05-26T00:00:00Z",
-    "relevance": 0.66,
-    "furtherDescription": "A briefing by the Commons Library noted that UK farms received substantial payments from the EU and that the UK government had offered no full 'Plan B' for agriculture post-exit. :contentReference[oaicite:15]{index=15}",
+    "overview": "Barack Obama warned UK would be 'back of the queue' for US trade deals",
+    "dateTime": "2016-04-22T16:00:00Z",
+    "relevance": 0.9,
+    "furtherDescription": "During a state visit to the UK, US President Barack Obama intervened in the referendum debate, warning that Britain would be 'at the back of the queue' for trade deals with the United States if it left the EU. His use of the British term 'queue' rather than American 'line' sparked controversy, with Leave supporters accusing him of being coached by Downing Street.",
     "URLs": [
-      "https://commonslibrary.parliament.uk/research-briefings/cbp-7602/"
+      "https://www.bbc.com/news/uk-politics-eu-referendum-36115138"
     ],
     "tags": [
-      "agriculture",
-      "economic"
+      "economic",
+      "political",
+      "international"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000594",
+      "20000373",
+      "20000374"
     ],
     "side": 1
   },
   {
-    "overview": "In a campaign rally in May 2016 Michael Gove claimed that the UK would ‘take back control’ of approximately £19 billion a year (equivalent to £350 million a week) if it left the EU.",
-    "dateTime": "2016-05-17T10:00:00Z",
-    "relevance": 0.79,
-    "furtherDescription": "Gove asserted decisions were being made in Brussels and argued a Leave vote would restore sovereignty; this formed a core Leave campaign message. :contentReference[oaicite:17]{index=17}",
+    "overview": "David Cameron argued leaving EU would threaten national security",
+    "dateTime": "2016-05-09T14:00:00Z",
+    "relevance": 0.82,
+    "furtherDescription": "Prime Minister Cameron suggested that EU membership allowed Britain to work more closely with European allies against terrorism and other security threats. He argued that cooperation through EU institutions like Europol made the UK safer and that leaving would weaken Britain's ability to combat international crime and terrorism.",
     "URLs": [
-      "https://www.theguardian.com/politics/2016/may/17/michael-gove-brexit-sovereignty-eu"
+      "https://www.ft.com/content/5bb7f0ec-14fa-11e6-9d98-00386a18e39d"
     ],
     "tags": [
       "political",
-      "economic"
+      "security"
     ],
-    "side": 0
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000552"
+    ],
+    "side": 1
   },
   {
-    "overview": "In June 2016 the Leave campaign emphasised that a Leave vote would allow the UK to secure trade deals globally, independent of EU membership.",
+    "overview": "Vote Leave highlighted potential trade deals with non-EU countries",
     "dateTime": "2016-05-15T13:00:00Z",
-    "relevance": 0.72,
-    "furtherDescription": "The Leave side argued that outside the EU the UK would be free to negotiate its own trade agreements with non-EU countries. (This mirrors the event you already had, but I include a fuller note.)",
+    "relevance": 0.75,
+    "furtherDescription": "Leave campaigners argued that outside the EU, the UK would be free to negotiate its own trade agreements with non-EU countries, including fast-growing economies like China and India. They claimed the UK was being held back by the EU's cumbersome collective trade negotiation process and could secure better deals independently.",
     "URLs": [
       "https://www.telegraph.co.uk/news/2016/05/15/brexit-would-allow-uk-to-strike-trade-deals-globally-say-leave-c/"
     ],
     "tags": [
       "economic",
+      "political",
       "international"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000373",
+      "20000374"
     ],
     "side": 0
   },
   {
-    "overview": "A key campaign message in May 2016 by Boris Johnson stated that EU membership undermined British democracy and that decisions affecting the UK should not be made by unelected EU bureaucrats.",
+    "overview": "Boris Johnson argued EU was undermining British democracy",
     "dateTime": "2016-05-16T09:00:00Z",
-    "relevance": 0.73,
-    "furtherDescription": "Johnson framed Brexit as reclaiming democracy and saw the EU as a threat to self-government. :contentReference[oaicite:19]{index=19}",
+    "relevance": 0.84,
+    "furtherDescription": "Former London Mayor Boris Johnson framed Brexit as reclaiming democracy, arguing that decisions affecting Britain should not be made by unelected EU bureaucrats in Brussels. He claimed the EU was a threat to self-government and that British laws should be made by British parliamentarians accountable to British voters.",
     "URLs": [
       "https://www.telegraph.co.uk/news/2016/05/16/boris-johnson-eu-undermining-democracy/"
     ],
@@ -290,7 +237,264 @@
       "political",
       "constitutional"
     ],
-    "side": 0,
-    "qcode": ["20000580"]
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000537",
+      "20000545"
+    ],
+    "side": 0
+  },
+  {
+    "overview": "Michael Gove said Brexit would restore sovereignty to UK Parliament",
+    "dateTime": "2016-05-17T10:00:00Z",
+    "relevance": 0.83,
+    "furtherDescription": "Justice Secretary Michael Gove claimed too many decisions were being made in Brussels rather than Westminster. In a campaign rally, he asserted that the UK would 'take back control' of approximately £19 billion a year (equivalent to £350 million a week) if it left the EU. Sovereignty and parliamentary supremacy became core Leave campaign messages.",
+    "URLs": [
+      "https://www.theguardian.com/politics/2016/may/17/michael-gove-brexit-sovereignty-eu"
+    ],
+    "tags": [
+      "political",
+      "constitutional",
+      "economic"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000537",
+      "04000000"
+    ],
+    "side": 0
+  },
+  {
+    "overview": "Remain campaign emphasized freedom of movement benefits for young people",
+    "dateTime": "2016-05-20T11:00:00Z",
+    "relevance": 0.7,
+    "furtherDescription": "The Remain campaign argued that staying in the EU guaranteed British citizens the right to work, study, and travel across Europe without visas or work permits. They particularly emphasized the opportunities this provided for young people to study abroad through Erasmus and work across 28 countries.",
+    "URLs": [
+      "https://www.theguardian.com/uk-news/2016/may/20/brexit-freedom-of-movement-uk-youth"
+    ],
+    "tags": [
+      "social",
+      "political",
+      "immigration"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "14000000",
+      "20000621"
+    ],
+    "side": 1
+  },
+  {
+    "overview": "Remain campaign warned of house price falls and job losses from Brexit",
+    "dateTime": "2016-05-21T15:00:00Z",
+    "relevance": 0.78,
+    "furtherDescription": "Opponents of Brexit argued that leaving would destabilize the housing market and increase unemployment. Economic modeling suggested property values could fall significantly and that businesses would cut jobs or relocate to continental Europe. Critics labeled this strategy 'Project Fear'.",
+    "URLs": [
+      "https://www.independent.co.uk/news/uk/politics/eu-referendum-brexit-house-prices-job-losses-remain-campaign-a7042196.html"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000344",
+      "20000365",
+      "20001368"
+    ],
+    "side": 1
+  },
+  {
+    "overview": "Chancellor Osborne warned of 'DIY recession' if Britain left EU",
+    "dateTime": "2016-05-23T09:30:00Z",
+    "relevance": 0.88,
+    "furtherDescription": "Chancellor George Osborne warned voters that Brexit would cause an immediate economic shock and push the UK into a self-inflicted 'DIY recession'. The Treasury published analysis suggesting GDP would shrink, unemployment would rise, and the pound would fall sharply. Leave campaigners dismissed these warnings as alarmist.",
+    "URLs": [
+      "https://www.theguardian.com/business/2016/may/23/eu-exit-diy-recession-osborne-warns"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000344",
+      "20000383"
+    ],
+    "side": 1
+  },
+  {
+    "overview": "UK Statistics Authority criticized £350m per week claim as misleading",
+    "dateTime": "2016-05-27T00:00:00Z",
+    "relevance": 0.77,
+    "furtherDescription": "The UK Statistics Authority officially criticized the Vote Leave campaign's claim that the UK sends £350 million per week to the EU, calling it misleading. In a public statement, the Authority noted that the gross figure ignored the UK's rebate and funds returned to the UK, and warned that misuse of statistics undermines public trust in official data.",
+    "URLs": [
+      "https://uksa.statisticsauthority.gov.uk/news/uk-statistics-authority-statement-on-the-use-of-official-statistics-on-contributions-to-the-european-union/"
+    ],
+    "tags": [
+      "economic",
+      "political"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000344"
+    ],
+    "side": 1
+  },
+  {
+    "overview": "Vote Leave campaign claimed leaving EU would save £350 million per week for NHS",
+    "dateTime": "2016-06-01T10:00:00Z",
+    "relevance": 0.95,
+    "furtherDescription": "The Vote Leave campaign prominently featured the claim on their battle bus that leaving the EU would save £350 million per week which could be spent on the NHS instead. This figure, which ignored the UK's rebate and EU funding received, became one of the most controversial and widely-discussed claims of the referendum campaign. It was later criticized as misleading by fact-checkers and the UK Statistics Authority.",
+    "URLs": [
+      "https://www.bbc.com/news/uk-politics-eu-referendum-36271589"
+    ],
+    "tags": [
+      "economic",
+      "political",
+      "health"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000667"
+    ],
+    "side": 0
+  },
+  {
+    "overview": "FTSE 100 fell 2% as polls showed Brexit becoming more likely",
+    "dateTime": "2016-06-14T00:00:00Z",
+    "relevance": 0.75,
+    "furtherDescription": "Financial markets reacted nervously to polling suggesting increased support for Leave. The FTSE 100 index lost £98 billion in value in a single day, falling by 2%. The pound also weakened against major currencies. Subsequent polls suggesting a move back towards Remain led to a recovery, illustrating the market volatility during the final weeks of the campaign.",
+    "URLs": [
+      "https://en.wikipedia.org/wiki/2016_United_Kingdom_European_Union_membership_referendum"
+    ],
+    "tags": [
+      "economic",
+      "financial"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "04000000",
+      "20000385",
+      "20000396"
+    ],
+    "side": 1
+  },
+  {
+    "overview": "Nigel Farage unveiled controversial 'Breaking Point' immigration poster",
+    "dateTime": "2016-06-16T00:00:00Z",
+    "relevance": 0.93,
+    "furtherDescription": "UKIP leader Nigel Farage unveiled a controversial poster showing a queue of refugees and migrants at the Slovenia-Croatia border in 2015 under the headline 'Breaking Point' and the slogan 'The EU has failed us all'. The poster was widely condemned across the political spectrum, with Chancellor George Osborne calling it 'disgusting and vile' with 'echoes of literature used in the 1930s'. Even Leave campaigner Michael Gove said he 'shuddered' when he saw it. The poster was part of a £100,000 campaign and was reported to police for alleged incitement of racial hatred.",
+    "URLs": [
+      "https://en.wikipedia.org/wiki/Breaking_Point_(UKIP_poster)",
+      "https://www.itv.com/news/2016-06-19/gove-i-shuddered-at-farages-migrant-breaking-point-poster"
+    ],
+    "tags": [
+      "political",
+      "immigration",
+      "social"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000616",
+      "20000621"
+    ],
+    "side": 0
+  },
+  {
+    "overview": "Labour MP Jo Cox murdered by white supremacist in Birstall",
+    "dateTime": "2016-06-16T12:53:00Z",
+    "relevance": 0.98,
+    "furtherDescription": "Labour MP Jo Cox, a prominent Remain supporter and advocate for Syrian refugees, was shot and stabbed multiple times outside a library in Birstall, West Yorkshire, where she was about to hold a constituency surgery. Her attacker, Thomas Mair, was a 53-year-old white supremacist with Nazi sympathies who shouted 'Britain first' during the attack. Cox died shortly after at Leeds General Infirmary. Both referendum campaigns immediately suspended activities as a mark of respect. The killing was later ruled an act of terrorism, and Mair was sentenced to life imprisonment. The murder shocked the nation and temporarily changed the tone of the referendum debate, with Jo Cox's husband Brendan stating she had been deeply troubled by the divisive tone of the campaign.",
+    "URLs": [
+      "https://en.wikipedia.org/wiki/Murder_of_Jo_Cox",
+      "https://www.nbcnews.com/storyline/brexit-referendum/thomas-mair-guilty-killing-u-k-lawmaker-jo-cox-n687566",
+      "https://www.aljazeera.com/news/2016/6/17/killing-of-mp-jo-cox-halts-brexit-campaigning-in-uk"
+    ],
+    "tags": [
+      "crime",
+      "political",
+      "terrorism"
+    ],
+    "qcode": [
+      "02000000",
+      "20000099",
+      "11000000",
+      "20000103",
+      "20000580"
+    ],
+    "side": null
+  },
+  {
+    "overview": "Referendum campaigns suspended following Jo Cox murder",
+    "dateTime": "2016-06-17T00:00:00Z",
+    "relevance": 0.85,
+    "furtherDescription": "Following the murder of Jo Cox, both the Remain and Leave campaigns suspended all activities for a second day as a mark of respect. Prime Minister David Cameron cancelled a planned rally in Gibraltar. The BBC cancelled political programmes including Question Time and This Week. A minute's silence was observed across the UK. Campaigning resumed on 19 June, with politicians calling for a more respectful tone in the final days before the vote.",
+    "URLs": [
+      "https://en.wikipedia.org/wiki/Jo_Cox",
+      "https://www.aljazeera.com/news/2016/6/17/killing-of-mp-jo-cox-halts-brexit-campaigning-in-uk"
+    ],
+    "tags": [
+      "political"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580"
+    ],
+    "side": null
+  },
+  {
+    "overview": "Referendum day: UK voted to leave the European Union by 51.9% to 48.1%",
+    "dateTime": "2016-06-23T00:00:00Z",
+    "relevance": 1.0,
+    "furtherDescription": "The United Kingdom held a referendum on continued EU membership, with 51.89% voting to leave and 48.11% voting to remain. Turnout was 72.2%, one of the highest for any UK vote. England and Wales voted to leave (except London), while Scotland, Northern Ireland, and Gibraltar voted to remain. The result was unexpected by many pollsters and financial markets. Sterling hit a 2016 high of $1.5018 early on referendum day based on exit polls suggesting Remain would win, but when the Sunderland result showed an unexpected swing to Leave, the pound plummeted to $1.3777, its lowest level since 1985.",
+    "URLs": [
+      "https://en.wikipedia.org/wiki/2016_United_Kingdom_European_Union_membership_referendum",
+      "https://www.gov.uk/government/topical-events/eu-referendum"
+    ],
+    "tags": [
+      "political",
+      "constitutional"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000543",
+      "20000537"
+    ],
+    "side": null
+  },
+  {
+    "overview": "David Cameron announced resignation as Prime Minister",
+    "dateTime": "2016-06-24T08:00:00Z",
+    "relevance": 0.96,
+    "furtherDescription": "Following the Leave vote, Prime Minister David Cameron announced his resignation outside 10 Downing Street, saying 'I don't think it would be right for me to try to be the captain that steers our country to its next destination.' He said he would remain in post until October to allow the Conservative Party to choose a successor. The pound fell to a 31-year low of $1.32 when markets opened on Monday. The Bank of England pledged to support the financial system amid market turmoil.",
+    "URLs": [
+      "https://www.gov.uk/government/topical-events/eu-referendum",
+      "https://en.wikipedia.org/wiki/Brexit"
+    ],
+    "tags": [
+      "political"
+    ],
+    "qcode": [
+      "11000000",
+      "20000580",
+      "20000555",
+      "20000558"
+    ],
+    "side": null
   }
 ]

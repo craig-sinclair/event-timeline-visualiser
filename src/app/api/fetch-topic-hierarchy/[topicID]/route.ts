@@ -1,13 +1,13 @@
 import { NextResponse, NextRequest } from "next/server";
 
 import { dbConnect } from "@/lib/mongoose";
+import { OntologyTopic } from "@/models/ontology";
 import {
 	TopicHierarchyData,
 	TopicHierarchyResponse,
-	OntologyTopic,
 	TopicData,
 	ParentHierarchyData,
-} from "@/models/ontology";
+} from "@/models/ontology.types";
 
 export async function GET(
 	request: NextRequest,
@@ -44,14 +44,14 @@ export async function GET(
 			if (!parentTopic) break;
 
 			hierarchy.push({
-				qcode: parentTopic.qcode,
+				qcode: parentTopic.qcode.replace(/^medtop:/, ""),
 				prefLabel: parentTopic.prefLabel,
 			});
 			currentTopic = parentTopic;
 		}
 
 		const topicHierarchy: TopicHierarchyData = {
-			qcode: baseTopic.qcode,
+			qcode: baseTopic.qcode.replace(/^medtop:/, ""),
 			prefLabel: baseTopic.prefLabel,
 			hierarchy: hierarchy,
 		};

@@ -20,7 +20,7 @@ import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 import { GET } from "@/app/api/fetch-events-in-topic/[topicID]/route";
 import { Event } from "@/models/event";
 import { EventData } from "@/models/event";
-import { EventsInTopic } from "@/models/ontology";
+import { EventsInTopic } from "@/models/ontology.types";
 import { Timeline } from "@/models/timeline";
 import { TimelineData } from "@/models/timeline";
 

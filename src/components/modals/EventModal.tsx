@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-
+import TopicHierarchyText from "@/components/ui/TopicHierarchyText";
 import { EventData } from "@/models/event";
+import { TopicHierarchyTextSize } from "@/models/ontology.types";
 
 export default function EventModal({
 	visible,
@@ -53,8 +53,13 @@ export default function EventModal({
 							<p className="text-sm opacity-80">{event.relevance}</p>
 						</div>
 
-						{/* Tags */}
-						{event.tags?.length > 0 && (
+						<div>
+							<h3 className="text-sm font-semibold mb-1">Further information</h3>
+							<p className="text-sm opacity-80">{event.furtherDescription}</p>
+						</div>
+
+						{/* Tags: comment for now; to be replaced by ontology topics (but filtering done by tags currently) */}
+						{/* {event.tags?.length > 0 && (
 							<div>
 								<h3 className="text-sm font-semibold mb-2">Tags</h3>
 								<div className="flex flex-wrap gap-2">
@@ -68,23 +73,19 @@ export default function EventModal({
 									))}
 								</div>
 							</div>
-						)}
+						)} */}
 
 						{/* Ontology Topics */}
 						{event?.qcode && event.qcode.length > 0 && (
 							<div>
-								<h3 className="text-sm font-semibold mb-2">Media Topics:</h3>
-								<div className="flex flex-wrap gap-2">
+								<h3 className="text-sm font-semibold mb-2">Tags:</h3>
+								<div>
 									{event.qcode.map((topicID, index) => (
-										<Link
-											className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors cursor-pointer"
-											href={`/events-in-topic/${topicID}`}
+										<TopicHierarchyText
+											size={TopicHierarchyTextSize.Small}
 											key={index}
-										>
-											<span className="px-3 py-1 text-xs border rounded-full">
-												{topicID}
-											</span>
-										</Link>
+											topicID={topicID}
+										/>
 									))}
 								</div>
 							</div>

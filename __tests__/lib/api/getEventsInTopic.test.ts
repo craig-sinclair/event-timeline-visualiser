@@ -1,7 +1,7 @@
 import { describe, it, vi, expect, beforeEach, afterEach } from "vitest";
 
 import { getEventsInTopic } from "@/lib/api/getEventsInTopic";
-import { TopicEventsResponse, EventsInTopic } from "@/models/ontology";
+import { TopicEventsResponse, EventsInTopic } from "@/models/ontology.types";
 
 const mockFetch = vi.fn();
 global.fetch = mockFetch;

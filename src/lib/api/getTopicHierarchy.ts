@@ -1,4 +1,4 @@
-import { TopicHierarchyResponse } from "@/models/ontology";
+import { TopicHierarchyResponse } from "@/models/ontology.types";
 
 export const getTopicHierarchy = async ({ topicID }: { topicID: string }) => {
 	if (!topicID || topicID === "") {
