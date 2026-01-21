@@ -22,6 +22,25 @@
         "position": 0.7
     },
     {
+        "overview": "Clinton Administration delays on SUV fuel efficiency standards",
+        "dateTime": "1999-07-01",
+        "relevance": 0.70,
+        "furtherDescription": "Despite growing concern over fuel economy, the Clinton administration allowed CAFE standards to remain flat for light trucks and SUVs, reducing pressure for efficiency improvements in a rapidly growing segment.",
+        "URLs": [
+            "https://www.nhtsa.gov/corporate-average-fuel-economy"
+        ],
+        "tags": [
+            "transport",
+            "standards",
+            "inaction"
+        ],
+        "position": 0.35,
+        "qcode": [
+            "12000000",
+            "14000000"
+        ]
+    },
+    {
         "overview": "American Recovery and Reinvestment Act (ARRA) — clean energy investment",
         "dateTime": "2009-02-17",
         "relevance": 0.85,
@@ -43,6 +62,25 @@
             "13000030"
         ],
         "position": 0.9
+    },
+    {
+        "overview": "George W. Bush administration rejects mandatory caps on CO₂",
+        "dateTime": "2001-2005",
+        "relevance": 0.85,
+        "furtherDescription": "The administration repeatedly opposed congressional proposals for mandatory carbon caps or economy-wide emissions limits, favouring voluntary programmes that had minimal impact on actual emissions.",
+        "URLs": [
+            "https://www.epa.gov/climatechange/epa-climate-change-policy-history"
+        ],
+        "tags": [
+            "federal-policy",
+            "inaction",
+            "emissions"
+        ],
+        "position": 0.2,
+        "qcode": [
+            "13000000",
+            "11000000"
+        ]
     },
     {
         "overview": "American Clean Energy and Security Act (Waxman-Markey) — House passage",
@@ -89,6 +127,25 @@
         "position": 0.75
     },
     {
+        "overview": "EPA revokes New Source Review enforcement (Bush era)",
+        "dateTime": "2003-12-31",
+        "relevance": 0.75,
+        "furtherDescription": "EPA rolled back strict enforcement of New Source Review rules, allowing some older coal-fired power plants to avoid upgrading emissions controls, slowing progress on reducing air pollutants and CO₂ co-benefits.",
+        "URLs": [
+            "https://www.nytimes.com/2003/12/31/us/bush-plan-eases-rules-for-pollution-control.html"
+        ],
+        "tags": [
+            "epa",
+            "power-sector",
+            "rollback"
+        ],
+        "position": 0.3,
+        "qcode": [
+            "11000005",
+            "13000000"
+        ]
+    },
+    {
         "overview": "EPA and NHTSA establish national GHG and fuel-economy standards for light-duty vehicles (MY 2012–2016; phase begins 2010)",
         "dateTime": "2010-04-01",
         "relevance": 0.86,
@@ -133,6 +190,44 @@
         "position": 0.7
     },
     {
+        "overview": "US fails to act on Arctic sea ice loss warnings",
+        "dateTime": "2000-2010",
+        "relevance": 0.65,
+        "furtherDescription": "Despite scientific warnings from NASA and NOAA about accelerating Arctic ice loss, federal policy was slow to fund mitigation or adaptation, relying on voluntary programmes rather than binding targets.",
+        "URLs": [
+            "https://climate.nasa.gov/news/"
+        ],
+        "tags": [
+            "science",
+            "inaction",
+            "arctic"
+        ],
+        "position": 0.25,
+        "qcode": [
+            "14000000",
+            "11000000"
+        ]
+    },
+    {
+        "overview": "Trump Administration rolls back Clean Power Plan",
+        "dateTime": "2019-06-19",
+        "relevance": 0.77,
+        "furtherDescription": "The EPA’s Affordable Clean Energy (ACE) rule replaced the Clean Power Plan with a narrower approach focusing on individual coal units rather than system-wide emissions reductions, substantially weakening national CO₂ reduction pathways.",
+        "URLs": [
+            "https://www.epa.gov/stationary-sources-air-pollution/affordable-clean-energy-rule"
+        ],
+        "tags": [
+            "power-sector",
+            "rollback",
+            "epa"
+        ],
+        "position": 0.3,
+        "qcode": [
+            "13000060",
+            "11000007"
+        ]
+    },
+    {
         "overview": "Obama Administration announces the Clean Power Plan",
         "dateTime": "2015-08-03",
         "relevance": 0.92,
@@ -155,6 +250,44 @@
         "position": 0.9
     },
     {
+        "overview": "Trump Administration SAFE Vehicles Rule",
+        "dateTime": "2020-04-30",
+        "relevance": 0.80,
+        "furtherDescription": "The SAFE rule rolled back federal vehicle fuel-economy and emissions standards for 2021–2026 model years, relaxing trajectory and limiting California’s waiver, reducing progress on transport decarbonisation.",
+        "URLs": [
+            "https://www.epa.gov/regulations-emissions-vehicles-and-engines/safer-affordable-fuel-efficient-safe-vehicles-final-rule"
+        ],
+        "tags": [
+            "transport",
+            "standards",
+            "rollback"
+        ],
+        "position": 0.35,
+        "qcode": [
+            "14000020",
+            "12000011"
+        ]
+    },
+    {
+        "overview": "Biden delays methane regulations for oil and gas (initial period)",
+        "dateTime": "2021-03-01",
+        "relevance": 0.65,
+        "furtherDescription": "Early in the administration, enforcement of stricter methane rules from the oil and gas sector was slowed pending review, temporarily reducing regulatory pressure on one of the fastest-growing sources of US greenhouse gases.",
+        "URLs": [
+            "https://www.epa.gov/ghgemissions"
+        ],
+        "tags": [
+            "methane",
+            "regulation",
+            "delay"
+        ],
+        "position": 0.45,
+        "qcode": [
+            "13000060",
+            "14000000"
+        ]
+    },
+    {
         "overview": "United States signs Paris Agreement (UN signing ceremony)",
         "dateTime": "2016-04-22",
         "relevance": 0.91,
@@ -175,6 +308,82 @@
             "11000040"
         ],
         "position": 0.6
+    },
+    {
+        "overview": "Coal subsidies continue in US federal budget",
+        "dateTime": "2000-2020",
+        "relevance": 0.70,
+        "furtherDescription": "Despite growing recognition of climate risks, federal budgets maintained subsidies and tax advantages for coal production, indirectly slowing transition to low-carbon electricity.",
+        "URLs": [
+            "https://www.eia.gov/todayinenergy/detail.php?id=38032"
+        ],
+        "tags": [
+            "fossil-fuels",
+            "subsidy",
+            "policy-inaction"
+        ],
+        "position": 0.25,
+        "qcode": [
+            "13000000",
+            "17000000"
+        ]
+    },
+    {
+        "overview": "Minimal federal support for renewable energy pre-2009",
+        "dateTime": "2000-2008",
+        "relevance": 0.75,
+        "furtherDescription": "Before ARRA, renewable deployment was limited by low federal incentives, minimal R&D funding, and fragmented policy, slowing adoption of wind, solar, and other low-carbon technologies.",
+        "URLs": [
+            "https://www.energy.gov/eere/office-energy-efficiency-renewable-energy"
+        ],
+        "tags": [
+            "renewables",
+            "federal-policy",
+            "inaction"
+        ],
+        "position": 0.4,
+        "qcode": [
+            "13000010",
+            "13000000"
+        ]
+    },
+    {
+        "overview": "Weak response to 2005 hurricane season and climate link",
+        "dateTime": "2005-12-01",
+        "relevance": 0.65,
+        "furtherDescription": "Following Hurricane Katrina and other storms, federal policy largely focused on disaster response rather than linking increased hurricane severity to climate change, missing opportunities for mitigation planning.",
+        "URLs": [
+            "https://www.nhc.noaa.gov/education/history/"
+        ],
+        "tags": [
+            "disaster",
+            "inaction",
+            "climate-connection"
+        ],
+        "position": 0.3,
+        "qcode": [
+            "14000000",
+            "16000000"
+        ]
+    },
+    {
+        "overview": "US delays on CAFE standards for 2008–2010 vehicles",
+        "dateTime": "2007-12-01",
+        "relevance": 0.70,
+        "furtherDescription": "Despite growing fuel prices and emissions concerns, light-duty vehicle efficiency standards remained modest, and regulatory updates were slow, delaying fleet-wide efficiency gains.",
+        "URLs": [
+            "https://www.nhtsa.gov/laws-regulations/corporate-average-fuel-economy"
+        ],
+        "tags": [
+            "transport",
+            "standards",
+            "inaction"
+        ],
+        "position": 0.4,
+        "qcode": [
+            "12000010",
+            "14000000"
+        ]
     },
     {
         "overview": "President Trump announces intent to withdraw from the Paris Agreement",
@@ -239,6 +448,26 @@
             "11000007"
         ],
         "position": 0.74
+    },
+    {
+        "overview": "US Withdrawal from Kyoto Protocol (Bush Administration)",
+        "dateTime": "2001-03-28",
+        "relevance": 0.90,
+        "furtherDescription": "President George W. Bush announced that the US would not ratify the Kyoto Protocol, citing potential economic harm and unfair obligations on developing countries. This decision delayed US engagement in binding international emissions reductions.",
+        "URLs": [
+            "https://www.state.gov/u-s-withdrawal-from-the-kyoto-protocol/",
+            "https://www.nytimes.com/2001/03/29/world/bush-wont-join-kyoto-climate-treaty-us-says.html"
+        ],
+        "tags": [
+            "international",
+            "withdrawal",
+            "policy-delay"
+        ],
+        "position": 0.2,
+        "qcode": [
+            "15000000",
+            "16000000"
+        ]
     },
     {
         "overview": "California Executive Order N-79-20: target for zero-emission new car sales by 2035",
