@@ -64,8 +64,8 @@ export default function TopicHierarchyText({
 	return (
 		<div
 			className={
-				"flex gap-3 max-w-4xl mx-auto px-4 sm:px-6 mt-5 sm:mt-10" +
-				(small ? " flex-wrap gap-2" : "")
+				"flex gap-3 max-w-4xl mx-auto" +
+				(small ? " flex-wrap mt-4" : "px-4 sm:px-6 mt-5 sm:mt-10")
 			}
 		>
 			{hierarchyData?.hierarchy.map((topic, i) => {
@@ -86,9 +86,7 @@ export default function TopicHierarchyText({
 
 						<h1
 							className={
-								small
-									? "text-sm font-medium py-1 px-1"
-									: "text-md font-medium py-2 px-1"
+								small ? "text-sm font-medium py-1" : "text-md font-medium py-2 px-1"
 							}
 						>
 							/
@@ -97,16 +95,17 @@ export default function TopicHierarchyText({
 				);
 			})}
 
-			<button
-				className={
-					"font-medium cursor-pointer rounded-md text-white hover:opacity-80 " +
-					(small
-						? "text-xs px-2 py-1 bg-blue-600 dark:bg-blue-900"
-						: "text-md p-2 bg-blue-600 dark:bg-blue-900")
-				}
-			>
-				{hierarchyData?.prefLabel}
-			</button>
+			{small ? (
+				<Link href={`/events-in-topic/${hierarchyData?.qcode}`}>
+					<button className="font-medium cursor-pointer rounded-md text-white hover:opacity-80 text-xs px-2 py-1 bg-blue-600 dark:bg-blue-900">
+						{hierarchyData?.prefLabel}
+					</button>
+				</Link>
+			) : (
+				<button className="font-medium cursor-pointer rounded-md text-white hover:opacity-80 text-md p-2 bg-blue-600 dark:bg-blue-900">
+					{hierarchyData?.prefLabel}
+				</button>
+			)}
 		</div>
 	);
 }

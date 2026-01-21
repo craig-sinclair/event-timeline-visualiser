@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-
+import TopicHierarchyText from "@/components/ui/TopicHierarchyText";
 import { EventData } from "@/models/event";
+import { TopicHierarchyTextSize } from "@/models/ontology.types";
 
 export default function EventModal({
 	visible,
@@ -79,17 +79,13 @@ export default function EventModal({
 						{event?.qcode && event.qcode.length > 0 && (
 							<div>
 								<h3 className="text-sm font-semibold mb-2">Tags:</h3>
-								<div className="flex flex-wrap gap-2">
+								<div>
 									{event.qcode.map((topicID, index) => (
-										<Link
-											className="font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:underline transition-colors cursor-pointer"
-											href={`/events-in-topic/${topicID}`}
+										<TopicHierarchyText
+											size={TopicHierarchyTextSize.Small}
 											key={index}
-										>
-											<span className="px-3 py-1 text-xs border rounded-full">
-												{topicID}
-											</span>
-										</Link>
+											topicID={topicID}
+										/>
 									))}
 								</div>
 							</div>
