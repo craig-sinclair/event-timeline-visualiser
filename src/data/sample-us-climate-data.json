@@ -18,7 +18,8 @@
             "11000001",
             "11000005",
             "11000010"
-        ]
+        ],
+        "position": 0.7
     },
     {
         "overview": "American Recovery and Reinvestment Act (ARRA) — clean energy investment",
@@ -40,7 +41,8 @@
             "13000010",
             "13000020",
             "13000030"
-        ]
+        ],
+        "position": 0.9
     },
     {
         "overview": "American Clean Energy and Security Act (Waxman-Markey) — House passage",
@@ -61,7 +63,8 @@
         "qcode": [
             "11000020",
             "13000040"
-        ]
+        ],
+        "position": 0.8
     },
     {
         "overview": "EPA Issues Endangerment Finding for Greenhouse Gases",
@@ -82,7 +85,8 @@
         "qcode": [
             "11000003",
             "14000010"
-        ]
+        ],
+        "position": 0.75
     },
     {
         "overview": "EPA and NHTSA establish national GHG and fuel-economy standards for light-duty vehicles (MY 2012–2016; phase begins 2010)",
@@ -103,7 +107,8 @@
         "qcode": [
             "12000010",
             "14000020"
-        ]
+        ],
+        "position": 0.6
     },
     {
         "overview": "US–China Joint Announcement on Climate Change and Clean Energy Cooperation",
@@ -124,7 +129,8 @@
         "qcode": [
             "14000030",
             "15000010"
-        ]
+        ],
+        "position": 0.7
     },
     {
         "overview": "Obama Administration announces the Clean Power Plan",
@@ -145,7 +151,8 @@
         "qcode": [
             "13000050",
             "11000030"
-        ]
+        ],
+        "position": 0.9
     },
     {
         "overview": "United States signs Paris Agreement (UN signing ceremony)",
@@ -166,7 +173,8 @@
         "qcode": [
             "15000020",
             "11000040"
-        ]
+        ],
+        "position": 0.6
     },
     {
         "overview": "President Trump announces intent to withdraw from the Paris Agreement",
@@ -186,7 +194,8 @@
         "qcode": [
             "15000030",
             "16000010"
-        ]
+        ],
+        "position": 0.3
     },
     {
         "overview": "Safe Affordable Fuel-Efficient (SAFE) Vehicles Rule — federal vehicle standards",
@@ -207,7 +216,8 @@
         "qcode": [
             "14000020",
             "12000011"
-        ]
+        ],
+        "position": 0.65
     },
     {
         "overview": "Affordable Clean Energy (ACE) Rule finalised",
@@ -227,7 +237,8 @@
         "qcode": [
             "13000060",
             "11000007"
-        ]
+        ],
+        "position": 0.74
     },
     {
         "overview": "California Executive Order N-79-20: target for zero-emission new car sales by 2035",
@@ -247,7 +258,8 @@
         "qcode": [
             "15000050",
             "18000010"
-        ]
+        ],
+        "position": 0.68
     },
     {
         "overview": "President Biden signs instrument to rejoin the Paris Agreement",
@@ -266,7 +278,8 @@
         "qcode": [
             "15000020",
             "11000040"
-        ]
+        ],
+        "position": 0.76
     },
     {
         "overview": "Executive Order 14008 — Tackling the Climate Crisis at Home and Abroad",
@@ -285,7 +298,8 @@
         "qcode": [
             "13000060",
             "16000020"
-        ]
+        ],
+        "position": 0.8
     },
     {
         "overview": "United States announces new NDC — 50–52% emissions reduction by 2030 (vs 2005)",
@@ -305,7 +319,8 @@
         "qcode": [
             "15000040",
             "13000070"
-        ]
+        ],
+        "position": 0.67
     },
     {
         "overview": "President revokes Keystone XL Presidential Permit",
@@ -324,7 +339,8 @@
         "qcode": [
             "17000010",
             "16000030"
-        ]
+        ],
+        "position": 0.57
     },
     {
         "overview": "TC Energy cancels the Keystone XL pipeline project",
@@ -344,7 +360,8 @@
         "qcode": [
             "17000011",
             "16000040"
-        ]
+        ],
+        "position": 0.7
     },
     {
         "overview": "Infrastructure Investment and Jobs Act (IIJA) — climate-relevant provisions",
@@ -364,7 +381,8 @@
         "qcode": [
             "13000080",
             "14000040"
-        ]
+        ],
+        "position": 0.9
     },
     {
         "overview": "U.S. Supreme Court rules in West Virginia v. EPA (limits on EPA’s generation-shifting authority)",
@@ -384,7 +402,8 @@
         "qcode": [
             "11000002",
             "11000006"
-        ]
+        ],
+        "position": 0.4
     },
     {
         "overview": "Inflation Reduction Act — largest US federal climate and clean-energy investment package",
@@ -404,7 +423,8 @@
         "qcode": [
             "13000090",
             "14000050"
-        ]
+        ],
+        "position": 0.9
     },
     {
         "overview": "State and local climate leadership intensifies (multiple policies and programmes)",
@@ -425,6 +445,7 @@
         "qcode": [
             "15000050",
             "18000020"
-        ]
+        ],
+        "position": 0.58
     }
 ]
