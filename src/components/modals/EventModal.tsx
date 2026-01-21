@@ -53,8 +53,8 @@ export default function EventModal({
 							<p className="text-sm opacity-80">{event.relevance}</p>
 						</div>
 
-						{/* Tags */}
-						{event.tags?.length > 0 && (
+						{/* Tags: comment for now; to be replaced by ontology topics (but filtering done by tags currently) */}
+						{/* {event.tags?.length > 0 && (
 							<div>
 								<h3 className="text-sm font-semibold mb-2">Tags</h3>
 								<div className="flex flex-wrap gap-2">
@@ -68,12 +68,12 @@ export default function EventModal({
 									))}
 								</div>
 							</div>
-						)}
+						)} */}
 
 						{/* Ontology Topics */}
 						{event?.qcode && event.qcode.length > 0 && (
 							<div>
-								<h3 className="text-sm font-semibold mb-2">Media Topics:</h3>
+								<h3 className="text-sm font-semibold mb-2">Tags:</h3>
 								<div className="flex flex-wrap gap-2">
 									{event.qcode.map((topicID, index) => (
 										<Link
