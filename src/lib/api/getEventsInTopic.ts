@@ -1,4 +1,4 @@
-import { TopicEventsResponse } from "@/models/ontology";
+import { TopicEventsResponse } from "@/models/ontology.types";
 
 export const getEventsInTopic = async ({ topicID }: { topicID: string }) => {
 	if (!topicID || topicID === "") {

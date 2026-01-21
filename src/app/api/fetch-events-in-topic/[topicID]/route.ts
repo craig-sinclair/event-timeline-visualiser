@@ -3,8 +3,8 @@ import { NextResponse, NextRequest } from "next/server";
 import { dbConnect } from "@/lib/mongoose";
 import { EventData } from "@/models/event";
 import { Event } from "@/models/event";
-import { TopicEventsResponse } from "@/models/ontology";
-import { EventsInTopic } from "@/models/ontology";
+import { TopicEventsResponse } from "@/models/ontology.types";
+import { EventsInTopic } from "@/models/ontology.types";
 import { TimelineData } from "@/models/timeline";
 import { Timeline } from "@/models/timeline";
 

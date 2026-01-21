@@ -53,6 +53,11 @@ export default function EventModal({
 							<p className="text-sm opacity-80">{event.relevance}</p>
 						</div>
 
+						<div>
+							<h3 className="text-sm font-semibold mb-1">Further information</h3>
+							<p className="text-sm opacity-80">{event.furtherDescription}</p>
+						</div>
+
 						{/* Tags: comment for now; to be replaced by ontology topics (but filtering done by tags currently) */}
 						{/* {event.tags?.length > 0 && (
 							<div>

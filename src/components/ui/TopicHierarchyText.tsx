@@ -1,14 +1,23 @@
 "use client";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
 import { getTopicHierarchy } from "@/lib/api/getTopicHierarchy";
-import { TopicHierarchyData } from "@/models/ontology";
+import { TopicHierarchyData, TopicHierarchyTextSize } from "@/models/ontology.types";
 
-export default function TopicHierarchyText({ topicID }: { topicID: string }) {
+export default function TopicHierarchyText({
+	topicID,
+	size = TopicHierarchyTextSize.Standard,
+}: {
+	topicID: string;
+	size?: TopicHierarchyTextSize;
+}) {
 	const [hierarchyData, setHierarchyData] = useState<TopicHierarchyData>();
 	const [errorMessage, setErrorMessage] = useState<string>("");
 	const [loading, setLoading] = useState(false);
+
+	const small = size === TopicHierarchyTextSize.Small;
 
 	useEffect(() => {
 		const fetchEventHierarchy = async () => {
@@ -33,9 +42,13 @@ export default function TopicHierarchyText({ topicID }: { topicID: string }) {
 
 	if (loading) {
 		return (
-			// Loading spinner animation
 			<div className="flex justify-center items-center py-4">
-				<div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
+				<div
+					className={
+						(small ? "h-6 w-6 border-2 " : "h-8 w-8 border-4 ") +
+						"animate-spin rounded-full border-blue-500 border-t-transparent"
+					}
+				></div>
 			</div>
 		);
 	}
@@ -49,22 +62,49 @@ export default function TopicHierarchyText({ topicID }: { topicID: string }) {
 	}
 
 	return (
-		<div className="flex gap-3 max-w-4xl mx-auto px-4 sm:px-6 mt-5 sm:mt-10">
+		<div
+			className={
+				"flex gap-3 max-w-4xl mx-auto px-4 sm:px-6 mt-5 sm:mt-10" +
+				(small ? " flex-wrap gap-2" : "")
+			}
+		>
 			{hierarchyData?.hierarchy.map((topic, i) => {
 				return (
-					<div className="flex align-center justify-center gap-2">
-						<Link href={`/events-in-topic/${topic.qcode}`} key={i}>
-							<button className="text-md font-medium cursor-pointer p-2 bg-green-600 dark:bg-green-800 text-white rounded-md hover:opacity-80">
+					<div className="flex align-center justify-center gap-2" key={i}>
+						<Link href={`/events-in-topic/${topic.qcode}`}>
+							<button
+								className={
+									"font-medium cursor-pointer rounded-md text-white hover:opacity-80 " +
+									(small
+										? "text-xs px-2 py-1 bg-green-600 dark:bg-green-800"
+										: "text-md p-2 bg-green-600 dark:bg-green-800")
+								}
+							>
 								{topic?.prefLabel}
 							</button>
 						</Link>
 
-						<h1 className="text-md font-medium py-2 px-1">/</h1>
+						<h1
+							className={
+								small
+									? "text-sm font-medium py-1 px-1"
+									: "text-md font-medium py-2 px-1"
+							}
+						>
+							/
+						</h1>
 					</div>
 				);
 			})}
 
-			<button className="text-md font-medium cursor-pointer p-2 rounded-md bg-blue-600 dark:bg-blue-900 text-white hover:opacity-80">
+			<button
+				className={
+					"font-medium cursor-pointer rounded-md text-white hover:opacity-80 " +
+					(small
+						? "text-xs px-2 py-1 bg-blue-600 dark:bg-blue-900"
+						: "text-md p-2 bg-blue-600 dark:bg-blue-900")
+				}
+			>
 				{hierarchyData?.prefLabel}
 			</button>
 		</div>

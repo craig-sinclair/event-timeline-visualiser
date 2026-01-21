@@ -12,7 +12,7 @@ import { NextRequest } from "next/server";
 import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 
 import { GET } from "@/app/api/fetch-topic-hierarchy/[topicID]/route";
-import { OntologyTopic, TopicData, TopicHierarchyData } from "@/models/ontology";
+import { OntologyTopic, TopicData, TopicHierarchyData } from "@/models/ontology.types";
 
 const mockData = vi.hoisted(() => {
 	const mockBaseTopicResponse: TopicData = {
