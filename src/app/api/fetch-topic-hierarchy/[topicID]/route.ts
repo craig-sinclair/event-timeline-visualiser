@@ -44,14 +44,14 @@ export async function GET(
 			if (!parentTopic) break;
 
 			hierarchy.push({
-				qcode: parentTopic.qcode,
+				qcode: parentTopic.qcode.replace(/^medtop:/, ""),
 				prefLabel: parentTopic.prefLabel,
 			});
 			currentTopic = parentTopic;
 		}
 
 		const topicHierarchy: TopicHierarchyData = {
-			qcode: baseTopic.qcode,
+			qcode: baseTopic.qcode.replace(/^medtop:/, ""),
 			prefLabel: baseTopic.prefLabel,
 			hierarchy: hierarchy,
 		};

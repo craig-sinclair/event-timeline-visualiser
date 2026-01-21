@@ -12,12 +12,13 @@ import { NextRequest } from "next/server";
 import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 
 import { GET } from "@/app/api/fetch-topic-hierarchy/[topicID]/route";
-import { OntologyTopic, TopicData, TopicHierarchyData } from "@/models/ontology.types";
+import { OntologyTopic } from "@/models/ontology";
+import { TopicData, TopicHierarchyData } from "@/models/ontology.types";
 
 const mockData = vi.hoisted(() => {
 	const mockBaseTopicResponse: TopicData = {
 		_id: "1",
-		qcode: "medtop:qcode-test",
+		qcode: "qcode-test",
 		uri: "123",
 		definition: "123",
 		prefLabel: "prefLabel-test",
@@ -27,7 +28,7 @@ const mockData = vi.hoisted(() => {
 
 	const mockFirstBroaderTopic: TopicData = {
 		_id: "2",
-		qcode: "medtop:qcode-test-2",
+		qcode: "qcode-test-2",
 		uri: "123",
 		definition: "123",
 		prefLabel: "prefLabel-test-2",
@@ -37,7 +38,7 @@ const mockData = vi.hoisted(() => {
 
 	const mockSecondBroaderTopic: TopicData = {
 		_id: "3",
-		qcode: "medtop:qcode-test-3",
+		qcode: "qcode-test-3",
 		uri: "123",
 		definition: "123",
 		prefLabel: "prefLabel-test-3",

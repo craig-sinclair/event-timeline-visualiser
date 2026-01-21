@@ -56,7 +56,9 @@ export default function EventsInTopicPage() {
 
 	return (
 		<>
-			<TopicHierarchyText topicID={topicID} />
+			<div className="max-w-4xl mx-auto px-4 sm:px-6 mt-5 sm:mt-10">
+				<TopicHierarchyText topicID={topicID} />
+			</div>
 			{allEventsInTopic.map((timeline, i) => {
 				return (
 					<div key={i}>

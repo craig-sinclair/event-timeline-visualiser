@@ -62,12 +62,7 @@ export default function TopicHierarchyText({
 	}
 
 	return (
-		<div
-			className={
-				"flex gap-3 max-w-4xl mx-auto" +
-				(small ? " flex-wrap mt-4" : "px-4 sm:px-6 mt-5 sm:mt-10")
-			}
-		>
+		<div className={"flex gap-3" + (small ? "flex-wrap mt-4" : "")}>
 			{hierarchyData?.hierarchy.map((topic, i) => {
 				return (
 					<div className="flex align-center justify-center gap-2" key={i}>
