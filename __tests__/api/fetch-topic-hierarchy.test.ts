@@ -11,6 +11,8 @@ vi.mock("@/models/ontology", () => ({
 import { NextRequest } from "next/server";
 import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 
+import { createMockChain } from "../setupTest";
+
 import { GET } from "@/app/api/fetch-topic-hierarchy/[topicID]/route";
 import { OntologyTopic } from "@/models/ontology";
 import { TopicData, TopicHierarchyData } from "@/models/ontology.types";
@@ -47,11 +49,6 @@ const mockData = vi.hoisted(() => {
 	};
 
 	return { mockBaseTopicResponse, mockFirstBroaderTopic, mockSecondBroaderTopic };
-});
-
-// Create object with lean method defined and return mock data
-const createMockChain = <T>(returnValue: T) => ({
-	lean: vi.fn().mockResolvedValue(returnValue),
 });
 
 describe("Fetch (ontology) topic hiearchy data API tests", () => {
