@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
+import { getAllChildTopics } from "@/lib/getAllChildTopics";
 import { dbConnect } from "@/lib/mongoose";
 import { EventData } from "@/models/event";
 import { Event } from "@/models/event";
@@ -26,19 +27,19 @@ export async function GET(
 			throw new Error("No timelines were found.");
 		}
 
-		const allMatchingEventTimelines: EventsInTopic = [];
+		const allChildTopics: string[] = await getAllChildTopics({ topicID: topicID });
+		const allMatchingTopicIDs: string[] = [topicID, ...allChildTopics];
 
+		const allMatchingEventTimelines: EventsInTopic = [];
 		for (const timeline of allTimelines) {
 			const allTimelineEvents = await Event.find({
 				_id: { $in: timeline.events },
 			}).lean<EventData[]>();
 
-			const currentTimelineMatchingEvents = [];
-			for (const event of allTimelineEvents) {
-				if (event.qcode?.includes(topicID)) {
-					currentTimelineMatchingEvents.push(event);
-				}
-			}
+			// Filter events that include any of the matching topic IDs in their qcode array
+			const currentTimelineMatchingEvents = allTimelineEvents.filter((event) => {
+				return event.qcode && allMatchingTopicIDs.some((id) => event.qcode?.includes(id));
+			});
 
 			if (currentTimelineMatchingEvents.length > 0) {
 				allMatchingEventTimelines.push({
