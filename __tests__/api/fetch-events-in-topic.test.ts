@@ -14,10 +14,15 @@ vi.mock("@/models/event", () => ({
 	},
 }));
 
+vi.mock("@/lib/getAllChildTopics", () => ({
+	getAllChildTopics: vi.fn(),
+}));
+
 import { NextRequest } from "next/server";
 import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 
 import { GET } from "@/app/api/fetch-events-in-topic/[topicID]/route";
+import { getAllChildTopics } from "@/lib/getAllChildTopics";
 import { Event } from "@/models/event";
 import { EventData } from "@/models/event";
 import { EventsInTopic } from "@/models/ontology.types";
@@ -81,6 +86,7 @@ const createMockChain = <T>(returnValue: T) => ({
 describe("Fetch events in topic API route tests", () => {
 	beforeEach(() => {
 		vi.resetAllMocks();
+		(getAllChildTopics as Mock).mockResolvedValue([]);
 	});
 
 	it("Throws error when no topic given", async () => {
@@ -178,5 +184,27 @@ describe("Fetch events in topic API route tests", () => {
 		expect(data.success).toEqual(true);
 		expect(data.message).toEqual("Successfully fetched event data from topic ID");
 		expect(data.events).toEqual([]);
+	});
+
+	it("Correctly includes all events matching child topic IDs", async () => {
+		(getAllChildTopics as Mock).mockResolvedValue(["qcode2", "qcode4"]);
+		(Timeline.find as Mock).mockReturnValue(createMockChain([mockData.mockSingleTimelineData]));
+		(Event.find as Mock).mockReturnValue(createMockChain(mockData.mockEventData));
+
+		const mockRequest = {} as NextRequest;
+		const response = await GET(mockRequest, { params: Promise.resolve({ topicID: "qcode1" }) });
+		const data = await response.json();
+
+		expect(data.success).toEqual(true);
+
+		// Should find events matching qcode1 (base), or qcode2 (child), or qcode4 (child)
+		const expectedResponse: EventsInTopic = [
+			{
+				timelineId: mockData.mockSingleTimelineData._id,
+				timelineName: mockData.mockSingleTimelineData.title,
+				events: mockData.mockEventData, // returns both events (qcode1 and qcode2)
+			},
+		];
+		expect(data.events).toEqual(expectedResponse);
 	});
 });

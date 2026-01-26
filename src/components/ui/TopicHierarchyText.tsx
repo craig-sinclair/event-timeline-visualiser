@@ -81,7 +81,9 @@ export default function TopicHierarchyText({
 
 						<h1
 							className={
-								small ? "text-sm font-medium py-1" : "text-md font-medium py-2 px-1"
+								small
+									? "text-sm font-medium py-1 mr-1 px-1"
+									: "text-md font-medium py-2 px-1"
 							}
 						>
 							/
