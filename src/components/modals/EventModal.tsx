@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect, useCallback } from "react";
+
 import TopicHierarchyText from "@/components/ui/TopicHierarchyText";
 import { EventData } from "@/models/event";
 import { TopicHierarchyTextSize } from "@/models/ontology.types";
@@ -13,6 +15,20 @@ export default function EventModal({
 	event: EventData | null;
 	onClose: () => void;
 }) {
+	// Use a loading state until all topic hierarchy texts are loaded
+	const [loadedTopicHierarchies, setLoadedTopicHierarchies] = useState<number>(0);
+	const totalTopics = event?.qcode?.length || 0;
+	const isLoading = totalTopics > 0 && loadedTopicHierarchies < totalTopics;
+
+	// Rest loaded topic hierarchies count when event changes
+	useEffect(() => {
+		setLoadedTopicHierarchies(0);
+	}, [event]);
+
+	const handleHierarchyTextLoaded = useCallback(() => {
+		setLoadedTopicHierarchies((prev) => prev + 1);
+	}, []);
+
 	if (!visible || !event) {
 		return null;
 	}
@@ -37,8 +53,14 @@ export default function EventModal({
 						</button>
 					</div>
 
+					{isLoading && (
+						<div className="flex justify-center items-center py-4">
+							<div className="h-12 w-12 animate-spin border-5 rounded-full border-blue-500 border-t-transparent" />
+						</div>
+					)}
+
 					{/* Content */}
-					<div className="p-6 space-y-4">
+					<div className={`p-6 space-y-4 ${isLoading ? "opacity-0" : "opacity-100"}`}>
 						{/* Date & Time */}
 						<div>
 							<h3 className="text-sm font-semibold mb-1">Date & Time</h3>
@@ -85,6 +107,7 @@ export default function EventModal({
 											size={TopicHierarchyTextSize.Small}
 											key={index}
 											topicID={topicID}
+											onLoadComplete={handleHierarchyTextLoaded}
 										/>
 									))}
 								</div>
