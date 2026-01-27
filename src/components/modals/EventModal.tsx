@@ -58,10 +58,10 @@ export default function EventModal({
 							<p className="text-sm opacity-80">{event.furtherDescription}</p>
 						</div>
 
-						{/* Tags: comment for now; to be replaced by ontology topics (but filtering done by tags currently) */}
-						{/* {event.tags?.length > 0 && (
+						{/* Related tags: for linking event with another timeline */}
+						{event.tags?.length > 0 && (
 							<div>
-								<h3 className="text-sm font-semibold mb-2">Tags</h3>
+								<h3 className="text-sm font-semibold mb-2">Related Timelines</h3>
 								<div className="flex flex-wrap gap-2">
 									{event.tags.map((tag, index) => (
 										<span
@@ -73,9 +73,9 @@ export default function EventModal({
 									))}
 								</div>
 							</div>
-						)} */}
+						)}
 
-						{/* Ontology Topics */}
+						{/* Ontology topics */}
 						{event?.qcode && event.qcode.length > 0 && (
 							<div>
 								<h3 className="text-sm font-semibold mb-2">Tags:</h3>
