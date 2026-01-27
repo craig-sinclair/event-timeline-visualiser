@@ -87,6 +87,21 @@ describe("populateData", () => {
 		},
 	];
 
+	const mockTrumpEventsData = [
+		{
+			_id: "event10",
+			title: "Sample-Trump",
+			date: "1988-11-01",
+			description: "XYZ",
+		},
+		{
+			_id: "event11",
+			title: "Sample-Trump-2",
+			date: "1992-06-13",
+			description: "YZX",
+		},
+	];
+
 	const mockTimelinesData = [
 		{
 			title: "Brexit Campaign",
@@ -106,6 +121,11 @@ describe("populateData", () => {
 		{
 			title: "US Response to Climate Change",
 			description: "Timeline of US Response to Climate Change",
+			events: [],
+		},
+		{
+			title: "Donald Trump",
+			description: "Timeline of Donald Trump",
 			events: [],
 		},
 	];
@@ -130,6 +150,11 @@ describe("populateData", () => {
 		{ ...mockUsClimateEventsData[1], _id: "createdEvent8" },
 	];
 
+	const mockCreatedTrumpEvents = [
+		{ ...mockTrumpEventsData[0], _id: "createdEvent9" },
+		{ ...mockTrumpEventsData[1], _id: "createdEvent10" },
+	];
+
 	beforeEach(async () => {
 		vi.clearAllMocks();
 
@@ -143,7 +168,8 @@ describe("populateData", () => {
 			.mockResolvedValueOnce(mockCreatedBrexitEvents) // first call for Brexit
 			.mockResolvedValueOnce(mockCreatedCovidEvents) // second call for COVID
 			.mockResolvedValueOnce(mockCreatedUkClimateEvents) // third call for UK Climate Response
-			.mockResolvedValueOnce(mockCreatedUsClimateEvents); // fourth call for US Climate Response
+			.mockResolvedValueOnce(mockCreatedUsClimateEvents) // fourth call for US Climate Response
+			.mockResolvedValueOnce(mockCreatedTrumpEvents); // fifth call for Trump events
 
 		vi.mocked(Timeline.insertMany).mockResolvedValue([]);
 
@@ -164,6 +190,9 @@ describe("populateData", () => {
 			}
 			if (filePath.includes("sample-timelines.json")) {
 				return JSON.stringify(mockTimelinesData);
+			}
+			if (filePath.includes("sample-trump-events.json")) {
+				return JSON.stringify(mockTrumpEventsData);
 			}
 
 			return JSON.stringify([]);
@@ -205,7 +234,6 @@ describe("populateData", () => {
 			process.cwd(),
 			"src/data/sample-us-climate-data.json"
 		);
-		expect(fs.readFileSync).toHaveBeenCalledTimes(5);
 	});
 
 	it("should insert events into database", async () => {

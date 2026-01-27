@@ -27,12 +27,17 @@ export async function populateData() {
 			process.cwd(),
 			"src/data/sample-us-climate-data.json"
 		);
+		const trumpEventsDataPath = path.join(
+			process.cwd(),
+			"src/data/sample-donald-trump-events.json"
+		);
 		const timelinesDataPath = path.join(process.cwd(), "src/data/sample-timelines.json");
 
 		const brexitEventsData = JSON.parse(fs.readFileSync(brexitEventsDataPath, "utf-8"));
 		const covidEventsData = JSON.parse(fs.readFileSync(covidEventsDataPath, "utf-8"));
 		const ukClimateData = JSON.parse(fs.readFileSync(ukClimateEventsDataPath, "utf-8"));
 		const usClimateData = JSON.parse(fs.readFileSync(usClimateEventsDataPath, "utf-8"));
+		const trumpEventsData = JSON.parse(fs.readFileSync(trumpEventsDataPath, "utf-8"));
 		const timelinesData = JSON.parse(fs.readFileSync(timelinesDataPath, "utf-8"));
 
 		// Add event documents to collection
@@ -47,6 +52,9 @@ export async function populateData() {
 
 		const createdUsClimateEvents = await Event.insertMany(usClimateData);
 		console.log(`5) Successfully added ${usClimateData.length} US Climate Response events...`);
+
+		const createdTrumpEvents = await Event.insertMany(trumpEventsData);
+		console.log(`6) Successfully added ${createdTrumpEvents.length} Donald Trump events...`);
 
 		// Link event documents for Brexit timeline
 		const brexitTimeline = timelinesData.find(
@@ -90,9 +98,16 @@ export async function populateData() {
 			usClimateTimeline.shortName = "US";
 		}
 
+		// Link event documents for Donald Trump timeline
+		const trumpTimeline = timelinesData.find((t: TimelineData) => t.title === "Donald Trump");
+		if (trumpTimeline) {
+			trumpTimeline.events = createdTrumpEvents.map((e) => e._id);
+			trumpTimeline.shortName = "Trump";
+		}
+
 		// Add all timeline documents
 		await Timeline.insertMany(timelinesData);
-		console.log(`6) Successfully added ${timelinesData.length} timelines...`);
+		console.log(`7) Successfully added ${timelinesData.length} timelines...`);
 
 		const ukTimelineDoc = await Timeline.findOne({ title: "UK Response to Climate Change" });
 		const usTimelineDoc = await Timeline.findOne({ title: "US Response to Climate Change" });
@@ -107,7 +122,7 @@ export async function populateData() {
 
 			await Timeline.updateOne({ _id: usId }, { $addToSet: { comparableTimelines: ukId } });
 
-			console.log("7) Linked UK and US climate timelines for comparison");
+			console.log("8) Linked UK and US climate timelines for comparison");
 		}
 
 		console.log("MongoDB data population script completed!");

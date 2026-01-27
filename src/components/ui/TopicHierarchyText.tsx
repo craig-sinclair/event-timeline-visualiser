@@ -9,9 +9,11 @@ import { TopicHierarchyData, TopicHierarchyTextSize } from "@/models/ontology.ty
 export default function TopicHierarchyText({
 	topicID,
 	size = TopicHierarchyTextSize.Standard,
+	onLoadComplete,
 }: {
 	topicID: string;
 	size?: TopicHierarchyTextSize;
+	onLoadComplete?: () => void;
 }) {
 	const [hierarchyData, setHierarchyData] = useState<TopicHierarchyData>();
 	const [errorMessage, setErrorMessage] = useState<string>("");
@@ -35,10 +37,11 @@ export default function TopicHierarchyText({
 				);
 			} finally {
 				setLoading(false);
+				onLoadComplete?.(); // notify parent (event modal) that completed loading
 			}
 		};
 		fetchEventHierarchy();
-	}, [topicID]);
+	}, [topicID, onLoadComplete]);
 
 	if (loading) {
 		return (

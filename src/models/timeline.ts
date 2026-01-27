@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { Schema, model } from "mongoose";
+import { Schema, model, Types } from "mongoose";
 
 import { ApiResponseBase } from "@/models/api";
 export interface TimelineData {
@@ -16,9 +16,19 @@ export interface TimelineData {
 	rightLabel?: string;
 	// For timelines that can be compared with other timelines (array of timeline IDs)
 	comparableTimelines?: string[];
+	tag?: string;
 }
 
+export type TagTimelineData = {
+	_id: Types.ObjectId;
+	tag: string;
+};
+
+export type TagToTimelineMap = Record<string, string>;
+
 export type TimelineResponse = ApiResponseBase<{ timelines: TimelineData[] }>;
+
+export type TagToTimelineResponse = ApiResponseBase<{ timelines: TagToTimelineMap }>;
 
 export const Timeline =
 	mongoose.models.Timeline ||
@@ -35,6 +45,7 @@ export const Timeline =
 				rightLabel: { type: String },
 				continuousScale: { type: Boolean },
 				comparableTimelines: [{ type: String }],
+				tag: { type: String },
 			},
 			{
 				collection: "timelines",
