@@ -16,6 +16,7 @@ export interface TimelineData {
 	rightLabel?: string;
 	// For timelines that can be compared with other timelines (array of timeline IDs)
 	comparableTimelines?: string[];
+	tag?: string;
 }
 
 export type TimelineResponse = ApiResponseBase<{ timelines: TimelineData[] }>;
@@ -35,6 +36,7 @@ export const Timeline =
 				rightLabel: { type: String },
 				continuousScale: { type: Boolean },
 				comparableTimelines: [{ type: String }],
+				tag: { type: String },
 			},
 			{
 				collection: "timelines",
