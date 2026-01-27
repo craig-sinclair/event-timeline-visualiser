@@ -19,7 +19,11 @@ export interface TimelineData {
 	tag?: string;
 }
 
+export type TagToTimelineMap = Record<string, string>;
+
 export type TimelineResponse = ApiResponseBase<{ timelines: TimelineData[] }>;
+
+export type TagToTimelineResponse = ApiResponseBase<{ timelines: TagToTimelineMap[] }>;
 
 export const Timeline =
 	mongoose.models.Timeline ||
