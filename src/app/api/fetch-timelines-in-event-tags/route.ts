@@ -12,6 +12,15 @@ export async function POST(request: NextRequest) {
 			throw new Error("Invalid input received for event tags.");
 		}
 
+		// Remove non-string entries, and trim
+		const cleanedTagsArray = tags
+			.map((tag) => (typeof tag === "string" ? tag.trim() : ""))
+			.filter(Boolean);
+
+		if (cleanedTagsArray.length === 0) {
+			throw new Error("No valid tag data provided.");
+		}
+
 		await dbConnect();
 
 		const response: TagToTimelineResponse = {
