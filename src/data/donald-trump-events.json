@@ -1,0 +1,57 @@
+[
+  {
+    "overview": "Trump Declared National Emergency for COVID-19",
+    "dateTime": "2020-03-13T00:00:00Z",
+    "furtherDescription": "President Donald Trump declared a national emergency under the Stafford Act to combat the coronavirus pandemic, freeing up $50 billion in federal resources for the response effort. In a Rose Garden press conference, Trump announced the emergency would 'unleash the full power of the federal government' to fight COVID-19. The declaration allowed the Federal Emergency Management Agency (FEMA) to lead certain aspects of the outbreak response and provided states access to disaster relief funds. However, Trump controversially refused to take responsibility for early testing failures, stating 'I don't take responsibility at all' and instead blamed previous administrations. The announcement came after a week of market turmoil, with the Dow Jones experiencing historic volatility. Trump's address marked a significant shift from his previous downplaying of the virus threat, though he continued to shake hands with retail executives at the event despite health warnings. The emergency declaration enabled states to access disaster relief funding and activated the National Guard in affected areas. This announcement was part of a broader response that included travel restrictions, economic stimulus measures, and the eventual launch of Operation Warp Speed for vaccine development.",
+    "relevance": 0.95,
+    "URLs": [
+      "https://trumpwhitehouse.archives.gov/briefings-statements/remarks-president-trump-address-nation/",
+      "https://www.cnn.com/2020/03/13/politics/donald-trump-emergency/index.html",
+      "https://trumpwhitehouse.archives.gov/issues/coronavirus/",
+      "https://www.factcheck.org/2020/10/timeline-of-trumps-covid-19-comments/",
+      "https://en.wikipedia.org/wiki/Donald_Trump_and_the_COVID-19_pandemic"
+    ],
+    "tags": [
+      "covid19"
+    ],
+    "position": 0.5,
+    "qcode": ["11000000", "20000540", "20000555", "07000000", "20000667", "20001355", "20001357"]
+  },
+  {
+    "overview": "Trump Praised Brexit Vote at Scottish Golf Course",
+    "dateTime": "2016-06-24T00:00:00Z",
+    "furtherDescription": "On the day of the Brexit referendum result, Donald Trump arrived at his Turnberry golf resort in Scotland to celebrate its reopening and immediately praised the UK's vote to leave the European Union, despite Scotland itself voting 62% to remain. Trump drew explicit parallels between Brexit and his own presidential campaign, stating 'I think I see a big parallel' and 'people want to take their country back'—echoing both his 'Make America Great Again' slogan and the Leave campaign's messaging. He tweeted 'Just arrived in Scotland. Place is going wild over the vote. They took their country back, just like we will take America back.' Trump's comments were particularly tone-deaf given Scotland's strong Remain vote and potential constitutional implications for the UK. He suggested the falling pound could benefit his golf business, saying it 'could be a very good thing' for Turnberry. This was not Trump's first Brexit intervention—in May 2016 he had told Fox News that Britain would be 'better off without' the EU, citing migration as 'a horrible thing for Europe.' Trump later called his own candidacy 'Brexit plus,' explicitly linking the populist, anti-establishment movements. His support for Brexit aligned him with figures like Nigel Farage and Marine Le Pen, and contradicted President Obama's warning that Britain would be 'at the back of the queue' for trade deals. The Brexit-Trump parallel became a recurring theme, with both campaigns tapping into working-class discontent with globalization, immigration, and political elites.",
+    "relevance": 0.88,
+    "URLs": [
+      "https://www.npr.org/2016/06/24/483353866/make-britain-great-again-donald-trumps-remarkable-reaction-to-brexit",
+      "https://www.washingtonpost.com/news/worldviews/wp/2016/05/06/donald-trump-supports-the-brexit-because-of-course-he-does/",
+      "https://en.wikipedia.org/wiki/2016_United_Kingdom_European_Union_membership_referendum",
+      "https://www.cnn.com/2016/06/22/politics/eu-referendum-brexit-donald-trump/index.html",
+      "https://abcnews.go.com/Politics/donald-trump-victory-similar-brexit/story?id=43420714"
+    ],
+    "tags": [
+      "brexit"
+    ],
+    "position": 0.25,
+    "qcode": ["11000000", "20000580", "20000543", "20000594", "20000616", "20000537"]
+  },
+  {
+    "overview": "Trump Announced US Withdrawal from Paris Climate Agreement",
+    "dateTime": "2017-06-01T00:00:00Z",
+    "furtherDescription": "President Donald Trump announced in a Rose Garden ceremony that the United States would withdraw from the Paris Climate Agreement, making it the only country to exit the landmark 2015 accord signed by 195 nations. Trump declared 'In order to fulfill my solemn duty to protect America and its citizens, the United States will withdraw from the Paris climate accord,' calling it 'very unfair at the highest level to the United States.' He claimed the agreement would cost the US economy nearly $3 trillion in reduced output, over 6 million industrial jobs, and would 'effectively decapitate our coal industry'—though these figures were disputed by fact-checkers. Trump stated he would seek to renegotiate the deal or create a new agreement with 'more favorable terms,' though European and UN leaders immediately rejected renegotiation. The announcement fulfilled a campaign promise and represented a major reversal of Obama-era climate policy. Trump stated the US would 'cease all implementation of the Paris Agreement' including the Nationally Determined Contribution (NDC) to reduce emissions 26-28% below 2005 levels by 2025, and contributions to the Green Climate Fund. He framed the decision as protecting American sovereignty, declaring that 'foreign leaders in Europe, Asia, and across the world should not have more to say with respect to the U.S. economy than our own citizens.' The withdrawal sparked immediate global condemnation and domestic protest. Business leaders Elon Musk and Bob Iger resigned from presidential advisory councils in protest. Multiple US states, cities, and companies pledged to continue meeting Paris targets independently, with California, New York, and Washington forming the United States Climate Alliance. A Washington Post poll found 59% of Americans opposed the withdrawal. Pittsburgh Mayor Bill Peduto responded to Trump's line 'I was elected to represent the citizens of Pittsburgh, not Paris' by noting that 80% of Pittsburgh had voted for Clinton and the city would follow Paris Agreement guidelines. Due to the agreement's terms, the US couldn't formally withdraw until November 4, 2020—one day after the 2020 election.",
+    "relevance": 0.92,
+    "URLs": [
+      "https://trumpwhitehouse.archives.gov/briefings-statements/statement-president-trump-paris-climate-accord/",
+      "https://trumpwhitehouse.archives.gov/articles/president-trump-announces-u-s-withdrawal-paris-climate-accord/",
+      "https://en.wikipedia.org/wiki/United_States_and_the_Paris_Agreement",
+      "https://www.npr.org/2017/06/01/531090243/trumps-speech-on-paris-climate-agreement-withdrawal-annotated",
+      "https://www.washingtonpost.com/politics/trump-to-announce-us-will-exit-paris-climate-deal/2017/06/01/fbcb0196-46da-11e7-bcde-624ad94170ab_story.html",
+      "https://climate.law.columbia.edu/content/president-trump-announces-withdrawal-paris-agreement-0"
+    ],
+    "tags": [
+      "us-climate"
+    ],
+    "position": 0.15,
+    "qcode": ["11000000", "20000540", "06000000", "20000632", "20000633", "20000594", "20000616", "04000000"]
+  }
+]

@@ -7,12 +7,14 @@
     "sideLabels": [
       "Leave",
       "Remain"
-    ]
+    ],
+    "tag": "brexit"
   },
   {
     "title": "COVID-19 Pandemic",
     "events": [],
-    "discussionID": 12346
+    "discussionID": 12346,
+    "tag": "covid19" 
   },
   {
     "title": "UK Response to Climate Change",
@@ -22,7 +24,8 @@
     "scaleLabels": {
       "start": "Climate Skepticism",
       "end": "Climate Emergency Action"
-    }
+    },
+    "tag": "uk-climate"
   },
   {
     "title": "US Response to Climate Change",
@@ -32,7 +35,13 @@
     "scaleLabels": {
       "start": "Climate Skepticism",
       "end": "Climate Emergency Action"
-    }
+    },
+    "tag": "us-climate"
+  },
+  {
+    "title": "Donald Trump",
+    "events": [],
+    "discussionID": 2468
   },
   {
     "title": "US Presidential Election 2020",
