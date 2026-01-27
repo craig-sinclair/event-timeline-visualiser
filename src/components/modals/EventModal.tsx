@@ -1,10 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 
 import TopicHierarchyText from "@/components/ui/TopicHierarchyText";
+import { getEventTagsToTimelineMap } from "@/lib/api/getEventTagsToTimelineMap";
 import { EventData } from "@/models/event";
 import { TopicHierarchyTextSize } from "@/models/ontology.types";
+import { TagToTimelineMap } from "@/models/timeline";
 
 export default function EventModal({
 	visible,
@@ -20,8 +23,32 @@ export default function EventModal({
 	const totalTopics = event?.qcode?.length || 0;
 	const isLoading = totalTopics > 0 && loadedTopicHierarchies < totalTopics;
 
+	const [tagsToTimelineMap, setTagsToTimelineMap] = useState<TagToTimelineMap>({});
+	const [tagsMappingError, setTagsMappingError] = useState<string>("");
+
 	// Rest loaded topic hierarchies count when event changes
 	useEffect(() => {
+		const fetchTagsToTimelines = async () => {
+			if (event?.tags && event?.tags?.length > 0) {
+				try {
+					const tagTimelineMap: TagToTimelineMap = await getEventTagsToTimelineMap({
+						allTagsArray: event.tags,
+					});
+					setTagsToTimelineMap(tagTimelineMap);
+					setTagsMappingError("");
+				} catch (error) {
+					setTagsToTimelineMap({});
+					if (error instanceof Error) {
+						setTagsMappingError(error.message);
+					} else {
+						setTagsMappingError(
+							"An unknown error occurred whilst fetching timeline mappings."
+						);
+					}
+				}
+			}
+		};
+		fetchTagsToTimelines();
 		setLoadedTopicHierarchies(0);
 	}, [event]);
 
@@ -55,7 +82,7 @@ export default function EventModal({
 
 					{isLoading && (
 						<div className="flex justify-center items-center py-4">
-							<div className="h-12 w-12 animate-spin border-5 rounded-full border-blue-500 border-t-transparent" />
+							<div className="h-10 w-14 animate-spin border-5 rounded-full border-blue-500 border-t-transparent" />
 						</div>
 					)}
 
@@ -80,19 +107,37 @@ export default function EventModal({
 							<p className="text-sm opacity-80">{event.furtherDescription}</p>
 						</div>
 
+						{tagsMappingError && (
+							<div>
+								<h3 className="text-sm font-semibold mb-2">{tagsMappingError}</h3>
+							</div>
+						)}
+
 						{/* Related tags: for linking event with another timeline */}
-						{event.tags?.length > 0 && (
+						{event.tags?.length > 0 && !tagsMappingError && (
 							<div>
 								<h3 className="text-sm font-semibold mb-2">Related Timelines</h3>
 								<div className="flex flex-wrap gap-2">
-									{event.tags.map((tag, index) => (
-										<span
-											key={index}
-											className="px-3 py-1 text-xs border rounded-full"
-										>
-											{tag}
-										</span>
-									))}
+									{event.tags.map((tag, index) => {
+										const timelineId = tagsToTimelineMap?.[tag];
+
+										return timelineId ? (
+											<Link
+												key={index}
+												href={`/timeline/${timelineId}`}
+												className="px-3 py-1 text-xs border rounded-full hover:underline"
+											>
+												{tag}
+											</Link>
+										) : (
+											<span
+												key={index}
+												className="px-3 py-1 text-xs border rounded-full"
+											>
+												{tag}
+											</span>
+										);
+									})}
 								</div>
 							</div>
 						)}
