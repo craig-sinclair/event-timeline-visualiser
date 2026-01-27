@@ -1,7 +1,8 @@
 import { NextResponse, NextRequest } from "next/server";
 
 import { dbConnect } from "@/lib/mongoose";
-import { TagToTimelineResponse } from "@/models/timeline";
+import { TagToTimelineResponse, TagToTimelineMap } from "@/models/timeline";
+import { Timeline, TagTimelineData } from "@/models/timeline";
 
 export async function POST(request: NextRequest) {
 	try {
@@ -23,10 +24,20 @@ export async function POST(request: NextRequest) {
 
 		await dbConnect();
 
+		const relevantTimelines = await Timeline.find(
+			{ tag: { $in: cleanedTagsArray } },
+			{ _id: 1, tag: 1 }
+		).lean<TagTimelineData[]>();
+
+		const tagToTimeline = relevantTimelines.reduce<TagToTimelineMap>((acc, timeline) => {
+			acc[timeline.tag] = timeline._id.toString();
+			return acc;
+		}, {});
+
 		const response: TagToTimelineResponse = {
 			success: true,
 			message: "Successfully fetched topic hierarchy data from database",
-			timelines: [],
+			timelines: tagToTimeline,
 			timestamp: new Date().toISOString(),
 		};
 
