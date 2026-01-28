@@ -52,7 +52,7 @@ export default function CompareTimelines({
 			<button
 				onClick={() => setIsExportTimelineModalOpen(true)}
 				disabled={isExportTimelineModalOpen}
-				className="border-white border p-2 text-md cursor-pointer mb-10"
+				className="border dark:border-white border-black p-2 text-md cursor-pointer mb-10"
 			>
 				Export Timeline
 			</button>
