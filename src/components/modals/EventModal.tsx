@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import TopicHierarchyText from "@/components/ui/TopicHierarchyText";
 import { getEventTagsToTimelineMap } from "@/lib/api/getEventTagsToTimelineMap";
 import { EventData } from "@/models/event";
@@ -80,11 +81,7 @@ export default function EventModal({
 						</button>
 					</div>
 
-					{isLoading && (
-						<div className="flex justify-center items-center py-4">
-							<div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
-						</div>
-					)}
+					{isLoading && <LoadingSpinner />}
 
 					{/* Content */}
 					<div className={`p-6 space-y-4 ${isLoading ? "opacity-0" : "opacity-100"}`}>
