@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { getAllTimelines } from "@/lib/api/getAllTimelines";
 import { TimelineData } from "@/models/timeline";
 
@@ -31,12 +32,7 @@ export default function TimelinesTable() {
 	};
 
 	if (loading) {
-		return (
-			// Loading spinner animation
-			<div className="flex justify-center items-center py-4">
-				<div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
-			</div>
-		);
+		return <LoadingSpinner />;
 	}
 
 	if (errorMessage) {

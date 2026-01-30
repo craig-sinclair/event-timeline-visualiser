@@ -6,6 +6,7 @@ import { useEffect, useState, useCallback, useMemo } from "react";
 import CompareTimelines from "@/components/CompareTimelines";
 import ContinuousScaleTimeline from "@/components/ContinuousScaleTimeline";
 import HorizontalTimeline from "@/components/HorizontalTimeline";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import TimelineFilters from "@/components/ui/TimelineFilters";
 import VerticalTimeline from "@/components/VerticalTimeline";
 import { useTimelineComparisonData } from "@/hooks/useTimelineComparisonData";
@@ -104,12 +105,7 @@ export default function TimelinePage() {
 	}, []);
 
 	if (loading || compareLoading) {
-		return (
-			// Loading spinner animation
-			<div className="flex justify-center items-center py-4">
-				<div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
-			</div>
-		);
+		return <LoadingSpinner />;
 	}
 
 	if (error) return <p>Error fetching events: {error}</p>;
