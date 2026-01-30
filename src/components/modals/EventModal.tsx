@@ -82,7 +82,7 @@ export default function EventModal({
 
 					{isLoading && (
 						<div className="flex justify-center items-center py-4">
-							<div className="h-10 w-14 animate-spin border-5 rounded-full border-blue-500 border-t-transparent" />
+							<div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
 						</div>
 					)}
 
