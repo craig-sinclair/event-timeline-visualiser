@@ -3,13 +3,11 @@
 import { useParams } from "next/navigation";
 import { useEffect, useState, useCallback, useMemo } from "react";
 
-import CompareTimelines from "@/components/CompareTimelines";
 import ContinuousScaleTimeline from "@/components/ContinuousScaleTimeline";
 import HorizontalTimeline from "@/components/HorizontalTimeline";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import TimelineFilters from "@/components/ui/TimelineFilters";
 import VerticalTimeline from "@/components/VerticalTimeline";
-import { useTimelineComparisonData } from "@/hooks/useTimelineComparisonData";
 import { getEventsInTimeline } from "@/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/lib/api/getTimelineFromId";
 import { filterEvents } from "@/lib/filterEvents";
@@ -31,7 +29,6 @@ export default function TimelinePage() {
 		shortName: "",
 		isMultipleSided: false,
 		isContinuousScale: false,
-		comparableTimelines: [] as string[],
 		leftLabel: "",
 		rightLabel: "",
 	});
@@ -40,16 +37,6 @@ export default function TimelinePage() {
 	const [error, setError] = useState<string | null>(null);
 
 	const [verticalSelected, setVerticalSelected] = useState(false);
-	const [selectedComparableTimelineID, setSelectedComparableTimelineID] = useState<string | null>(
-		null
-	);
-
-	const {
-		compareData: compareEventsData,
-		compareTimelineShortName: compareTimelineShortName,
-		loading: compareLoading,
-		error: compareError,
-	} = useTimelineComparisonData(timelineID, selectedComparableTimelineID);
 
 	useEffect(() => {
 		const fetchEventAndTimelineData = async () => {
@@ -64,7 +51,6 @@ export default function TimelinePage() {
 					shortName: timelineData[0].shortName ?? "",
 					isContinuousScale: !!timelineData[0].continuousScale,
 					isMultipleSided: !!timelineData[0].multipleView,
-					comparableTimelines: timelineData[0].comparableTimelines ?? [],
 					leftLabel: timelineData[0].leftLabel ?? "",
 					rightLabel: timelineData[0].rightLabel ?? "",
 				});
@@ -83,19 +69,6 @@ export default function TimelinePage() {
 		return sortEvents({ events: filteredEvents, sortBy: eventSortBy });
 	}, [events, eventFilters, eventSortBy]);
 
-	const filteredAndSortedCompareEvents = useMemo(() => {
-		if (!compareEventsData) return null;
-
-		const filteredCompareEvents = filterEvents({
-			events: compareEventsData,
-			filters: eventFilters,
-		});
-		return sortEvents({
-			events: filteredCompareEvents,
-			sortBy: eventSortBy,
-		});
-	}, [compareEventsData, eventFilters, eventSortBy]);
-
 	const handleEventFilterChange = useCallback((newEventFilters: EventFiltersState) => {
 		setEventFilters(newEventFilters);
 	}, []);
@@ -104,31 +77,13 @@ export default function TimelinePage() {
 		setEventSortBy(newEventSortBy);
 	}, []);
 
-	if (loading || compareLoading) {
+	if (loading) {
 		return <LoadingSpinner />;
 	}
 
 	if (error) return <p>Error fetching events: {error}</p>;
-	if (compareError) return <p>Error whilst fetching comparison events: {compareError}</p>;
-
-	const handleCompareTimelineChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-		const selectedId = e.target.value;
-		setSelectedComparableTimelineID(selectedId === "" ? null : selectedId);
-	};
 
 	const displayTimeline = () => {
-		if (selectedComparableTimelineID && filteredAndSortedCompareEvents) {
-			return (
-				<CompareTimelines
-					events={filteredAndSortedCompareEvents}
-					leftLabel={timelineConfig.leftLabel}
-					rightLabel={timelineConfig.rightLabel}
-					timelineOneLabel={compareTimelineShortName}
-					timelineTwoLabel={timelineConfig.shortName}
-				/>
-			);
-		}
-
 		if (timelineConfig.isMultipleSided) {
 			return (
 				<VerticalTimeline
@@ -218,28 +173,6 @@ export default function TimelinePage() {
 								</label>
 							</div>
 						</div>
-					</div>
-				)}
-
-				{timelineConfig.comparableTimelines.length > 0 && (
-					<div>
-						<label className="block mb-2 text-xs md:text-sm">
-							Compare with other Timeline:
-						</label>
-						<select
-							className="text-xs md:text-sm rounded-lg dark:bg-gray-700 focus:ring-blue-500 dark:hover:bg-gray-500 focus:border-blue-500 block w-full p-2.5 dark:focus:ring-blue-500 dark:focus:border-blue-500 border border-[var(--borderColour)]"
-							onChange={handleCompareTimelineChange}
-							value={selectedComparableTimelineID || ""}
-						>
-							<option value="" className="dark:bg-gray-700 darK:text-white">
-								Do Not Compare
-							</option>
-							{timelineConfig.comparableTimelines.map((timeline, index) => (
-								<option key={index} value={timeline}>
-									{timeline}
-								</option>
-							))}
-						</select>
 					</div>
 				)}
 			</div>
