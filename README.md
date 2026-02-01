@@ -30,11 +30,8 @@ There are a variety of available formats for viewing timelines, and the applicat
 3) Two-sided timeline:
 ![Two-Sided Timeline View](src/data/screenshots/two-sided.png)
 
-3) Continuous/gradient scale timelines (communicating each event's position within the timeline):
+4) Continuous/gradient scale timelines (communicating each event's position within the timeline):
 ![Continuous/Gradient Scale Timeline View](src/data/screenshots/continuous.png)
-
-4) Comparison view, allowing the grouping of multiple timelines for similar issues:
-![Comparison Timeline View](src/data/screenshots/comparison.png)
 
 Note that in all cases, the timeline pages are equipped with a suite of helpful **filters** based on the content of events. This allows users to customise their view and explore topics most interesting to them.
 Users may click on individual events, which displays a helpful pop-up with more information, sources, and topics related to that particular event.
@@ -122,7 +119,6 @@ src/
       EventModal.tsx            # Event card with further information on specific event
       ExportTimelineModal.tsx   # Modal to handle exporting of timeline in HTML or image format
 
-    CompareTimelines.tsx          # Allow grouped display of all events in multiple timelines
     ContinuousScaleTimeline.tsx   # Gradient format scale encoding position in timeline display
     HorizontalTimeline.tsx        # Standard horizontal format timeline of events
     VerticalTimeline.tsx          # Standard vertical format timeline of events
@@ -159,7 +155,6 @@ src/
 
   hooks/                      # Custom React hooks
     useEventModal.ts            # Contains shared general logic for opening/closing event card and viewing its contents
-    useTimelineComparisonData.ts
 
   utils/                      # Miscellaneous utilities
     event-styles.const.ts       # Stores base styling logic for event cards
