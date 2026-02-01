@@ -109,22 +109,6 @@ export async function populateData() {
 		await Timeline.insertMany(timelinesData);
 		console.log(`7) Successfully added ${timelinesData.length} timelines...`);
 
-		const ukTimelineDoc = await Timeline.findOne({ title: "UK Response to Climate Change" });
-		const usTimelineDoc = await Timeline.findOne({ title: "US Response to Climate Change" });
-
-		// Link US Climate timeline with UK Climate timeline
-		// Updates both of their comparableTimelines field to add each other's timelineID
-		if (ukTimelineDoc && usTimelineDoc) {
-			const ukId = ukTimelineDoc._id.toString();
-			const usId = usTimelineDoc._id.toString();
-
-			await Timeline.updateOne({ _id: ukId }, { $addToSet: { comparableTimelines: usId } });
-
-			await Timeline.updateOne({ _id: usId }, { $addToSet: { comparableTimelines: ukId } });
-
-			console.log("8) Linked UK and US climate timelines for comparison");
-		}
-
 		console.log("MongoDB data population script completed!");
 		process.exit(0);
 	} catch (error) {
