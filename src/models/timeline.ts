@@ -14,8 +14,6 @@ export interface TimelineData {
 	continuousScale?: boolean;
 	leftLabel?: string;
 	rightLabel?: string;
-	// For timelines that can be compared with other timelines (array of timeline IDs)
-	comparableTimelines?: string[];
 	tag?: string;
 }
 
@@ -44,7 +42,6 @@ export const Timeline =
 				leftLabel: { type: String },
 				rightLabel: { type: String },
 				continuousScale: { type: Boolean },
-				comparableTimelines: [{ type: String }],
 				tag: { type: String },
 			},
 			{
