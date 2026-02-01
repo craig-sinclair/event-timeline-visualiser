@@ -44,14 +44,14 @@ export default function ExportTimelineModal({
 	return (
 		<>
 			{/* Backdrop */}
-			<div className="fixed inset-0 bg-black/99 z-40" onClick={onClose} />
+			<div className="fixed inset-0 dark:bg-black/99 bg-white/99 z-40" onClick={onClose} />
 
 			{/* Modal */}
 			<div className="fixed inset-0 z-50 flex items-center justify-center p-4">
 				<div className="bg-[var(--background)] border rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto p-5">
 					{/* Header */}
-					<div className="flex justify-between items-start p-6 border-b">
-						<h2 className="text-xl font-semibold pr-8">Export Timeline</h2>
+					<div className="flex justify-between items-start border-b">
+						<h2 className="text-xl font-semibold mb-3">Export Timeline</h2>
 						<button
 							onClick={onClose}
 							className="text-2xl leading-none hover:opacity-70 transition-opacity cursor-pointer"
@@ -66,7 +66,7 @@ export default function ExportTimelineModal({
 						<button
 							onClick={() => handleTimelineExport(exportTimelineImage)}
 							disabled={isExportingTimeline}
-							className="border-white border p-2 text-md cursor-pointer mb-10"
+							className="dark:border-white border-black border p-2 text-md cursor-pointer mb-10"
 						>
 							Export as Image
 						</button>
@@ -74,7 +74,7 @@ export default function ExportTimelineModal({
 						<button
 							onClick={() => handleTimelineExport(exportTimelineHtml)}
 							disabled={isExportingTimeline}
-							className="border-white border p-2 text-md cursor-pointer mb-10"
+							className="dark:border-white border-black border p-2 text-md cursor-pointer mb-10"
 						>
 							Export as HTML
 						</button>
