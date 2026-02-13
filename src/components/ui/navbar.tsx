@@ -29,9 +29,12 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
 	return (
 		<header className="flex justify-between items-center p-4 relative border-b border-[var(--borderColour)] dark:border-[var(--darkSecondary)]">
 			<Link href={"/"}>
-				<h1 className="text-xl font-bold hover:opacity-75 transition-all duration-200">
-					{title}
-				</h1>
+				<div className="hover:opacity-75 transition-all duration-200 m-0 p-0">
+					<span className="font-serif font-bold text-2xl tracking-tight text-gray-900 dark:text-gray-100">
+						{title}
+					</span>
+					<span className="text-blue-900 dark:text-blue-500 font-light text-2xl">.</span>
+				</div>
 			</Link>
 
 			<div className="flex align-middle gap-2 items-center">

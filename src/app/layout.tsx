@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "Event Timeline Visualiser",
-	description: "created by Craig Sinclair",
+	title: "TimelineScope",
+	description: "Created by Craig Sinclair",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
