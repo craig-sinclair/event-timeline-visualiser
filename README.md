@@ -1,4 +1,4 @@
-# Event Timeline Visualiser
+# TimelineScope
 #### Table of Contents
 - [About](#about)
 - [Usage](#usage)
@@ -10,11 +10,11 @@
 
 ## About
 ![Site Banner Image](src/data/screenshots/header.png)
-The **Event Timeline Visualiser** is an interactive web-application that allows users to explore a variety of political/economic/social timelines via an intuitive user interface.
-Timelines consists of a variety of events, which include: political statements, news events, ecnomic policy changes, and much more! This project aims to promote a bias-free reporting of factual events, allowing users to explore events in the world of current affairs in an accessible manner. To explore the capabilities of the Event Timeline Visualiser, see the [features](#features) section.
+**TimelineScope** is an interactive web-application that allows users to explore a variety of political/economic/social timelines via an intuitive user interface.
+Timelines consists of a variety of events, which include: political statements, news events, ecnomic policy changes, and much more! This project aims to promote a bias-free reporting of factual events, allowing users to explore events in the world of current affairs in an accessible manner. To explore the capabilities of the TimelineScope, see the [features](#features) section.
 
 ## Usage
-The Event Timeline Visualiser application publicly accessible at [event-timeline-visualiser.vercel.app/](https://event-timeline-visualiser.vercel.app/). If you wish to run a local version of the application, please see the dedicated [guide](#local-installation-guide).
+**TimelineScope** is publicly accessible at [event-timeline-visualiser.vercel.app/](https://event-timeline-visualiser.vercel.app/). If you wish to run a local version of the application, please see the dedicated [guide](#local-installation-guide).
 
 ## Features
 Beyond the landing page, users are redirected to the home dashboard, which contains a table of all explorable timelines in the application:

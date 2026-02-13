@@ -10,7 +10,7 @@ export default function NavbarWrapper() {
 
 	return (
 		<Navbar
-			title="Interactive Event Timeline Visualiser"
+			title="TimelineScope"
 			isSignedIn={isSignedIn}
 			onSignOut={() => signOut({ callbackUrl: "/" })}
 		/>
