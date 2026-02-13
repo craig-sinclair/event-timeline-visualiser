@@ -7,12 +7,11 @@ export default function Page() {
 			<div className="flex flex-col justify-center items-center gap-6 rounded-lg p-4 sm:px-6 sm:py-6 md:px-10">
 				<p className="text-2xl sm:text-3xl md:text-4xl md:leading-normal font-light text-center">
 					Welcome to{" "}
-
 					<span className="font-serif font-bold text-4xl tracking-tight text-gray-900 dark:text-gray-100">
 						TimelineScope
 					</span>
 					<span className="text-blue-900 dark:text-blue-500 font-light text-4xl">.</span>
-				<br />
+					<br />
 					Explore a variety of social, political and economic event timelines.
 				</p>
 
