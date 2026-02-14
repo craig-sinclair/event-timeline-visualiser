@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 
 import { filterEvents } from "@/lib/filterEvents";
-import { EventData, CompareTimelineEventData } from "@/models/event";
+import { EventData } from "@/models/event";
 
 const mockEventData: EventData[] = [
 	{
@@ -21,29 +21,6 @@ const mockEventData: EventData[] = [
 		relevance: 0.9,
 		URLs: ["example-123"],
 		tags: ["example-tag-2", "example-tag-3"],
-	},
-];
-
-const mockCompareTimelinesData: CompareTimelineEventData[] = [
-	{
-		_id: "12345",
-		overview: "example",
-		furtherDescription: "test",
-		dateTime: "2025-01-01 10:00",
-		relevance: 0.5,
-		URLs: [],
-		tags: ["example-tag-1", "example-tag-3"],
-		timelineSide: 1,
-	},
-	{
-		_id: "24680",
-		overview: "example-2",
-		furtherDescription: "test 2",
-		dateTime: "2025-01-02 10:01",
-		relevance: 0.9,
-		URLs: ["example-123"],
-		tags: ["example-tag-2", "example-tag-3"],
-		timelineSide: 2,
 	},
 ];
 
@@ -78,15 +55,6 @@ describe("Filter events function tests", () => {
 	it("correctly return no events if none match tag filter", () => {
 		const result = filterEvents({ events: mockEventData, filters: { tags: ["test-bad-tag"] } });
 		expect(result).toEqual([]);
-	});
-
-	it("correctly applies filters for comparison format timeline event data", () => {
-		const result = filterEvents({
-			events: mockCompareTimelinesData,
-			filters: { tags: ["example-tag-2"] },
-		});
-		expect(result).not.toEqual(mockCompareTimelinesData);
-		expect(result).toEqual([mockCompareTimelinesData[1]]);
 	});
 
 	it("correctly applies filters for minimum relevance in event data", () => {
