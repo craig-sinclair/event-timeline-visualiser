@@ -6,7 +6,7 @@ import {
 	TopicHierarchyData,
 	TopicHierarchyResponse,
 	TopicData,
-	ParentHierarchyData,
+	TopicReference,
 } from "@/models/ontology.types";
 
 export async function GET(
@@ -31,7 +31,7 @@ export async function GET(
 			throw new Error(`Could not find topic with ID: ${topicID}.`);
 		}
 
-		const hierarchy: ParentHierarchyData[] = [];
+		const hierarchy: TopicReference[] = [];
 		let currentTopic: TopicData | null = baseTopic;
 
 		// Fetch all parent topics (until reaching topic with no broader topic field)
