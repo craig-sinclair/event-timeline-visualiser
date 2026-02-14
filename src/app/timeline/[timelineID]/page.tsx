@@ -8,11 +8,13 @@ import HorizontalTimeline from "@/components/HorizontalTimeline";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import TimelineFilters from "@/components/ui/TimelineFilters";
 import VerticalTimeline from "@/components/VerticalTimeline";
+import { getAllTopicsInTimeline } from "@/lib/api/getAllTopicsInTimeline";
 import { getEventsInTimeline } from "@/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/lib/api/getTimelineFromId";
 import { filterEvents } from "@/lib/filterEvents";
 import { sortEvents } from "@/lib/sortEvents";
 import { EventData, EventFiltersState, EventSortByOptions } from "@/models/event";
+import { TopicReference } from "@/models/ontology.types";
 import { TimelineData } from "@/models/timeline";
 
 export default function TimelinePage() {
@@ -21,8 +23,10 @@ export default function TimelinePage() {
 	}>();
 
 	const [events, setEvents] = useState<EventData[]>([]);
-	const [eventFilters, setEventFilters] = useState<EventFiltersState>({ tags: [] });
+	const [eventFilters, setEventFilters] = useState<EventFiltersState>({ qcode: [] });
 	const [eventSortBy, setEventSortBy] = useState<EventSortByOptions>("date-asc");
+
+	const [allMediaTopics, setAllMediaTopics] = useState<TopicReference[]>([]);
 
 	const [timelineConfig, setTimelineConfig] = useState({
 		name: "",
@@ -43,6 +47,12 @@ export default function TimelinePage() {
 			try {
 				const eventsData = await getEventsInTimeline({ timelineID });
 				setEvents(eventsData);
+
+				// Mock implementation for now (update with API endpoint)
+				const allMediaTopicsData: TopicReference[] = await getAllTopicsInTimeline({
+					timelineID,
+				});
+				setAllMediaTopics(allMediaTopicsData);
 
 				const timelineData: TimelineData[] = await getTimelineFromId({ timelineID });
 
@@ -135,6 +145,7 @@ export default function TimelinePage() {
 					eventsArray={events}
 					onFiltersChange={handleEventFilterChange}
 					onSortByChange={handleEventSortByChange}
+					allMediaTopics={allMediaTopics}
 				/>
 
 				{/* Display toggle (horizontal/ vertical) if not a two-sided timeline */}

@@ -8,11 +8,7 @@
       "https://www.who.int/emergencies/disease-outbreak-news/item/2020-DON229",
       "https://www.bbc.co.uk/news/world-50917163"
     ],
-    "tags": [
-      "origin",
-      "wuhan",
-      "surveillance"
-    ],
+    "tags": [],
     "qcode": [
       "20000449",
       "20001358",
@@ -29,11 +25,7 @@
       "https://www.ncbi.nlm.nih.gov/nuccore/1798174254",
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC10129129/"
     ],
-    "tags": [
-      "genomics",
-      "surveillance",
-      "research"
-    ],
+    "tags": [],
     "qcode": [
       "20000737",
       "20000477",
@@ -50,11 +42,7 @@
       "https://www.theguardian.com/world/2020/jan/23/coronavirus-panic-and-anger-in-wuhan-as-china-orders-city-into-lockdown",
       "https://www.cdc.gov/museum/timeline/covid19.html"
     ],
-    "tags": [
-      "lockdown",
-      "mobility",
-      "containment"
-    ],
+    "tags": [],
     "qcode": [
       "20001358",
       "20000346",
@@ -70,11 +58,7 @@
       "https://www.who.int/news/item/30-01-2020-statement-on-the-second-meeting-of-the-international-health-regulations",
       "https://www.bbc.co.uk/news/51286135"
     ],
-    "tags": [
-      "WHO",
-      "international",
-      "emergency"
-    ],
+    "tags": [],
     "qcode": [
       "20001358",
       "20000449",
@@ -90,11 +74,7 @@
       "https://www.bbc.com/news/world-51345855",
       "https://www.who.int/publications/m/item/weekly-epidemiological-update---covid-19"
     ],
-    "tags": [
-      "international",
-      "fatality",
-      "surveillance"
-    ],
+    "tags": [],
     "qcode": [
       "20000449",
       "20001358",
@@ -110,11 +90,7 @@
       "https://www.who.int/director-general/speeches/detail/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020",
       "https://www.bbc.com/news/world-51839944"
     ],
-    "tags": [
-      "WHO",
-      "pandemic",
-      "public-health"
-    ],
+    "tags": [],
     "qcode": [
       "20000449",
       "20001358",
@@ -130,11 +106,7 @@
       "https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19",
       "https://www.bbc.co.uk/news/52101135"
     ],
-    "tags": [
-      "lockdown",
-      "travel",
-      "economy"
-    ],
+    "tags": [],
     "qcode": [
       "20000346",
       "20001358",
@@ -150,11 +122,7 @@
       "https://www.nature.com/articles/d41586-020-01221-y",
       "https://www.who.int/initiatives/act-accelerator/covax"
     ],
-    "tags": [
-      "vaccine",
-      "research",
-      "global"
-    ],
+    "tags": [],
     "qcode": [
       "20000737",
       "20000477",
@@ -170,11 +138,7 @@
       "https://www.gov.uk/government/news/uk-authorises-pfizer-biontech-covid-19-vaccine",
       "https://www.nejm.org/doi/full/10.1056/NEJMoa2034577"
     ],
-    "tags": [
-      "vaccine",
-      "UK",
-      "regulation"
-    ],
+    "tags": [],
     "qcode": [
       "20000477",
       "20001358",
@@ -190,11 +154,7 @@
       "https://www.nytimes.com/2020/11/09/health/covid-vaccine-pfizer.html",
       "https://www.fda.gov/media/144638/download"
     ],
-    "tags": [
-      "vaccine",
-      "science",
-      "breakthrough"
-    ],
+    "tags": [],
     "qcode": [
       "20000477",
       "20000737",
@@ -210,11 +170,7 @@
       "https://www.recoverytrial.net/results/dexamethasone-results",
       "https://www.nejm.org/doi/full/10.1056/NEJMoa2021436"
     ],
-    "tags": [
-      "treatment",
-      "clinical-trial",
-      "hospital-care"
-    ],
+    "tags": [],
     "qcode": [
       "20000464",
       "20000737",
@@ -230,11 +186,7 @@
       "https://www.bbc.com/news/world-55809378",
       "https://coronavirus.jhu.edu/map.html"
     ],
-    "tags": [
-      "global",
-      "statistics",
-      "surveillance"
-    ],
+    "tags": [],
     "qcode": [
       "20000346",
       "20000449",
@@ -250,11 +202,7 @@
       "https://www.cdc.gov/coronavirus/2019-ncov/variants/variant.html",
       "https://www.who.int/news/item/15-07-2021-delta-variant-dominates"
     ],
-    "tags": [
-      "variant",
-      "transmission",
-      "vaccination"
-    ],
+    "tags": [],
     "qcode": [
       "20000451",
       "20000449",
@@ -270,11 +218,7 @@
       "https://www.who.int/news/item/26-11-2021-classification-of-omicron",
       "https://www.nature.com/articles/d41586-021-03626-1"
     ],
-    "tags": [
-      "variant",
-      "mutation",
-      "WHO"
-    ],
+    "tags": [],
     "qcode": [
       "20000451",
       "20000449",
@@ -290,11 +234,7 @@
       "https://www.pfizer.com/news/press-release/press-release-detail/pfizer-receives-us-fda-emergency-use-authorization-novel",
       "https://www.fda.gov/media/171049/download"
     ],
-    "tags": [
-      "treatment",
-      "antiviral",
-      "regulation"
-    ],
+    "tags": [],
     "qcode": [
       "20000464",
       "20000737",
@@ -310,11 +250,7 @@
       "https://www.gov.uk/government/news/oxford-universityastrazeneca-vaccine-authorised-by-uk-medicines-regulator",
       "https://www.astrazeneca.com/content/astraz/media-centre/press-releases/2020/astrazenecas-covid-19-vaccine-authorised-in-uk.html"
     ],
-    "tags": [
-      "vaccine",
-      "uk",
-      "distribution"
-    ],
+    "tags": [],
     "qcode": [
       "20000477",
       "20001358",
@@ -330,11 +266,7 @@
       "https://www.who.int/news-room/feature-stories/detail/the-covax-facility",
       "https://www.imf.org/en/Topics/imf-and-covid19/Policy-Responses-to-COVID-19"
     ],
-    "tags": [
-      "vaccine",
-      "equity",
-      "COVAX"
-    ],
+    "tags": [],
     "qcode": [
       "20000477",
       "20001358",
@@ -350,11 +282,7 @@
       "https://www.bbc.com/news/world-59100307",
       "https://www.who.int/data"
     ],
-    "tags": [
-      "statistics",
-      "mortality",
-      "global"
-    ],
+    "tags": [],
     "qcode": [
       "20000346",
       "20000449",
@@ -370,11 +298,7 @@
       "https://www.who.int/news-room/fact-sheets/detail/post-covid-19-condition-(long-covid)",
       "https://www.bmj.com/content/378/bmj.o169"
     ],
-    "tags": [
-      "long-covid",
-      "research",
-      "rehabilitation"
-    ],
+    "tags": [],
     "qcode": [
       "20001358",
       "20000737",
@@ -390,11 +314,7 @@
       "https://www.theguardian.com/world/2022/dec/07/china-ends-zero-covid-policy",
       "https://www.bbc.com/news/world-asia-china-63838686"
     ],
-    "tags": [
-      "china",
-      "policy",
-      "society"
-    ],
+    "tags": [],
     "qcode": [
       "20001358",
       "20000346",
@@ -410,11 +330,7 @@
       "https://www.who.int/news/item/05-05-2023-who-declares-end-to-covid-19-global-health-emergency",
       "https://www.nature.com/articles/d41586-023-01208-2"
     ],
-    "tags": [
-      "WHO",
-      "post-pandemic",
-      "policy"
-    ],
+    "tags": [],
     "qcode": [
       "20001358",
       "20000449",
@@ -430,11 +346,7 @@
       "https://www.who.int/news/item/01-12-2023-pandemic-accord-negotiations",
       "https://www.statnews.com/2023/12/01/who-pandemic-accord-negotiations/"
     ],
-    "tags": [
-      "WHO",
-      "policy",
-      "preparedness"
-    ],
+    "tags": [],
     "qcode": [
       "20001358",
       "20000346",
@@ -450,11 +362,7 @@
       "https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html",
       "https://www.cdc.gov/museum/timeline/covid19.html"
     ],
-    "tags": [
-      "travel",
-      "border",
-      "policy"
-    ],
+    "tags": [],
     "qcode": [
       "20001358",
       "20000346",
@@ -470,11 +378,7 @@
       "https://www.who.int/news/item/21-07-2022-updated-global-covid-19-vaccination-strategy",
       "https://www.ema.europa.eu/en/news/ema-updates-advice-use-covid-19-booster-vaccines"
     ],
-    "tags": [
-      "vaccine",
-      "boosters",
-      "policy"
-    ],
+    "tags": [],
     "qcode": [
       "20000477",
       "20001358",

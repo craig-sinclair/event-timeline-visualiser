@@ -19,15 +19,17 @@ export type EventsInTopic = {
 
 export type TopicEventsResponse = ApiResponseBase<{ events: EventsInTopic }>;
 
-export type ParentHierarchyData = {
+export type TopicReference = {
 	qcode: string;
 	prefLabel: string;
 };
 
+export type TopicsInTimelineResponse = ApiResponseBase<{ topics: TopicReference[] }>;
+
 export type TopicHierarchyData = {
 	qcode: string;
 	prefLabel: string;
-	hierarchy: ParentHierarchyData[];
+	hierarchy: TopicReference[];
 };
 
 export type TopicHierarchyResponse = ApiResponseBase<{ topic: TopicHierarchyData }>;

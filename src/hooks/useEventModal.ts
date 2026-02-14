@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { EventData, CompareTimelineEventData } from "@/models/event";
+import { EventData } from "@/models/event";
 
-export function useEventModal<T extends EventData | CompareTimelineEventData>() {
+export function useEventModal<T extends EventData>() {
 	const [isEventModalOpen, setIsEventModalOpen] = useState(false);
 	const [selectedEvent, setSelectedEvent] = useState<T | null>(null);
 

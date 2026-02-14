@@ -22,7 +22,7 @@ export interface ReactSelectEvent {
 }
 
 export interface EventFiltersState {
-	tags: string[];
+	qcode: string[];
 	dateRange?: string;
 	minRelevance?: number;
 	sortBy?: string;
@@ -32,16 +32,12 @@ export type SortableEventFields = {
 	overview: string;
 	dateTime: string;
 	relevance?: number;
-	tags?: string[];
+	qcode?: string[];
 };
 
 export type EventFilterPredicate<T> = (event: T) => boolean;
 
 export type EventSortByOptions = "relevance-asc" | "relevance-desc" | "date-asc" | "date-desc";
-
-export type CompareTimelineEventData = EventData & {
-	timelineSide: 1 | 2;
-};
 
 export type EventRelevanceStyling = {
 	// Values stored in the rem unit

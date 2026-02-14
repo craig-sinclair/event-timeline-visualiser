@@ -10,14 +10,16 @@
       "https://commonslibrary.parliament.uk/research-briefings/sn05533/",
       "https://en.wikipedia.org/wiki/Climate_Change_Act_2008"
     ],
-    "tags": [
-      "legislation",
-      "emissions",
-      "targets",
-      "historic"
-    ],
+    "tags": [],
     "position": 0.85,
-    "qcode": ["11000000", "20000543", "20000570", "06000000", "20000632", "20000633"]
+    "qcode": [
+      "11000000",
+      "20000543",
+      "20000570",
+      "06000000",
+      "20000632",
+      "20000633"
+    ]
   },
   {
     "overview": "Government Advertising Encouraged Less Flying and Lower-Carbon Behaviors",
@@ -29,14 +31,16 @@
       "https://www.bbc.co.uk/news/science-environment-10206286",
       "https://webarchive.nationalarchives.gov.uk/ukgwa/20100509140257/http://actonco2.direct.gov.uk/"
     ],
-    "tags": [
-      "aviation",
-      "behavior-change",
-      "public-awareness",
-      "policy-retreat"
-    ],
+    "tags": [],
     "position": 0.58,
-    "qcode": ["11000000", "06000000", "20000632", "20000337", "20000338", "14000000"]
+    "qcode": [
+      "11000000",
+      "06000000",
+      "20000632",
+      "20000337",
+      "20000338",
+      "14000000"
+    ]
   },
   {
     "overview": "Nigel Lawson Forms Global Warming Policy Foundation",
@@ -49,14 +53,15 @@
       "https://www.bbc.co.uk/news/uk-politics-48868561",
       "https://en.wikipedia.org/wiki/Global_Warming_Policy_Foundation"
     ],
-    "tags": [
-      "skepticism",
-      "think-tank",
-      "opposition",
-      "policy"
-    ],
+    "tags": [],
     "position": 0.15,
-    "qcode": ["11000000", "06000000", "20000632", "20000560", "20000363"]
+    "qcode": [
+      "11000000",
+      "06000000",
+      "20000632",
+      "20000560",
+      "20000363"
+    ]
   },
   {
     "overview": "Woodland Carbon Code Established",
@@ -68,14 +73,15 @@
       "https://www.bbc.co.uk/news/science-environment-14368790",
       "https://www.gov.uk/guidance/the-woodland-carbon-code-scheme"
     ],
-    "tags": [
-      "forestry",
-      "carbon-offsetting",
-      "nature",
-      "standards"
-    ],
+    "tags": [],
     "position": 0.65,
-    "qcode": ["06000000", "20000632", "20000635", "20000649", "20000214"]
+    "qcode": [
+      "06000000",
+      "20000632",
+      "20000635",
+      "20000649",
+      "20000214"
+    ]
   },
   {
     "overview": "Carbon Price Floor Introduced",
@@ -88,14 +94,17 @@
       "https://commonslibrary.parliament.uk/research-briefings/sn05927/",
       "https://en.wikipedia.org/wiki/Carbon_price_floor"
     ],
-    "tags": [
-      "carbon-pricing",
-      "taxation",
-      "coal",
-      "policy-instrument"
-    ],
+    "tags": [],
     "position": 0.77,
-    "qcode": ["11000000", "04000000", "20000379", "06000000", "20000632", "20000256", "20000258"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000379",
+      "06000000",
+      "20000632",
+      "20000256",
+      "20000258"
+    ]
   },
   {
     "overview": "Zero Carbon Homes Policy Scrapped",
@@ -107,14 +116,16 @@
       "https://www.bbc.co.uk/news/business-33482425",
       "https://www.carbonbrief.org/why-did-uk-government-scrap-zero-carbon-homes-policy/"
     ],
-    "tags": [
-      "housing",
-      "policy-reversal",
-      "emissions",
-      "construction"
-    ],
+    "tags": [],
     "position": 0.28,
-    "qcode": ["11000000", "04000000", "20000235", "20001368", "06000000", "20000632"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000235",
+      "20001368",
+      "06000000",
+      "20000632"
+    ]
   },
   {
     "overview": "Coal Phase-Out Announcement",
@@ -126,14 +137,17 @@
       "https://www.bbc.co.uk/news/business-34851718",
       "https://www.theguardian.com/environment/2015/nov/18/energy-policy-shift-climate-change-amber-rudd-backburner"
     ],
-    "tags": [
-      "coal",
-      "energy",
-      "phase-out",
-      "fossil-fuels"
-    ],
+    "tags": [],
     "position": 0.75,
-    "qcode": ["11000000", "04000000", "20000256", "20000258", "06000000", "20000632", "20000260"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000256",
+      "20000258",
+      "06000000",
+      "20000632",
+      "20000260"
+    ]
   },
   {
     "overview": "Cancellation of Carbon Capture Competition",
@@ -145,14 +159,16 @@
       "https://www.theguardian.com/environment/2015/nov/25/uk-cancels-pioneering-1bn-carbon-capture-and-storage-competition",
       "https://www.carbonbrief.org/timeline-how-uk-carbon-capture-storage-competitions-have-unfolded/"
     ],
-    "tags": [
-      "carbon-capture",
-      "funding",
-      "policy-reversal",
-      "technology"
-    ],
+    "tags": [],
     "position": 0.35,
-    "qcode": ["11000000", "04000000", "20000256", "06000000", "20000632", "20000208"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000256",
+      "06000000",
+      "20000632",
+      "20000208"
+    ]
   },
   {
     "overview": "Solar Subsidy Cuts Devastate Industry",
@@ -164,14 +180,17 @@
       "https://www.theguardian.com/environment/2015/dec/17/solar-panel-subsidies-slashed-government-climate-change",
       "https://www.carbonbrief.org/guest-post-why-have-uk-solar-panel-installations-fallen-so-dramatically"
     ],
-    "tags": [
-      "solar",
-      "subsidies",
-      "renewable-energy",
-      "policy-cut"
-    ],
+    "tags": [],
     "position": 0.30,
-    "qcode": ["11000000", "04000000", "20000256", "20000257", "20001209", "06000000", "20000632"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000256",
+      "20000257",
+      "20001209",
+      "06000000",
+      "20000632"
+    ]
   },
   {
     "overview": "Green Investment Bank Privatized",
@@ -183,14 +202,16 @@
       "https://www.theguardian.com/environment/2017/mar/23/green-investment-bank-sold-macquarie-climate-concerns",
       "https://commonslibrary.parliament.uk/research-briefings/sn05960/"
     ],
-    "tags": [
-      "finance",
-      "privatization",
-      "green-investment",
-      "policy-change"
-    ],
+    "tags": [],
     "position": 0.40,
-    "qcode": ["11000000", "04000000", "20001370", "20000287", "06000000", "20000632"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20001370",
+      "20000287",
+      "06000000",
+      "20000632"
+    ]
   },
   {
     "overview": "Heathrow Third Runway Approval and Legal Challenge",
@@ -202,14 +223,18 @@
       "https://www.theguardian.com/environment/2020/feb/27/heathrow-third-runway-ruled-illegal-over-climate-change",
       "https://commonslibrary.parliament.uk/research-briefings/cbp-8706/"
     ],
-    "tags": [
-      "aviation",
-      "infrastructure",
-      "legal",
-      "emissions"
-    ],
+    "tags": [],
     "position": 0.32,
-    "qcode": ["11000000", "04000000", "20000337", "20000338", "02000000", "20000106", "06000000", "20000632"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000337",
+      "20000338",
+      "02000000",
+      "20000106",
+      "06000000",
+      "20000632"
+    ]
   },
   {
     "overview": "Extinction Rebellion Protests Disrupt London",
@@ -222,14 +247,16 @@
       "https://extinctionrebellion.uk/",
       "https://en.wikipedia.org/wiki/Extinction_Rebellion"
     ],
-    "tags": [
-      "activism",
-      "protests",
-      "public-pressure",
-      "social-movement"
-    ],
+    "tags": [],
     "position": 0.92,
-    "qcode": ["16000000", "20000065", "20000066", "06000000", "20000632", "14000000"]
+    "qcode": [
+      "16000000",
+      "20000065",
+      "20000066",
+      "06000000",
+      "20000632",
+      "14000000"
+    ]
   },
   {
     "overview": "UK Parliament Declares Climate Emergency",
@@ -243,14 +270,16 @@
       "https://climateemergencydeclaration.org/united-kingdom-bipartisan-uk-parliament-declares-a-climate-emergency/",
       "https://en.wikipedia.org/wiki/Climate_emergency_declarations_in_the_United_Kingdom"
     ],
-    "tags": [
-      "political",
-      "historic",
-      "declaration",
-      "parliamentary"
-    ],
+    "tags": [],
     "position": 0.88,
-    "qcode": ["11000000", "20000543", "20000537", "06000000", "20000632", "20000540"]
+    "qcode": [
+      "11000000",
+      "20000543",
+      "20000537",
+      "06000000",
+      "20000632",
+      "20000540"
+    ]
   },
   {
     "overview": "Feed-in Tariff Scheme Closed",
@@ -262,14 +291,16 @@
       "https://www.bbc.co.uk/news/business-47686377",
       "https://www.theguardian.com/environment/2019/mar/29/uk-solar-panel-installations-fall-by-94-as-subsidies-cut"
     ],
-    "tags": [
-      "renewable-energy",
-      "solar",
-      "subsidies",
-      "policy-change"
-    ],
+    "tags": [],
     "position": 0.48,
-    "qcode": ["11000000", "04000000", "20000256", "20000257", "20001209", "06000000"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000256",
+      "20000257",
+      "20001209",
+      "06000000"
+    ]
   },
   {
     "overview": "Net Zero Target Legislated",
@@ -282,14 +313,16 @@
       "https://commonslibrary.parliament.uk/research-briefings/cbp-8590/",
       "https://www.legislation.gov.uk/uksi/2019/1056/made"
     ],
-    "tags": [
-      "legislation",
-      "net-zero",
-      "targets",
-      "ambitious"
-    ],
+    "tags": [],
     "position": 0.95,
-    "qcode": ["11000000", "20000543", "20000570", "06000000", "20000632", "20000633"]
+    "qcode": [
+      "11000000",
+      "20000543",
+      "20000570",
+      "06000000",
+      "20000632",
+      "20000633"
+    ]
   },
   {
     "overview": "Climate Assembly UK Convened",
@@ -301,14 +334,15 @@
       "https://www.bbc.co.uk/news/science-environment-54014081",
       "https://www.theguardian.com/environment/2020/sep/10/climate-assembly-uk-publishes-its-report"
     ],
-    "tags": [
-      "public-engagement",
-      "democracy",
-      "policy-development",
-      "consultation"
-    ],
+    "tags": [],
     "position": 0.72,
-    "qcode": ["11000000", "20000540", "06000000", "20000632", "14000000"]
+    "qcode": [
+      "11000000",
+      "20000540",
+      "06000000",
+      "20000632",
+      "14000000"
+    ]
   },
   {
     "overview": "Nature Recovery Network Proposed",
@@ -320,14 +354,16 @@
       "https://www.bbc.co.uk/news/science-environment-51476012",
       "https://www.theguardian.com/environment/2020/feb/12/nature-recovery-network-england-habitats-wildlife"
     ],
-    "tags": [
-      "nature",
-      "biodiversity",
-      "habitat",
-      "planning"
-    ],
+    "tags": [],
     "position": 0.70,
-    "qcode": ["06000000", "20000632", "20000635", "20000649", "20000650", "11000000"]
+    "qcode": [
+      "06000000",
+      "20000632",
+      "20000635",
+      "20000649",
+      "20000650",
+      "11000000"
+    ]
   },
   {
     "overview": "Green Homes Grant Scheme Launched and Scrapped",
@@ -339,14 +375,16 @@
       "https://www.theguardian.com/environment/2021/mar/27/green-homes-grant-to-close-after-six-months",
       "https://commonslibrary.parliament.uk/research-briefings/cbp-9185/"
     ],
-    "tags": [
-      "housing",
-      "energy-efficiency",
-      "policy-failure",
-      "funding"
-    ],
+    "tags": [],
     "position": 0.45,
-    "qcode": ["11000000", "04000000", "20000235", "20001368", "06000000", "20000632"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000235",
+      "20001368",
+      "06000000",
+      "20000632"
+    ]
   },
   {
     "overview": "Offshore Wind Expansion Commitment",
@@ -358,14 +396,17 @@
       "https://www.bbc.co.uk/news/science-environment-54421822",
       "https://www.theguardian.com/environment/2020/oct/06/boris-johnson-announces-plans-for-40gw-of-offshore-wind-by-2030"
     ],
-    "tags": [
-      "renewable-energy",
-      "wind",
-      "investment",
-      "ambitious"
-    ],
+    "tags": [],
     "position": 0.88,
-    "qcode": ["11000000", "04000000", "20000256", "20000257", "20001211", "06000000", "20000632"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000256",
+      "20000257",
+      "20001211",
+      "06000000",
+      "20000632"
+    ]
   },
   {
     "overview": "Electric Vehicle Charging Infrastructure Investment",
@@ -377,14 +418,17 @@
       "https://www.bbc.co.uk/news/business-55005408",
       "https://www.theguardian.com/environment/2020/nov/18/boris-johnsons-10-point-green-plan-what-does-it-include"
     ],
-    "tags": [
-      "electric-vehicles",
-      "transport",
-      "infrastructure",
-      "investment"
-    ],
+    "tags": [],
     "position": 0.78,
-    "qcode": ["11000000", "04000000", "20000337", "20000341", "20001258", "06000000", "20000632"]
+    "qcode": [
+      "11000000",
+      "04000000",
+      "20000337",
+      "20000341",
+      "20001258",
+      "06000000",
+      "20000632"
+    ]
   },
   {
     "overview": "Fracking Ban Lifted Then Reinstated",
@@ -396,12 +440,7 @@
       "https://www.theguardian.com/environment/2022/sep/22/liz-truss-lifts-fracking-ban-despite-opposition-from-tory-mps",
       "https://www.bbc.co.uk/news/uk-politics-63573377"
     ],
-    "tags": [
-      "fracking",
-      "fossil-fuels",
-      "policy-reversal",
-      "energy-security"
-    ],
+    "tags": [],
     "position": 0.25
   },
   {
@@ -414,12 +453,7 @@
       "https://www.bbc.co.uk/news/business-33482425",
       "https://www.carbonbrief.org/why-did-uk-government-scrap-zero-carbon-homes-policy/"
     ],
-    "tags": [
-      "housing",
-      "policy-reversal",
-      "emissions",
-      "construction"
-    ],
+    "tags": [],
     "position": 0.28
   },
   {
@@ -432,12 +466,7 @@
       "https://www.bbc.co.uk/news/science-environment-54014081",
       "https://www.theguardian.com/environment/2020/sep/10/climate-assembly-uk-publishes-its-report"
     ],
-    "tags": [
-      "public-engagement",
-      "democracy",
-      "policy-development",
-      "consultation"
-    ],
+    "tags": [],
     "position": 0.72
   },
   {
@@ -450,12 +479,7 @@
       "https://www.bbc.co.uk/news/business-47686377",
       "https://www.theguardian.com/environment/2019/mar/29/uk-solar-panel-installations-fall-by-94-as-subsidies-cut"
     ],
-    "tags": [
-      "renewable-energy",
-      "solar",
-      "subsidies",
-      "policy-change"
-    ],
+    "tags": [],
     "position": 0.48
   },
   {
@@ -468,12 +492,7 @@
       "https://www.bbc.co.uk/news/business-58230295",
       "https://www.theguardian.com/environment/2021/aug/17/uk-unveils-its-hydrogen-strategy-to-cut-carbon-emissions"
     ],
-    "tags": [
-      "hydrogen",
-      "energy",
-      "innovation",
-      "technology"
-    ],
+    "tags": [],
     "position": 0.68
   },
   {
@@ -486,12 +505,7 @@
       "https://www.theguardian.com/environment/2023/jul/31/rishi-sunak-to-max-out-uk-fossil-fuel-reserves-with-hundreds-of-new-north-sea-licences",
       "https://www.gov.uk/government/news/hundreds-of-new-north-sea-oil-and-gas-licences-to-boost-british-energy-independence-and-grow-the-economy"
     ],
-    "tags": [
-      "fossil-fuels",
-      "north-sea",
-      "oil-gas",
-      "controversy"
-    ],
+    "tags": [],
     "position": 0.22
   },
   {
@@ -504,12 +518,7 @@
       "https://www.bbc.co.uk/news/science-environment-57489680",
       "https://www.theguardian.com/environment/2021/jun/16/uk-woefully-underprepared-for-climate-crisis-say-government-advisers"
     ],
-    "tags": [
-      "adaptation",
-      "infrastructure",
-      "warning",
-      "resilience"
-    ],
+    "tags": [],
     "position": 0.42
   },
   {
@@ -522,12 +531,7 @@
       "https://www.theguardian.com/environment/2017/mar/23/green-investment-bank-sold-macquarie-climate-concerns",
       "https://commonslibrary.parliament.uk/research-briefings/sn05960/"
     ],
-    "tags": [
-      "finance",
-      "privatization",
-      "green-investment",
-      "policy-change"
-    ],
+    "tags": [],
     "position": 0.40
   },
   {
@@ -540,12 +544,7 @@
       "https://www.bbc.co.uk/news/business-55005408",
       "https://www.theguardian.com/environment/2020/nov/18/boris-johnsons-10-point-green-plan-what-does-it-include"
     ],
-    "tags": [
-      "electric-vehicles",
-      "transport",
-      "infrastructure",
-      "investment"
-    ],
+    "tags": [],
     "position": 0.78
   },
   {
@@ -558,12 +557,7 @@
       "https://www.theguardian.com/environment/2019/apr/15/extinction-rebellion-activists-block-london-bridges",
       "https://extinctionrebellion.uk/"
     ],
-    "tags": [
-      "activism",
-      "protests",
-      "public-pressure",
-      "social-movement"
-    ],
+    "tags": [],
     "position": 0.92
   },
   {
@@ -576,12 +570,7 @@
       "https://www.theguardian.com/environment/2022/oct/14/just-stop-oil-activists-throw-soup-at-van-goghs-sunflowers",
       "https://juststopoil.org/"
     ],
-    "tags": [
-      "activism",
-      "protests",
-      "controversy",
-      "civil-disobedience"
-    ],
+    "tags": [],
     "position": 0.95
   },
   {
@@ -594,12 +583,7 @@
       "https://www.bbc.co.uk/news/science-environment-14368790",
       "https://www.gov.uk/guidance/the-woodland-carbon-code-scheme"
     ],
-    "tags": [
-      "forestry",
-      "carbon-offsetting",
-      "nature",
-      "standards"
-    ],
+    "tags": [],
     "position": 0.65
   },
   {
@@ -612,12 +596,7 @@
       "https://www.theguardian.com/environment/2020/feb/27/heathrow-third-runway-ruled-illegal-over-climate-change",
       "https://commonslibrary.parliament.uk/research-briefings/cbp-8706/"
     ],
-    "tags": [
-      "aviation",
-      "infrastructure",
-      "legal",
-      "emissions"
-    ],
+    "tags": [],
     "position": 0.32
   },
   {
@@ -630,12 +609,7 @@
       "https://www.bbc.co.uk/news/business-58960913",
       "https://www.theguardian.com/money/2021/oct/22/government-launches-green-savings-bonds-paying-065-interest"
     ],
-    "tags": [
-      "finance",
-      "green-bonds",
-      "public-investment",
-      "retail"
-    ],
+    "tags": [],
     "position": 0.62
   },
   {
@@ -648,12 +622,7 @@
       "https://www.theguardian.com/uk-news/2022/jul/21/supreme-court-blocks-hebridean-peat-extraction-plans",
       "https://www.supremecourt.uk/cases/uksc-2021-0078.html"
     ],
-    "tags": [
-      "peatlands",
-      "nature",
-      "carbon-storage",
-      "legal"
-    ],
+    "tags": [],
     "position": 0.80
   },
   {
@@ -666,12 +635,7 @@
       "https://www.carbonbrief.org/analysis-uks-co2-emissions-have-fallen-29-per-cent-over-the-past-decade",
       "https://commonslibrary.parliament.uk/research-briefings/sn05927/"
     ],
-    "tags": [
-      "carbon-pricing",
-      "taxation",
-      "coal",
-      "policy-instrument"
-    ],
+    "tags": [],
     "position": 0.77
   },
   {
@@ -684,12 +648,7 @@
       "https://www.theguardian.com/environment/2015/dec/17/solar-panel-subsidies-slashed-government-climate-change",
       "https://www.carbonbrief.org/guest-post-why-have-uk-solar-panel-installations-fallen-so-dramatically"
     ],
-    "tags": [
-      "solar",
-      "subsidies",
-      "renewable-energy",
-      "policy-cut"
-    ],
+    "tags": [],
     "position": 0.30
   },
   {
@@ -702,12 +661,7 @@
       "https://www.bbc.co.uk/news/science-environment-51476012",
       "https://www.theguardian.com/environment/2020/feb/12/nature-recovery-network-england-habitats-wildlife"
     ],
-    "tags": [
-      "nature",
-      "biodiversity",
-      "habitat",
-      "planning"
-    ],
+    "tags": [],
     "position": 0.70
   },
   {
@@ -720,12 +674,7 @@
       "https://www.bbc.co.uk/news/science-environment-10206286",
       "https://webarchive.nationalarchives.gov.uk/ukgwa/20100509140257/http://actonco2.direct.gov.uk/"
     ],
-    "tags": [
-      "aviation",
-      "behavior-change",
-      "public-awareness",
-      "policy-retreat"
-    ],
+    "tags": [],
     "position": 0.58
   },
   {
@@ -738,12 +687,7 @@
       "https://www.bbc.co.uk/news/science-environment-66046608",
       "https://www.theguardian.com/environment/2023/jun/29/uk-net-zero-policies-not-enough-to-hit-targets-climate-change-committee-warns"
     ],
-    "tags": [
-      "accountability",
-      "targets",
-      "policy-gap",
-      "warning"
-    ],
+    "tags": [],
     "position": 0.44
   },
   {
@@ -756,12 +700,7 @@
       "https://www.bbc.co.uk/news/business-62226981",
       "https://www.theguardian.com/environment/2022/jul/20/sizewell-c-nuclear-power-station-given-go-ahead-by-uk-government"
     ],
-    "tags": [
-      "nuclear",
-      "energy",
-      "infrastructure",
-      "controversial"
-    ],
+    "tags": [],
     "position": 0.68
   }
 ]

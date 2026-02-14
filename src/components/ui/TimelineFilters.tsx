@@ -3,47 +3,40 @@ import { useState, useEffect } from "react";
 import Select from "react-select";
 
 import { customStyles } from "@/components/ui/TimelineFilters.styles";
-import { getAllTagsInTimeline } from "@/lib/getAllTagsInTimeline";
 import { getAllYearsInTimeline } from "@/lib/getAllYearsInTimeline";
 import { EventData, EventFiltersState, ReactSelectEvent, EventSortByOptions } from "@/models/event";
+import { TopicReference } from "@/models/ontology.types";
 
 export default function TimelineFilters({
 	eventsArray,
 	onFiltersChange,
 	onSortByChange,
+	allMediaTopics,
 }: {
 	eventsArray: EventData[];
 	onFiltersChange: (filters: EventFiltersState) => void;
 	onSortByChange: (sortBy: EventSortByOptions) => void;
+	allMediaTopics: TopicReference[];
 }) {
-	const [selectedTags, setSelectedTags] = useState<ReactSelectEvent[]>([]);
-	const [allTags, setAllTags] = useState<ReactSelectEvent[]>([]);
-
+	const [selectedMediaTopics, setSelectedMediaTopics] = useState<ReactSelectEvent[]>([]);
 	const [minimumRelevance, setMinimumRelevance] = useState<number>(0.0);
 	const [selectedSortBy, setSelectedSortBy] = useState<EventSortByOptions>("date-asc");
 
 	const [selectedDateFilter, setSelectedDateFilter] = useState<string>("");
 	const [allPossibleEventYears, setAllPossibleEventYears] = useState<string[]>([]);
 
-	const createReactSelectFormatEvents = (allAvailable: string[]) => {
+	const createReactSelectFormatEvents = (allTopics: TopicReference[]) => {
 		const completeDictionary = [];
-		for (const tag of allAvailable) {
+		for (const topic of allTopics) {
 			completeDictionary.push({
-				value: tag,
-				label: tag,
+				value: topic.qcode,
+				label: topic.prefLabel,
 			});
 		}
 		return completeDictionary;
 	};
 
-	// Fetch all the tags in the given timeline
-	useEffect(() => {
-		const fetchAllTags = () => {
-			const allTags = getAllTagsInTimeline({ eventsArray: eventsArray });
-			setAllTags(createReactSelectFormatEvents(allTags));
-		};
-		fetchAllTags();
-	}, [eventsArray]);
+	const allFormattedMediaTopics = createReactSelectFormatEvents(allMediaTopics);
 
 	// Fetch all the years in the given timeline for date filter
 	useEffect(() => {
@@ -57,11 +50,11 @@ export default function TimelineFilters({
 	// When filter useState variables change, notify parent timeline component
 	useEffect(() => {
 		onFiltersChange({
-			tags: selectedTags.map((tag) => tag.value),
+			qcode: selectedMediaTopics.map((topic) => topic.value),
 			minRelevance: minimumRelevance,
 			dateRange: selectedDateFilter,
 		});
-	}, [selectedTags, minimumRelevance, selectedDateFilter, onFiltersChange]);
+	}, [selectedMediaTopics, minimumRelevance, selectedDateFilter, onFiltersChange]);
 
 	// When sort by option changes, notify the parent timeline component
 	useEffect(() => {
@@ -96,11 +89,11 @@ export default function TimelineFilters({
 			</div>
 
 			<div className="w-xs">
-				<label className="block mb-2 text-xs md:text-sm">Tags</label>
+				<label className="block mb-2 text-xs md:text-sm">Media Topics</label>
 				<Select
-					options={allTags}
-					value={selectedTags}
-					onChange={(selected) => setSelectedTags(selected as ReactSelectEvent[])}
+					options={allFormattedMediaTopics}
+					value={selectedMediaTopics}
+					onChange={(selected) => setSelectedMediaTopics(selected as ReactSelectEvent[])}
 					isMulti
 					name="tags"
 					className="text-xs md:text-sm"
