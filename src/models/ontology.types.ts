@@ -24,6 +24,8 @@ export type TopicReference = {
 	prefLabel: string;
 };
 
+export type TopicsInTimelineResponse = ApiResponseBase<{ topics: TopicReference[] }>;
+
 export type TopicHierarchyData = {
 	qcode: string;
 	prefLabel: string;
