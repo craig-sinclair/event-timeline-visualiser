@@ -96,7 +96,7 @@ export default function TimelineFilters({
 			</div>
 
 			<div className="w-xs">
-				<label className="block mb-2 text-xs md:text-sm">Tags</label>
+				<label className="block mb-2 text-xs md:text-sm">Media Topics</label>
 				<Select
 					options={allMediaTopics}
 					value={selectedMediaTopics}
