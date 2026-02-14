@@ -9,11 +9,7 @@
             "https://www.law.cornell.edu/supct/pdf/05-1120P.ZO",
             "https://archive.org/details/micro_IA40385016_0400"
         ],
-        "tags": [
-            "judicial",
-            "clean-air-act",
-            "legal-precedent"
-        ],
+        "tags": [],
         "qcode": [
             "11000001",
             "11000005",
@@ -29,11 +25,7 @@
         "URLs": [
             "https://www.nhtsa.gov/corporate-average-fuel-economy"
         ],
-        "tags": [
-            "transport",
-            "standards",
-            "inaction"
-        ],
+        "tags": [],
         "position": 0.35,
         "qcode": [
             "12000000",
@@ -50,12 +42,7 @@
             "https://www.energy.gov/oe/2009-american-recovery-and-reinvestment-act",
             "https://www.energy.gov/eere/bioenergy/american-recovery-and-reinvestment-act"
         ],
-        "tags": [
-            "fiscal-policy",
-            "investment",
-            "renewables",
-            "innovation"
-        ],
+        "tags": [],
         "qcode": [
             "13000010",
             "13000020",
@@ -71,11 +58,7 @@
         "URLs": [
             "https://www.epa.gov/climatechange/epa-climate-change-policy-history"
         ],
-        "tags": [
-            "federal-policy",
-            "inaction",
-            "emissions"
-        ],
+        "tags": [],
         "position": 0.2,
         "qcode": [
             "13000000",
@@ -92,12 +75,7 @@
             "https://www.congress.gov/bill/111th-congress/house-bill/2454/text",
             "https://en.wikipedia.org/wiki/American_Clean_Energy_and_Security_Act"
         ],
-        "tags": [
-            "legislation",
-            "cap-and-trade",
-            "congress",
-            "policy-debate"
-        ],
+        "tags": [],
         "qcode": [
             "11000020",
             "13000040"
@@ -114,12 +92,7 @@
             "https://www.federalregister.gov/documents/2009/12/15/E9-29537/endangerment-and-cause-or-contribute-findings-for-greenhouse-gases-under-section-202a-of-the-clean",
             "https://www.epa.gov/sites/default/files/2016-08/documents/endangermentfinding_legalbasis.pdf"
         ],
-        "tags": [
-            "science",
-            "regulation",
-            "epa",
-            "legal-basis"
-        ],
+        "tags": [],
         "qcode": [
             "11000003",
             "14000010"
@@ -134,11 +107,7 @@
         "URLs": [
             "https://www.nytimes.com/2003/12/31/us/bush-plan-eases-rules-for-pollution-control.html"
         ],
-        "tags": [
-            "epa",
-            "power-sector",
-            "rollback"
-        ],
+        "tags": [],
         "position": 0.3,
         "qcode": [
             "11000005",
@@ -155,12 +124,7 @@
             "https://www.gao.gov/products/gao-10-739r",
             "https://theicct.org/publication/u-s-epa-light-duty-vehicle-ghg-and-cafe-standards-for-2012-2016/"
         ],
-        "tags": [
-            "transport",
-            "vehicle-standards",
-            "fuel-economy",
-            "national-program"
-        ],
+        "tags": [],
         "qcode": [
             "12000010",
             "14000020"
@@ -177,12 +141,7 @@
             "https://publications.ieaghg.org/insightpapers/2014-IP23%20US-China%20Joint%20Announcement%20on%20Climate%20Change%20and%20Clean%20Energy%20Cooperation.pdf",
             "https://www.brookings.edu/articles/u-s-china-joint-presidential-statement-on-climate-change-the-road-to-paris-and-beyond/"
         ],
-        "tags": [
-            "international",
-            "diplomacy",
-            "major-emitters",
-            "pre-Paris"
-        ],
+        "tags": [],
         "qcode": [
             "14000030",
             "15000010"
@@ -197,11 +156,7 @@
         "URLs": [
             "https://climate.nasa.gov/news/"
         ],
-        "tags": [
-            "science",
-            "inaction",
-            "arctic"
-        ],
+        "tags": [],
         "position": 0.25,
         "qcode": [
             "14000000",
@@ -216,11 +171,7 @@
         "URLs": [
             "https://www.epa.gov/stationary-sources-air-pollution/affordable-clean-energy-rule"
         ],
-        "tags": [
-            "power-sector",
-            "rollback",
-            "epa"
-        ],
+        "tags": [],
         "position": 0.3,
         "qcode": [
             "13000060",
@@ -237,12 +188,7 @@
             "https://19january2017snapshot.epa.gov/cleanpowerplan/fact-sheet-clean-power-plan-numbers_.html",
             "https://obamawhitehouse.archives.gov/the-press-office/2015/08/03/fact-sheet-president-obama-announce-historic-carbon-pollution-standards"
         ],
-        "tags": [
-            "power-sector",
-            "regulation",
-            "emissions-targets",
-            "state-flexibility"
-        ],
+        "tags": [],
         "qcode": [
             "13000050",
             "11000030"
@@ -257,11 +203,7 @@
         "URLs": [
             "https://www.epa.gov/regulations-emissions-vehicles-and-engines/safer-affordable-fuel-efficient-safe-vehicles-final-rule"
         ],
-        "tags": [
-            "transport",
-            "standards",
-            "rollback"
-        ],
+        "tags": [],
         "position": 0.35,
         "qcode": [
             "14000020",
@@ -276,11 +218,7 @@
         "URLs": [
             "https://www.epa.gov/ghgemissions"
         ],
-        "tags": [
-            "methane",
-            "regulation",
-            "delay"
-        ],
+        "tags": [],
         "position": 0.45,
         "qcode": [
             "13000060",
@@ -297,12 +235,7 @@
             "https://unfccc.int/sites/default/files/resource/parisagreement_publication.pdf",
             "https://obamawhitehouse.archives.gov/the-press-office/2015/12/12/what-paris-agreement-means-united-states"
         ],
-        "tags": [
-            "international",
-            "treaty",
-            "diplomacy",
-            "NDC"
-        ],
+        "tags": [],
         "qcode": [
             "15000020",
             "11000040"
@@ -317,11 +250,7 @@
         "URLs": [
             "https://www.eia.gov/todayinenergy/detail.php?id=38032"
         ],
-        "tags": [
-            "fossil-fuels",
-            "subsidy",
-            "policy-inaction"
-        ],
+        "tags": [],
         "position": 0.25,
         "qcode": [
             "13000000",
@@ -336,11 +265,7 @@
         "URLs": [
             "https://www.energy.gov/eere/office-energy-efficiency-renewable-energy"
         ],
-        "tags": [
-            "renewables",
-            "federal-policy",
-            "inaction"
-        ],
+        "tags": [],
         "position": 0.4,
         "qcode": [
             "13000010",
@@ -355,11 +280,7 @@
         "URLs": [
             "https://www.nhc.noaa.gov/education/history/"
         ],
-        "tags": [
-            "disaster",
-            "inaction",
-            "climate-connection"
-        ],
+        "tags": [],
         "position": 0.3,
         "qcode": [
             "14000000",
@@ -374,11 +295,7 @@
         "URLs": [
             "https://www.nhtsa.gov/laws-regulations/corporate-average-fuel-economy"
         ],
-        "tags": [
-            "transport",
-            "standards",
-            "inaction"
-        ],
+        "tags": [],
         "position": 0.4,
         "qcode": [
             "12000010",
@@ -394,12 +311,7 @@
             "https://climate.law.columbia.edu/content/president-trump-announces-withdrawal-paris-agreement-0",
             "https://climateactiontracker.org/press/effect-of-the-us-withdrawal-from-the-paris-agreement/"
         ],
-        "tags": [
-            "international",
-            "withdrawal",
-            "politics",
-            "diplomacy"
-        ],
+        "tags": [],
         "qcode": [
             "15000030",
             "16000010"
@@ -416,12 +328,7 @@
             "https://www.federalregister.gov/documents/2020/04/30/2020-06967/the-safer-affordable-fuel-efficient-safe-vehicles-rule-for-model-years-2021-2026-passenger-cars-and",
             "https://www.nhtsa.gov/corporate-average-fuel-economy/safe"
         ],
-        "tags": [
-            "transport",
-            "standards",
-            "rollback",
-            "federal-policy"
-        ],
+        "tags": [],
         "qcode": [
             "14000020",
             "12000011"
@@ -437,12 +344,7 @@
             "https://www.epa.gov/stationary-sources-air-pollution/affordable-clean-energy-rule",
             "https://www.epa.gov/stationary-sources-air-pollution/fact-sheet-overview-final-ace-rule"
         ],
-        "tags": [
-            "power-sector",
-            "rule-change",
-            "rollback",
-            "epa"
-        ],
+        "tags": [],
         "qcode": [
             "13000060",
             "11000007"
@@ -458,11 +360,7 @@
             "https://www.state.gov/u-s-withdrawal-from-the-kyoto-protocol/",
             "https://www.nytimes.com/2001/03/29/world/bush-wont-join-kyoto-climate-treaty-us-says.html"
         ],
-        "tags": [
-            "international",
-            "withdrawal",
-            "policy-delay"
-        ],
+        "tags": [],
         "position": 0.2,
         "qcode": [
             "15000000",
@@ -478,12 +376,7 @@
             "https://www.gov.ca.gov/2020/09/23/governor-newsom-announces-california-will-phase-out-gasoline-powered-cars-drastically-reduce-demand-for-fossil-fuel-in-californias-fight-against-climate-change/",
             "https://www.gov.ca.gov/wp-content/uploads/2020/09/9.23.20-EO-N-79-20-Climate.pdf"
         ],
-        "tags": [
-            "state-policy",
-            "transport",
-            "zero-emission",
-            "subnational"
-        ],
+        "tags": [],
         "qcode": [
             "15000050",
             "18000010"
@@ -499,11 +392,7 @@
             "https://2021-2025.state.gov/the-united-states-officially-rejoins-the-paris-agreement/",
             "https://unfccc.int/news/un-welcomes-us-announcement-to-rejoin-the-paris-agreement"
         ],
-        "tags": [
-            "international",
-            "recommitment",
-            "executive-action"
-        ],
+        "tags": [],
         "qcode": [
             "15000020",
             "11000040"
@@ -519,11 +408,7 @@
             "https://www.presidency.ucsb.edu/documents/executive-order-14008-tackling-the-climate-crisis-home-and-abroad",
             "https://www.federalregister.gov/documents/2021/02/01/2021-02177/tackling-the-climate-crisis-at-home-and-abroad"
         ],
-        "tags": [
-            "executive-order",
-            "whole-of-government",
-            "climate-governance"
-        ],
+        "tags": [],
         "qcode": [
             "13000060",
             "16000020"
@@ -539,12 +424,7 @@
             "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2021/04/22/fact-sheet-president-biden-sets-2030-greenhouse-gas-pollution-reduction-target-aimed-at-creating-good-paying-union-jobs-and-securing-u-s-leadership-on-clean-energy-technologies/",
             "https://unfccc.int/sites/default/files/NDC/2022-06/United%20States%20NDC%20April%2021%202021%20Final.pdf"
         ],
-        "tags": [
-            "NDC",
-            "targets",
-            "international",
-            "domestic-policy"
-        ],
+        "tags": [],
         "qcode": [
             "15000040",
             "13000070"
@@ -560,11 +440,7 @@
             "https://www.reuters.com/business/energy/biden-revokes-kxl-permit-blow-canadas-oil-sector-ottawa-disappointed-2021-01-20/",
             "https://docs.house.gov/meetings/GO/GO00/20211028/114185/HHRG-117-GO00-20211028-SD016.pdf"
         ],
-        "tags": [
-            "infrastructure",
-            "fossil-fuels",
-            "executive-action"
-        ],
+        "tags": [],
         "qcode": [
             "17000010",
             "16000030"
@@ -581,11 +457,7 @@
             "https://www.theguardian.com/environment/2021/jun/09/keystone-xl-pipeline-canceled",
             "https://www.reuters.com/business/energy/tc-energy-terminates-keystone-xl-pipeline-project-2021-06-09/"
         ],
-        "tags": [
-            "infrastructure",
-            "cancellation",
-            "indigenous-rights"
-        ],
+        "tags": [],
         "qcode": [
             "17000011",
             "16000040"
@@ -601,12 +473,7 @@
             "https://www.congress.gov/bill/117th-congress/house-bill/3684",
             "https://afdc.energy.gov/laws/infrastructure-investment-jobs-act"
         ],
-        "tags": [
-            "infrastructure",
-            "resilience",
-            "EV-charging",
-            "adaptation"
-        ],
+        "tags": [],
         "qcode": [
             "13000080",
             "14000040"
@@ -622,12 +489,7 @@
             "https://www.supremecourt.gov/opinions/21pdf/20-1530_n758.pdf",
             "https://www.skadden.com/insights/publications/2022/09/quarterly-insights/west-virginia-v-epa"
         ],
-        "tags": [
-            "judicial",
-            "major-questions",
-            "regulatory-limit",
-            "power-sector"
-        ],
+        "tags": [],
         "qcode": [
             "11000002",
             "11000006"
@@ -643,12 +505,7 @@
             "https://www.energy.gov/lpo/inflation-reduction-act-2022",
             "https://www.congress.gov/crs/product/R47262"
         ],
-        "tags": [
-            "legislation",
-            "tax-credits",
-            "clean-energy",
-            "investment"
-        ],
+        "tags": [],
         "qcode": [
             "13000090",
             "14000050"
@@ -665,12 +522,7 @@
             "https://eelp.law.harvard.edu/us-paris-commitment/",
             "https://www.rggi.org/"
         ],
-        "tags": [
-            "subnational",
-            "states",
-            "cities",
-            "corporate-action"
-        ],
+        "tags": [],
         "qcode": [
             "15000050",
             "18000020"
