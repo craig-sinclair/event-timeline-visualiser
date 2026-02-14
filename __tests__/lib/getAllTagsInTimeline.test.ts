@@ -1,15 +1,15 @@
 import { describe, it, expect } from "vitest";
 
-import { getAllTagsInTimeline } from "@/lib/getAllTagsInTimeline";
+import { getAllMediaTopicsInTimeline } from "@/lib/getAllMediaTopicsInTimeline";
 import { EventData } from "@/models/event";
 
-describe("Get all tags in timeline tests", () => {
+describe("Get all media topics in timeline tests", () => {
 	it("Returns an empty array for empty events data", () => {
-		const result = getAllTagsInTimeline({ eventsArray: [] });
+		const result = getAllMediaTopicsInTimeline({ eventsArray: [] });
 		expect(result).toEqual([]);
 	});
 
-	it("Correctly return array of tags for single event with single tag", () => {
+	it("Correctly return array of media topics for single event with single media topic", () => {
 		const singleEventData: EventData[] = [
 			{
 				_id: "12345",
@@ -18,15 +18,33 @@ describe("Get all tags in timeline tests", () => {
 				furtherDescription: "test",
 				relevance: 0.5,
 				URLs: [],
-				tags: ["tag1"],
+				tags: [],
+				qcode: ["1"],
 			},
 		];
 
-		const result = getAllTagsInTimeline({ eventsArray: singleEventData });
-		expect(result).toEqual(["tag1"]);
+		const result = getAllMediaTopicsInTimeline({ eventsArray: singleEventData });
+		expect(result).toEqual(["1"]);
 	});
 
-	it("Correctly returns array of tags for multiple events with multiple tags", () => {
+	it("Correctly handles event data with missing media topic field", () => {
+		const singleEventData: EventData[] = [
+			{
+				_id: "12345",
+				overview: "test",
+				dateTime: "2025-01-01",
+				furtherDescription: "test",
+				relevance: 0.5,
+				URLs: [],
+				tags: [],
+			},
+		];
+
+		const result = getAllMediaTopicsInTimeline({ eventsArray: singleEventData });
+		expect(result).toEqual([]);
+	});
+
+	it("Correctly returns array of tags for multiple events with multiple media topics", () => {
 		const multipleEventsData: EventData[] = [
 			{
 				_id: "12345",
@@ -35,7 +53,8 @@ describe("Get all tags in timeline tests", () => {
 				furtherDescription: "test",
 				relevance: 0.5,
 				URLs: [],
-				tags: ["tag1", "tag2", "tag3"],
+				tags: [],
+				qcode: ["1", "2", "3"],
 			},
 			{
 				_id: "123456",
@@ -44,15 +63,16 @@ describe("Get all tags in timeline tests", () => {
 				furtherDescription: "test2",
 				relevance: 0.5,
 				URLs: [],
-				tags: ["tag4", "tag5"],
+				tags: [],
+				qcode: ["4", "5"],
 			},
 		];
 
-		const result = getAllTagsInTimeline({ eventsArray: multipleEventsData });
-		expect(result).toEqual(["tag1", "tag2", "tag3", "tag4", "tag5"]);
+		const result = getAllMediaTopicsInTimeline({ eventsArray: multipleEventsData });
+		expect(result).toEqual(["1", "2", "3", "4", "5"]);
 	});
 
-	it("Correctly extracts only unique tags found in events", () => {
+	it("Correctly extracts only unique media topics found in events", () => {
 		const multipleEventsData: EventData[] = [
 			{
 				_id: "12345",
@@ -61,7 +81,8 @@ describe("Get all tags in timeline tests", () => {
 				furtherDescription: "test",
 				relevance: 0.5,
 				URLs: [],
-				tags: ["tag1", "tag2", "tag2"],
+				tags: [],
+				qcode: ["1", "2", "3"],
 			},
 			{
 				_id: "123456",
@@ -70,10 +91,11 @@ describe("Get all tags in timeline tests", () => {
 				furtherDescription: "test2",
 				relevance: 0.5,
 				URLs: [],
-				tags: ["tag2", "tag3", "tag1"],
+				tags: [],
+				qcode: ["1", "2", "3"],
 			},
 		];
-		const result = getAllTagsInTimeline({ eventsArray: multipleEventsData });
-		expect(result).toEqual(["tag1", "tag2", "tag3"]);
+		const result = getAllMediaTopicsInTimeline({ eventsArray: multipleEventsData });
+		expect(result).toEqual(["1", "2", "3"]);
 	});
 });

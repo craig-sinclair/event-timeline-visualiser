@@ -22,7 +22,7 @@ export interface ReactSelectEvent {
 }
 
 export interface EventFiltersState {
-	tags: string[];
+	qcode: string[];
 	dateRange?: string;
 	minRelevance?: number;
 	sortBy?: string;
@@ -32,7 +32,7 @@ export type SortableEventFields = {
 	overview: string;
 	dateTime: string;
 	relevance?: number;
-	tags?: string[];
+	qcode?: string[];
 };
 
 export type EventFilterPredicate<T> = (event: T) => boolean;

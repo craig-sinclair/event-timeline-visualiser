@@ -21,7 +21,7 @@ export default function TimelinePage() {
 	}>();
 
 	const [events, setEvents] = useState<EventData[]>([]);
-	const [eventFilters, setEventFilters] = useState<EventFiltersState>({ tags: [] });
+	const [eventFilters, setEventFilters] = useState<EventFiltersState>({ qcode: [] });
 	const [eventSortBy, setEventSortBy] = useState<EventSortByOptions>("date-asc");
 
 	const [timelineConfig, setTimelineConfig] = useState({

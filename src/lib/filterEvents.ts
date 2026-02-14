@@ -9,9 +9,11 @@ export const filterEvents = <T extends SortableEventFields>({
 }): T[] => {
 	const predicates: EventFilterPredicate<T>[] = [];
 
-	if (filters.tags && filters.tags.length > 0) {
+	if (filters.qcode && filters.qcode.length > 0) {
 		predicates.push(
-			(event) => !!event.tags && filters.tags.some((tag) => event.tags!.includes(tag))
+			(event) =>
+				!!event.qcode &&
+				filters.qcode.some((mediaTopicID) => event.qcode!.includes(mediaTopicID))
 		);
 	}
 
