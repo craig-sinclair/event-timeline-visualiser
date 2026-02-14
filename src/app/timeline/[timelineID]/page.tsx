@@ -8,6 +8,7 @@ import HorizontalTimeline from "@/components/HorizontalTimeline";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import TimelineFilters from "@/components/ui/TimelineFilters";
 import VerticalTimeline from "@/components/VerticalTimeline";
+import { getAllTopicsInTimeline } from "@/lib/api/getAllTopicsInTimeline";
 import { getEventsInTimeline } from "@/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/lib/api/getTimelineFromId";
 import { filterEvents } from "@/lib/filterEvents";
@@ -48,7 +49,9 @@ export default function TimelinePage() {
 				setEvents(eventsData);
 
 				// Mock implementation for now (update with API endpoint)
-				const allMediaTopicsData: TopicReference[] = [{ qcode: "", prefLabel: "" }];
+				const allMediaTopicsData: TopicReference[] = await getAllTopicsInTimeline({
+					timelineID,
+				});
 				setAllMediaTopics(allMediaTopicsData);
 
 				const timelineData: TimelineData[] = await getTimelineFromId({ timelineID });
