@@ -8,6 +8,7 @@ import HorizontalTimeline from "@/components/HorizontalTimeline";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import TimelineFilters from "@/components/ui/TimelineFilters";
 import VerticalTimeline from "@/components/VerticalTimeline";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import { getAllTopicsInTimeline } from "@/lib/api/getAllTopicsInTimeline";
 import { getEventsInTimeline } from "@/lib/api/getEventsInTimeline";
 import { getTimelineFromId } from "@/lib/api/getTimelineFromId";
@@ -40,6 +41,9 @@ export default function TimelinePage() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 
+	const isMobile = useIsMobile();
+	console.log(isMobile);
+
 	const [verticalSelected, setVerticalSelected] = useState(false);
 
 	useEffect(() => {
@@ -48,7 +52,6 @@ export default function TimelinePage() {
 				const eventsData = await getEventsInTimeline({ timelineID });
 				setEvents(eventsData);
 
-				// Mock implementation for now (update with API endpoint)
 				const allMediaTopicsData: TopicReference[] = await getAllTopicsInTimeline({
 					timelineID,
 				});
