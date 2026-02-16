@@ -37,7 +37,7 @@ export default function TimelineFilters({
 	};
 
 	const allFormattedMediaTopics = createReactSelectFormatEvents(allMediaTopics);
-
+	
 	// Fetch all the years in the given timeline for date filter
 	useEffect(() => {
 		const fetchAllYears = () => {
@@ -62,15 +62,16 @@ export default function TimelineFilters({
 	}, [selectedSortBy, onSortByChange]);
 
 	return (
-		<>
-			<div className="flex flex-col gap-2">
+		<div className="flex flex-col gap-4 w-full">
+		<div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-start">
+			<div className="flex flex-col gap-2 w-full">
 				<label className="text-xs md:text-sm font-medium text-[var(--foreground)]">
 					Date Range
 				</label>
 				<select
 					value={selectedDateFilter}
 					onChange={(e) => setSelectedDateFilter(e.target.value as string)}
-					className="w-full px-3 py-2.5 text-xs md:text-sm rounded-lg cursor-pointer appearance-none bg-[var(--background)] border border-[var(--borderColour)] hover:border-[var(--borderColour)] focus:outline-none focus:ring-0 focus:border-[var(--borderColour)] transition-colors"
+					className="w-full px-3 py-2.5 text-xs md:text-sm rounded-lg cursor-pointer appearance-none bg-[var(--background)] border border-[var(--borderColour)] focus:outline-none"
 					style={{
 						backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
 						backgroundRepeat: "no-repeat",
@@ -88,8 +89,8 @@ export default function TimelineFilters({
 				</select>
 			</div>
 
-			<div className="w-xs">
-				<label className="block mb-2 text-xs md:text-sm">Media Topics</label>
+			<div className="flex flex-col gap-2 w-full">
+				<label className="block text-xs md:text-sm font-medium">Media Topics</label>
 				<Select
 					options={allFormattedMediaTopics}
 					value={selectedMediaTopics}
@@ -105,26 +106,29 @@ export default function TimelineFilters({
 				/>
 			</div>
 
-			<div className="w-xs">
-				<label className="block mb-2 text-xs md:text-sm">Min. Relevance</label>
-				<input
-					type="range"
-					min={0}
-					max={1}
-					value={minimumRelevance}
-					step={0.1}
-					onChange={(e) => setMinimumRelevance(Number(e.target.value))}
-					className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-[var(--lightSecondary)] dark:bg-[var(--darkSecondary)] accent-blue-500 border border-[var(--borderColour)]"
-				/>
+			<div className="flex flex-col gap-2 w-full">
+				<label className="text-xs md:text-sm font-medium">Min. Relevance</label>
+				<div className="flex items-center h-[42px]">
+					<input
+						type="range"
+						min={0}
+						max={1}
+						value={minimumRelevance}
+						step={0.1}
+						onChange={(e) => setMinimumRelevance(Number(e.target.value))}
+						className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-[var(--lightSecondary)] dark:bg-[var(--darkSecondary)] accent-blue-500 border border-[var(--borderColour)]"
+					/>
+				</div>
 			</div>
-			<div className="flex flex-col gap-2">
+
+			<div className="flex flex-col gap-2 w-full">
 				<label className="text-xs md:text-sm font-medium text-[var(--foreground)]">
 					Sort By
 				</label>
 				<select
 					value={selectedSortBy}
 					onChange={(e) => setSelectedSortBy(e.target.value as EventSortByOptions)}
-					className="w-full px-3 py-2.5 text-xs md:text-sm rounded-lg cursor-pointer appearance-none bg-[var(--background)] border border-[var(--borderColour)] hover:border-[var(--borderColour)] focus:outline-none focus:ring-0 focus:border-[var(--borderColour)] transition-colors"
+					className="w-full px-3 py-2.5 text-xs md:text-sm rounded-lg cursor-pointer appearance-none bg-[var(--background)] border border-[var(--borderColour)] hover:border-[var(--borderColour)] focus:outline-none"
 					style={{
 						backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
 						backgroundRepeat: "no-repeat",
@@ -139,6 +143,7 @@ export default function TimelineFilters({
 					<option value="date-desc">Newest</option>
 				</select>
 			</div>
-		</>
+		</div>
+		</div>
 	);
 }

@@ -33,7 +33,7 @@ export default function VerticalTimeline({
 					<button
 						onClick={() => setIsExportTimelineModalOpen(true)}
 						disabled={isExportTimelineModalOpen}
-						className="border dark:border-white border-black p-2 text-md cursor-pointer mb-10"
+						className="border dark:border-white border-black p-2 text-md cursor-pointer mb-10 hidden md:block"
 					>
 						Export Timeline
 					</button>

@@ -137,13 +137,14 @@ export default function TimelinePage() {
 			<div className="flex justify-center items-center w-full mb-5 md:mb-8">
 				<h1 className="text-3xl">
 					{" "}
-					<span className="font-bold text-blue-500">{timelineConfig.name}</span> Event
+					<span className="font-extrabold text-blue-500 font-serif">{timelineConfig.name}</span> Event
 					Timeline
 				</h1>
 			</div>
 
 			{/* Event filter options */}
-			<div className="flex justify-between items-center mb-5 md:mb-10 max-w-full lg:max-w-5/6 ml-auto mr-auto">
+			<div className="flex justify-between items-center align-center gap-3 lg:gap-5 mb-5 md:mb-10 max-w-full lg:max-w-5/6 ml-auto mr-auto">
+
 				<TimelineFilters
 					eventsArray={events}
 					onFiltersChange={handleEventFilterChange}
@@ -155,8 +156,8 @@ export default function TimelinePage() {
 				{!timelineConfig.isMultipleSided &&
 					!timelineConfig.isContinuousScale &&
 					!isMobile && (
-						<div className="flex flex-col">
-							<label className="block mb-2 text-xs md:text-sm">Display Mode:</label>
+						<div className="flex flex-col h-[42px] mb-6">
+							<label className="block mb-3 text-xs md:text-sm font-medium">Display Mode:</label>
 
 							<div>
 								<div className="inline-flex items-center gap-2">
