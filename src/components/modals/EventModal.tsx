@@ -93,19 +93,19 @@ export default function EventModal({
 						<div>
 							<h3 className="text-md font-semibold mb-1">Date & Time</h3>
 							<p className="text-sm opacity-80">
-								{new Date(event.dateTime).toLocaleString()}
+								{new Date(event.dateTime).toISOString().split("T")[0]}
 							</p>
-						</div>
-
-						{/* Relevance */}
-						<div>
-							<h3 className="text-md font-semibold mb-1">Relevance</h3>
-							<p className="text-sm opacity-80">{event.relevance}</p>
 						</div>
 
 						<div>
 							<h3 className="text-md font-semibold mb-1">Further information</h3>
 							<p className="text-sm opacity-80">{event.furtherDescription}</p>
+						</div>
+
+						{/* Relevance */}
+						<div>
+							<h3 className="text-md font-semibold mb-1">Relevance</h3>
+							<p className="text-sm opacity-80">{event.relevance * 100}%</p>
 						</div>
 
 						{tagsMappingError && (
@@ -146,7 +146,7 @@ export default function EventModal({
 						{/* Ontology topics */}
 						{event?.qcode && event.qcode.length > 0 && (
 							<div>
-								<h3 className="text-md font-semibold mb-2">Tags:</h3>
+								<h3 className="text-md font-semibold mb-1">Tags:</h3>
 								<div>
 									{event.qcode.map((topicID, index) => (
 										<TopicHierarchyText
@@ -163,7 +163,7 @@ export default function EventModal({
 						{/* URLs */}
 						{event.URLs?.length > 0 && (
 							<div>
-								<h3 className="text-md font-semibold mb-2">Related Links</h3>
+								<h3 className="text-md font-semibold mb-1">Related Links</h3>
 								<ul className="space-y-2 md:space-y-1">
 									{event.URLs.map((url, index) => (
 										<li key={index}>

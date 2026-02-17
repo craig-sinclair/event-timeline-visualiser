@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 
 import { getTopicHierarchy } from "@/lib/api/getTopicHierarchy";
 import { TopicHierarchyData, TopicHierarchyTextSize } from "@/models/ontology.types";
@@ -64,48 +64,33 @@ export default function TopicHierarchyText({
 		);
 	}
 
+	const btnBase = "font-medium cursor-pointer rounded text-white hover:opacity-80 truncate";
+	const btnSize = small ? "text-xs px-1.5 py-1" : "text-sm px-2 py-1.5";
+	const separatorSize = small ? "text-xs" : "text-sm";
+
 	return (
-		<div className={"flex gap-3" + (small ? "flex-wrap mt-4" : "")}>
-			{hierarchyData?.hierarchy.map((topic, i) => {
-				return (
-					<div className="flex align-center justify-center gap-2" key={i}>
-						<Link href={`/events-in-topic/${topic.qcode}`}>
-							<button
-								className={
-									"font-medium cursor-pointer rounded-md text-white hover:opacity-80 " +
-									(small
-										? "text-xs px-2 py-1 bg-green-600 dark:bg-green-800"
-										: "text-md p-2 bg-green-600 dark:bg-green-800")
-								}
-							>
-								{topic?.prefLabel}
-							</button>
-						</Link>
+		<div className={`flex flex-wrap items-center gap-2 ${small ? "mt-4" : ""}`}>
+			{hierarchyData?.hierarchy.map((topic, i) => (
+				<Fragment key={topic.qcode}>
+					<Link key={`link-${i}`} href={`/events-in-topic/${topic.qcode}`}>
+						<button className={`${btnBase} ${btnSize} bg-green-600 dark:bg-green-800`}>
+							{topic?.prefLabel}
+						</button>
+					</Link>
+					<span
+						key={`sep-${i}`}
+						className={`${separatorSize} font-medium text-gray-400 select-none`}
+					>
+						/
+					</span>
+				</Fragment>
+			))}
 
-						<h1
-							className={
-								small
-									? "text-sm font-medium py-1 mr-1 px-1"
-									: "text-md font-medium py-2 px-1"
-							}
-						>
-							/
-						</h1>
-					</div>
-				);
-			})}
-
-			{small ? (
-				<Link href={`/events-in-topic/${hierarchyData?.qcode}`}>
-					<button className="font-medium cursor-pointer rounded-md text-white hover:opacity-80 text-xs px-2 py-1 bg-blue-600 dark:bg-blue-900">
-						{hierarchyData?.prefLabel}
-					</button>
-				</Link>
-			) : (
-				<button className="font-medium cursor-pointer rounded-md text-white hover:opacity-80 text-md p-2 bg-blue-600 dark:bg-blue-900">
+			<Link href={`/events-in-topic/${hierarchyData?.qcode}`}>
+				<button className={`${btnBase} ${btnSize} bg-blue-600 dark:bg-blue-900`}>
 					{hierarchyData?.prefLabel}
 				</button>
-			)}
+			</Link>
 		</div>
 	);
 }
