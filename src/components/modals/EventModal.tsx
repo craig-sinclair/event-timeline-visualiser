@@ -68,13 +68,15 @@ export default function EventModal({
 
 			{/* Modal */}
 			<div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-				<div className="bg-[var(--background)] border rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+				<div className="bg-[var(--background)] border rounded-md md:rounded-lg shadow-lg max-w-2xl w-full max-h-[95vh] md:max-h-[90vh] overflow-x-hidden md:overflow-y-auto md:overflow-x-auto">
 					{/* Header */}
-					<div className="flex justify-between items-start p-6 border-b">
-						<h2 className="text-xl font-semibold pr-8">{event.overview}</h2>
+					<div className="flex justify-between items-start p-3 md:p-6 border-b">
+						<h2 className="text-md md:text-xl font-semibold pr-4 md:pr-8">
+							{event.overview}
+						</h2>
 						<button
 							onClick={onClose}
-							className="text-2xl leading-none hover:opacity-70 transition-opacity cursor-pointer"
+							className="text-xl md:text-2xl leading-none hover:opacity-70 transition-opacity cursor-pointer"
 							aria-label="Close modal"
 						>
 							X
@@ -84,10 +86,12 @@ export default function EventModal({
 					{isLoading && <LoadingSpinner />}
 
 					{/* Content */}
-					<div className={`p-6 space-y-4 ${isLoading ? "opacity-0" : "opacity-100"}`}>
+					<div
+						className={`p-3 md:p-6 space-y-4 ${isLoading ? "opacity-0" : "opacity-100"}`}
+					>
 						{/* Date & Time */}
 						<div>
-							<h3 className="text-sm font-semibold mb-1">Date & Time</h3>
+							<h3 className="text-md font-semibold mb-1">Date & Time</h3>
 							<p className="text-sm opacity-80">
 								{new Date(event.dateTime).toLocaleString()}
 							</p>
@@ -95,12 +99,12 @@ export default function EventModal({
 
 						{/* Relevance */}
 						<div>
-							<h3 className="text-sm font-semibold mb-1">Relevance</h3>
+							<h3 className="text-md font-semibold mb-1">Relevance</h3>
 							<p className="text-sm opacity-80">{event.relevance}</p>
 						</div>
 
 						<div>
-							<h3 className="text-sm font-semibold mb-1">Further information</h3>
+							<h3 className="text-md font-semibold mb-1">Further information</h3>
 							<p className="text-sm opacity-80">{event.furtherDescription}</p>
 						</div>
 
@@ -113,7 +117,7 @@ export default function EventModal({
 						{/* Related tags: for linking event with another timeline */}
 						{event.tags?.length > 0 && !tagsMappingError && (
 							<div>
-								<h3 className="text-sm font-semibold mb-2">Related Timelines</h3>
+								<h3 className="text-md font-semibold mb-2">Related Timelines</h3>
 								<div className="flex flex-wrap gap-2">
 									{event.tags.map((tag, index) => {
 										const timelineId = tagsToTimelineMap?.[tag];
@@ -122,14 +126,14 @@ export default function EventModal({
 											<Link
 												key={index}
 												href={`/timeline/${timelineId}`}
-												className="px-3 py-1 text-xs border rounded-full hover:underline"
+												className="px-3 py-1 text-sm md:text-xs border rounded-md md:rounded-full hover:underline"
 											>
 												{tag}
 											</Link>
 										) : (
 											<span
 												key={index}
-												className="px-3 py-1 text-xs border rounded-full"
+												className="px-3 py-1 text-sm md:text-xs border rounded-md md:rounded-full"
 											>
 												{tag}
 											</span>
@@ -142,7 +146,7 @@ export default function EventModal({
 						{/* Ontology topics */}
 						{event?.qcode && event.qcode.length > 0 && (
 							<div>
-								<h3 className="text-sm font-semibold mb-2">Tags:</h3>
+								<h3 className="text-md font-semibold mb-2">Tags:</h3>
 								<div>
 									{event.qcode.map((topicID, index) => (
 										<TopicHierarchyText
@@ -159,8 +163,8 @@ export default function EventModal({
 						{/* URLs */}
 						{event.URLs?.length > 0 && (
 							<div>
-								<h3 className="text-sm font-semibold mb-2">Related Links</h3>
-								<ul className="space-y-1">
+								<h3 className="text-md font-semibold mb-2">Related Links</h3>
+								<ul className="space-y-2 md:space-y-1">
 									{event.URLs.map((url, index) => (
 										<li key={index}>
 											<a
