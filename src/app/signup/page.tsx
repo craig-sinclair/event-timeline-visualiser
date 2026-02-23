@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 
+import { validatePassword } from "@/lib/validateSignUpFields";
+
 export default function SignupPage() {
 	const router = useRouter();
 	const [email, setEmail] = useState("");
@@ -16,6 +18,18 @@ export default function SignupPage() {
 		e.preventDefault();
 		setError("");
 
+		const passwordError = validatePassword({ newPassword: password });
+		if (passwordError) {
+			setError(passwordError);
+			return;
+		}
+
+		// const validEmail = validateEmail({ newEmail: email });
+		// if (!validEmail) {
+		// 	setError("Please enter a valid e-mail address.");
+		// 	return;
+		// }
+
 		if (password !== repeatPassword) {
 			setError("Passwords do not match");
 			return;
@@ -24,7 +38,6 @@ export default function SignupPage() {
 		setLoading(true);
 
 		try {
-			// Call your API route to create the user
 			const res = await fetch("/api/signup", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -37,8 +50,8 @@ export default function SignupPage() {
 			}
 
 			// Automatically sign in the user after signup
-			await signIn("credentials", { email, password, redirect: false });
-			router.push("/profile-setup"); // redirect to profile setup
+			await signIn("email-password", { email, password, redirect: false });
+			router.push("/");
 		} catch (err) {
 			if (err instanceof Error) {
 				setError(err.message);
