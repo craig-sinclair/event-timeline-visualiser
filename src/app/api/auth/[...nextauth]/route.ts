@@ -1,14 +1,11 @@
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-import clientPromise from "@/lib/mongodb";
 import { dbConnect } from "@/lib/mongoose";
-import { findUserByEmailOrPhone, createUser } from "@/services/authService";
-import { hashPassword, comparePassword } from "@/services/passwordService";
+import { findUserByEmailOrPhone } from "@/services/authService";
+import { comparePassword } from "@/services/passwordService";
 
 const handler = NextAuth({
-	adapter: MongoDBAdapter(clientPromise),
 	session: { strategy: "jwt" },
 	pages: {
 		signIn: "/signin",
@@ -20,56 +17,21 @@ const handler = NextAuth({
 			credentials: {
 				email: { label: "Email", type: "text" },
 				password: { label: "Password", type: "password" },
-				gdprConsent: { label: "GDPR Consent", type: "checkbox" },
 			},
 			async authorize(credentials) {
-				const { email, password, gdprConsent } = credentials!;
 				await dbConnect();
 
-				let user = await findUserByEmailOrPhone(email);
+				const user = await findUserByEmailOrPhone(credentials!.email);
+				if (!user) return null;
 
-				if (!user) {
-					if (!gdprConsent) return null;
-					const hashed = await hashPassword(password);
-					user = await createUser({
-						email,
-						passwordHash: hashed,
-						authProvider: "password",
-						gdprConsent: {
-							accepted: true,
-							acceptedAt: new Date(),
-							version: "1.0",
-						},
-						profileCompleted: false,
-					});
-				} else {
-					const valid = await comparePassword(password, user.passwordHash!);
-					if (!valid) return null;
-				}
+				const valid = await comparePassword(credentials!.password, user.passwordHash!);
+				if (!valid) return null;
 
 				return { id: user._id.toString(), email: user.email, name: user.name };
 			},
 		}),
 	],
 	callbacks: {
-		async signIn({ user }) {
-			await dbConnect();
-
-			if (user.email) {
-				const existing = await findUserByEmailOrPhone(user.email);
-
-				if (!existing) {
-					await createUser({
-						email: user.email,
-						name: user.name || "",
-						authProvider: "password",
-					});
-				}
-			}
-
-			return true;
-		},
-
 		async jwt({ token, user }) {
 			if (user?.id) token.id = user.id;
 			return token;

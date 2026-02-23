@@ -1,34 +1,16 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
-import { useState, useEffect, Suspense } from "react";
+import { useState } from "react";
 
-const errorMessages: Record<string, string> = {
-	CredentialsSignin: "Invalid email or password. Please try again.",
-	EmailSignin: "Email sign-in failed. Please check your inbox or try again.",
-	OAuthSignin: "OAuth sign-in failed. Please try a different provider.",
-	OAuthCallback: "OAuth callback error. Please try again.",
-	AccessDenied: "Access denied. You do not have permission to sign in.",
-	Configuration: "Authentication configuration error. Contact support.",
-	Verification: "Email verification failed. Please request a new link.",
-};
-
-function SignInForm() {
+export default function SignInForm() {
 	const router = useRouter();
-	const searchParams = useSearchParams();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
-
-	useEffect(() => {
-		const errorCode = searchParams.get("error");
-		if (errorCode && errorMessages[errorCode]) {
-			setError(errorMessages[errorCode]);
-		}
-	}, [searchParams]);
 
 	const handleEmailPasswordLogin = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -39,14 +21,12 @@ function SignInForm() {
 			redirect: false,
 			email,
 			password,
-			gdprConsent: true,
 			callbackUrl: "/",
 		});
 
 		setLoading(false);
-
 		if (res?.error) {
-			setError(errorMessages[res.error] || "Invalid email or password");
+			setError("Invalid email or password. Please try again.");
 		} else {
 			router.push("/");
 		}
@@ -98,13 +78,5 @@ function SignInForm() {
 				</p>
 			</form>
 		</div>
-	);
-}
-
-export default function SignInPage() {
-	return (
-		<Suspense fallback={<div>Loading...</div>}>
-			<SignInForm />
-		</Suspense>
 	);
 }
