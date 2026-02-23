@@ -28,7 +28,7 @@ export default function SignInForm() {
 		if (res?.error) {
 			setError("Invalid email or password. Please try again.");
 		} else {
-			router.push("/");
+			router.push("/dashboard");
 		}
 	};
 
@@ -65,9 +65,13 @@ export default function SignInForm() {
 				<button
 					type="submit"
 					disabled={loading}
-					className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 cursor-pointer"
+					className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 cursor-pointer disabled:cursor-not-allowed disabled:opacity-70 flex items-center justify-center transition-opacity duration-150"
 				>
-					{loading ? "Signing in..." : "Sign In"}
+					{loading ? (
+						<div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+					) : (
+						"Sign In"
+					)}
 				</button>
 
 				<p className="text-md">
