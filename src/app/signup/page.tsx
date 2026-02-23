@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 
-import { validatePassword } from "@/lib/validateSignUpFields";
+import { validatePassword, validateEmail } from "@/lib/validateSignUpFields";
 
 export default function SignupPage() {
 	const router = useRouter();
@@ -24,14 +24,14 @@ export default function SignupPage() {
 			return;
 		}
 
-		// const validEmail = validateEmail({ newEmail: email });
-		// if (!validEmail) {
-		// 	setError("Please enter a valid e-mail address.");
-		// 	return;
-		// }
+		const validEmail = validateEmail({ newEmail: email });
+		if (!validEmail) {
+			setError("Please enter a valid e-mail address.");
+			return;
+		}
 
 		if (password !== repeatPassword) {
-			setError("Passwords do not match");
+			setError("Passwords do not match.");
 			return;
 		}
 

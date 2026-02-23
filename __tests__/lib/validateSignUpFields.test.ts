@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-import { validatePassword } from "@/lib/validateSignUpFields";
+import { validatePassword, validateEmail } from "@/lib/validateSignUpFields";
 import { MIN_PASSWORD_SIZE } from "@/utils/auth.const";
 
 describe("Validate password function tests", () => {
@@ -26,5 +26,47 @@ describe("Validate password function tests", () => {
 		const correctPassword = "Test123Test123";
 		const result = validatePassword({ newPassword: correctPassword });
 		expect(result).toEqual(null);
+	});
+});
+
+describe("Validate email function tests", () => {
+	it("Correctly handles empty email string", () => {
+		const result = validateEmail({ newEmail: "" });
+		expect(result).toEqual(false);
+	});
+
+	it("Correctly handles missing @ symbol in email", () => {
+		const result = validateEmail({ newEmail: "john.com" });
+		expect(result).toEqual(false);
+	});
+
+	it("Correctly handles missing . symbol in email", () => {
+		const result = validateEmail({ newEmail: "john@gmailcom" });
+		expect(result).toEqual(false);
+	});
+
+	it("Correctly handles missing characters before @ symbol in email", () => {
+		const result = validateEmail({ newEmail: "@gmail.com" });
+		expect(result).toEqual(false);
+	});
+
+	it("Correctly handles missing characters after . symbol in email", () => {
+		const result = validateEmail({ newEmail: "john@gmail." });
+		expect(result).toEqual(false);
+	});
+
+	it("Correctly handles missing character after @ symbol in email", () => {
+		const result = validateEmail({ newEmail: "john@" });
+		expect(result).toEqual(false);
+	});
+
+	it("Correctly handles invalid email structure despite valid characters", () => {
+		const result = validateEmail({ newEmail: "@gmailjohn." });
+		expect(result).toEqual(false);
+	});
+
+	it("Correctly handles valid email address", () => {
+		const result = validateEmail({ newEmail: "john@gmail.com" });
+		expect(result).toEqual(true);
 	});
 });

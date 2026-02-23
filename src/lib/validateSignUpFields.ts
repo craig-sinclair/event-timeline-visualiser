@@ -8,3 +8,14 @@ export function validatePassword({ newPassword }: { newPassword: string }) {
 
 	return null;
 }
+
+export function validateEmail({ newEmail }: { newEmail: string }): boolean {
+	/*
+    Ensures there is:
+    - One or more characters preceding @ symbol
+    - One or more characters after @ symbol
+    - A dot character present 
+    - One or more characters after dot
+    */
+	return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newEmail);
+}
