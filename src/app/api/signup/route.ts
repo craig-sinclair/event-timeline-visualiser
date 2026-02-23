@@ -1,12 +1,27 @@
 import { NextResponse } from "next/server";
 
 import { dbConnect } from "@/lib/mongoose";
+import { validateEmail, validatePassword } from "@/lib/validateSignUpFields";
 import User from "@/models/user";
 import { hashPassword } from "@/services/passwordService";
 
 export async function POST(req: Request) {
+	const { email, password } = await req.json();
+
+	const validEmail = validateEmail({ newEmail: email });
+	if (!validEmail) {
+		return NextResponse.json(
+			{ message: "Please provide a valid e-mail address." },
+			{ status: 500 }
+		);
+	}
+
+	const passwordError = validatePassword({ newPassword: password });
+	if (passwordError) {
+		return NextResponse.json({ message: passwordError }, { status: 500 });
+	}
+
 	try {
-		const { email, password } = await req.json();
 		await dbConnect();
 
 		const existing = await User.findOne({ email });
@@ -15,15 +30,13 @@ export async function POST(req: Request) {
 		}
 
 		const hashed = await hashPassword(password);
-		const user = await User.create({
+		await User.create({
 			email,
 			passwordHash: hashed,
 			authProvider: "password",
-			gdprConsent: true,
-			profileCompleted: false,
 		});
 
-		return NextResponse.json({ message: "User created", user });
+		return NextResponse.json({ message: "User created" }, { status: 201 });
 	} catch (error) {
 		console.error("Signup error:", error);
 		return NextResponse.json({ message: "Internal server error" }, { status: 500 });

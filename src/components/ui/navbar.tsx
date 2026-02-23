@@ -44,21 +44,16 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
 					<div className="relative">
 						<button
 							onClick={toggleDropdown}
-							className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold"
+							className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold cursor-pointer"
 						>
 							{userInitials}
 						</button>
 
 						{dropdownOpen && (
-							<div className="absolute right-0 mt-2 w-40 border rounded shadow-lg z-10">
-								<Link href={"/profile"}>
-									<button className="block w-full text-left px-4 py-2 hover:bg-gray-100">
-										Profile
-									</button>
-								</Link>
+							<div className="absolute right-0 mt-2 w-40 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-10 bg-white dark:bg-gray-900">
 								<button
 									onClick={onSignOut}
-									className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-red-600"
+									className="block w-full text-left px-4 py-2 rounded-md text-red-500 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors duration-150"
 								>
 									Sign Out
 								</button>
