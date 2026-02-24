@@ -20,6 +20,8 @@ const endpointSections = [
 	{ slug: "endpoints/fetch-timelines-in-event-tags", label: "Get Event's Related Timelines" },
 ];
 
+const allSections = [...generalSections, ...endpointSections];
+
 interface Props {
 	searchParams: Promise<{ section?: string }>;
 }
@@ -32,88 +34,107 @@ export default async function DevelopersPage({ searchParams }: Props) {
 	const markdown = fs.readFileSync(filePath, "utf8");
 
 	return (
-		<div className="flex min-h-screen max-w-6xl mx-auto px-8 py-12 gap-12">
-			{/* Sidebar */}
-			<aside className="w-56 shrink-0">
-				<div className="sticky top-8">
-					<p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3 px-3">
-						API Reference
-					</p>
+		<div className="min-h-screen max-w-6xl mx-auto px-4 md:px-8 py-8 md:py-12">
+			{/* Mobile (collapsible links) */}
+			<nav className="md:hidden flex flex-col gap-1 mb-8 pb-6 border-b border-gray-200 dark:border-gray-700">
+				{allSections.map((s) => (
+					<Link
+						key={s.slug}
+						href={`/developers?section=${s.slug}`}
+						className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+							activeSection === s.slug
+								? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+								: "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+						}`}
+					>
+						{s.label}
+					</Link>
+				))}
+			</nav>
 
-					<div className="mb-4 border-b border-gray-200 dark:border-gray-700" />
-
-					<nav className="flex flex-col gap-0.5">
-						{generalSections.map((s) => (
-							<Link
-								key={s.slug}
-								href={`/developers?section=${s.slug}`}
-								className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-all duration-150 ${
-									activeSection === s.slug
-										? "bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white"
-										: "text-gray-500 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/60 dark:hover:text-gray-200"
-								}`}
-							>
-								{activeSection === s.slug && (
-									<span className="w-1 h-1 rounded-full bg-blue-500 shrink-0" />
-								)}
-								{s.label}
-							</Link>
-						))}
-
-						<p className="text-xs font-medium text-gray-400 uppercase tracking-wider px-3 mt-4 mb-1">
-							Endpoints
+			<div className="flex gap-12">
+				{/* Sidebar (desktop) */}
+				<aside className="hidden md:block w-56 shrink-0">
+					<div className="sticky top-8">
+						<p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3 px-3">
+							API Reference
 						</p>
 
 						<div className="mb-4 border-b border-gray-200 dark:border-gray-700" />
 
-						{endpointSections.map((s) => (
-							<Link
-								key={s.slug}
-								href={`/developers?section=${s.slug}`}
-								className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-all duration-150 ${
-									activeSection === s.slug
-										? "bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white"
-										: "text-gray-500 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/60 dark:hover:text-gray-200"
-								}`}
-							>
-								{activeSection === s.slug && (
-									<span className="w-1 h-1 rounded-full bg-blue-500 shrink-0" />
-								)}
-								{s.label}
-							</Link>
-						))}
-					</nav>
-				</div>
-			</aside>
+						<nav className="flex flex-col gap-0.5">
+							{generalSections.map((s) => (
+								<Link
+									key={s.slug}
+									href={`/developers?section=${s.slug}`}
+									className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-all duration-150 ${
+										activeSection === s.slug
+											? "bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white"
+											: "text-gray-500 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/60 dark:hover:text-gray-200"
+									}`}
+								>
+									{activeSection === s.slug && (
+										<span className="w-1 h-1 rounded-full bg-blue-500 shrink-0" />
+									)}
+									{s.label}
+								</Link>
+							))}
 
-			{/* Divider */}
-			<div className="w-px bg-gray-200 dark:bg-gray-700 shrink-0" />
+							<p className="text-xs font-medium text-gray-400 uppercase tracking-wider px-3 mt-4 mb-1">
+								Endpoints
+							</p>
 
-			{/* Content */}
-			<article className={`flex-1 min-w-0 ${styles.docsArticle}`}>
-				<Markdown
-					remarkPlugins={[remarkGfm]}
-					components={{
-						code({ children, className, ...rest }) {
-							const match = /language-(\w+)/.exec(className || "");
-							if (match) {
+							<div className="mb-4 border-b border-gray-200 dark:border-gray-700" />
+
+							{endpointSections.map((s) => (
+								<Link
+									key={s.slug}
+									href={`/developers?section=${s.slug}`}
+									className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-all duration-150 ${
+										activeSection === s.slug
+											? "bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white"
+											: "text-gray-500 hover:text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800/60 dark:hover:text-gray-200"
+									}`}
+								>
+									{activeSection === s.slug && (
+										<span className="w-1 h-1 rounded-full bg-blue-500 shrink-0" />
+									)}
+									{s.label}
+								</Link>
+							))}
+						</nav>
+					</div>
+				</aside>
+
+				{/* Sidebar Divider */}
+				<div className="hidden md:block w-px bg-gray-200 dark:bg-gray-700 shrink-0" />
+
+				{/* Content */}
+				<article className={`flex-1 min-w-0 ${styles.docsArticle}`}>
+					<Markdown
+						remarkPlugins={[remarkGfm]}
+						components={{
+							code({ children, className, ...rest }) {
+								const match = /language-(\w+)/.exec(className || "");
+								if (match) {
+									return (
+										<SyntaxHighlighter language={match[1]} style={vscDarkPlus}>
+											{String(children).replace(/\n$/, "")}
+										</SyntaxHighlighter>
+									);
+								}
 								return (
-									<SyntaxHighlighter language={match[1]} style={vscDarkPlus}>
-										{String(children).replace(/\n$/, "")}
-									</SyntaxHighlighter>
+									<code className={className} {...rest}>
+										{children}
+									</code>
 								);
-							}
-							return (
-								<code className={className} {...rest}>
-									{children}
-								</code>
-							);
-						},
-					}}
-				>
-					{markdown}
-				</Markdown>
-			</article>
+							},
+						}}
+					>
+						{markdown}
+					</Markdown>
+				</article>
+			</div>
 		</div>
 	);
 }

@@ -89,6 +89,8 @@ src/
     timeline/                 # View a specific timeline, defaulting to an appropriate view/style for event display
       [timelineID]/
         page.tsx
+    developer/                # Developer documentation for API usage
+      page.tsx
 
     api/                      # ONLY route handlers here (Next.js conventions)
       /admin              
@@ -155,6 +157,7 @@ src/
 
   hooks/                      # Custom React hooks
     useEventModal.ts            # Contains shared general logic for opening/closing event card and viewing its contents
+    useIsMobile.ts              # Determine if current user is on mobile device or not
 
   utils/                      # Miscellaneous utilities
     event-styles.const.ts       # Stores base styling logic for event cards
@@ -166,7 +169,9 @@ src/
     sample-timelines.json     # JSON document for timelines collection
     sample-covid-data.json    # Example of JSON document for events in a timeline
 
-  __tests__/                  # Unit tests folder
+__tests__/                    # Unit tests folder
+
+content/                      # Contains markdown content for developer documentation
 ```
 
 ## CI/CD
