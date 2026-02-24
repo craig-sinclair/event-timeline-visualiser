@@ -1,9 +1,9 @@
 # Timelines
-Base path: `/api/timelines`
+Base path: `/api/fetch-timelines`
 
 ---
 
-## GET /api/timelines
+## GET /api/fetch-timelines
 Returns a list of all timelines stored in the database.
 
 **Authentication**: Required
@@ -12,7 +12,7 @@ Returns a list of all timelines stored in the database.
 
 **Example Request**
 ```bash
-curl https://event-timeline-visualiser.vercel.app/api/timelines \
+curl https://event-timeline-visualiser.vercel.app/api/fetch-timelines \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 

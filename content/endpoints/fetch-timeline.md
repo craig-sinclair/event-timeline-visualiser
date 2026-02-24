@@ -1,9 +1,9 @@
 # Fetch Timeline by ID
-Base path: `/api/timelines/[timelineID]`
+Base path: `/api/fetch-timeline/[timelineID]`
 
 ---
 
-## GET /api/timelines/[timelineID]
+## GET /api/fetch-timeline/[timelineID]
 Returns a single timeline by its MongoDB ObjectId.
 
 **Authentication**: Required
@@ -16,7 +16,7 @@ Returns a single timeline by its MongoDB ObjectId.
 
 **Example Request**
 ```bash
-curl https://event-timeline-visualiser.vercel.app/api/timelines/<timeline-id> \
+curl https://event-timeline-visualiser.vercel.app/api/fetch-timeline/<timeline-id> \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -27,12 +27,12 @@ curl https://event-timeline-visualiser.vercel.app/api/timelines/<timeline-id> \
   "message": "Successfully fetched timeline from database",
   "timelines": [
     {
-      "_id": "699460429ee0817db37f2c7b",
+      "_id": "123",
       "title": "US Response to Climate Change",
       "shortName": "US",
       "events": [
-        "699460429ee0817db37f2c52",
-        "699460429ee0817db37f2c53"
+        "001",
+        "002"
       ],
       "discussionID": 999,
       "leftLabel": "Climate Skepticism",

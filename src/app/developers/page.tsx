@@ -13,6 +13,7 @@ const generalSections = [{ slug: "index", label: "Overview" }];
 const endpointSections = [
 	{ slug: "endpoints/fetch-timelines", label: "Get all Timelines" },
 	{ slug: "endpoints/fetch-timeline", label: "Get Timeline by ID" },
+	{ slug: "endpoints/fetch-events", label: "Get Events in Timeline" },
 ];
 
 interface Props {
@@ -58,6 +59,9 @@ export default async function DevelopersPage({ searchParams }: Props) {
 						<p className="text-xs font-medium text-gray-400 uppercase tracking-wider px-3 mt-4 mb-1">
 							Endpoints
 						</p>
+
+						<div className="mb-4 border-b border-gray-200 dark:border-gray-700" />
+
 						{endpointSections.map((s) => (
 							<Link
 								key={s.slug}
