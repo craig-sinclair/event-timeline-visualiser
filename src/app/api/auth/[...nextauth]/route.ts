@@ -27,18 +27,24 @@ const handler = NextAuth({
 				const valid = await comparePassword(credentials!.password, user.passwordHash!);
 				if (!valid) return null;
 
-				return { id: user._id.toString(), email: user.email, name: user.name };
+				return {
+					id: user._id.toString(),
+					email: user.email,
+					displayName: user.displayName,
+				};
 			},
 		}),
 	],
 	callbacks: {
 		async jwt({ token, user }) {
 			if (user?.id) token.id = user.id;
+			if (user?.displayName) token.displayName = user.displayName;
 			return token;
 		},
 		async session({ session, token }) {
 			if (session.user && typeof token?.id === "string") {
 				session.user.id = token.id;
+				session.user.displayName = token.displayName as string;
 			}
 			return session;
 		},

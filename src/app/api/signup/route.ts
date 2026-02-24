@@ -6,7 +6,7 @@ import User from "@/models/user";
 import { hashPassword } from "@/services/passwordService";
 
 export async function POST(req: Request) {
-	const { email, password } = await req.json();
+	const { email, password, displayName } = await req.json();
 
 	const validEmail = validateEmail({ newEmail: email });
 	if (!validEmail) {
@@ -34,6 +34,7 @@ export async function POST(req: Request) {
 			email,
 			passwordHash: hashed,
 			authProvider: "password",
+			displayName: displayName,
 		});
 
 		return NextResponse.json({ message: "User created" }, { status: 201 });

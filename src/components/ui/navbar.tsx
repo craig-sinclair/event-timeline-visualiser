@@ -18,8 +18,9 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
 
 	const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-	const userInitials = session?.user?.name
-		? session.user.name
+	console.log(session);
+	const userInitials = session?.user?.displayName
+		? session.user.displayName
 				.split(" ")
 				.map((n) => n[0])
 				.join("")
@@ -44,7 +45,7 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
 					<div className="relative">
 						<button
 							onClick={toggleDropdown}
-							className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold cursor-pointer"
+							className="w-10 h-10 rounded-full bg-blue-600 dark:bg-blue-500 ml-1 md:ml-3 text-white flex items-center justify-center font-semibold font-serif cursor-pointer"
 						>
 							{userInitials}
 						</button>

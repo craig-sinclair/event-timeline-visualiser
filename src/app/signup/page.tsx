@@ -10,6 +10,7 @@ export default function SignupPage() {
 	const router = useRouter();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [displayName, setDisplayName] = useState("");
 	const [repeatPassword, setRepeatPassword] = useState("");
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
@@ -35,13 +36,18 @@ export default function SignupPage() {
 			return;
 		}
 
+		if (!displayName || displayName.length < 1) {
+			setError("Please enter a valid display name");
+			return;
+		}
+
 		setLoading(true);
 
 		try {
 			const res = await fetch("/api/signup", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ email, password }),
+				body: JSON.stringify({ email, password, displayName }),
 			});
 
 			if (!res.ok) {
@@ -70,13 +76,20 @@ export default function SignupPage() {
 			{error && <p className="text-red-500">{error}</p>}
 
 			<form onSubmit={handleSubmit} className="space-y-4 p-6 rounded shadow max-w-xl">
-				<h2 className="text-xl font-semibold">Email + Password</h2>
-
 				<input
 					type="email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 					placeholder="Email"
+					className="border rounded w-full p-2"
+					required
+				/>
+
+				<input
+					type="text"
+					value={displayName}
+					onChange={(e) => setDisplayName(e.target.value)}
+					placeholder="Display Name"
 					className="border rounded w-full p-2"
 					required
 				/>
