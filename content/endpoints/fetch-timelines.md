@@ -1,4 +1,4 @@
-# Timelines
+# Fetch all Timelines
 Base path: `/api/fetch-timelines`
 
 ---
