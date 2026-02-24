@@ -4,10 +4,13 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 
+import { validatePassword, validateEmail, validateDisplayName } from "@/lib/validateSignUpFields";
+
 export default function SignupPage() {
 	const router = useRouter();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [displayName, setDisplayName] = useState("");
 	const [repeatPassword, setRepeatPassword] = useState("");
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
@@ -16,19 +19,36 @@ export default function SignupPage() {
 		e.preventDefault();
 		setError("");
 
+		const passwordError = validatePassword({ newPassword: password });
+		if (passwordError) {
+			setError(passwordError);
+			return;
+		}
+
+		const validEmail = validateEmail({ newEmail: email });
+		if (!validEmail) {
+			setError("Please enter a valid e-mail address.");
+			return;
+		}
+
+		const displayNameError = validateDisplayName({ newDisplayName: displayName });
+		if (displayNameError) {
+			setError(displayNameError);
+			return;
+		}
+
 		if (password !== repeatPassword) {
-			setError("Passwords do not match");
+			setError("Passwords do not match.");
 			return;
 		}
 
 		setLoading(true);
 
 		try {
-			// Call your API route to create the user
 			const res = await fetch("/api/signup", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ email, password }),
+				body: JSON.stringify({ email, password, displayName }),
 			});
 
 			if (!res.ok) {
@@ -37,8 +57,8 @@ export default function SignupPage() {
 			}
 
 			// Automatically sign in the user after signup
-			await signIn("credentials", { email, password, redirect: false });
-			router.push("/profile-setup"); // redirect to profile setup
+			await signIn("email-password", { email, password, redirect: false });
+			router.push("/dashboard");
 		} catch (err) {
 			if (err instanceof Error) {
 				setError(err.message);
@@ -57,13 +77,20 @@ export default function SignupPage() {
 			{error && <p className="text-red-500">{error}</p>}
 
 			<form onSubmit={handleSubmit} className="space-y-4 p-6 rounded shadow max-w-xl">
-				<h2 className="text-xl font-semibold">Email + Password</h2>
-
 				<input
 					type="email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 					placeholder="Email"
+					className="border rounded w-full p-2"
+					required
+				/>
+
+				<input
+					type="text"
+					value={displayName}
+					onChange={(e) => setDisplayName(e.target.value)}
+					placeholder="Display Name"
 					className="border rounded w-full p-2"
 					required
 				/>
@@ -89,9 +116,13 @@ export default function SignupPage() {
 				<button
 					type="submit"
 					disabled={loading}
-					className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 cursor-pointer"
+					className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 cursor-pointer disabled:cursor-not-allowed disabled:opacity-70 flex items-center justify-center transition-opacity duration-150"
 				>
-					{loading ? "Signing up..." : "Sign Up"}
+					{loading ? (
+						<div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+					) : (
+						"Sign Up"
+					)}
 				</button>
 
 				<p className="text-md">
