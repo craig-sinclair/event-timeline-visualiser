@@ -10,7 +10,10 @@ import remarkGfm from "remark-gfm";
 import styles from "./page.module.css";
 
 const generalSections = [{ slug: "index", label: "Overview" }];
-const endpointSections = [{ slug: "endpoints/fetch-timelines", label: "Get all Timelines" }];
+const endpointSections = [
+	{ slug: "endpoints/fetch-timelines", label: "Get all Timelines" },
+	{ slug: "endpoints/fetch-timeline", label: "Get Timeline by ID" },
+];
 
 interface Props {
 	searchParams: Promise<{ section?: string }>;
