@@ -1,0 +1,102 @@
+.docsArticle h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.docsArticle h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.docsArticle h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.docsArticle p {
+  margin: 1rem 0;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+.docsArticle strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.docsArticle hr {
+  border: none;
+  border-top: 1px solid var(--borderColour);
+  margin: 2rem 0;
+}
+
+.docsArticle a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.docsArticle a:hover {
+  text-decoration: underline;
+}
+
+.docsArticle ul {
+  list-style: inherit;
+}
+
+/* Inline code only — excludes syntax highlighted blocks */
+.docsArticle :not(pre) > code {
+  background: var(--lightSecondary);
+  color: var(--foreground);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: ui-monospace, monospace;
+  border: 1px solid var(--borderColour);
+}
+
+.docsArticle table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+  border: 1px solid var(--borderColour);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.docsArticle thead {
+  background: var(--lightSecondary);
+}
+
+.docsArticle th {
+  text-align: left;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--borderColour);
+}
+
+.docsArticle td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--borderColour);
+  color: var(--foreground);
+  vertical-align: top;
+}
+
+.docsArticle tr:last-child td {
+  border-bottom: none;
+}
+
+.docsArticle tbody tr:hover {
+  background: var(--darkSecondary);
+}
