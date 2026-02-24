@@ -1,13 +1,13 @@
 import { describe, it, expect } from "vitest";
 
-import { validatePassword, validateEmail } from "@/lib/validateSignUpFields";
-import { MIN_PASSWORD_SIZE } from "@/utils/auth.const";
+import { validatePassword, validateEmail, validateDisplayName } from "@/lib/validateSignUpFields";
+import { MIN_PASSWORD_SIZE, MAX_DISPLAY_NAME_LENGTH } from "@/utils/auth.const";
 
 describe("Validate password function tests", () => {
 	it("Correctly handles input smaller than min password size", () => {
 		const incorrectPassword = "a".repeat(MIN_PASSWORD_SIZE - 1);
 		const result = validatePassword({ newPassword: incorrectPassword });
-		expect(result).toEqual("Password must contain at least 6 characters.");
+		expect(result).toEqual(`Password must contain at least ${MIN_PASSWORD_SIZE} characters.`);
 	});
 
 	it("Correctly handles missing uppercase letter", () => {
@@ -68,5 +68,25 @@ describe("Validate email function tests", () => {
 	it("Correctly handles valid email address", () => {
 		const result = validateEmail({ newEmail: "john@gmail.com" });
 		expect(result).toEqual(true);
+	});
+});
+
+describe("Validate display name tests", () => {
+	it("Correctly handles empty display name", () => {
+		const result = validateDisplayName({ newDisplayName: "" });
+		expect(result).toEqual("Display name field empty.");
+	});
+
+	it("Correctly handles display names beyond max size", () => {
+		const incorrectDisplayName = "a".repeat(MAX_DISPLAY_NAME_LENGTH + 1);
+		const result = validateDisplayName({ newDisplayName: incorrectDisplayName });
+		expect(result).toEqual(
+			`Display name has max. length of ${MAX_DISPLAY_NAME_LENGTH} characters.`
+		);
+	});
+
+	it("Correctly handles valid display names", () => {
+		const result = validateDisplayName({ newDisplayName: "test" });
+		expect(result).toEqual(null);
 	});
 });

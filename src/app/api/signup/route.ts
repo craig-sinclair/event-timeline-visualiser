@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { dbConnect } from "@/lib/mongoose";
-import { validateEmail, validatePassword } from "@/lib/validateSignUpFields";
+import { validateEmail, validatePassword, validateDisplayName } from "@/lib/validateSignUpFields";
 import User from "@/models/user";
 import { hashPassword } from "@/services/passwordService";
 
@@ -18,6 +18,11 @@ export async function POST(req: Request) {
 
 	const passwordError = validatePassword({ newPassword: password });
 	if (passwordError) {
+		return NextResponse.json({ message: passwordError }, { status: 500 });
+	}
+
+	const displayNameError = validateDisplayName({ newDisplayName: displayName });
+	if (displayNameError) {
 		return NextResponse.json({ message: passwordError }, { status: 500 });
 	}
 

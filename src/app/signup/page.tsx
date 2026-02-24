@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 
-import { validatePassword, validateEmail } from "@/lib/validateSignUpFields";
+import { validatePassword, validateEmail, validateDisplayName } from "@/lib/validateSignUpFields";
 
 export default function SignupPage() {
 	const router = useRouter();
@@ -31,13 +31,14 @@ export default function SignupPage() {
 			return;
 		}
 
-		if (password !== repeatPassword) {
-			setError("Passwords do not match.");
+		const displayNameError = validateDisplayName({ newDisplayName: displayName });
+		if (displayNameError) {
+			setError(displayNameError);
 			return;
 		}
 
-		if (!displayName || displayName.length < 1) {
-			setError("Please enter a valid display name");
+		if (password !== repeatPassword) {
+			setError("Passwords do not match.");
 			return;
 		}
 
