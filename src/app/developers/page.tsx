@@ -17,6 +17,7 @@ const endpointSections = [
 	{ slug: "endpoints/fetch-media-topics-in-timeline", label: "Get Media Topics in Timeline" },
 	{ slug: "endpoints/fetch-events-in-topic", label: "Get Events by Media Topic" },
 	{ slug: "endpoints/fetch-topic-hierarchy", label: "Get Media Topic Hierarchy" },
+	{ slug: "endpoints/fetch-timelines-in-event-tags", label: "Get Event's Related Timelines" },
 ];
 
 interface Props {
