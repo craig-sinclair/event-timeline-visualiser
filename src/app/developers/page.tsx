@@ -14,7 +14,8 @@ const endpointSections = [
 	{ slug: "endpoints/fetch-timelines", label: "Get all Timelines" },
 	{ slug: "endpoints/fetch-timeline", label: "Get Timeline by ID" },
 	{ slug: "endpoints/fetch-events", label: "Get Events in Timeline" },
-	{ slug: "endpoints/fetch-media-topics-in-timeline", label: "Get Timeline Media Topics" },
+	{ slug: "endpoints/fetch-media-topics-in-timeline", label: "Get Media Topics in Timeline" },
+	{ slug: "endpoints/fetch-events-in-topic", label: "Get Events by Media Topic" },
 ];
 
 interface Props {
