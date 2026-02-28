@@ -87,7 +87,7 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
 							<div className="absolute right-0 mt-2 w-40 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-10 bg-white dark:bg-gray-900">
 								<button
 									onClick={onSignOut}
-									className="block w-full text-left px-4 py-2 rounded-md text-red-500 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors duration-150"
+									className="block w-full text-left px-2 py-1 md:px-4 md:py-2 rounded-md text-red-500 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors duration-150"
 								>
 									Sign Out
 								</button>
@@ -97,7 +97,7 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
 				) : (
 					// Not yet signed in; display 'Sign In' button
 					<Link href={"/signin"}>
-						<button className="rounded bg-blue-600 px-3 py-1 text-white hover:bg-blue-700 cursor-pointer">
+						<button className="rounded bg-blue-600 px-1 md:px-3 py-1 text-sm md:text-base text-white hover:bg-blue-700 cursor-pointer">
 							Sign In
 						</button>
 					</Link>

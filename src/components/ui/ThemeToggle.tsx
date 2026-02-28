@@ -20,18 +20,18 @@ export default function ThemeToggle() {
 	return (
 		<button
 			onClick={() => setTheme(isDark ? "light" : "dark")}
-			className="relative h-7 w-14 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-200 ease-in-out cursor-pointer"
+			className="relative h-6 w-12 md:h-7 md:w-14 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-200 ease-in-out cursor-pointer"
 			aria-label="Toggle theme"
 		>
 			<div
-				className={`absolute top-0.5 h-6 w-6 rounded-full bg-white dark:bg-gray-900 shadow-md transform transition-transform duration-200 ease-in-out flex items-center justify-center ${
+				className={`absolute top-0.5 h-5 w-5 md:h-6 md:w-6 rounded-full bg-white dark:bg-gray-900 shadow-md transform transition-transform duration-200 ease-in-out flex items-center justify-center ${
 					isDark ? "translate-x-7" : "translate-x-0.5"
 				}`}
 			>
 				<div className="transition-transform duration-200 ease-in-out">
 					{isDark ? (
 						<svg
-							className="h-3.5 w-3.5 text-gray-100 rotate-0 transition-transform duration-200"
+							className="h-3 md:h-3.5 w-3 md:w-3.5 text-gray-100 rotate-0 transition-transform duration-200"
 							fill="currentColor"
 							viewBox="0 0 20 20"
 						>
@@ -39,7 +39,7 @@ export default function ThemeToggle() {
 						</svg>
 					) : (
 						<svg
-							className="h-3.5 w-3.5 text-gray-800 rotate-0 transition-transform duration-200"
+							className="h-3 md:h-3.5 w-3 text-gray-800 rotate-0 transition-transform duration-200"
 							fill="currentColor"
 							viewBox="0 0 20 20"
 						>
