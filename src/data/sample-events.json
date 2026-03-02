@@ -76,7 +76,9 @@
     "relevance": 0.65,
     "furtherDescription": "Britain Stronger in Europe (the official Remain campaign) published a government-funded leaflet costing £9.3 million that was delivered to households across the UK. The leaflet argued that Brexit would raise living costs, hit jobs, reduce living standards, and lead to 'a decade or more of uncertainty'. The use of public funds for this campaign material was controversial.",
     "URLs": [
-      "https://en.wikipedia.org/wiki/Pro-EU_leaflet"
+      "https://en.wikipedia.org/wiki/Pro-EU_leaflet",
+      "https://www.theguardian.com/politics/2016/apr/07/9m-pro-eu-leaflet-is-necessary-and-right-says-cameron",
+      "https://www.theguardian.com/politics/2016/apr/06/cameron-to-push-case-remain-eu-with-9m-taxpayer-funded-publicity-blitz"
     ],
     "tags": [],
     "qcode": [
@@ -99,23 +101,6 @@
       "11000000",
       "20000580",
       "20000543"
-    ],
-    "side": 0
-  },
-  {
-    "overview": "Nigel Farage claimed Brexit would allow UK to take back control of its borders",
-    "dateTime": "2016-04-15T12:00:00Z",
-    "relevance": 0.9,
-    "furtherDescription": "UKIP leader Nigel Farage made border control and immigration a central message of the Leave campaign, arguing that EU membership prevented the UK from controlling who entered the country. This 'take back control' message became one of the most resonant themes of the Brexit campaign, focusing heavily on concerns about immigration levels.",
-    "URLs": [
-      "https://www.independent.co.uk/news/uk/politics/eu-referendum-nigel-farage-borders-control-immigration-a6985061.html"
-    ],
-    "tags": [],
-    "qcode": [
-      "11000000",
-      "20000580",
-      "20000616",
-      "20000621"
     ],
     "side": 0
   },
@@ -159,9 +144,10 @@
     "overview": "David Cameron argued leaving EU would threaten national security",
     "dateTime": "2016-05-09T14:00:00Z",
     "relevance": 0.82,
-    "furtherDescription": "Prime Minister Cameron suggested that EU membership allowed Britain to work more closely with European allies against terrorism and other security threats. He argued that cooperation through EU institutions like Europol made the UK safer and that leaving would weaken Britain's ability to combat international crime and terrorism.",
+    "furtherDescription": "Prime Minister Cameron made the security case for Remain in a speech at the British Museum, arguing that EU membership helped preserve peace and stability in Europe. He warned that leaving would be an 'abject act of national retreat' and that weakening the EU risked destabilising less democratic nations on its borders. Leave campaigners dismissed his warnings as historically illiterate scaremongering.",
     "URLs": [
-      "https://www.ft.com/content/5bb7f0ec-14fa-11e6-9d98-00386a18e39d"
+      "https://www.theguardian.com/politics/2016/may/09/david-cameron-rejects-claims-of-hyperbole-over-brexit-risks",
+      "https://www.gov.uk/government/speeches/pm-speech-on-the-uks-strength-and-security-in-the-eu-9-may-2016"
     ],
     "tags": [],
     "qcode": [
@@ -177,7 +163,7 @@
     "relevance": 0.75,
     "furtherDescription": "Leave campaigners argued that outside the EU, the UK would be free to negotiate its own trade agreements with non-EU countries, including fast-growing economies like China and India. They claimed the UK was being held back by the EU's cumbersome collective trade negotiation process and could secure better deals independently.",
     "URLs": [
-      "https://www.telegraph.co.uk/news/2016/05/15/brexit-would-allow-uk-to-strike-trade-deals-globally-say-leave-c/"
+      "https://www.bbc.co.uk/news/uk-politics-eu-referendum-36534802"
     ],
     "tags": [],
     "qcode": [
@@ -191,11 +177,12 @@
   },
   {
     "overview": "Boris Johnson argued EU was undermining British democracy",
-    "dateTime": "2016-05-16T09:00:00Z",
+    "dateTime": "2016-05-09T09:00:00Z",
     "relevance": 0.84,
     "furtherDescription": "Former London Mayor Boris Johnson framed Brexit as reclaiming democracy, arguing that decisions affecting Britain should not be made by unelected EU bureaucrats in Brussels. He claimed the EU was a threat to self-government and that British laws should be made by British parliamentarians accountable to British voters.",
     "URLs": [
-      "https://www.telegraph.co.uk/news/2016/05/16/boris-johnson-eu-undermining-democracy/"
+      "https://www.bbc.co.uk/news/uk-politics-36246146",
+      "https://www.theguardian.com/politics/2016/may/09/boris-johnson-cameron-cant-cut-immigration-and-stay-in-eu"
     ],
     "tags": [],
     "qcode": [
@@ -246,7 +233,8 @@
     "relevance": 0.78,
     "furtherDescription": "Opponents of Brexit argued that leaving would destabilize the housing market and increase unemployment. Economic modeling suggested property values could fall significantly and that businesses would cut jobs or relocate to continental Europe. Critics labeled this strategy 'Project Fear'.",
     "URLs": [
-      "https://www.independent.co.uk/news/uk/politics/eu-referendum-brexit-house-prices-job-losses-remain-campaign-a7042196.html"
+      "https://www.theguardian.com/politics/2016/may/20/eu-referendum-george-osborne-house-prices-brexit",
+      "https://www.itv.com/news/2016-05-20/brexit-would-cause-house-prices-to-plummet-by-up-to-18-report-warns"
     ],
     "tags": [],
     "qcode": [
@@ -335,7 +323,6 @@
     "relevance": 0.93,
     "furtherDescription": "UKIP leader Nigel Farage unveiled a controversial poster showing a queue of refugees and migrants at the Slovenia-Croatia border in 2015 under the headline 'Breaking Point' and the slogan 'The EU has failed us all'. The poster was widely condemned across the political spectrum, with Chancellor George Osborne calling it 'disgusting and vile' with 'echoes of literature used in the 1930s'. Even Leave campaigner Michael Gove said he 'shuddered' when he saw it. The poster was part of a £100,000 campaign and was reported to police for alleged incitement of racial hatred.",
     "URLs": [
-      "https://en.wikipedia.org/wiki/Breaking_Point_(UKIP_poster)",
       "https://www.itv.com/news/2016-06-19/gove-i-shuddered-at-farages-migrant-breaking-point-poster"
     ],
     "tags": [],
@@ -353,7 +340,6 @@
     "relevance": 0.98,
     "furtherDescription": "Labour MP Jo Cox, a prominent Remain supporter and advocate for Syrian refugees, was shot and stabbed multiple times outside a library in Birstall, West Yorkshire, where she was about to hold a constituency surgery. Her attacker, Thomas Mair, was a 53-year-old white supremacist with Nazi sympathies who shouted 'Britain first' during the attack. Cox died shortly after at Leeds General Infirmary. Both referendum campaigns immediately suspended activities as a mark of respect. The killing was later ruled an act of terrorism, and Mair was sentenced to life imprisonment. The murder shocked the nation and temporarily changed the tone of the referendum debate, with Jo Cox's husband Brendan stating she had been deeply troubled by the divisive tone of the campaign.",
     "URLs": [
-      "https://en.wikipedia.org/wiki/Murder_of_Jo_Cox",
       "https://www.nbcnews.com/storyline/brexit-referendum/thomas-mair-guilty-killing-u-k-lawmaker-jo-cox-n687566",
       "https://www.aljazeera.com/news/2016/6/17/killing-of-mp-jo-cox-halts-brexit-campaigning-in-uk"
     ],
@@ -373,7 +359,6 @@
     "relevance": 0.85,
     "furtherDescription": "Following the murder of Jo Cox, both the Remain and Leave campaigns suspended all activities for a second day as a mark of respect. Prime Minister David Cameron cancelled a planned rally in Gibraltar. The BBC cancelled political programmes including Question Time and This Week. A minute's silence was observed across the UK. Campaigning resumed on 19 June, with politicians calling for a more respectful tone in the final days before the vote.",
     "URLs": [
-      "https://en.wikipedia.org/wiki/Jo_Cox",
       "https://www.aljazeera.com/news/2016/6/17/killing-of-mp-jo-cox-halts-brexit-campaigning-in-uk"
     ],
     "tags": [],
@@ -389,8 +374,8 @@
     "relevance": 1.0,
     "furtherDescription": "The United Kingdom held a referendum on continued EU membership, with 51.89% voting to leave and 48.11% voting to remain. Turnout was 72.2%, one of the highest for any UK vote. England and Wales voted to leave (except London), while Scotland, Northern Ireland, and Gibraltar voted to remain. The result was unexpected by many pollsters and financial markets. Sterling hit a 2016 high of $1.5018 early on referendum day based on exit polls suggesting Remain would win, but when the Sunderland result showed an unexpected swing to Leave, the pound plummeted to $1.3777, its lowest level since 1985.",
     "URLs": [
-      "https://en.wikipedia.org/wiki/2016_United_Kingdom_European_Union_membership_referendum",
-      "https://www.gov.uk/government/topical-events/eu-referendum"
+      "https://www.gov.uk/government/topical-events/eu-referendum",
+      "https://www.bbc.co.uk/news/politics/eu_referendum/results"
     ],
     "tags": [],
     "qcode": [
@@ -407,8 +392,7 @@
     "relevance": 0.96,
     "furtherDescription": "Following the Leave vote, Prime Minister David Cameron announced his resignation outside 10 Downing Street, saying 'I don't think it would be right for me to try to be the captain that steers our country to its next destination.' He said he would remain in post until October to allow the Conservative Party to choose a successor. The pound fell to a 31-year low of $1.32 when markets opened on Monday. The Bank of England pledged to support the financial system amid market turmoil.",
     "URLs": [
-      "https://www.gov.uk/government/topical-events/eu-referendum",
-      "https://en.wikipedia.org/wiki/Brexit"
+      "https://www.gov.uk/government/topical-events/eu-referendum"
     ],
     "tags": [],
     "qcode": [
