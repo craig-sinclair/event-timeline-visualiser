@@ -8,6 +8,8 @@ import About from "@/components/About";
 
 export default function Page() {
 	const [navbarHeight, setNavbarHeight] = useState(0);
+	const [showChevronDown, setShowChevronDown] = useState(true);
+	const HIDE_CHEVRON_SCROLL_LIMIT = 100;
 
 	useEffect(() => {
 		const update = () => {
@@ -17,6 +19,13 @@ export default function Page() {
 		update();
 		window.addEventListener("resize", update);
 		return () => window.removeEventListener("resize", update);
+	}, []);
+
+	// Hide chevron down icon (to about page) when scroll down far enough
+	useEffect(() => {
+		const handleScroll = () => setShowChevronDown(window.scrollY < HIDE_CHEVRON_SCROLL_LIMIT);
+		window.addEventListener("scroll", handleScroll, { passive: true });
+		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
 	const scrollToAboutSection = () => {
@@ -56,6 +65,11 @@ export default function Page() {
 					onClick={scrollToAboutSection}
 					aria-label="Scroll to About section"
 					className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[var(--foreground)] opacity-80 hover:opacity-80 transition-opacity duration-300 group cursor-pointer"
+					style={{
+						opacity: showChevronDown ? 1 : 0,
+						pointerEvents: showChevronDown ? "auto" : "none",
+						transition: "opacity 0.4s ease",
+					}}
 				>
 					<span className="text-xs font-medium uppercase tracking-widest">
 						Learn more
