@@ -1,7 +1,7 @@
 [
   {
     "overview": "Climate Change Act 2008 Passed",
-    "dateTime": "2008-11-26",
+    "dateTime": "2008-11-26T00:00:00Z",
     "furtherDescription": "The UK became the first country in the world to set legally binding long-term emissions reduction targets. The Climate Change Act committed the UK to reducing greenhouse gas emissions by at least 80% by 2050 relative to 1990 levels, and established a framework of five-year carbon budgets. The Act also created the independent Climate Change Committee to advise the government and monitor progress. This groundbreaking legislation set a template for climate action globally and established the UK as an international leader on climate policy.",
     "relevance": 0.95,
     "URLs": [
@@ -23,7 +23,7 @@
   },
   {
     "overview": "Government Advertising Encouraged Less Flying and Lower-Carbon Behaviors",
-    "dateTime": "2009-03-15",
+    "dateTime": "2009-03-15T00:00:00Z",
     "furtherDescription": "The government ran campaigns under the 'Act on CO2' initiative encouraging people to reduce flying and adopt lower-carbon behaviors such as switching off lights and reducing home heating. The campaign included TV advertisements and a website with carbon calculators. However, these campaigns were quietly dropped amid political concerns about appearing anti-growth and pressure from the aviation and business industries, who argued the messaging was damaging to the economy. This marked an early example of the tension between climate action and economic growth concerns.",
     "relevance": 0.64,
     "URLs": [
@@ -44,7 +44,7 @@
   },
   {
     "overview": "Nigel Lawson Forms Global Warming Policy Foundation",
-    "dateTime": "2009-11-23",
+    "dateTime": "2009-11-23T00:00:00Z",
     "furtherDescription": "Former Conservative Chancellor Nigel Lawson established the Global Warming Policy Foundation (GWPF), a think tank skeptical of climate change policies and the costs of climate action. The organization has been influential in questioning the necessity of aggressive climate measures and providing a platform for climate skepticism in UK policy debates. The GWPF has been criticized for lacking transparency about its funding sources and for promoting views that contradict mainstream climate science. It represents a significant counter-movement to climate policy and has influenced Conservative Party thinking on net zero costs.",
     "relevance": 0.75,
     "URLs": [
@@ -65,7 +65,7 @@
   },
   {
     "overview": "Woodland Carbon Code Established",
-    "dateTime": "2011-08-01",
+    "dateTime": "2011-08-01T00:00:00Z",
     "furtherDescription": "The UK government launched the Woodland Carbon Code, the world's first voluntary standard for woodland creation projects that allows carbon sequestration to be quantified and verified. This created a robust framework for carbon offsetting through forestry and helped develop a market for woodland carbon credits. The Code provides assurance that the climate benefits claimed by tree planting projects are real, measurable, and additional. It has since been adopted as a model by other countries and has enabled over 100 projects covering thousands of hectares of new woodland.",
     "relevance": 0.71,
     "URLs": [
@@ -85,7 +85,7 @@
   },
   {
     "overview": "Carbon Price Floor Introduced",
-    "dateTime": "2013-04-01",
+    "dateTime": "2013-04-01T00:00:00Z",
     "furtherDescription": "The UK introduced a carbon price floor, setting a minimum price on carbon emissions from electricity generation to provide certainty for low-carbon investment. Starting at £16 per tonne of CO2, this policy made coal power significantly more expensive and accelerated the decline of coal generation while making renewables and nuclear more competitive. The carbon price floor is credited as one of the most effective policies in driving the UK's dramatic reduction in coal use. However, it was later frozen in 2016 to avoid penalizing energy-intensive industries and affecting competitiveness. Despite this freeze, it remains a key policy tool in the UK's decarbonization strategy.",
     "relevance": 0.83,
     "URLs": [
@@ -108,7 +108,7 @@
   },
   {
     "overview": "Zero Carbon Homes Policy Scrapped",
-    "dateTime": "2015-07-10",
+    "dateTime": "2015-07-10T00:00:00Z",
     "furtherDescription": "The Conservative government scrapped the Zero Carbon Homes standard, which would have required all new homes built from 2016 onwards to be zero carbon through a combination of energy efficiency measures and renewable energy. The policy, first announced in 2006, had been due to take effect within months. Environmental groups condemned this as a major setback for reducing emissions from the housing sector, which accounts for around 20% of UK emissions. The housing industry had largely welcomed the decision, claiming the standards would add excessive costs to new builds. This reversal highlighted tensions between climate ambitions and concerns about housing affordability and construction industry competitiveness.",
     "relevance": 0.68,
     "URLs": [
@@ -129,7 +129,7 @@
   },
   {
     "overview": "Coal Phase-Out Announcement",
-    "dateTime": "2015-11-18",
+    "dateTime": "2015-11-18T00:00:00Z",
     "furtherDescription": "Energy Secretary Amber Rudd announced plans to phase out all unabated coal-fired power stations in Great Britain by 2025, marking a decisive shift away from coal. In her landmark speech, Rudd stated that coal power was incompatible with climate targets and that the UK would lead the world in clean energy transition. The announcement set in motion the closure of remaining coal plants and positioned the UK to become the first major economy to eliminate coal power. However, critics noted that support for gas infrastructure continued, and environmental groups argued the government was not doing enough to replace coal with renewables rather than gas.",
     "relevance": 0.85,
     "URLs": [
@@ -151,7 +151,7 @@
   },
   {
     "overview": "Cancellation of Carbon Capture Competition",
-    "dateTime": "2015-11-25",
+    "dateTime": "2015-11-25T00:00:00Z",
     "furtherDescription": "The government unexpectedly cancelled a £1 billion carbon capture and storage (CCS) competition that had been running since 2012, just weeks before winners were to be announced. Two major projects at Peterhead in Scotland and the White Rose project in Yorkshire had been competing for the funding. The decision disappointed industry leaders and environmental groups, who viewed CCS as essential for decarbonizing heavy industry and potentially continuing to use gas power stations. The cancellation was seen as undermining the UK's position as a leader in green technology development and jeopardizing future investment in CCS. It marked a significant policy reversal that set back UK CCS development by years.",
     "relevance": 0.70,
     "URLs": [
@@ -172,7 +172,7 @@
   },
   {
     "overview": "Solar Subsidy Cuts Devastate Industry",
-    "dateTime": "2015-12-17",
+    "dateTime": "2015-12-17T00:00:00Z",
     "furtherDescription": "The government announced it would slash subsidies for solar power by 65%, effective from January 2016, reducing the Feed-in Tariff from 12.9p per kWh to 4.4p per kWh. The solar industry warned this would destroy jobs and halt the UK's solar energy growth, with some companies describing it as an 'existential threat'. Solar installations fell by over 90% in subsequent years, dropping from around 4GW of new capacity in 2015 to just 0.4GW in 2019. The policy was criticized as short-sighted, particularly given falling costs of solar panels and the technology's potential for distributed generation. It represented a significant setback for the UK's renewable energy transition and contrasted sharply with growing solar deployment in other countries.",
     "relevance": 0.79,
     "URLs": [
@@ -194,7 +194,7 @@
   },
   {
     "overview": "Green Investment Bank Privatized",
-    "dateTime": "2017-03-23",
+    "dateTime": "2017-03-23T00:00:00Z",
     "furtherDescription": "The government sold the Green Investment Bank (GIB) to Australian infrastructure group Macquarie for £2.3 billion, despite warnings from environmental groups that privatization would weaken its green mandate. Originally established in 2012 with £3.8 billion of public money to catalyze private investment in low-carbon projects, the GIB had invested in offshore wind, waste-to-energy, and energy efficiency projects. Environmental campaigners argued the bank was finally gaining momentum and that selling it represented a false economy. The sale included some environmental protections, but critics questioned whether Macquarie would maintain the same commitment to green investments. The privatization raised fundamental questions about the government's commitment to green finance and infrastructure.",
     "relevance": 0.73,
     "URLs": [
@@ -215,7 +215,7 @@
   },
   {
     "overview": "Heathrow Third Runway Approval and Legal Challenge",
-    "dateTime": "2018-06-25",
+    "dateTime": "2018-06-25T00:00:00Z",
     "furtherDescription": "Parliament voted 415 to 119 to approve expansion of Heathrow Airport with a third runway, despite concerns about aviation emissions and the project's compatibility with climate commitments. The £14 billion project was projected to increase the airport's capacity from 480,000 flights to 740,000 per year. Environmental groups, local councils, and London Mayor Sadiq Khan challenged the decision in court. In February 2020, the Court of Appeal ruled the expansion illegal because ministers had failed to consider the Paris Agreement and the government's own climate commitments. This landmark ruling was the first in the world to be based on the Paris Agreement, though it was later overturned by the Supreme Court, which found the government had adequately considered climate policy.",
     "relevance": 0.76,
     "URLs": [
@@ -238,7 +238,7 @@
   },
   {
     "overview": "Extinction Rebellion Protests Disrupt London",
-    "dateTime": "2019-04-15",
+    "dateTime": "2019-04-15T00:00:00Z",
     "furtherDescription": "Environmental activist group Extinction Rebellion launched major non-violent protests across London, blocking Oxford Circus, Waterloo Bridge, and other major roads and bridges for 11 days to demand urgent climate action. The protests involved thousands of people and resulted in over 1,000 arrests. Extinction Rebellion's three demands were: tell the truth about the climate emergency, act now to halt biodiversity loss and reach net zero by 2025, and create a Citizens' Assembly on climate. The movement used civil disobedience tactics including sit-ins, roadblocks, and disruption of public transport. While controversial, the protests succeeded in putting climate change at the center of public discourse and influenced Parliament's subsequent climate emergency declaration. Swedish activist Greta Thunberg addressed protesters and met with MPs during the demonstrations.",
     "relevance": 0.87,
     "URLs": [
@@ -260,7 +260,7 @@
   },
   {
     "overview": "UK Parliament Declares Climate Emergency",
-    "dateTime": "2019-05-01",
+    "dateTime": "2019-05-01T00:00:00Z",
     "furtherDescription": "The UK Parliament became the first national legislature in the world to declare a climate and environment emergency, following a motion tabled by Labour leader Jeremy Corbyn. The symbolic motion passed without a vote after cross-party support, though it did not legally compel the government to specific actions. Environment Secretary Michael Gove acknowledged the situation was 'grave' but stopped short of using the word 'emergency'. The declaration was one of the key demands from Extinction Rebellion protests that had paralyzed parts of London in April. The motion called for net-zero emissions before 2050 and urged the government to outline proposals to restore the UK's natural environment within six months. The declaration inspired similar emergency declarations by local councils, regional governments, and eventually other national parliaments around the world.",
     "relevance": 0.91,
     "URLs": [
@@ -283,7 +283,7 @@
   },
   {
     "overview": "Feed-in Tariff Scheme Closed",
-    "dateTime": "2019-03-31",
+    "dateTime": "2019-03-31T00:00:00Z",
     "furtherDescription": "The Feed-in Tariff (FIT) scheme, which paid households and businesses for generating renewable electricity through solar panels, wind turbines, or other technologies, was closed to new applicants. Launched in 2010, the scheme had been highly successful in boosting small-scale renewable energy deployment, particularly rooftop solar. Over 800,000 installations were made under the scheme. However, its closure without an adequate replacement disappointed renewable energy advocates, who argued it left a policy gap for community and household-scale renewables. The government argued the scheme had achieved its purpose of establishing renewables and that costs had fallen sufficiently. Critics contended this left individuals with limited options to participate in the energy transition.",
     "relevance": 0.70,
     "URLs": [
@@ -304,7 +304,7 @@
   },
   {
     "overview": "Net Zero Target Legislated",
-    "dateTime": "2019-06-27",
+    "dateTime": "2019-06-27T00:00:00Z",
     "furtherDescription": "The UK amended the Climate Change Act to target net zero greenhouse gas emissions by 2050, making it the first major economy to legislate for net zero. This represented a significant strengthening of climate ambitions from the previous 80% reduction target set in 2008. Prime Minister Theresa May announced the commitment just before leaving office, establishing it as her environmental legacy. The decision followed recommendations from the Climate Change Committee and was backed by cross-party support. The legislation requires the UK to bring all greenhouse gas emissions to net zero by 2050, compared to 1990 levels, through a combination of emissions reductions and offsetting remaining emissions through methods like tree planting or carbon capture technology. This legally binding commitment set the framework for all subsequent UK climate policy.",
     "relevance": 0.98,
     "URLs": [
@@ -326,7 +326,7 @@
   },
   {
     "overview": "Climate Assembly UK Convened",
-    "dateTime": "2020-01-25",
+    "dateTime": "2020-01-25T00:00:00Z",
     "furtherDescription": "Parliament established Climate Assembly UK, a citizens' assembly bringing together 108 randomly selected members of the public to deliberate on how the UK should meet its net zero target. Meeting over six weekends, the assembly heard from experts and discussed options across transport, home heating, diet, and other areas. The assembly's September 2020 report emphasized the importance of clear leadership, fair burden-sharing, public engagement, and co-benefits in climate action. Key recommendations included phasing out petrol and diesel vehicles, improving public transport, insulating homes, reducing meat consumption, and protecting nature. The process demonstrated strong public support for climate action when people are properly informed, though implementation of recommendations has been partial.",
     "relevance": 0.78,
     "URLs": [
@@ -346,7 +346,7 @@
   },
   {
     "overview": "Nature Recovery Network Proposed",
-    "dateTime": "2020-02-12",
+    "dateTime": "2020-02-12T00:00:00Z",
     "furtherDescription": "The government's 25 Year Environment Plan proposed creating a Nature Recovery Network across England to connect and expand habitats, support biodiversity, and enhance carbon sequestration. The network would link existing protected areas with restored habitats, creating corridors for wildlife and resilient ecosystems. The plan recognized that nature-based solutions are essential for both climate mitigation (through carbon storage) and adaptation (through flood management and cooling). However, implementation has been slower than hoped, hampered by funding constraints, planning system barriers, and lack of coordination between different government departments and agencies. Environmental groups have called for stronger legal backing and dedicated funding to realize the network's potential.",
     "relevance": 0.72,
     "URLs": [
@@ -367,7 +367,7 @@
   },
   {
     "overview": "Green Homes Grant Scheme Launched and Scrapped",
-    "dateTime": "2020-09-01",
+    "dateTime": "2020-09-01T00:00:00Z",
     "furtherDescription": "The government launched the £2 billion Green Homes Grant scheme to help homeowners and landlords improve energy efficiency through insulation, double glazing, and low-carbon heating. Homeowners could claim vouchers covering up to two-thirds of costs (up to £5,000), with low-income households eligible for 100% funding (up to £10,000). However, the scheme was plagued by bureaucratic delays, difficulties finding approved installers, and low awareness. It was abruptly scrapped in March 2021 after just six months, with only £314 million of the £2 billion allocated actually spent—just 5% of the budget reaching households. The failure was widely criticized as emblematic of stop-start climate policies that undermine industry confidence and waste public money. It highlighted the challenge of retrofitting the UK's poorly insulated housing stock.",
     "relevance": 0.65,
     "URLs": [
@@ -388,7 +388,7 @@
   },
   {
     "overview": "Offshore Wind Expansion Commitment",
-    "dateTime": "2020-10-06",
+    "dateTime": "2020-10-06T00:00:00Z",
     "furtherDescription": "Prime Minister Boris Johnson announced his 'Ten Point Plan for a Green Industrial Revolution', committing to quadruple offshore wind capacity from 10GW to 40GW by 2030—enough to power every home in the UK. Johnson declared the UK would become the 'Saudi Arabia of wind', positioning offshore wind as central to both decarbonization and economic recovery from COVID-19. The plan included £160 million to upgrade ports and infrastructure for offshore wind manufacturing. The UK's shallow seas, particularly in the North Sea, provide ideal conditions for offshore wind, and the country has become a global leader in the technology. The commitment represented significant ambition, though some questioned whether grid infrastructure, planning systems, and supply chains could scale at the required pace.",
     "relevance": 0.92,
     "URLs": [
@@ -410,7 +410,7 @@
   },
   {
     "overview": "Electric Vehicle Charging Infrastructure Investment",
-    "dateTime": "2020-11-18",
+    "dateTime": "2020-11-18T00:00:00Z",
     "furtherDescription": "As part of the Ten Point Plan, the government committed £1.3 billion to accelerate the rollout of charging infrastructure for electric vehicles (EVs), including rapid chargers on motorways and on-street charging in residential areas. The funding recognized that charging infrastructure is critical to supporting the planned ban on new petrol and diesel car sales from 2030 (later delayed to 2035). The UK has led Europe in EV adoption, with over 1 million EVs on the road by 2022, but 'charging anxiety' remains a barrier. The investment aimed to create a comprehensive network of 300,000 charge points by 2030, though concerns persist about regional inequalities, with rural and less affluent areas having fewer chargers.",
     "relevance": 0.84,
     "URLs": [
@@ -432,7 +432,7 @@
   },
   {
     "overview": "Fracking Ban Lifted Then Reinstated",
-    "dateTime": "2022-09-22",
+    "dateTime": "2022-09-22T00:00:00Z",
     "furtherDescription": "Liz Truss's government lifted the ban on fracking in England, arguing for energy security. After widespread opposition and minor earthquakes, the policy was quickly reversed when Rishi Sunak became Prime Minister, highlighting policy instability.",
     "relevance": 0.72,
     "URLs": [
@@ -445,7 +445,7 @@
   },
   {
     "overview": "Zero Carbon Homes Policy Scrapped",
-    "dateTime": "2015-07-10",
+    "dateTime": "2015-07-10T00:00:00Z",
     "furtherDescription": "The government scrapped the Zero Carbon Homes standard, which would have required all new homes to be zero carbon from 2016. Environmental groups condemned this as a major setback for reducing emissions from the housing sector.",
     "relevance": 0.68,
     "URLs": [
@@ -458,7 +458,7 @@
   },
   {
     "overview": "Climate Assembly UK Convened",
-    "dateTime": "2020-01-25",
+    "dateTime": "2020-01-25T00:00:00Z",
     "furtherDescription": "Parliament established Climate Assembly UK, bringing together 108 citizens to deliberate on how the UK should meet its net zero target. The assembly's recommendations emphasized the importance of public engagement, fairness, and co-benefits in climate action.",
     "relevance": 0.78,
     "URLs": [
@@ -471,7 +471,7 @@
   },
   {
     "overview": "Feed-in Tariff Scheme Closed",
-    "dateTime": "2019-03-31",
+    "dateTime": "2019-03-31T00:00:00Z",
     "furtherDescription": "The Feed-in Tariff scheme, which paid households for generating renewable electricity, was closed to new applicants. While it had successfully boosted solar adoption, its closure without an adequate replacement disappointed renewable energy advocates.",
     "relevance": 0.70,
     "URLs": [
@@ -484,7 +484,7 @@
   },
   {
     "overview": "UK Hydrogen Strategy Published",
-    "dateTime": "2021-08-17",
+    "dateTime": "2021-08-17T00:00:00Z",
     "furtherDescription": "The government published its Hydrogen Strategy, aiming for 5GW of low carbon hydrogen production capacity by 2030. The strategy includes both 'blue' hydrogen (from gas with carbon capture) and 'green' hydrogen (from renewables), though environmentalists prefer the latter.",
     "relevance": 0.80,
     "URLs": [
@@ -497,7 +497,7 @@
   },
   {
     "overview": "New North Sea Oil and Gas Licenses Approved",
-    "dateTime": "2023-07-31",
+    "dateTime": "2023-07-31T00:00:00Z",
     "furtherDescription": "The government announced hundreds of new North Sea oil and gas licenses, arguing it would boost energy security. Climate campaigners denounced this as incompatible with net zero commitments and inconsistent with the UK's climate leadership claims.",
     "relevance": 0.85,
     "URLs": [
@@ -510,7 +510,7 @@
   },
   {
     "overview": "Climate Change Committee Warns of Adaptation Gap",
-    "dateTime": "2021-06-16",
+    "dateTime": "2021-06-16T00:00:00Z",
     "furtherDescription": "The independent Climate Change Committee issued a stark warning that the UK is underprepared for the impacts of climate change already being felt. The report highlighted failures in flood defenses, heat resilience, and biodiversity protection.",
     "relevance": 0.82,
     "URLs": [
@@ -523,7 +523,7 @@
   },
   {
     "overview": "£1 Billion Green Investment Bank Privatized",
-    "dateTime": "2017-03-23",
+    "dateTime": "2017-03-23T00:00:00Z",
     "furtherDescription": "The government sold the Green Investment Bank to Macquarie Group for £2.3 billion, despite criticism that privatization would weaken its green mandate. Originally established to support low-carbon projects, its sale raised questions about commitment to green finance.",
     "relevance": 0.73,
     "URLs": [
@@ -536,7 +536,7 @@
   },
   {
     "overview": "Electric Vehicle Charging Infrastructure Investment",
-    "dateTime": "2020-11-18",
+    "dateTime": "2020-11-18T00:00:00Z",
     "furtherDescription": "As part of the Ten Point Plan, the government committed £1.3 billion to accelerate the rollout of charging infrastructure for electric vehicles. This represented recognition that infrastructure is critical to supporting the transition away from petrol and diesel vehicles.",
     "relevance": 0.84,
     "URLs": [
@@ -549,7 +549,7 @@
   },
   {
     "overview": "Extinction Rebellion Protests Disrupt London",
-    "dateTime": "2019-04-15",
+    "dateTime": "2019-04-15T00:00:00Z",
     "furtherDescription": "Extinction Rebellion launched major protests across London, blocking roads and bridges to demand urgent climate action. The movement put climate change at the center of public discourse, though opinions were divided on their disruptive tactics.",
     "relevance": 0.87,
     "URLs": [
@@ -562,7 +562,7 @@
   },
   {
     "overview": "Just Stop Oil Protests Target Artwork and Roads",
-    "dateTime": "2022-10-14",
+    "dateTime": "2022-10-14T00:00:00Z",
     "furtherDescription": "Just Stop Oil activists threw soup at Van Gogh's Sunflowers and blocked major roads, demanding an end to new oil and gas projects. The controversial tactics sparked debate about effective climate activism, with some viewing them as counterproductive.",
     "relevance": 0.80,
     "URLs": [
@@ -575,7 +575,7 @@
   },
   {
     "overview": "Woodland Carbon Code Established",
-    "dateTime": "2011-08-01",
+    "dateTime": "2011-08-01T00:00:00Z",
     "furtherDescription": "The UK government launched the Woodland Carbon Code, a voluntary standard for woodland creation projects that allows carbon sequestration to be quantified and verified. This created a framework for carbon offsetting through forestry.",
     "relevance": 0.71,
     "URLs": [
@@ -588,7 +588,7 @@
   },
   {
     "overview": "Heathrow Third Runway Approval and Legal Challenge",
-    "dateTime": "2018-06-25",
+    "dateTime": "2018-06-25T00:00:00Z",
     "furtherDescription": "Parliament approved expansion of Heathrow Airport with a third runway, despite concerns about aviation emissions. Environmental groups and local councils successfully challenged the decision in court in 2020, citing incompatibility with climate commitments.",
     "relevance": 0.76,
     "URLs": [
@@ -601,7 +601,7 @@
   },
   {
     "overview": "Treasury Launches Green Savings Bonds",
-    "dateTime": "2021-10-22",
+    "dateTime": "2021-10-22T00:00:00Z",
     "furtherDescription": "NS&I launched Green Savings Bonds, allowing individuals to invest in government green projects. While symbolically important for engaging the public, critics noted the scale was small relative to the investment needed for net zero.",
     "relevance": 0.66,
     "URLs": [
@@ -614,7 +614,7 @@
   },
   {
     "overview": "Supreme Court Blocks Peat Extraction in Scotland",
-    "dateTime": "2022-07-21",
+    "dateTime": "2022-07-21T00:00:00Z",
     "furtherDescription": "The UK Supreme Court ruled against commercial peat extraction on Lewis, citing environmental concerns. Peatlands are critical carbon stores, and this decision reflected growing recognition of nature-based solutions to climate change.",
     "relevance": 0.74,
     "URLs": [
@@ -627,7 +627,7 @@
   },
   {
     "overview": "Carbon Price Floor Introduced",
-    "dateTime": "2013-04-01",
+    "dateTime": "2013-04-01T00:00:00Z",
     "furtherDescription": "The UK introduced a carbon price floor, setting a minimum price on carbon emissions from electricity generation. This policy accelerated the decline of coal power and made renewables more competitive, though it was later frozen to avoid penalizing industry.",
     "relevance": 0.83,
     "URLs": [
@@ -640,7 +640,7 @@
   },
   {
     "overview": "Solar Subsidy Cuts Devastate Industry",
-    "dateTime": "2015-12-17",
+    "dateTime": "2015-12-17T00:00:00Z",
     "furtherDescription": "The government slashed subsidies for solar power by 65%, effective from January 2016. The solar industry warned this would destroy jobs and slow renewable deployment, with installations falling dramatically in subsequent years.",
     "relevance": 0.79,
     "URLs": [
@@ -653,7 +653,7 @@
   },
   {
     "overview": "Nature Recovery Network Proposed",
-    "dateTime": "2020-02-12",
+    "dateTime": "2020-02-12T00:00:00Z",
     "furtherDescription": "The 25 Year Environment Plan proposed creating a Nature Recovery Network across England, connecting habitats to support biodiversity and carbon sequestration. Implementation has been slower than hoped, with funding concerns.",
     "relevance": 0.72,
     "URLs": [
@@ -666,7 +666,7 @@
   },
   {
     "overview": "Government Advertising Encourages Less Flying",
-    "dateTime": "2009-03-15",
+    "dateTime": "2009-03-15T00:00:00Z",
     "furtherDescription": "The government briefly ran campaigns encouraging people to reduce flying and adopt lower-carbon behaviors under the Act on CO2 initiative. These were quietly dropped amid political concerns about appearing anti-growth and industry pressure.",
     "relevance": 0.64,
     "URLs": [
@@ -679,7 +679,7 @@
   },
   {
     "overview": "Climate Change Committee Reports Policy Gap",
-    "dateTime": "2023-06-29",
+    "dateTime": "2023-06-29T00:00:00Z",
     "furtherDescription": "The Climate Change Committee's annual progress report found that UK policy is insufficient to meet legally binding carbon budgets. The committee identified major gaps in delivery across transport, buildings, and agriculture sectors.",
     "relevance": 0.89,
     "URLs": [
@@ -692,7 +692,7 @@
   },
   {
     "overview": "Sizewell C Nuclear Plant Approved",
-    "dateTime": "2022-07-20",
+    "dateTime": "2022-07-20T00:00:00Z",
     "furtherDescription": "The government approved the £20-30 billion Sizewell C nuclear power station in Suffolk, arguing nuclear is necessary for energy security and net zero. Environmental groups were divided, with some supporting low-carbon baseload and others concerned about costs and waste.",
     "relevance": 0.81,
     "URLs": [

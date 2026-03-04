@@ -1,7 +1,7 @@
 [
     {
         "overview": "Massachusetts v. EPA (U.S. Supreme Court)",
-        "dateTime": "2007-04-02",
+        "dateTime": "2007-04-02T00:00:00Z",
         "relevance": 0.96,
         "furtherDescription": "The Supreme Court held that greenhouse gases fit within the Clean Air Act’s broad definition of air pollutants and that petitioners had standing to challenge EPA’s refusal to regulate them. The ruling established a legal foundation for federal regulatory action on CO₂ and other greenhouse gases, triggering subsequent rulemakings and litigation over the scope of EPA authority.",
         "URLs": [
@@ -19,7 +19,7 @@
     },
     {
         "overview": "Clinton Administration delays on SUV fuel efficiency standards",
-        "dateTime": "1999-07-01",
+        "dateTime": "1999-07-01T00:00:00Z",
         "relevance": 0.70,
         "furtherDescription": "Despite growing concern over fuel economy, the Clinton administration allowed CAFE standards to remain flat for light trucks and SUVs, reducing pressure for efficiency improvements in a rapidly growing segment.",
         "URLs": [
@@ -34,7 +34,7 @@
     },
     {
         "overview": "American Recovery and Reinvestment Act (ARRA) — clean energy investment",
-        "dateTime": "2009-02-17",
+        "dateTime": "2009-02-17T00:00:00Z",
         "relevance": 0.85,
         "furtherDescription": "ARRA allocated tens of billions to clean-energy deployment, grid modernisation, energy-efficiency programmes and innovation (including ARPA-E funding and loan guarantees). The package accelerated large-scale deployment of renewables, boosted R&D, helped modernise the US electric grid and created financing channels for low-carbon technologies during the post-crisis fiscal stimulus.",
         "URLs": [
@@ -52,7 +52,7 @@
     },
     {
         "overview": "George W. Bush administration rejects mandatory caps on CO₂",
-        "dateTime": "2001-2005",
+        "dateTime": "2001-2005T00:00:00Z",
         "relevance": 0.85,
         "furtherDescription": "The administration repeatedly opposed congressional proposals for mandatory carbon caps or economy-wide emissions limits, favouring voluntary programmes that had minimal impact on actual emissions.",
         "URLs": [
@@ -67,7 +67,7 @@
     },
     {
         "overview": "American Clean Energy and Security Act (Waxman-Markey) — House passage",
-        "dateTime": "2009-06-26",
+        "dateTime": "2009-06-26T00:00:00Z",
         "relevance": 0.72,
         "furtherDescription": "The House passed H.R.2454 (Waxman-Markey), a comprehensive cap-and-trade and clean-energy bill that would have created an economy-wide carbon market and funded clean-energy programmes. The legislation signalled strong Congressional attention to emissions pricing and clean-energy transition, but it failed to pass the Senate and thus did not become law. Waxman-Markey shaped subsequent policy and stakeholder debate on market mechanisms vs regulatory approaches.",
         "URLs": [
@@ -84,7 +84,7 @@
     },
     {
         "overview": "EPA Issues Endangerment Finding for Greenhouse Gases",
-        "dateTime": "2009-04-17",
+        "dateTime": "2009-04-17T00:00:00Z",
         "relevance": 0.97,
         "furtherDescription": "EPA issued the proposed and later final Endangerment and Cause or Contribute Findings under CAA Section 202(a), concluding that six greenhouse gases threaten public health and welfare. The finding provided the scientific and legal basis for regulating GHGs from motor vehicles and, by extension, supported later regulatory actions across sectors.",
         "URLs": [
@@ -101,7 +101,7 @@
     },
     {
         "overview": "EPA revokes New Source Review enforcement (Bush era)",
-        "dateTime": "2003-12-31",
+        "dateTime": "2003-12-31T00:00:00Z",
         "relevance": 0.75,
         "furtherDescription": "EPA rolled back strict enforcement of New Source Review rules, allowing some older coal-fired power plants to avoid upgrading emissions controls, slowing progress on reducing air pollutants and CO₂ co-benefits.",
         "URLs": [
@@ -116,7 +116,7 @@
     },
     {
         "overview": "EPA and NHTSA establish national GHG and fuel-economy standards for light-duty vehicles (MY 2012–2016; phase begins 2010)",
-        "dateTime": "2010-04-01",
+        "dateTime": "2010-04-01T00:00:00Z",
         "relevance": 0.86,
         "furtherDescription": "The joint EPA-NHTSA rule created harmonised national standards for greenhouse-gas emissions and Corporate Average Fuel Economy (CAFE), covering model years 2012–2016 and later phases. The National Program reduced projected fleet CO₂ emissions substantially, drove vehicle-efficiency technology adoption and provided regulatory certainty for manufacturers.",
         "URLs": [
@@ -133,7 +133,7 @@
     },
     {
         "overview": "US–China Joint Announcement on Climate Change and Clean Energy Cooperation",
-        "dateTime": "2014-11-11",
+        "dateTime": "2014-11-11T00:00:00Z",
         "relevance": 0.84,
         "furtherDescription": "The United States and China — the world’s two largest emitters — pledged enhanced climate cooperation: the US committed to a 26–28% reduction in emissions below 2005 levels by 2025, and China announced peak-by-around-2030 ambitions and a target for non-fossil energy share. The announcement increased momentum toward a global agreement and was widely credited with improving prospects for the 2015 Paris outcome.",
         "URLs": [
@@ -150,7 +150,7 @@
     },
     {
         "overview": "US fails to act on Arctic sea ice loss warnings",
-        "dateTime": "2000-2010",
+        "dateTime": "2000-2010T00:00:00Z",
         "relevance": 0.65,
         "furtherDescription": "Despite scientific warnings from NASA and NOAA about accelerating Arctic ice loss, federal policy was slow to fund mitigation or adaptation, relying on voluntary programmes rather than binding targets.",
         "URLs": [
@@ -165,7 +165,7 @@
     },
     {
         "overview": "Trump Administration rolls back Clean Power Plan",
-        "dateTime": "2019-06-19",
+        "dateTime": "2019-06-19T00:00:00Z",
         "relevance": 0.77,
         "furtherDescription": "The EPA’s Affordable Clean Energy (ACE) rule replaced the Clean Power Plan with a narrower approach focusing on individual coal units rather than system-wide emissions reductions, substantially weakening national CO₂ reduction pathways.",
         "URLs": [
@@ -180,7 +180,7 @@
     },
     {
         "overview": "Obama Administration announces the Clean Power Plan",
-        "dateTime": "2015-08-03",
+        "dateTime": "2015-08-03T00:00:00Z",
         "relevance": 0.92,
         "furtherDescription": "EPA’s Clean Power Plan set state-specific targets to reduce CO₂ emissions from existing power plants and encouraged programmatic flexibility (trading, rate- or mass-based approaches). The rule aimed to cut power-sector emissions ~32% below 2005 levels by 2030 and catalysed utility planning for coal-to-gas shifts, renewables and efficiency, despite later legal and political challenges.",
         "URLs": [
@@ -197,7 +197,7 @@
     },
     {
         "overview": "Trump Administration SAFE Vehicles Rule",
-        "dateTime": "2020-04-30",
+        "dateTime": "2020-04-30T00:00:00Z",
         "relevance": 0.80,
         "furtherDescription": "The SAFE rule rolled back federal vehicle fuel-economy and emissions standards for 2021–2026 model years, relaxing trajectory and limiting California’s waiver, reducing progress on transport decarbonisation.",
         "URLs": [
@@ -212,7 +212,7 @@
     },
     {
         "overview": "Biden delays methane regulations for oil and gas (initial period)",
-        "dateTime": "2021-03-01",
+        "dateTime": "2021-03-01T00:00:00Z",
         "relevance": 0.65,
         "furtherDescription": "Early in the administration, enforcement of stricter methane rules from the oil and gas sector was slowed pending review, temporarily reducing regulatory pressure on one of the fastest-growing sources of US greenhouse gases.",
         "URLs": [
@@ -227,7 +227,7 @@
     },
     {
         "overview": "United States signs Paris Agreement (UN signing ceremony)",
-        "dateTime": "2016-04-22",
+        "dateTime": "2016-04-22T00:00:00Z",
         "relevance": 0.91,
         "furtherDescription": "At the UN signing ceremony the United States formally signed the Paris Agreement, committing to international cooperation and to submit a nationally determined contribution (NDC). The signature symbolised diplomatic endorsement of the Paris framework, while domestic implementation continued to depend on subsequent executive and congressional actions.",
         "URLs": [
@@ -244,7 +244,7 @@
     },
     {
         "overview": "Coal subsidies continue in US federal budget",
-        "dateTime": "2000-2020",
+        "dateTime": "2000-2020T00:00:00Z",
         "relevance": 0.70,
         "furtherDescription": "Despite growing recognition of climate risks, federal budgets maintained subsidies and tax advantages for coal production, indirectly slowing transition to low-carbon electricity.",
         "URLs": [
@@ -259,7 +259,7 @@
     },
     {
         "overview": "Minimal federal support for renewable energy pre-2009",
-        "dateTime": "2000-2008",
+        "dateTime": "2000-2008T00:00:00Z",
         "relevance": 0.75,
         "furtherDescription": "Before ARRA, renewable deployment was limited by low federal incentives, minimal R&D funding, and fragmented policy, slowing adoption of wind, solar, and other low-carbon technologies.",
         "URLs": [
@@ -274,7 +274,7 @@
     },
     {
         "overview": "Weak response to 2005 hurricane season and climate link",
-        "dateTime": "2005-12-01",
+        "dateTime": "2005-12-01T00:00:00Z",
         "relevance": 0.65,
         "furtherDescription": "Following Hurricane Katrina and other storms, federal policy largely focused on disaster response rather than linking increased hurricane severity to climate change, missing opportunities for mitigation planning.",
         "URLs": [
@@ -289,7 +289,7 @@
     },
     {
         "overview": "US delays on CAFE standards for 2008–2010 vehicles",
-        "dateTime": "2007-12-01",
+        "dateTime": "2007-12-01T00:00:00Z",
         "relevance": 0.70,
         "furtherDescription": "Despite growing fuel prices and emissions concerns, light-duty vehicle efficiency standards remained modest, and regulatory updates were slow, delaying fleet-wide efficiency gains.",
         "URLs": [
@@ -304,7 +304,7 @@
     },
     {
         "overview": "President Trump announces intent to withdraw from the Paris Agreement",
-        "dateTime": "2017-06-01",
+        "dateTime": "2017-06-01T00:00:00Z",
         "relevance": 0.88,
         "furtherDescription": "President Trump announced the United States intended to withdraw from the Paris Agreement, arguing the deal disadvantaged US workers and industry. The formal withdrawal process completed in November 2020; the decision produced international and domestic policy ripple effects and spurred subnational and private-sector climate commitments in response.",
         "URLs": [
@@ -320,7 +320,7 @@
     },
     {
         "overview": "Safe Affordable Fuel-Efficient (SAFE) Vehicles Rule — federal vehicle standards",
-        "dateTime": "2020-04-30",
+        "dateTime": "2020-04-30T00:00:00Z",
         "relevance": 0.80,
         "furtherDescription": "NHTSA and EPA finalised the SAFE rule to establish a single national fuel-economy and emissions programme for model years 2021–2026, relaxing prior trajectories for stringency and limiting California’s waiver scope. The rule represented a federal rollback from earlier, more ambitious Obama-era standards and prompted litigation and state-level policy responses.",
         "URLs": [
@@ -337,7 +337,7 @@
     },
     {
         "overview": "Affordable Clean Energy (ACE) Rule finalised",
-        "dateTime": "2019-06-19",
+        "dateTime": "2019-06-19T00:00:00Z",
         "relevance": 0.77,
         "furtherDescription": "The EPA’s ACE rule replaced the Clean Power Plan with a narrower approach that emphasised heat-rate improvements at individual coal units rather than system-wide generation shifting. Critics argued ACE produced substantially smaller emissions reductions and left large sources of power-sector emissions unaddressed, while supporters touted regulatory certainty for affected coal plants.",
         "URLs": [
@@ -353,7 +353,7 @@
     },
     {
         "overview": "US Withdrawal from Kyoto Protocol (Bush Administration)",
-        "dateTime": "2001-03-28",
+        "dateTime": "2001-03-28T00:00:00Z",
         "relevance": 0.90,
         "furtherDescription": "President George W. Bush announced that the US would not ratify the Kyoto Protocol, citing potential economic harm and unfair obligations on developing countries. This decision delayed US engagement in binding international emissions reductions.",
         "URLs": [
@@ -369,7 +369,7 @@
     },
     {
         "overview": "California Executive Order N-79-20: target for zero-emission new car sales by 2035",
-        "dateTime": "2020-09-23",
+        "dateTime": "2020-09-23T00:00:00Z",
         "relevance": 0.84,
         "furtherDescription": "California set a state policy that all new passenger cars and light-duty trucks sold in the state be zero-emission by 2035, demonstrating ambitious subnational action that influences vehicle markets, state-level rulemaking (including waiver petitions) and manufacturing investment decisions.",
         "URLs": [
@@ -385,7 +385,7 @@
     },
     {
         "overview": "President Biden signs instrument to rejoin the Paris Agreement",
-        "dateTime": "2021-01-20",
+        "dateTime": "2021-01-20T00:00:00Z",
         "relevance": 0.94,
         "furtherDescription": "On his first day in office President Biden transmitted an instrument to re-join the Paris Agreement; US re-entry took effect on 19 February 2021. The rapid re-engagement signalled renewed federal commitment to international climate diplomacy and to raising domestic mitigation ambition through executive action and legislation.",
         "URLs": [
@@ -401,7 +401,7 @@
     },
     {
         "overview": "Executive Order 14008 — Tackling the Climate Crisis at Home and Abroad",
-        "dateTime": "2021-01-27",
+        "dateTime": "2021-01-27T00:00:00Z",
         "relevance": 0.89,
         "furtherDescription": "EO 14008 established a National Climate Task Force, elevated climate policy across federal agencies, prioritised environmental justice and launched initiatives to align federal procurement, infrastructure and permitting with climate and clean-energy objectives. It created coordinated mechanisms to pursue mitigation, resilience and clean-energy manufacturing goals.",
         "URLs": [
@@ -417,7 +417,7 @@
     },
     {
         "overview": "United States announces new NDC — 50–52% emissions reduction by 2030 (vs 2005)",
-        "dateTime": "2021-04-22",
+        "dateTime": "2021-04-22T00:00:00Z",
         "relevance": 0.93,
         "furtherDescription": "The Biden administration submitted an updated nationally determined contribution (NDC) under the Paris framework, committing to economy-wide net GHG reductions of 50–52% below 2005 levels by 2030. The pledge shaped domestic policy priorities for tax incentives, infrastructure, vehicle standards and power-sector decarbonisation, and provided a benchmark for international climate diplomacy.",
         "URLs": [
@@ -433,7 +433,7 @@
     },
     {
         "overview": "President revokes Keystone XL Presidential Permit",
-        "dateTime": "2021-01-20",
+        "dateTime": "2021-01-20T00:00:00Z",
         "relevance": 0.76,
         "furtherDescription": "President Biden revoked the presidential cross-border permit for the Keystone XL pipeline on his first day in office, halting construction and signalling a shift in federal infrastructure policy toward limiting new large-scale fossil-fuel transport projects. The action catalysed legal and trade claims and contributed to the project's eventual termination.",
         "URLs": [
@@ -449,7 +449,7 @@
     },
     {
         "overview": "TC Energy cancels the Keystone XL pipeline project",
-        "dateTime": "2021-06-09",
+        "dateTime": "2021-06-09T00:00:00Z",
         "relevance": 0.74,
         "furtherDescription": "Following the permit revocation and sustained legal and political opposition, TC Energy announced termination of the Keystone XL project. The cancellation marked a high-profile outcome in debates over fossil-fuel infrastructure, Indigenous rights and climate impacts, and triggered arbitration and bilateral trade disputes.",
         "URLs": [
@@ -466,7 +466,7 @@
     },
     {
         "overview": "Infrastructure Investment and Jobs Act (IIJA) — climate-relevant provisions",
-        "dateTime": "2021-11-15",
+        "dateTime": "2021-11-15T00:00:00Z",
         "relevance": 0.87,
         "furtherDescription": "IIJA authorised historic funding for grid resilience, EV charging networks, public transport, clean-water projects and resilience measures. While framed as infrastructure investment, the law contains substantial climate-relevant elements that facilitate decarbonisation and adaptation investments at federal, state and local levels.",
         "URLs": [
@@ -482,7 +482,7 @@
     },
     {
         "overview": "U.S. Supreme Court rules in West Virginia v. EPA (limits on EPA’s generation-shifting authority)",
-        "dateTime": "2022-06-30",
+        "dateTime": "2022-06-30T00:00:00Z",
         "relevance": 0.92,
         "furtherDescription": "The Supreme Court held that EPA could not rely on broad 'generation-shifting' measures under Section 111(d) of the Clean Air Act without clear congressional authorisation, invoking the major-questions doctrine. The decision constrained one regulatory pathway for large-scale power-sector emissions reductions and refocused policy attention onto Congress and alternative regulatory tools.",
         "URLs": [
@@ -498,7 +498,7 @@
     },
     {
         "overview": "Inflation Reduction Act — largest US federal climate and clean-energy investment package",
-        "dateTime": "2022-08-16",
+        "dateTime": "2022-08-16T00:00:00Z",
         "relevance": 0.99,
         "furtherDescription": "The IRA enacted historic tax incentives, grants and procurement authority to accelerate clean-energy deployment, domestic manufacturing, electrification and emissions reductions across power, transport, buildings and industry. Analysts view IRA provisions as transformational for US decarbonisation pathways and industrial policy, with long-term effects on supply chains and investment.",
         "URLs": [
@@ -514,7 +514,7 @@
     },
     {
         "overview": "State and local climate leadership intensifies (multiple policies and programmes)",
-        "dateTime": "2020-01-01",
+        "dateTime": "2020-01-01T00:00:00Z",
         "relevance": 0.83,
         "furtherDescription": "In the absence of continuous federal direction at times, numerous US states, cities, regional partnerships and corporations amplified climate commitments — including renewable portfolio standards, cap-and-trade participation (RGGI), corporate net-zero pledges and subnational NDC-aligned targets — creating a parallel track of ambition and policy experimentation that influenced national politics and markets.",
         "URLs": [
