@@ -10,7 +10,7 @@ import { NavLink } from "@/models/nav.types";
 
 const navLinks: NavLink[] = [
 	{ href: "/developers", label: "Developers", authRequired: true },
-	{ href: "/", label: "About", authRequired: false },
+	{ href: "/", label: "Home", authRequired: false },
 	{ href: "/dashboard", label: "All Timelines", authRequired: false },
 ];
 
@@ -36,7 +36,7 @@ export default function Navbar({ title, isSignedIn, onSignOut }: HeaderProps) {
 		: "U";
 
 	return (
-		<header className="grid grid-cols-3 items-center p-4 border-b border-[var(--borderColour)]">
+		<header className="grid grid-cols-3 items-center p-4 border-b border-[var(--borderColour)] sticky top-0 z-50 bg-[var(--background)]/80 backdrop-blur-md">
 			<div className="flex items-center">
 				<Link href={"/"}>
 					<div className="hover:opacity-75 transition-all duration-200 m-0 p-0">
