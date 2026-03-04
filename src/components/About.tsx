@@ -78,29 +78,27 @@ function StepCard({ step, index }: { step: (typeof steps)[0]; index: number }) {
 				transform: visible ? "translateY(0)" : "translateY(32px)",
 				transition: "opacity 0.65s ease, transform 0.65s ease",
 			}}
-			className="group relative flex flex-col gap-5 rounded-2xl border border-[var(--borderColour)] bg-[var(--lightSecondary)] p-7"
+			className="group relative flex flex-col gap-5 rounded-2xl border border-[var(--borderColour)] bg-[var(--lightSecondary)] dark:bg-transparent p-7"
 		>
 			<span className="absolute top-5 right-6 font-serif text-6xl font-bold text-[var(--foreground)] opacity-[0.04] select-none pointer-events-none">
 				{step.number}
 			</span>
 
-			{/* Icon */}
-			<div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--borderColour)] bg-[var(--background)] text-blue-600">
+			<div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--borderColour)] dark:border-slate-700 bg-[var(--background)] dark:bg-transparent text-blue-600 dark:text-blue-400">
 				<Icon className="h-5 w-5" />
 			</div>
 
-			{/* Step label */}
 			<div className="flex items-center gap-2">
-				<span className="text-[10px] font-bold uppercase tracking-widest text-blue-600/70">
+				<span className="text-[10px] font-bold uppercase tracking-widest text-blue-600/70 dark:text-slate-500">
 					Step {step.number}
 				</span>
 			</div>
 
 			<div className="flex flex-col gap-2">
-				<h3 className="text-base font-semibold tracking-tight text-[var(--foreground)]">
+				<h3 className="text-base font-semibold tracking-tight text-gray-900 dark:text-slate-100">
 					{step.title}
 				</h3>
-				<p className="text-sm leading-relaxed text-[var(--foreground)] opacity-55">
+				<p className="text-sm leading-relaxed text-gray-500 dark:text-slate-400">
 					{step.description}
 				</p>
 			</div>
@@ -128,16 +126,18 @@ export default function About() {
 						<span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">
 							About TimelineScope
 						</span>
-						<h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
+						<h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
 							See what happened,{" "}
-							<span className="italic font-light">and why it mattered.</span>
+							<span className="italic font-light text-gray-900 dark:text-white">
+								and why it mattered.
+							</span>
 						</h2>
-						<p className="text-gray-500 dark:text-gray-400 text-base leading-relaxed">
+						<p className="text-gray-500 dark:text-slate-300 text-base leading-relaxed">
 							TimelineScope turns historical complexity into navigable, visual
 							stories: from political revolutions to economic turning points, every
 							event is placed in its proper context.
 						</p>
-						<p className="text-gray-500 dark:text-gray-400 text-base leading-relaxed">
+						<p className="text-gray-500 dark:text-slate-300 text-base leading-relaxed">
 							Built for students, researchers, and the simply curious. Our goal is to
 							make the full sweep of world history immediately accessible and
 							genuinely intuitive.
@@ -161,10 +161,10 @@ export default function About() {
 					}}
 					className="mb-10"
 				>
-					<h3 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">
+					<h3 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-slate-100 sm:text-3xl font-serif">
 						How it works
 					</h3>
-					<span className="text-xs font-bold uppercase tracking-[0.25em] text-[var(--foreground)] opacity-30">
+					<span className="text-xs font-bold uppercase tracking-[0.25em] text-gray-400 dark:text-slate-300">
 						From catalogue to source in four easy steps.
 					</span>
 				</div>
@@ -183,10 +183,10 @@ export default function About() {
 					className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl border border-[var(--borderColour)] bg-[var(--lightSecondary)] px-8 py-6"
 				>
 					<div>
-						<p className="text-sm font-semibold text-[var(--foreground)]">
+						<p className="text-sm font-semibold text-gray-900 dark:text-slate-100">
 							Ready to begin?
 						</p>
-						<p className="text-sm text-[var(--foreground)] opacity-50">
+						<p className="text-sm text-gray-500 dark:text-slate-400">
 							Free to use. No account required to browse.
 						</p>
 					</div>
