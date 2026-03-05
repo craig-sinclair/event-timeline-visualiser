@@ -82,7 +82,10 @@ describe("Filter events function tests", () => {
 	it("correctly handles filtering with year for event data that excludes all data", () => {
 		const result = filterEvents({
 			events: mockEventData,
-			filters: { qcode: [], dateRange: "1999" },
+			filters: {
+				qcode: [],
+				dateRange: { start: new Date("1999-01-01"), end: new Date("1999-12-31") },
+			},
 		});
 		expect(result).toEqual([]);
 	});
@@ -90,7 +93,10 @@ describe("Filter events function tests", () => {
 	it("correctly handles filtering with year for event data that includes all data", () => {
 		const result = filterEvents({
 			events: mockEventData,
-			filters: { qcode: [], dateRange: "2025" },
+			filters: {
+				qcode: [],
+				dateRange: { start: new Date("2000-01-01"), end: new Date("2025-12-31") },
+			},
 		});
 		expect(result).toEqual(mockEventData);
 	});
