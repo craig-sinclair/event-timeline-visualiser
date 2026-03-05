@@ -28,12 +28,14 @@ export const filterEvents = <T extends SortableEventFields>({
 		);
 	}
 
-	// Ensure substring (year) at start of date matches the filter year
-	if (filters.dateRange !== undefined && filters.dateRange !== "") {
-		predicates.push(
-			(event) =>
-				event.dateTime.length >= 4 && event.dateTime.substring(0, 4) === filters.dateRange
-		);
+	// Ensure event is within filtered start and end date range
+	if (filters.dateRange?.start !== undefined || filters.dateRange?.end !== undefined) {
+		predicates.push((event) => {
+			const t = new Date(event.dateTime).getTime();
+			const afterStart = !filters.dateRange?.start || t >= filters.dateRange.start.getTime();
+			const beforeEnd = !filters.dateRange?.end || t <= filters.dateRange.end.getTime();
+			return afterStart && beforeEnd;
+		});
 	}
 
 	// Apply all filters on events array, built up from predicates array
