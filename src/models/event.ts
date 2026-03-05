@@ -23,7 +23,7 @@ export interface ReactSelectEvent {
 
 export interface EventFiltersState {
 	qcode: string[];
-	dateRange?: string;
+	dateRange?: { start: Date | null; end: Date | null };
 	minRelevance?: number;
 	sortBy?: string;
 }
