@@ -71,7 +71,10 @@ class CircuitBreaker {
 	private onFailure() {
 		this.failureCount++;
 		this.lastFailureTime = Date.now();
-		if (this.failureCount >= (this.params.failureThreshold ?? 5)) {
+		if (
+			this.status == "HALF_OPEN" ||
+			this.failureCount >= (this.params.failureThreshold ?? 5)
+		) {
 			this.status = "OPEN";
 		}
 	}

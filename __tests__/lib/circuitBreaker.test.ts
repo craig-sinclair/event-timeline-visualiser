@@ -3,9 +3,15 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import { mongoCircuitBreaker } from "@/lib/circuitBreaker";
 import { CircuitBreakerInternalState } from "@/models/circuitBreaker.types";
 
+const FAILURE_THRESHOLD = 5;
+const RETRY_TIMEOUT_MS = 30_000;
+const SUCCESS_THRESHOLD = 3;
+const CALL_TIMEOUT_MS = 8_000;
+
 describe("Circuit breaker tests", () => {
 	beforeEach(() => {
 		mongoCircuitBreaker.reset();
+		vi.useRealTimers();
 	});
 
 	it("correctly initialises with default state", () => {
@@ -39,16 +45,14 @@ describe("Circuit breaker tests", () => {
 	});
 
 	it("transitions to open state after failure threshold reached", async () => {
-		const failureThreshold = 5;
-		for (let i = 0; i < failureThreshold; i++) {
+		for (let i = 0; i < FAILURE_THRESHOLD; i++) {
 			await mongoCircuitBreaker.call(() => Promise.reject(new Error())).catch(() => {});
 		}
 		expect(mongoCircuitBreaker.getState().status).toEqual("OPEN");
 	});
 
 	it("rejects requests when circuit breaker is open", async () => {
-		const failureThreshold = 5;
-		for (let i = 0; i < failureThreshold; i++) {
+		for (let i = 0; i < FAILURE_THRESHOLD; i++) {
 			await mongoCircuitBreaker.call(() => Promise.reject(new Error())).catch(() => {});
 		}
 
@@ -57,5 +61,58 @@ describe("Circuit breaker tests", () => {
 			"Request rejected, circuit breaker is OPEN."
 		);
 		expect(spy).not.toHaveBeenCalled();
+	});
+
+	it("transitions to half open state after timeout period exceeded", async () => {
+		vi.useFakeTimers();
+
+		for (let i = 0; i < FAILURE_THRESHOLD; i++) {
+			await mongoCircuitBreaker.call(() => Promise.reject(new Error())).catch(() => {});
+		}
+
+		vi.advanceTimersByTime(RETRY_TIMEOUT_MS + 1);
+		await mongoCircuitBreaker.call(() => Promise.resolve("ok")).catch(() => {});
+		expect(mongoCircuitBreaker.getState().status).toEqual("HALF_OPEN");
+	});
+
+	it("transitions to closed state after three successful calls in half open state", async () => {
+		vi.useFakeTimers();
+
+		for (let i = 0; i < FAILURE_THRESHOLD; i++) {
+			await mongoCircuitBreaker.call(() => Promise.reject(new Error())).catch(() => {});
+		}
+
+		vi.advanceTimersByTime(RETRY_TIMEOUT_MS + 1);
+		for (let i = 0; i < SUCCESS_THRESHOLD; i++) {
+			await mongoCircuitBreaker.call(() => Promise.resolve("ok"));
+		}
+
+		expect(mongoCircuitBreaker.getState().status).toEqual("CLOSED");
+		expect(mongoCircuitBreaker.getState().failureCount).toEqual(0);
+	});
+
+	it("transitions to open on failure when in half open state", async () => {
+		vi.useFakeTimers();
+
+		for (let i = 0; i < FAILURE_THRESHOLD; i++) {
+			await mongoCircuitBreaker.call(() => Promise.reject(new Error())).catch(() => {});
+		}
+
+		vi.advanceTimersByTime(RETRY_TIMEOUT_MS + 1);
+		await mongoCircuitBreaker.call(() => Promise.resolve("ok"));
+
+		await mongoCircuitBreaker.call(() => Promise.reject(new Error())).catch(() => {});
+		expect(mongoCircuitBreaker.getState().status).toEqual("OPEN");
+	});
+
+	it("rejects with timeout error if call exceeds threshold", async () => {
+		vi.useFakeTimers();
+
+		const slowRequest = () => new Promise<never>((_, reject) => setTimeout(reject, 10_000));
+		const resultPromise = mongoCircuitBreaker.call(slowRequest);
+		vi.advanceTimersByTime(CALL_TIMEOUT_MS + 1);
+
+		await expect(resultPromise).rejects.toThrow(`Timeout after ${CALL_TIMEOUT_MS}ms`);
+		expect(mongoCircuitBreaker.getState().failureCount).toEqual(1);
 	});
 });
