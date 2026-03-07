@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
+import { mongoCircuitBreaker } from "@/lib/circuitBreaker";
 import { dbConnect } from "@/lib/mongoose";
 import { TagToTimelineResponse, TagToTimelineMap } from "@/models/timeline";
 import { Timeline, TagTimelineData } from "@/models/timeline";
@@ -24,10 +25,11 @@ export async function POST(request: NextRequest) {
 
 		await dbConnect();
 
-		const relevantTimelines = await Timeline.find(
-			{ tag: { $in: cleanedTagsArray } },
-			{ _id: 1, tag: 1 }
-		).lean<TagTimelineData[]>();
+		const relevantTimelines = await mongoCircuitBreaker.call(() =>
+			Timeline.find({ tag: { $in: cleanedTagsArray } }, { _id: 1, tag: 1 }).lean<
+				TagTimelineData[]
+			>()
+		);
 
 		const tagToTimeline = relevantTimelines.reduce<TagToTimelineMap>((acc, timeline) => {
 			acc[timeline.tag] = timeline._id.toString();

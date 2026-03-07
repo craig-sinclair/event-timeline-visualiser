@@ -8,6 +8,12 @@ vi.mock("@/models/timeline", () => ({
 	},
 }));
 
+vi.mock("@/lib/circuitBreaker", () => ({
+	mongoCircuitBreaker: {
+		call: vi.fn((fn) => fn()),
+	},
+}));
+
 import { NextRequest } from "next/server";
 import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 

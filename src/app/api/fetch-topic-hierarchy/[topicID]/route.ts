@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
+import { mongoCircuitBreaker } from "@/lib/circuitBreaker";
 import { dbConnect } from "@/lib/mongoose";
 import { OntologyTopic } from "@/models/ontology";
 import {
@@ -23,9 +24,11 @@ export async function GET(
 		await dbConnect();
 
 		const TOPIC_QCODE_PREFIX = "medtop:";
-		const baseTopic: TopicData | null = await OntologyTopic.findOne({
-			qcode: `${TOPIC_QCODE_PREFIX}${topicID}`,
-		}).lean<TopicData>();
+		const baseTopic: TopicData | null = await mongoCircuitBreaker.call(() =>
+			OntologyTopic.findOne({
+				qcode: `${TOPIC_QCODE_PREFIX}${topicID}`,
+			}).lean<TopicData>()
+		);
 
 		if (!baseTopic) {
 			throw new Error(`Could not find topic with ID: ${topicID}.`);
@@ -37,9 +40,13 @@ export async function GET(
 		// Fetch all parent topics (until reaching topic with no broader topic field)
 		// Known that there is at most one parent topic (array length 1)
 		while (currentTopic?.broader?.[0]) {
-			const parentTopic: TopicData | null = await OntologyTopic.findOne({
-				qcode: currentTopic.broader[0],
-			}).lean<TopicData>();
+			const broaderQcode: string = currentTopic.broader[0];
+
+			const parentTopic: TopicData | null = await mongoCircuitBreaker.call(() =>
+				OntologyTopic.findOne({
+					qcode: broaderQcode,
+				}).lean<TopicData | null>()
+			);
 
 			if (!parentTopic) break;
 

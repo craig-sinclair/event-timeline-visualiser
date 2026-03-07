@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
+import { mongoCircuitBreaker } from "@/lib/circuitBreaker";
 import { getAllChildTopics } from "@/lib/getAllChildTopics";
 import { dbConnect } from "@/lib/mongoose";
 import { EventData } from "@/models/event";
@@ -22,7 +23,10 @@ export async function GET(
 
 		await dbConnect();
 
-		const allTimelines = await Timeline.find().lean<TimelineData[]>();
+		const allTimelines = await mongoCircuitBreaker.call(() =>
+			Timeline.find().lean<TimelineData[]>()
+		);
+
 		if (!Array.isArray(allTimelines) || allTimelines.length === 0) {
 			throw new Error("No timelines were found.");
 		}
@@ -32,9 +36,11 @@ export async function GET(
 
 		const allMatchingEventTimelines: EventsInTopic = [];
 		for (const timeline of allTimelines) {
-			const allTimelineEvents = await Event.find({
-				_id: { $in: timeline.events },
-			}).lean<EventData[]>();
+			const allTimelineEvents = await mongoCircuitBreaker.call(() =>
+				Event.find({
+					_id: { $in: timeline.events },
+				}).lean<EventData[]>()
+			);
 
 			// Filter events that include any of the matching topic IDs in their qcode array
 			const currentTimelineMatchingEvents = allTimelineEvents.filter((event) => {
