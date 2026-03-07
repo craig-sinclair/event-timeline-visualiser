@@ -11,6 +11,12 @@ vi.mock("@/models/ontology", () => ({
 	},
 }));
 
+vi.mock("@/lib/circuitBreaker", () => ({
+	mongoCircuitBreaker: {
+		call: vi.fn((fn) => fn()),
+	},
+}));
+
 import { describe, it, expect, vi, type Mock, beforeEach } from "vitest";
 
 import { getAllChildTopics } from "@/lib/getAllChildTopics";
