@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
+import { mongoCircuitBreaker } from "@/lib/circuitBreaker";
 import { dbConnect } from "@/lib/mongoose";
 import { EventResponse, Event, EventData } from "@/models/event";
 import { Timeline, TimelineData } from "@/models/timeline";
@@ -17,15 +18,20 @@ export async function GET(
 
 		await dbConnect();
 
-		const timeline = await Timeline.findById(timelineID).lean<TimelineData | null>();
+		const timeline = await mongoCircuitBreaker.call(() =>
+			Timeline.findById(timelineID).lean<TimelineData | null>()
+		);
+
 		if (!timeline) {
 			throw new Error("Could not find given timeline.");
 		}
 
 		// Get timeline from event IDs in timeline's events array
-		const allEvents = await Event.find({
-			_id: { $in: timeline.events },
-		}).lean<EventData[]>();
+		const allEvents = await mongoCircuitBreaker.call(() =>
+			Event.find({
+				_id: { $in: timeline.events },
+			}).lean<EventData[]>()
+		);
 
 		const validEvents = allEvents.map((t) => ({
 			...t,

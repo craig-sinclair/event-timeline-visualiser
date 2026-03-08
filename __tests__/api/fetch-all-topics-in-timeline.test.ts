@@ -1,3 +1,9 @@
+vi.mock("@/lib/circuitBreaker", () => ({
+	mongoCircuitBreaker: {
+		call: vi.fn((fn) => fn()),
+	},
+}));
+
 vi.mock("@/lib/mongoose", () => ({ dbConnect: vi.fn() }));
 
 vi.mock("mongoose", async () => {

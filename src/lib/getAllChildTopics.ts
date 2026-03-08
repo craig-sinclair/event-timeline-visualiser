@@ -1,3 +1,4 @@
+import { mongoCircuitBreaker } from "@/lib/circuitBreaker";
 import { dbConnect } from "@/lib/mongoose";
 import { OntologyTopic } from "@/models/ontology";
 
@@ -14,25 +15,27 @@ export async function getAllChildTopics({ topicID }: { topicID: string }): Promi
 	Recursively finds all children topics from base using MongoDB's graphLookup
 	Traverses, matching by broader field of other topics (including deeply nested children)
 	*/
-	const result = await OntologyTopic.aggregate([
-		{
-			$match: { qcode: baseQcode },
-		},
-		{
-			$graphLookup: {
-				from: "ontology",
-				startWith: "$qcode",
-				connectFromField: "qcode",
-				connectToField: "broader",
-				as: "descendants",
+	const result = await mongoCircuitBreaker.call(() =>
+		OntologyTopic.aggregate([
+			{
+				$match: { qcode: baseQcode },
 			},
-		},
-		{
-			$project: {
-				childQcodes: `$descendants.qcode`,
+			{
+				$graphLookup: {
+					from: "ontology",
+					startWith: "$qcode",
+					connectFromField: "qcode",
+					connectToField: "broader",
+					as: "descendants",
+				},
 			},
-		},
-	]);
+			{
+				$project: {
+					childQcodes: `$descendants.qcode`,
+				},
+			},
+		])
+	);
 
 	if (!result.length) {
 		throw new Error(`Could not find topic with ID: ${topicID}`);

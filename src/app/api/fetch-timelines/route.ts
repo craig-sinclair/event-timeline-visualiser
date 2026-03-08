@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { mongoCircuitBreaker } from "@/lib/circuitBreaker";
 import { dbConnect } from "@/lib/mongoose";
 import { TimelineData, Timeline, TimelineResponse } from "@/models/timeline";
 
@@ -7,7 +8,10 @@ export async function GET() {
 	try {
 		await dbConnect();
 
-		const allTimelines = await Timeline.find().lean<TimelineData[]>();
+		const allTimelines = await mongoCircuitBreaker.call(() =>
+			Timeline.find().lean<TimelineData[]>()
+		);
+
 		const validTimelines = allTimelines.map((t) => ({
 			...t,
 			_id: t._id.toString(), // converts (Mongo) ObjectId -> string

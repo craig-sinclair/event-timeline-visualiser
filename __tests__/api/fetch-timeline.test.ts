@@ -3,6 +3,12 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 
 import { GET } from "@/app/api/fetch-timeline/[timelineID]/route";
 
+vi.mock("@/lib/circuitBreaker", () => ({
+	mongoCircuitBreaker: {
+		call: vi.fn((fn) => fn()),
+	},
+}));
+
 vi.mock("@/lib/mongoose", () => ({
 	dbConnect: vi.fn(),
 }));

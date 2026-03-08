@@ -5,6 +5,12 @@ import { GET } from "@/app/api/fetch-events/[timelineID]/route";
 import { EventData } from "@/models/event";
 import { TimelineData } from "@/models/timeline";
 
+vi.mock("@/lib/circuitBreaker", () => ({
+	mongoCircuitBreaker: {
+		call: vi.fn((fn) => fn()),
+	},
+}));
+
 vi.mock("@/lib/mongoose", () => ({
 	dbConnect: vi.fn(),
 }));

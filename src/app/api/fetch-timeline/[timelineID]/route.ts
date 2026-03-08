@@ -1,5 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
+import { mongoCircuitBreaker } from "@/lib/circuitBreaker";
 import { dbConnect } from "@/lib/mongoose";
 import { TimelineData, Timeline, TimelineResponse } from "@/models/timeline";
 
@@ -18,7 +19,10 @@ export async function GET(
 
 		await dbConnect();
 
-		const timelineObject = await Timeline.findById(timelineID).lean<TimelineData | null>();
+		const timelineObject = await mongoCircuitBreaker.call(() =>
+			Timeline.findById(timelineID).lean<TimelineData | null>()
+		);
+
 		if (!timelineObject) {
 			throw new Error("Could not find given timeline.");
 		}
