@@ -6,7 +6,7 @@ import ExportTimelineModal from "@/components/modals/ExportTimelineModal";
 import GradientScaleHeader from "@/components/ui/GradientScaleHeader";
 import { useEventModal } from "@/hooks/useEventModal";
 import { createEventCardStyle } from "@/lib/createEventCardStyle";
-import { getEventColor } from "@/lib/getEventColour";
+import { getEventColour } from "@/lib/getEventColour";
 import { EventData } from "@/models/event";
 
 export default function VerticalTimeline({
@@ -88,7 +88,7 @@ export default function VerticalTimeline({
 										<div
 											className="border-2 rounded-lg p-4 cursor-pointer transition-all hover:opacity-75"
 											style={{
-												borderColor: getEventColor(event.position),
+												borderColor: getEventColour(event.position),
 												...createEventCardStyle({
 													relevance: event.relevance,
 												}),
