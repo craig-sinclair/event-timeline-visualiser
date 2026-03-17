@@ -24,7 +24,7 @@ export async function POST(req: Request) {
 
 	const displayNameError = validateDisplayName({ newDisplayName: displayName });
 	if (displayNameError) {
-		return NextResponse.json({ message: passwordError }, { status: 500 });
+		return NextResponse.json({ message: displayNameError }, { status: 500 });
 	}
 
 	try {
