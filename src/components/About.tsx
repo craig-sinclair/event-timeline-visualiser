@@ -175,6 +175,19 @@ export default function About() {
 					))}
 				</div>
 
+				<div className="mt-3">
+					<h3 className="text-sm font-medium">
+						Taxonomy for event topics is provided by{" "}
+						<a
+							href="https://iptc.org/"
+							className="text-blue-600 dark:text-blue-400 hover:underline"
+						>
+							IPTC
+						</a>
+						, the global standards body of the news media.
+					</h3>
+				</div>
+
 				<div
 					style={{
 						opacity: stepsLabelVisible ? 1 : 0,
