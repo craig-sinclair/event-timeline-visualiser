@@ -121,6 +121,7 @@ src/
       EventModal.tsx            # Event card with further information on specific event
       ExportTimelineModal.tsx   # Modal to handle exporting of timeline in HTML or image format
 
+    About.tsx                     # About page detailing overview of application functionality
     ContinuousScaleTimeline.tsx   # Gradient format scale encoding position in timeline display
     HorizontalTimeline.tsx        # Standard horizontal format timeline of events
     VerticalTimeline.tsx          # Standard vertical format timeline of events
