@@ -52,18 +52,21 @@ git clone https://github.com/craig-sinclair/event-timeline-visualiser.git
 > [!IMPORTANT]
 > Environmetal variables are required for setup to allow for MongoDB interaction. For reference, a `.env.example` file has been created at the project root. Developers should create a `.env` file following this example, and update the `MONGODB_URI` to their own connection string.
 
-`npm` was utilised as a package manager tool in this project. To install dependencies, from the project root folder `event-timeline-visualiser`:
+`pnpm` was utilised as a package manager tool in this project. To install dependencies, from the project root folder `event-timeline-visualiser`:
 ```bash
 # From the project root folder (event-timeline-visualiser)
 
+# Install pnpm package manage with npm (if required)
+npm install pnpm
+
 # Install project dependencies with npm
-npm install
+pnpm install
 
 # Use the provided datbase population script for sample data
-npm run populate-data
+pnpm run populate-data
 
 # Run the development serve
-npm run dev
+pnpm run dev
 ```
 The site shall then be accessible at [http://localhost:3000](http://localhost:3000).
 
@@ -196,16 +199,16 @@ Before merging, the pipeline must have completed a successful run on the merge r
 ### Code Styling and Conventions
 - Code styles and conventions are enforced throughout the project, and are specified in `eslint.config.mjs`.
 - This enforces: double quotes for strings, trailing commas in objects, four tab style indentation/spacing, wrapping lines over one hundred characters, ... etc.
-- Running `npm run lint` locally in a terminal shall execute the linter tool. Enable automating fixing of lint issues (where possible), with `npm run lint:fix`.
+- Running `pnpm run lint` locally in a terminal shall execute the linter tool. Enable automating fixing of lint issues (where possible), with `pnpm run lint:fix`.
 
 ### Unit Testing
 - The [Vitest](https://vitest.dev/) testing framework was used for all unit tests.
 - The `__tests__/` directory aims to mirror the `src/` directory, with an emphasis on testing for API routes and `lib/` functions.
-- Running `npm run test` locally in a terminal shall execute all unit tests in the `__test__/` directory.
+- Running `pnpm run test` locally in a terminal shall execute all unit tests in the `__test__/` directory.
 - Frequently, interactions with the database are mocked. This is to ensure an isolated testing environment and to avoid unwanted changes to records.
 
 Add: package used for unit testing, patterns of unit testing, automated runs, local triggering of unit testing, importance of testing (particular lib functions + api routes).
 
 ### Pre-Commit Hooks
-After cloning the repository, and running `npm install`, this shall enable pre-commit hooks via the Husky package.
+After cloning the repository, and running `pnpm install`, this shall enable pre-commit hooks via the Husky package.
 Currently, this executes the lint stage prior to all Git commits made, blocking if there are any lint errors.
