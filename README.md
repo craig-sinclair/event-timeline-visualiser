@@ -44,6 +44,11 @@ Users may click on individual events, which displays a helpful pop-up with more 
 
 
 ## Local Installation Guide
+#### Pre-Requisites
+- **Node.js** installed: download from [nodejs.org](https://nodejs.org/en).
+- A **MongoDB** instance accessible via a connection URI (e.g. `mongodb://localhost:27017/yourdb`). If required, see the [MongoDB installation guide](https://www.mongodb.com/docs/manual/installation/).
+- **Git** installed on your local machine: download from [git](https://git-scm.com/).
+
 ```bash
 # Open a terminal and clone the repository
 git clone https://github.com/craig-sinclair/event-timeline-visualiser.git
@@ -56,13 +61,13 @@ git clone https://github.com/craig-sinclair/event-timeline-visualiser.git
 ```bash
 # From the project root folder (event-timeline-visualiser)
 
-# Install pnpm package manage with npm (if required)
+# Install pnpm packager manage with npm (if required)
 npm install pnpm
 
 # Install project dependencies with npm
 pnpm install
 
-# Use the provided datbase population script for sample data
+# Use the provided database population script for sample data
 pnpm run populate-data
 
 # Run the development serve
@@ -75,105 +80,128 @@ Following NextJS convention, routing to frontend pages and API endpoints is base
 
 ```
 src/
-  app/                        # Next.js routes (App Router)
+  app/
     layout.tsx
     page.tsx
-    dashboard/                # Displays all available timelines in a table format
+    dashboard/
       page.tsx
-    events-in-topic/          # View all events with a particular ontology topic (across all timelines)
+    events-in-topic/
       [topicID]/
         page.tsx
-    signin/                   # Sign-in form page
+    signin/
       page.tsx
-    signup/                   # Profile registration page
+    signup/
       page.tsx
-    profile/                  # View profile (signed in users only)
-      page.tsx
-    timeline/                 # View a specific timeline, defaulting to an appropriate view/style for event display
+    timeline/
       [timelineID]/
         page.tsx
-    developer/                # Developer documentation for API usage
+    developers/
       page.tsx
 
-    api/                      # ONLY route handlers here (Next.js conventions)
+    api/
       /admin              
-        / users               # Fetch all users from database
-          / route.ts
-      /auth                   # Various routes for login, registration, fetching auth session
-        ...
-      /fetch-events           # Fetch all events in a given timeline
-        /[timelineID]
+      /auth
+        /[...nextauth]
           /route.ts
-      /fetch-tmieline         # Fetch a timeline object by its ID
-        /[timelineID]
-          /route.ts
-      /fetch-timelines        # Fetch all timelines in the DB
+      /signup
         /route.ts
-      
-      /fetch-topic-hierarchy  # Builds array of parent/grandparent/... topics from a given media (ontology) topic
+      /fetch-events
+        /[timelineID]
+          /route.ts
+      /fetch-tmieline
+        /[timelineID]
+          /route.ts
+      /fetch-timelines
+        /route.ts  
+      /fetch-topic-hierarchy
         /[topicID]
-          / route.ts
+          /route.ts
+      /fetch-events-in-topic
+        /[topicID]
+          /route.ts
+      /fetch-all-topics-in-timeline
+        /[timelineID]
+          /route.ts
 
   components/
-    ui/                       # Reusable UI primitives
+    ui/
+      DateRangeFilter.ts
+      fonts.ts
+      GradientScaleHeader.tsx
+      LoadingSpinner.tsx
+      Navbar.tsx
+      ThemeToggle.tsx
+      TimelineFilters.tsx
+      TopicHierarchyText.tsx
 
-    layout/                     # Page or app-level layout components
+    layout/
       ErrorBoundary.tsx
 
-    modals/                     # modals/ pop-ups
-      EventModal.tsx            # Event card with further information on specific event
-      ExportTimelineModal.tsx   # Modal to handle exporting of timeline in HTML or image format
+    modals/
+      EventModal.tsx
+      ExportTimelineModal.tsx
 
-    About.tsx                     # About page detailing overview of application functionality
-    ContinuousScaleTimeline.tsx   # Gradient format scale encoding position in timeline display
-    HorizontalTimeline.tsx        # Standard horizontal format timeline of events
-    VerticalTimeline.tsx          # Standard vertical format timeline of events
-    TimelinesTable.tsx            # Table to list all events
+    About.tsx
+    ContinuousScaleTimeline.tsx
+    HorizontalTimeline.tsx
+    VerticalTimeline.tsx
+    TimelinesTable.tsx
 
-  lib/                        # Framework-agnostic helpers (formatters, API clients) and general-purpose utilities
-    createEventCardStyle.ts       # Determine event card styling based on its relevance
-    exportTimelineHTML.ts         # Exporting of timeline as HTML file
-    exportTimelineImage.ts        # Exporting of timeline as PNG file
-    filterEvents.ts               # Filter event array by tags, date range and relevance
-    getAllTagsInTimeline.ts       # Returns all tags that exist in events in a timeline
-    getAllYearsInTimeline.ts      # Gets all years (dates) in events in a timeline
-    getEventColour.ts             # Determine event card colour corresponding to gradient scale for position
-    mongoose.ts                   # Allow global connection to MongoDB through mongoose package
-    sortEvents.ts                 # Re-arrange array of event by input sorting field
-    api/                      # Helper functions to communicate with API endpoints via frontend
+  lib/
+    auth.ts
+    buildYearMonthTree.ts
+    circuitBreaker.ts
+    createEventCardStyle.ts
+    exportTimelineHTML.ts
+    exportTimelineImage.ts
+    filterEvents.ts
+    getAllChildTopics.ts
+    getEventColour.ts
+    mongodb.ts
+    mongoose.ts
+    sortEvents.ts
+    validateSignUpFields.ts
+    api/
       getAllTimelines.ts
+      getAllTopicsInTimeline.ts
       getEventsInTimeline.ts
       getEventsInTopic.ts
+      getEventTagsToTimelineMap.ts
       getTimelineFromId.ts
       getTopicHierarchy.ts
 
-  models/                     # TypeScript types/interfaces and schemas/models for MongoDB
-    api.ts                      # Contains base types for API responses/failures
+  models/
+    api.ts
+    circuitBreaker.types.ts
+    dateFilters.types.ts
+    entry.ts
     event.ts
+    item.tsx
     ontology.ts
+    ontology.types.ts
     timeline.ts
     user.ts
+    userSchema.ts
 
-
-  services/                   # Business logic for auth login
+  services/
     authService.ts
     passwordService.ts
 
-  hooks/                      # Custom React hooks
-    useEventModal.ts            # Contains shared general logic for opening/closing event card and viewing its contents
-    useIsMobile.ts              # Determine if current user is on mobile device or not
+  hooks/
+    useEventModal.ts
+    useIsMobile.ts
 
-  utils/                      # Miscellaneous utilities
-    event-styles.const.ts       # Stores base styling logic for event cards
+  utils/
+    auth.const.ts
+    event-styles.const.ts
+    month-names.const.ts
 
-  public/                     # Static assets
+  public/
 
   data/                       # JSON format data for population script and screenshots
     /screenshots
-    sample-timelines.json     # JSON document for timelines collection
-    sample-covid-data.json    # Example of JSON document for events in a timeline
 
-__tests__/                    # Unit tests folder
+__tests__/
 
 content/                      # Contains markdown content for developer documentation
 ```
