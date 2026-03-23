@@ -44,6 +44,11 @@ Users may click on individual events, which displays a helpful pop-up with more 
 
 
 ## Local Installation Guide
+#### Pre-Requisites
+- **Node.js** installed: download from [nodejs.org](https://nodejs.org/en).
+- A **MongoDB** instance accessible via a connection URI (e.g. `mongodb://localhost:27017/yourdb`). If required, see the [MongoDB installation guide](https://www.mongodb.com/docs/manual/installation/).
+- **Git** installed on your local machine: download from [git](https://git-scm.com/).
+
 ```bash
 # Open a terminal and clone the repository
 git clone https://github.com/craig-sinclair/event-timeline-visualiser.git
@@ -56,13 +61,13 @@ git clone https://github.com/craig-sinclair/event-timeline-visualiser.git
 ```bash
 # From the project root folder (event-timeline-visualiser)
 
-# Install pnpm package manage with npm (if required)
+# Install pnpm packager manage with npm (if required)
 npm install pnpm
 
 # Install project dependencies with npm
 pnpm install
 
-# Use the provided datbase population script for sample data
+# Use the provided database population script for sample data
 pnpm run populate-data
 
 # Run the development serve
